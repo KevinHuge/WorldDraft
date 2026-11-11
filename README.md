@@ -4,10 +4,10 @@
 
 ## If Code Builds the World, Can Video Models Just Render It?
 
-Zhiyu Hou<sup>1,\*</sup>, Wen-Jie Shu<sup>2,\*</sup>, Harold H. Chen<sup>3,\*,†</sup>, Weilin Ruan<sup>4</sup>, Chenfei Liao<sup>5</sup>,<br>
-Liuzhou Zhang<sup>3</sup>, Disen Lan<sup>6</sup>, Xiaogang Xu<sup>7</sup>, Qi Chen<sup>2</sup>, Ser-Nam Lim<sup>8</sup>
+Zhiyu Hou<sup>\*</sup>, Wen-Jie Shu<sup>\*</sup>, Harold H. Chen<sup>\*,†</sup>, Weilin Ruan, Chenfei Liao,<br>
+Liuzhou Zhang, Disen Lan, Xiaogang Xu, Qi Chen, Ser-Nam Lim
 
-<sup>1</sup> SUSTech &nbsp; <sup>2</sup> ZODA &nbsp; <sup>3</sup> HKUST &nbsp; <sup>4</sup> CUHK &nbsp; <sup>5</sup> HKUST(GZ) &nbsp; <sup>6</sup> FDU &nbsp; <sup>7</sup> ZJU &nbsp; <sup>8</sup> UCF
+SUSTech &nbsp; ZODA &nbsp; HKUST &nbsp; CUHK &nbsp; HKUST(GZ) &nbsp; FDU &nbsp; ZJU &nbsp; UCF
 
 <sup>\*</sup> Equal Contribution &nbsp; <sup>†</sup> Project Lead
 
