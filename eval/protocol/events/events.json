@@ -1,0 +1,2240 @@
+{
+  "schema": "worlddraft.events",
+  "dataset": "worlddraft",
+  "window_pad_seconds": 0.15,
+  "episodes": {
+    "A01": [
+      {
+        "name": "cross",
+        "phases": [
+          "turn#1"
+        ],
+        "participants": [
+          "cars"
+        ],
+        "action": "Track the cars approaching in the straight-through lanes of the four road arms, separately from the cars in the inner left-turn lanes. Their crossing begins as they enter the junction and continues straight across it with body heading aligned to the incoming road.",
+        "outcome": "The same straight-through cars reach the opposite road arms with no left-turn heading change; progress of a turning car does not satisfy this event.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "turn",
+        "phases": [
+          "turn#1"
+        ],
+        "participants": [
+          "cars"
+        ],
+        "action": "Track the cars initially approaching in the inner lanes from the bottom, right, top and left of the intersection. Each left turn begins when that car starts changing heading, follows a curved path across the junction, and ends when its heading settles along its perpendicular outgoing road. The bottom-entry car turns toward image-left.",
+        "outcome": "The turning cars complete their heading changes and advance along their respective outgoing road arms; straight approach or crossing a stop line alone is not a completed turn.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "turn",
+        "phases": [
+          "turn#1"
+        ],
+        "participants": [
+          "Vehicle_02"
+        ],
+        "action": "Target: the car initially approaching from the bottom of the opening frame in the inner incoming lane, facing upward; follow this same car as it turns toward the left side of the image. Event: its first left turn through the intersection. Onset: its body heading first changes from its initial straight-ahead orientation. Offset: its heading finishes changing and settles along the outgoing road toward image-left. Forward travel with unchanged heading before or after the turn is outside this interval; do not time another car or the moment it crosses a road marking.",
+        "outcome": "Target: the car initially approaching from the bottom of the opening frame in the inner incoming lane, facing upward; follow this same car as it turns toward the left side of the image. Event: its first left turn through the intersection. Onset: its body heading first changes from its initial straight-ahead orientation. Offset: its heading finishes changing and settles along the outgoing road toward image-left. Forward travel with unchanged heading before or after the turn is outside this interval; do not time another car or the moment it crosses a road marking.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "turn",
+          "occurrence": 1
+        }
+      }
+    ],
+    "A02": [
+      {
+        "name": "break",
+        "phases": [
+          "rack_motion#1"
+        ],
+        "participants": [
+          "balls"
+        ],
+        "action": "Track the incoming cue ball and the initially compact group of numbered object balls. The break begins with the cue ball reaching the group and transferring motion through ball contacts; follow the object balls as the group opens.",
+        "outcome": "Several object balls separate from their opening neighbors and move away from the compact group; cue-ball travel without disruption of the group is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "spread",
+        "phases": [
+          "rack_motion#1"
+        ],
+        "participants": [
+          "balls"
+        ],
+        "action": "Track the numbered object balls originally in the compact group, not just the cue ball. After the break, they roll away on distinct paths and may contact one another or the cushions.",
+        "outcome": "The original group has become a spatially dispersed arrangement on the table; camera motion or a single ball moving while the group stays compact does not count.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "rack_motion",
+        "phases": [
+          "rack_motion#1"
+        ],
+        "participants": [
+          "BALL 01 • solid.002"
+        ],
+        "action": "Target: object ball 1 in the initially compact group of billiard balls, near the lower/front edge of that group in the opening view, identified by its numbered patch when visible; not the incoming cue ball. Event: this same ball is displaced by the break. Time: the first crossing of 0.03 scene units of distance from its own opening position, not the cue-ball launch, another ball moving, or completion of rack dispersal. This is a single displacement-threshold crossing, with no separate end boundary.",
+        "outcome": "Target: object ball 1 in the initially compact group of billiard balls, near the lower/front edge of that group in the opening view, identified by its numbered patch when visible; not the incoming cue ball. Event: this same ball is displaced by the break. Time: the first crossing of 0.03 scene units of distance from its own opening position, not the cue-ball launch, another ball moving, or completion of rack dispersal. This is a single displacement-threshold crossing, with no separate end boundary.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "time"
+          ],
+          "parent_event": "break",
+          "occurrence": 1
+        }
+      }
+    ],
+    "A03": [
+      {
+        "name": "convey",
+        "phases": [
+          "gate_release#1"
+        ],
+        "participants": [
+          "bottles"
+        ],
+        "action": "Track the upright bottles queued on the moving belt through the fixed packaging frame. Follow their advance as the retractable stop lowers and releases the queue, then as bottles pass the machine section.",
+        "outcome": "The same bottles have advanced along the belt relative to the fixed guides and machine, with subsequent bottles occupying earlier positions; frame motion or stop motion alone is not bottle transport.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "gate_release",
+        "phases": [
+          "gate_release#1"
+        ],
+        "participants": [
+          "A03 retracting metering stop"
+        ],
+        "action": "Target: the narrow retractable metering stop across the bottle conveyor at the downstream end of the held bottle queue, not a bottle or the fixed machine frame. Event: the stop retracts downward to let bottles advance. Onset: the stop itself first moves downward relative to the conveyor. Offset: that downward stroke ends at its lowered position. Bottle motion before or after this stroke is not a boundary of the stop motion.",
+        "outcome": "Target: the narrow retractable metering stop across the bottle conveyor at the downstream end of the held bottle queue, not a bottle or the fixed machine frame. Event: the stop retracts downward to let bottles advance. Onset: the stop itself first moves downward relative to the conveyor. Offset: that downward stroke ends at its lowered position. Bottle motion before or after this stroke is not a boundary of the stop motion.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "convey",
+          "occurrence": 1
+        }
+      }
+    ],
+    "A04": [
+      {
+        "name": "sail",
+        "phases": [
+          "sail#1",
+          "pass#1"
+        ],
+        "participants": [
+          "boats"
+        ],
+        "action": "Track each sailboat by its hull and mast from its opening location on the lake. During the observed sailing interval, hulls advance on distinct courses relative to the water and shore; the interval is continuous rather than a single launch or docking action.",
+        "outcome": "Individual boats occupy changed locations while retaining distinct hulls and upright masts; apparent displacement caused only by camera motion does not establish sailing.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      }
+    ],
+    "A05": [
+      {
+        "name": "rotate",
+        "phases": [
+          "rotate#1",
+          "bob#1"
+        ],
+        "participants": [
+          "horses"
+        ],
+        "action": "Track the horses attached to the carousel poles around the fixed central axis. Observe their changing angular positions as the platform carries them around; motion is already ongoing and no unique startup or stop is required.",
+        "outcome": "The horses advance around the axis while remaining on their own poles; vertical bobbing without angular travel does not satisfy rotation.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "bob",
+        "phases": [
+          "rotate#1",
+          "bob#1"
+        ],
+        "participants": [
+          "horses"
+        ],
+        "action": "Track individual carousel horses relative to their own vertical poles while the platform rotates. A bobbing cycle rises from a local low height, reverses at a high height and descends again; judge height along the pole rather than image position.",
+        "outcome": "Horse heights change along their poles and different horses can occupy different heights while staying attached; rotation alone does not establish bobbing.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      }
+    ],
+    "A06": [
+      {
+        "name": "oscillate",
+        "phases": [
+          "swing#1",
+          "phases#1"
+        ],
+        "participants": [
+          "pendulums"
+        ],
+        "action": "Track the suspended pendulum balls beneath the fixed support rail, each associated with its own suspension point. Follow successive swings through the center and reversals at the sides rather than treating the whole array as a rigid object.",
+        "outcome": "The balls change their relative arrangement through back-and-forth motion while the upper suspension points stay fixed; a camera sweep is not an oscillation.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      }
+    ],
+    "A07": [
+      {
+        "name": "circulate",
+        "phases": [
+          "rotate#1",
+          "continue#1"
+        ],
+        "participants": [
+          "gondolas"
+        ],
+        "action": "Track the passenger gondolas attached around the Ferris-wheel rim, relative to the fixed hub and support legs. The rotating wheel carries them along circular paths while each basket retains an upright passenger orientation; no unique start or stop is expected.",
+        "outcome": "The same gondolas reach changed angular locations around the hub and remain attached with baskets upright; camera motion alone is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      }
+    ],
+    "A08": [
+      {
+        "name": "descend",
+        "phases": [
+          "descend#1"
+        ],
+        "participants": [
+          "marbles"
+        ],
+        "action": "Track the marbles initially distributed among the stacked funnels. Follow each marble as it rolls around a funnel and progresses through its outlet into a lower part of the apparatus.",
+        "outcome": "Marbles reach funnel levels below their own opening levels. Finishing in a collection tray is not required because the evaluated reference clip does not show tray contact.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "tray_collection",
+        "phases": [
+          "tray_collection#1"
+        ],
+        "participants": [
+          "Glass marble 08"
+        ],
+        "action": "Target: the lowest marble in the opening funnel apparatus (Glass marble 08), followed through the lower funnels toward the finish tray. Event: this marble reaches the tray support surface. Time: the target-to-tray gap first crosses downward through 0.01 scene units. Entering a lower funnel or merely approaching the tray does not count. This is one contact-proximity crossing; if the reference clip never reaches it, the event remains excluded rather than assigned an artificial time.",
+        "outcome": "Target: the lowest marble in the opening funnel apparatus (Glass marble 08), followed through the lower funnels toward the finish tray. Event: this marble reaches the tray support surface. Time: the target-to-tray gap first crosses downward through 0.01 scene units. Entering a lower funnel or merely approaching the tray does not count. This is one contact-proximity crossing; if the reference clip never reaches it, the event remains excluded rather than assigned an artificial time.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "no_reference_event",
+          "required_boundaries": [],
+          "parent_event": "collect",
+          "occurrence": 1
+        }
+      }
+    ],
+    "B01": [
+      {
+        "name": "initiation",
+        "phases": [
+          "first_domino#1",
+          "last_domino#1"
+        ],
+        "participants": [
+          "dominoes"
+        ],
+        "action": "Track the first domino at the starting end of the curved single row, initially at image upper-left, and its immediate neighbor. The event starts when the first block tips, then contacts the next block and initiates adjacent toppling.",
+        "outcome": "The next blocks begin falling in order while blocks farther down the row are still upright; merely moving the whole row or tipping an unrelated terminal block is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "cascade",
+        "phases": [
+          "first_domino#1",
+          "last_domino#1"
+        ],
+        "participants": [
+          "dominoes"
+        ],
+        "action": "Follow the chain of adjacent dominoes from the already triggered starting end along the curve to the terminal block at image-right. Each falling block transfers the fall to its next neighbor.",
+        "outcome": "Toppling reaches the terminal end while earlier blocks remain down; simultaneous unrelated collapse without propagation along the row does not establish the described cascade.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "first_domino",
+        "phases": [
+          "first_domino#1"
+        ],
+        "participants": [
+          "B01 | domino 01"
+        ],
+        "action": "Target: the first upright domino at the starting end of the curved single row, initially at the upper-left end in the opening view; track this block rather than its neighbor. Event: the initiating block tips and transmits the fall into the row. Time: the first instant its tilt exceeds five degrees from its opening upright orientation. Do not use contact with the next block or the time it lies flat; this event has one threshold-crossing boundary.",
+        "outcome": "Target: the first upright domino at the starting end of the curved single row, initially at the upper-left end in the opening view; track this block rather than its neighbor. Event: the initiating block tips and transmits the fall into the row. Time: the first instant its tilt exceeds five degrees from its opening upright orientation. Do not use contact with the next block or the time it lies flat; this event has one threshold-crossing boundary.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "time"
+          ],
+          "parent_event": "initiation",
+          "occurrence": 1
+        }
+      },
+      {
+        "name": "last_domino",
+        "phases": [
+          "last_domino#1"
+        ],
+        "participants": [
+          "B01 | domino 30"
+        ],
+        "action": "Target: the last domino at the opposite end of the curved single row, initially at the right-hand end in the opening view. Event: the propagating cascade reaches this terminal block and it starts tipping. Time: this block first exceeds five degrees of tilt from its opening upright orientation. Earlier blocks falling or this block finally lying flat do not define the time; there is one crossing boundary.",
+        "outcome": "Target: the last domino at the opposite end of the curved single row, initially at the right-hand end in the opening view. Event: the propagating cascade reaches this terminal block and it starts tipping. Time: this block first exceeds five degrees of tilt from its opening upright orientation. Earlier blocks falling or this block finally lying flat do not define the time; there is one crossing boundary.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "time"
+          ],
+          "parent_event": "cascade",
+          "occurrence": 1
+        }
+      }
+    ],
+    "B02": [
+      {
+        "name": "first_exchange",
+        "phases": [
+          "hand_withdrawal#1"
+        ],
+        "participants": [
+          "balls",
+          "hand"
+        ],
+        "action": "Track the initially hand-held raised rightmost ball and the opposite leftmost ball of the five-ball cradle. After the hand withdraws, the rightmost ball swings inward and strikes the central row.",
+        "outcome": "The leftmost ball swings outward after the incoming strike while the middle balls remain approximately centered; the release alone is not the completed exchange.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "return_exchange",
+        "phases": [
+          "hand_withdrawal#1"
+        ],
+        "participants": [
+          "balls"
+        ],
+        "action": "Track the leftmost ball that swung outward after the first strike, and follow it back toward the central row. The return exchange begins with its inward swing and collision with the row.",
+        "outcome": "The rightmost ball swings outward again after the return strike; do not substitute its initial held pose or first release.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "catch",
+        "phases": [
+          "hand_withdrawal#1"
+        ],
+        "participants": [
+          "balls",
+          "hand"
+        ],
+        "action": "Track the hand and the same rightmost cradle ball that was initially held. After the free swings, the hand returns to intercept that ball near its raised position.",
+        "outcome": "The hand holds the raised ball and its free swinging stops; a brief natural turning point without being held is not a catch.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "hand_withdrawal",
+        "phases": [
+          "hand_withdrawal#1"
+        ],
+        "participants": [
+          "B02 | release hand controller"
+        ],
+        "action": "Target: the hand initially holding the raised rightmost ball of the five-ball Newton cradle. Event: the hand withdraws outward from that ball to release it. Onset: the hand begins its first outward withdrawal from the held position. Offset: this outward withdrawal stops. Track hand translation, not the ball reaching the central row, the leftmost ball swinging, or the later return of the hand to catch the rightmost ball.",
+        "outcome": "Target: the hand initially holding the raised rightmost ball of the five-ball Newton cradle. Event: the hand withdraws outward from that ball to release it. Onset: the hand begins its first outward withdrawal from the held position. Offset: this outward withdrawal stops. Track hand translation, not the ball reaching the central row, the leftmost ball swinging, or the later return of the hand to catch the rightmost ball.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "first_exchange",
+          "occurrence": 1
+        }
+      }
+    ],
+    "B03": [
+      {
+        "name": "impact",
+        "phases": [
+          "headpin_fall#1"
+        ],
+        "participants": [
+          "ball",
+          "pins"
+        ],
+        "action": "Track the bowling ball approaching along the lane and the single front/head pin at the apex facing it. The impact begins when the ball reaches the front of the pin formation and makes contact.",
+        "outcome": "The front pins start tilting or translating from their initial positions after the contact; a ball passing nearby without disturbing them is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "scatter",
+        "phases": [
+          "headpin_fall#1"
+        ],
+        "participants": [
+          "ball",
+          "pins"
+        ],
+        "action": "Track the pins initially arranged behind the head pin. After the initial ball impact, contacts propagate through this group and individual pins topple or slide apart.",
+        "outcome": "Most pins end down and at least one remains upright, matching the reference outcome; ball travel alone or only the head pin moving does not satisfy this event.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "headpin_fall",
+        "phases": [
+          "headpin_fall#1"
+        ],
+        "participants": [
+          "B03 | pin 01"
+        ],
+        "action": "Target: the single front/head pin at the apex of the bowling-pin formation facing the approaching ball, centered ahead of the other pins. Event: this pin tips after the ball arrives. Time: its first tilt exceeding five degrees from its opening upright orientation. Do not substitute first ball-pin contact, sliding without tilt, another pin falling, or the head pin reaching the floor. Only this crossing is timed.",
+        "outcome": "Target: the single front/head pin at the apex of the bowling-pin formation facing the approaching ball, centered ahead of the other pins. Event: this pin tips after the ball arrives. Time: its first tilt exceeding five degrees from its opening upright orientation. Do not substitute first ball-pin contact, sliding without tilt, another pin falling, or the head pin reaching the floor. Only this crossing is timed.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "time"
+          ],
+          "parent_event": "impact",
+          "occurrence": 1
+        }
+      }
+    ],
+    "B04": [
+      {
+        "name": "top_transfer",
+        "phases": [
+          "top_transfer#1"
+        ],
+        "participants": [
+          "marble_01",
+          "lift"
+        ],
+        "action": "Track a marble carried by the vertical elevator on the right of the loop apparatus. Follow it upward to the top exit and across the connection onto the upper descending track.",
+        "outcome": "That same marble leaves the lift and continues along the upper return track; an empty lift moving or a different marble already on the track is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "bottom_return",
+        "phases": [
+          "top_transfer#1"
+        ],
+        "participants": [
+          "marble_10"
+        ],
+        "action": "Track a marble on the lower return track as it approaches the bottom inlet of the right-hand elevator. The receiving interval begins at its approach to the inlet and ends as the lift accepts it.",
+        "outcome": "The marble enters the elevator receiving position rather than rolling off the end of the track; upper-track transfer is a different event.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "top_transfer",
+        "phases": [
+          "top_transfer#1"
+        ],
+        "participants": [
+          "Marble_01"
+        ],
+        "action": "Target: the marble initially at the lower inlet beside the vertical elevator on the right of the apparatus (Marble_01); follow this same marble as the lift raises it to the top. Event: it transfers from the lift onto the descending return track. Onset: its world height first starts decreasing after the upward ride. Horizontal motion or the elevator mechanism rotating is not this boundary; only the start of descent is scored.",
+        "outcome": "Target: the marble initially at the lower inlet beside the vertical elevator on the right of the apparatus (Marble_01); follow this same marble as the lift raises it to the top. Event: it transfers from the lift onto the descending return track. Onset: its world height first starts decreasing after the upward ride. Horizontal motion or the elevator mechanism rotating is not this boundary; only the start of descent is scored.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset"
+          ],
+          "parent_event": "top_transfer",
+          "occurrence": 1
+        }
+      }
+    ],
+    "B05": [
+      {
+        "name": "scoop_lift",
+        "phases": [
+          "slew_to_truck#1"
+        ],
+        "participants": [
+          "bucket",
+          "earth"
+        ],
+        "action": "Track the excavator bucket at the end of the boom and the soil beneath it, distinct from the nearby dump truck. The bucket enters or curls through the soil and is then raised from the ground.",
+        "outcome": "Soil is visibly carried inside the raised bucket; an empty bucket lifting is not the completed scoop-and-lift event.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "load_truck",
+        "phases": [
+          "slew_to_truck#1"
+        ],
+        "participants": [
+          "bucket",
+          "earth",
+          "bed"
+        ],
+        "action": "Track the same loaded excavator bucket as the upper carriage swivels from the digging area toward the nearby truck bed. Above the bed, the bucket tips outward to discharge its contents.",
+        "outcome": "Soil leaves the bucket and falls into the truck bed; carriage rotation without dumping or soil falling beside the truck does not establish loading.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "slew_to_truck",
+        "phases": [
+          "slew_to_truck#1"
+        ],
+        "participants": [
+          "Upper carriage slew"
+        ],
+        "action": "Target: the excavator upper carriage carrying its cab, boom and bucket, rotating on the stationary lower chassis beside the dump truck. Event: its first swivel toward the truck after loading the bucket. Onset: the upper carriage first changes yaw toward the truck. Offset: this yaw rotation stops at its truck-facing orientation. Boom raising, bucket curling and soil falling are separate motions and must not set these yaw boundaries.",
+        "outcome": "Target: the excavator upper carriage carrying its cab, boom and bucket, rotating on the stationary lower chassis beside the dump truck. Event: its first swivel toward the truck after loading the bucket. Onset: the upper carriage first changes yaw toward the truck. Offset: this yaw rotation stops at its truck-facing orientation. Boom raising, bucket curling and soil falling are separate motions and must not set these yaw boundaries.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "load_truck",
+          "occurrence": 1
+        }
+      }
+    ],
+    "B06": [
+      {
+        "name": "road_before",
+        "phases": [
+          "bridge_open#1",
+          "bridge_close#1"
+        ],
+        "participants": [
+          "leaves",
+          "cars"
+        ],
+        "action": "Track the first road car approaching the drawbridge while the hinged leaves are still horizontal and connected. Follow that car onto and across the bridge deck.",
+        "outcome": "The same car reaches the opposite bank before the opening stroke; the later post-closing traffic is a separate event.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "boat_pass",
+        "phases": [
+          "bridge_open#1",
+          "bridge_close#1"
+        ],
+        "participants": [
+          "leaves",
+          "boat"
+        ],
+        "action": "Track both hinged bridge leaves and the boat approaching through the canal. The sequence starts with the leaves rotating up to open the water passage, then the boat travels through the gap.",
+        "outcome": "The boat clears the space under the bridge while the leaves are still raised, before they begin lowering; opening alone is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "road_restore",
+        "phases": [
+          "bridge_open#1",
+          "bridge_close#1"
+        ],
+        "participants": [
+          "leaves",
+          "cars"
+        ],
+        "action": "Track the raised drawbridge leaves and the road cars waiting at the banks. The leaves rotate down until their road surfaces reconnect, after which cars advance onto the deck.",
+        "outcome": "Road cars cross on the reconnected closed deck; cars moving before the bridge closes do not establish successful restoration.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "bridge_open",
+        "phases": [
+          "bridge_open#1"
+        ],
+        "participants": [
+          "Left lifting bridge leaf"
+        ],
+        "action": "Target: the movable bridge leaf on the left half of the canal crossing in the opening view, attached to its bank hinge; not a car or the boat. Event: its first opening stroke from the horizontal road position. Onset: the leaf first rotates upward about its hinge. Offset: that upward rotation ends at its raised position. A car leaving the bridge or the boat entering the gap is not the leaf boundary.",
+        "outcome": "Target: the movable bridge leaf on the left half of the canal crossing in the opening view, attached to its bank hinge; not a car or the boat. Event: its first opening stroke from the horizontal road position. Onset: the leaf first rotates upward about its hinge. Offset: that upward rotation ends at its raised position. A car leaving the bridge or the boat entering the gap is not the leaf boundary.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "boat_pass",
+          "occurrence": 1
+        }
+      },
+      {
+        "name": "bridge_close",
+        "phases": [
+          "bridge_close#1"
+        ],
+        "participants": [
+          "Left lifting bridge leaf"
+        ],
+        "action": "Target: the same bank-hinged left bridge leaf used for bridge opening. Event: its first downward closing stroke from the raised position toward the road. Onset: the leaf starts rotating downward. Offset: its downward rotation ends at the closed road position. Do not use the boat passing or cars restarting as the boundary; observe the leaf angle itself.",
+        "outcome": "Target: the same bank-hinged left bridge leaf used for bridge opening. Event: its first downward closing stroke from the raised position toward the road. Onset: the leaf starts rotating downward. Offset: its downward rotation ends at the closed road position. Do not use the boat passing or cars restarting as the boundary; observe the leaf angle itself.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "road_restore",
+          "occurrence": 1
+        }
+      }
+    ],
+    "B07": [
+      {
+        "name": "raise",
+        "phases": [
+          "forks_raise#1"
+        ],
+        "participants": [
+          "forks",
+          "cargo"
+        ],
+        "action": "Track the forklift moving fork carriage and the loaded pallet above its forks, relative to the mast and the nearby truck bed. The event starts with the forks rising and ends at the raised loading height before forward insertion.",
+        "outcome": "The pallet is supported by the forks at a height that clears the truck bed; forklift translation without vertical lifting is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "unload",
+        "phases": [
+          "forks_raise#1"
+        ],
+        "participants": [
+          "forks",
+          "cargo"
+        ],
+        "action": "Track the same pallet as the forklift carries it into the truck, lowers it onto the bed, and reverses with its forks withdrawing from beneath it.",
+        "outcome": "The pallet and cartons stay supported on the truck bed while the forklift backs away; carrying the pallet back out is not successful unloading.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "forks_raise",
+        "phases": [
+          "forks_raise#1"
+        ],
+        "participants": [
+          "Moving carriage and L forks"
+        ],
+        "action": "Target: the forklift front moving carriage and its pair of L-shaped forks beneath the loaded pallet, not the vehicle chassis or truck. Event: the first upward fork stroke carrying the pallet. Onset: the fork carriage starts rising relative to the mast. Offset: that upward stroke stops at the raised level. Driving the forklift forward, moving the camera, or later withdrawing the forks does not extend this vertical-motion interval.",
+        "outcome": "Target: the forklift front moving carriage and its pair of L-shaped forks beneath the loaded pallet, not the vehicle chassis or truck. Event: the first upward fork stroke carrying the pallet. Onset: the fork carriage starts rising relative to the mast. Offset: that upward stroke stops at the raised level. Driving the forklift forward, moving the camera, or later withdrawing the forks does not extend this vertical-motion interval.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "raise",
+          "occurrence": 1
+        }
+      }
+    ],
+    "B08": [
+      {
+        "name": "slow",
+        "phases": [
+          "final_carton_stop#1"
+        ],
+        "participants": [
+          "cartons"
+        ],
+        "action": "Track the leading carton initially nearest the downstream output side of the packaging machine. It advances out onto the roller section and decelerates relative to the fixed roller frame.",
+        "outcome": "Its forward translation noticeably slows; movement of the belt, camera or a following carton is not evidence that this leading carton slowed.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "accumulate",
+        "phases": [
+          "final_carton_stop#1"
+        ],
+        "participants": [
+          "cartons"
+        ],
+        "action": "Track the leading carton and the following cartons emerging from the machine. Each arriving carton catches up to the one ahead and the resulting contacts advance the queue before it settles.",
+        "outcome": "The cartons form a closely packed queue that is approximately stationary near the end; separated moving cartons or a single temporary pause do not establish the accumulated queue.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "final_carton_stop",
+        "phases": [
+          "final_carton_stop#1"
+        ],
+        "participants": [
+          "Carton 1"
+        ],
+        "action": "Target: the leading carton nearest the downstream end of the output rollers (Carton 1), followed continuously from its opening position as other cartons queue behind it. Event: its final forward movement during accumulation. Offset: its last forward translation ends and it remains at that position for the rest of the clip. An earlier temporary pause is not the final stop, and movement of an arriving carton is not movement of this target. Only the final offset is scored.",
+        "outcome": "Target: the leading carton nearest the downstream end of the output rollers (Carton 1), followed continuously from its opening position as other cartons queue behind it. Event: its final forward movement during accumulation. Offset: its last forward translation ends and it remains at that position for the rest of the clip. An earlier temporary pause is not the final stop, and movement of an arriving carton is not movement of this target. Only the final offset is scored.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "offset"
+          ],
+          "parent_event": "accumulate",
+          "occurrence": -1
+        }
+      }
+    ],
+    "C01": [
+      {
+        "name": "enter",
+        "phases": [
+          "occlusion#1"
+        ],
+        "participants": [
+          "train"
+        ],
+        "action": "Track the connected train from its leading coach as it approaches the entrance tunnel portal. The leader passes inside, then successive coaches follow into the same opening and become blocked by the tunnel.",
+        "outcome": "The train becomes hidden by the tunnel structure in coach order; passing in front of the tunnel facade is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "exit",
+        "phases": [
+          "occlusion#1"
+        ],
+        "participants": [
+          "train"
+        ],
+        "action": "Track the same train through the tunnel interval and identify its leading coach reappearing at the other portal. Subsequent coaches follow it onto the outgoing track.",
+        "outcome": "Connected coaches are visible on the right-hand outgoing track; a different train or visibility at the entrance portal is not the specified exit.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "occlusion",
+        "phases": [
+          "occlusion#1"
+        ],
+        "participants": [
+          "C01 | coach 01 controller"
+        ],
+        "action": "Target: the leading coach of the connected train, the first coach to enter the tunnel; keep this coach identity through disappearance and reappearance. Event: its first almost-complete tunnel occlusion. Onset: the visible fraction of this coach drops to at most 10 percent. Offset: its visible fraction first rises above 10 percent as it emerges. Initial partial covering and the last trailing coach entering or exiting do not define these boundaries.",
+        "outcome": "Target: the leading coach of the connected train, the first coach to enter the tunnel; keep this coach identity through disappearance and reappearance. Event: its first almost-complete tunnel occlusion. Onset: the visible fraction of this coach drops to at most 10 percent. Offset: its visible fraction first rises above 10 percent as it emerges. Initial partial covering and the last trailing coach entering or exiting do not define these boundaries.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "enter",
+          "occurrence": 1
+        }
+      }
+    ],
+    "C02": [
+      {
+        "name": "underpass",
+        "phases": [
+          "occlusion#1"
+        ],
+        "participants": [
+          "boats"
+        ],
+        "action": "Track the passenger boats approaching the bridge on the water, preserving each boat identity through the deck occlusion. Each underpass begins with approach beneath the deck, continues through hiding, and ends with emergence on the other side.",
+        "outcome": "The same boats reappear beyond the bridge and continue on the water; passing alongside the bridge without going beneath it does not count.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "occlusion",
+        "phases": [
+          "occlusion#1"
+        ],
+        "participants": [
+          "Ferry 1"
+        ],
+        "action": "Target: Ferry 1, the boat initially nearest the left end of the bridge on the lower/near side of its deck in the opening view, heading toward the passage beneath the bridge. Track this same boat, not one on the opposite side or farther right. Event: its first almost-complete bridge occlusion. Onset: at most 10 percent of the target remains visible behind the bridge. Offset: more than 10 percent becomes visible again beyond the obstruction. Passing a bridge edge with most of the boat still visible is not the onset.",
+        "outcome": "Target: Ferry 1, the boat initially nearest the left end of the bridge on the lower/near side of its deck in the opening view, heading toward the passage beneath the bridge. Track this same boat, not one on the opposite side or farther right. Event: its first almost-complete bridge occlusion. Onset: at most 10 percent of the target remains visible behind the bridge. Offset: more than 10 percent becomes visible again beyond the obstruction. Passing a bridge edge with most of the boat still visible is not the onset.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "underpass",
+          "occurrence": 1
+        }
+      }
+    ],
+    "C03": [
+      {
+        "name": "enter",
+        "phases": [
+          "occlusion#1"
+        ],
+        "participants": [
+          "person_and_door"
+        ],
+        "action": "Track the single walking person approaching the revolving-door enclosure from image-left, distinct from its rotating panels. The person moves into a door compartment while the panels rotate around the central axis.",
+        "outcome": "The door structure blocks the person from view during passage; rotation of an empty door or a person staying outside is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "exit",
+        "phases": [
+          "occlusion#1"
+        ],
+        "participants": [
+          "person_and_door"
+        ],
+        "action": "Track the same person through the revolving-door enclosure after entry. Follow the person as the rotating compartment carries the passage toward the far opening.",
+        "outcome": "The person emerges outside on the right and moves away from the door; a brief glimpse through a panel gap while still inside is not completed exit.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "occlusion",
+        "phases": [
+          "occlusion#1"
+        ],
+        "participants": [
+          "Person torso"
+        ],
+        "action": "Target: the torso of the single walking person approaching the revolving-door enclosure from image-left; track the torso, not the head, legs or a door panel. Event: the torso becomes almost fully blocked by the rotating door structure and then reappears. Onset: at most 10 percent of the torso is visible. Offset: the visible torso fraction first exceeds 10 percent again. The person starting to walk, entering the doorway, or finally leaving the entire enclosure are different boundaries.",
+        "outcome": "Target: the torso of the single walking person approaching the revolving-door enclosure from image-left; track the torso, not the head, legs or a door panel. Event: the torso becomes almost fully blocked by the rotating door structure and then reappears. Onset: at most 10 percent of the torso is visible. Offset: the visible torso fraction first exceeds 10 percent again. The person starting to walk, entering the doorway, or finally leaving the entire enclosure are different boundaries.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "enter",
+          "occurrence": 1
+        }
+      }
+    ],
+    "C04": [
+      {
+        "name": "reappear",
+        "phases": [
+          "occlusion#1"
+        ],
+        "participants": [
+          "cable_cars"
+        ],
+        "action": "Track each cable-car cabin along its fixed cable route, preserving its identity as foliage or other scene structures cover it. Follow the interval from approach to the obstruction through hiding to reappearance.",
+        "outcome": "The same cabins become visible farther along the cable while staying attached to the route; another cabin entering view does not establish reappearance of the hidden one.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "occlusion",
+        "phases": [
+          "occlusion#1"
+        ],
+        "participants": [
+          "Cable car 1"
+        ],
+        "action": "Target: the cable-car cabin initially at the left of the opening view (Cable car 1), followed along its route; do not switch to the cabin initially on the right. Event: this cabin first becomes almost completely occluded along the route, then reappears. Onset: at most 10 percent of its target cabin geometry remains visible behind scene obstructions. Offset: the visible fraction first exceeds 10 percent again. Partial overlap with foliage or supports alone is insufficient.",
+        "outcome": "Target: the cable-car cabin initially at the left of the opening view (Cable car 1), followed along its route; do not switch to the cabin initially on the right. Event: this cabin first becomes almost completely occluded along the route, then reappears. Onset: at most 10 percent of its target cabin geometry remains visible behind scene obstructions. Offset: the visible fraction first exceeds 10 percent again. Partial overlap with foliage or supports alone is insufficient.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "reappear",
+          "occurrence": 1
+        }
+      }
+    ],
+    "C05": [
+      {
+        "name": "aisle",
+        "phases": [
+          "occlusion#1"
+        ],
+        "participants": [
+          "forklift"
+        ],
+        "action": "Track the single forklift initially at image-left in the warehouse aisle. It drives behind the shelving and stored goods, becomes occluded, and continues toward the right-hand opening.",
+        "outcome": "The same forklift emerges on the right beyond the racks; a carton moving or a view through a rack gap without passage does not establish aisle traversal.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "occlusion",
+        "phases": [
+          "occlusion#1"
+        ],
+        "participants": [
+          "Forklift motion root"
+        ],
+        "action": "Target: the forklift initially at image-left of the warehouse, tracked as one vehicle behind the racks; do not follow the shelving or a carton on it. Event: its first almost-complete occlusion by the shelving and stored goods. Onset: at most 10 percent of the forklift target remains visible. Offset: its visible fraction first exceeds 10 percent again. Do not wait for the whole vehicle to clear the rack or time the beginning of driving.",
+        "outcome": "Target: the forklift initially at image-left of the warehouse, tracked as one vehicle behind the racks; do not follow the shelving or a carton on it. Event: its first almost-complete occlusion by the shelving and stored goods. Onset: at most 10 percent of the forklift target remains visible. Offset: its visible fraction first exceeds 10 percent again. Do not wait for the whole vehicle to clear the rack or time the beginning of driving.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "aisle",
+          "occurrence": 1
+        }
+      }
+    ],
+    "C06": [
+      {
+        "name": "roads",
+        "phases": [
+          "occlusion#1"
+        ],
+        "participants": [
+          "cars"
+        ],
+        "action": "Track each car on its own curved ring road or straight diagonal bridge from its opening position. Cars advance relative to lane markings and may be hidden by higher road decks before reappearing.",
+        "outcome": "Cars reach later positions on their respective road surfaces without switching road levels; camera movement or substituting another car after occlusion is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "occlusion",
+        "phases": [
+          "occlusion#1"
+        ],
+        "participants": [
+          "Ring 2 car 1"
+        ],
+        "action": "Target: the car initially in the lower-middle part of the opening image on the curved ring roadway (Ring 2 car 1), not the nearby car on the straight diagonal bridge. Follow that same car around its ring. Event: its first almost-complete occlusion by the elevated road structure. Onset: at most 10 percent of the target remains visible. Offset: more than 10 percent becomes visible again. Do not switch to another car or time ordinary travel along the curve.",
+        "outcome": "Target: the car initially in the lower-middle part of the opening image on the curved ring roadway (Ring 2 car 1), not the nearby car on the straight diagonal bridge. Follow that same car around its ring. Event: its first almost-complete occlusion by the elevated road structure. Onset: at most 10 percent of the target remains visible. Offset: more than 10 percent becomes visible again. Do not switch to another car or time ordinary travel along the curve.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "roads",
+          "occurrence": 1
+        }
+      }
+    ],
+    "C07": [
+      {
+        "name": "wash",
+        "phases": [
+          "occlusion#1"
+        ],
+        "participants": [
+          "car_and_brushes"
+        ],
+        "action": "Track the single car approaching the wash housing. It moves into the opening, passes through the enclosed brush area while hidden, and continues toward the exit.",
+        "outcome": "The same car becomes visible outside the housing again after passage; the nose entering alone or brushes moving around a stationary external car is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "occlusion",
+        "phases": [
+          "occlusion#1"
+        ],
+        "participants": [
+          "Car motion root"
+        ],
+        "action": "Target: the single car approaching the car-wash housing, followed through the wash passage. Event: its first almost-complete hiding inside the wash structure, followed by reappearance. Onset: at most 10 percent of the car target remains visible. Offset: the visible fraction first exceeds 10 percent again. The nose entering the opening, brush contact, and the whole car finally clearing the housing are not these boundaries.",
+        "outcome": "Target: the single car approaching the car-wash housing, followed through the wash passage. Event: its first almost-complete hiding inside the wash structure, followed by reappearance. Onset: at most 10 percent of the car target remains visible. Offset: the visible fraction first exceeds 10 percent again. The nose entering the opening, brush contact, and the whole car finally clearing the housing are not these boundaries.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "wash",
+          "occurrence": 1
+        }
+      }
+    ],
+    "C08": [
+      {
+        "name": "cover",
+        "phases": [
+          "cup_cover#1",
+          "cup_reveal#1"
+        ],
+        "participants": [
+          "cups_and_ball"
+        ],
+        "action": "Track the cup initially on the left above the small visible ball. It descends vertically toward the tabletop until its rim surrounds the ball.",
+        "outcome": "The ball is hidden beneath this cup at the tabletop; another cup lowering away from the ball does not establish covering.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "shuffle_reveal",
+        "phases": [
+          "cup_cover#1",
+          "cup_reveal#1"
+        ],
+        "participants": [
+          "cups_and_ball"
+        ],
+        "action": "Keep the identity of the cup that initially covered the ball while all cups change lateral positions. After the shuffle, that same cup rises from the tabletop.",
+        "outcome": "The same small ball becomes visible underneath the lifted covering cup; lifting a different empty cup is not a successful reveal.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "cup_cover",
+        "phases": [
+          "cup_cover#1"
+        ],
+        "participants": [
+          "C08 | cup 1"
+        ],
+        "action": "Target: the cup initially on the left above the small ball (cup 1); preserve this identity even when cups exchange positions. Event: this cup first lowers to cover the ball. Onset: the cup begins descending vertically. Offset: its downward stroke ends at the tabletop level. Lateral shuffling, another cup moving, and the first instant the ball is visually blocked are not the vertical-stroke boundaries.",
+        "outcome": "Target: the cup initially on the left above the small ball (cup 1); preserve this identity even when cups exchange positions. Event: this cup first lowers to cover the ball. Onset: the cup begins descending vertically. Offset: its downward stroke ends at the tabletop level. Lateral shuffling, another cup moving, and the first instant the ball is visually blocked are not the vertical-stroke boundaries.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "cover",
+          "occurrence": 1
+        }
+      },
+      {
+        "name": "cup_reveal",
+        "phases": [
+          "cup_reveal#1"
+        ],
+        "participants": [
+          "C08 | cup 1"
+        ],
+        "action": "Target: the same cup initially on the left that covered the ball (cup 1), tracked through the shuffle rather than chosen by its final position or color. Event: this cup rises after the shuffle to reveal the ball. Onset: the cup starts its upward stroke from the tabletop. Offset: that upward stroke ends at its raised position. The ball first becoming visible may occur within the stroke and is not the end boundary.",
+        "outcome": "Target: the same cup initially on the left that covered the ball (cup 1), tracked through the shuffle rather than chosen by its final position or color. Event: this cup rises after the shuffle to reveal the ball. Onset: the cup starts its upward stroke from the tabletop. Offset: that upward stroke ends at its raised position. The ball first becoming visible may occur within the stroke and is not the end boundary.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "shuffle_reveal",
+          "occurrence": 1
+        }
+      }
+    ],
+    "D01": [
+      {
+        "name": "drive",
+        "phases": [
+          "drive#1",
+          "continue#1"
+        ],
+        "participants": [
+          "car"
+        ],
+        "action": "Track the single car on the curved road, relative to lane markings and road edges while the camera follows it. Its path bends with the road and its heading follows the local roadway; this is continuous driving with no unique startup or stop.",
+        "outcome": "The car advances along the bend and remains on the pavement; a moving camera around an otherwise stationary car is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      }
+    ],
+    "D02": [],
+    "D03": [],
+    "D04": [
+      {
+        "name": "spin",
+        "phases": [
+          "rotate#1",
+          "continue#1"
+        ],
+        "participants": [
+          "turbine_rotors"
+        ],
+        "action": "Track the turbine blades relative to each fixed nacelle hub and tower. The rotors sweep through changing angular positions about their hubs during the observation interval; no unique start or stop is expected.",
+        "outcome": "Blades rotate while remaining attached to their hubs and the towers stay fixed; viewpoint change alone does not establish rotor motion.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      }
+    ],
+    "D05": [
+      {
+        "name": "departure",
+        "phases": [
+          "depart#1",
+          "navigate#1"
+        ],
+        "participants": [
+          "boats"
+        ],
+        "action": "Track the yacht followed by the camera as it moves away from its opening berth, distinct from the boats remaining docked and the separate vessel farther out. Follow its separation from the dock into the harbor.",
+        "outcome": "The followed yacht is farther from its berth over the water while the other docked yachts remain moored; camera retreat alone or motion of the offshore vessel does not establish departure.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      }
+    ],
+    "D06": [],
+    "D07": [
+      {
+        "name": "travel",
+        "phases": [
+          "travel#1",
+          "continue#1"
+        ],
+        "participants": [
+          "train"
+        ],
+        "action": "Track the locomotive and its connected coaches on the curved elevated viaduct. They advance together relative to rails and bridge piers, with each coach following the rail curvature; no unique launch or arrival boundary is required.",
+        "outcome": "The locomotive and coaches reach later positions on the track, remaining connected in their original order; a camera pan along a stationary train is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      }
+    ],
+    "D08": [
+      {
+        "name": "rides",
+        "phases": [
+          "wheel#1",
+          "coaster#1",
+          "tower#1"
+        ],
+        "participants": [
+          "ride_vehicles"
+        ],
+        "action": "Track the Ferris-wheel gondolas around their hub, the coaster train along its rails, and the seat carriage along the drop tower. Judge each component relative to its own fixed support, including its characteristic circular, rail-following or vertical movement.",
+        "outcome": "These moving ride components change positions while remaining attached to their respective mechanisms; a camera orbit around a static park is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      }
+    ],
+    "E01": [
+      {
+        "name": "pickup",
+        "phases": [
+          "payload_first_lift#1"
+        ],
+        "participants": [
+          "robot_and_payload"
+        ],
+        "action": "Track the roller-cassette payload on the pickup fixture beneath the industrial robot gripper. The gripper descends to engage it, then lifts the same cassette away from the fixture.",
+        "outcome": "The cassette clears the pickup support and is carried by the gripper; empty gripper motion does not establish pickup.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "carry",
+        "phases": [
+          "payload_first_lift#1"
+        ],
+        "participants": [
+          "robot_and_payload"
+        ],
+        "action": "Track the same cassette after pickup and the robot joints carrying it. The arm changes configuration and moves the payload away from its pickup location while maintaining the grasp.",
+        "outcome": "The cassette remains attached to the gripper at the new location; arm motion without the cassette or loss of the payload does not establish carrying.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "payload_first_lift",
+        "phases": [
+          "payload_first_lift#1"
+        ],
+        "participants": [
+          "Roller cassette payload"
+        ],
+        "action": "Target: the roller-cassette payload initially resting on the pickup fixture beneath the robot gripper, not the gripper or the arm links. Event: the payload first rises with the gripper. Onset: the payload world height begins increasing from its supported level. Offset: this first upward segment ends at its first local maximum height, whether followed by a pause or descent. Horizontal transfer or continued arm articulation does not extend the rise.",
+        "outcome": "Target: the roller-cassette payload initially resting on the pickup fixture beneath the robot gripper, not the gripper or the arm links. Event: the payload first rises with the gripper. Onset: the payload world height begins increasing from its supported level. Offset: this first upward segment ends at its first local maximum height, whether followed by a pause or descent. Horizontal transfer or continued arm articulation does not extend the rise.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "pickup",
+          "occurrence": 1
+        }
+      }
+    ],
+    "E02": [
+      {
+        "name": "cycle",
+        "phases": [
+          "first_top#1",
+          "second_rise#1"
+        ],
+        "participants": [
+          "scissor_lift"
+        ],
+        "action": "Track the rigid load platform above the scissor linkage and fixed base. The first cycle raises the platform as the links open, reaches a high turning point, then lowers as the links fold.",
+        "outcome": "The platform changes height upward and downward while remaining level and connected to the base; translation of the whole lift is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "repeat",
+        "phases": [
+          "first_top#1",
+          "second_rise#1"
+        ],
+        "participants": [
+          "scissor_lift"
+        ],
+        "action": "Track the same platform after its first up-and-down cycle. It begins a second upward stroke from the intervening low point, reaches another high point, and lowers again.",
+        "outcome": "The platform returns toward a low height with the scissor links still connected; replaying only the first rise or judging another moving part does not establish repetition.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "first_top",
+        "phases": [
+          "first_top#1"
+        ],
+        "participants": [
+          "Rigid upper table"
+        ],
+        "action": "Target: the rigid upper load platform supported by the scissor arms above the fixed base, not an individual arm or hose. Event: the platform completes its first upward stroke. Offset: its height reaches the first local maximum and stops increasing before lowering. The start of rising or a linkage joint rotating is not this boundary. Only this first top offset is timed.",
+        "outcome": "Target: the rigid upper load platform supported by the scissor arms above the fixed base, not an individual arm or hose. Event: the platform completes its first upward stroke. Offset: its height reaches the first local maximum and stops increasing before lowering. The start of rising or a linkage joint rotating is not this boundary. Only this first top offset is timed.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "offset"
+          ],
+          "parent_event": "cycle",
+          "occurrence": 1
+        }
+      },
+      {
+        "name": "second_rise",
+        "phases": [
+          "second_rise#1"
+        ],
+        "participants": [
+          "Rigid upper table"
+        ],
+        "action": "Target: the same rigid upper scissor-lift platform above the fixed base. Event: its second upward stroke, after the first rise and intervening lowering. Onset: its height starts increasing from the intervening low turning point. Offset: that second increase ends at the next local maximum. Count upward strokes of this platform; do not substitute its first rise or a later cycle.",
+        "outcome": "Target: the same rigid upper scissor-lift platform above the fixed base. Event: its second upward stroke, after the first rise and intervening lowering. Onset: its height starts increasing from the intervening low turning point. Offset: that second increase ends at the next local maximum. Count upward strokes of this platform; do not substitute its first rise or a later cycle.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "repeat",
+          "occurrence": 2
+        }
+      }
+    ],
+    "E03": [
+      {
+        "name": "unfold",
+        "phases": [
+          "umbrella_open#1"
+        ],
+        "participants": [
+          "umbrella"
+        ],
+        "action": "Track the fabric canopy and attached ribs around the umbrella central shaft. From the closed pose, ribs spread outward and unfold the fabric until the opening stroke finishes.",
+        "outcome": "The canopy is broadly expanded above the shaft with its ribs supporting it; moving the closed umbrella as a rigid object is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "umbrella_open",
+        "phases": [
+          "umbrella_open#1"
+        ],
+        "participants": [
+          "Canopy • eight sewn panels with unfolding pleats"
+        ],
+        "action": "Target: the fabric canopy attached to the umbrella ribs around the central shaft, initially folded closed. Event: its first unfolding stroke as the ribs spread. Onset: the canopy begins deforming away from the closed shape. Offset: the opening deformation finishes at the fully expanded shape. Translation of the whole umbrella, shaft motion or later fabric movement is not the opening stroke.",
+        "outcome": "Target: the fabric canopy attached to the umbrella ribs around the central shaft, initially folded closed. Event: its first unfolding stroke as the ribs spread. Onset: the canopy begins deforming away from the closed shape. Offset: the opening deformation finishes at the fully expanded shape. Translation of the whole umbrella, shaft motion or later fabric movement is not the opening stroke.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "unfold",
+          "occurrence": 1
+        }
+      }
+    ],
+    "E04": [
+      {
+        "name": "flutter",
+        "phases": [
+          "billow#1",
+          "continue#1"
+        ],
+        "participants": [
+          "curtains"
+        ],
+        "action": "Track the two curtain panels attached along their upper edges at the window. Their cloth billows, folds and sways away from and back toward the window while the attachment line stays supported; this is ongoing deformation without a unique start or stop.",
+        "outcome": "Folds and lower hems change shape while the top edges remain attached; camera motion or rigid translation of an unchanged panel is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      }
+    ],
+    "E05": [
+      {
+        "name": "waves",
+        "phases": [
+          "waves#1",
+          "continue#1"
+        ],
+        "participants": [
+          "ropes"
+        ],
+        "action": "Track the two continuous ropes from the ends held by the athlete toward their far ends. Alternating hand motion drives bends that travel along the rope lengths, rather than moving each rope as a rigid rod.",
+        "outcome": "The ropes show changing curved shapes and propagating waves while remaining continuous; hand motion without corresponding rope deformation is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      }
+    ],
+    "E06": [
+      {
+        "name": "squeeze",
+        "phases": [
+          "first_compression#1",
+          "first_recovery#1"
+        ],
+        "participants": [
+          "sponge_and_basin"
+        ],
+        "action": "Track the sponge block above the basin by its top-to-bottom height. During the first compression its height decreases to a local minimum, then increases during recovery; sideways bulging can accompany compression.",
+        "outcome": "The sponge recovers height after the squeeze instead of merely translating as a rigid block; the receiving basin and droplets are not the deforming target.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "water",
+        "phases": [
+          "first_compression#1",
+          "first_recovery#1"
+        ],
+        "participants": [
+          "sponge_and_basin"
+        ],
+        "action": "Track the same sponge and the space between it and the basin during the subsequent squeeze. Compression deforms the sponge and visible droplets separate from it and travel downward.",
+        "outcome": "Droplets fall below the sponge toward the basin receiving area; sponge deformation without released droplets does not establish this water-release outcome.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "first_compression",
+        "phases": [
+          "first_compression#1"
+        ],
+        "participants": [
+          "Wet sponge • reduced compressible continuum"
+        ],
+        "action": "Target: the sponge block above the receiving basin, judged by its top-to-bottom height, not a water droplet or basin edge. Event: the first sustained decrease in sponge height. Onset: that first downward compression starts. Offset: height reaches its first local minimum before recovery. Sideways bulging or droplets appearing does not define the boundary; track thickness rather than whole-object translation.",
+        "outcome": "Target: the sponge block above the receiving basin, judged by its top-to-bottom height, not a water droplet or basin edge. Event: the first sustained decrease in sponge height. Onset: that first downward compression starts. Offset: height reaches its first local minimum before recovery. Sideways bulging or droplets appearing does not define the boundary; track thickness rather than whole-object translation.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "squeeze",
+          "occurrence": 1
+        }
+      },
+      {
+        "name": "first_recovery",
+        "phases": [
+          "first_recovery#1"
+        ],
+        "participants": [
+          "Wet sponge • reduced compressible continuum"
+        ],
+        "action": "Target: the same sponge block above the basin. Event: the upward height segment after the first compression, which is the second increasing-height segment overall because a small initial expansion precedes the compression. Onset: height starts increasing from the first compressed minimum. Offset: this recovery ends at the next local maximum height. Do not count the opening expansion as this recovery or use droplets as a boundary.",
+        "outcome": "Target: the same sponge block above the basin. Event: the upward height segment after the first compression, which is the second increasing-height segment overall because a small initial expansion precedes the compression. Onset: height starts increasing from the first compressed minimum. Offset: this recovery ends at the next local maximum height. Do not count the opening expansion as this recovery or use droplets as a boundary.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "squeeze",
+          "occurrence": 2
+        }
+      }
+    ],
+    "E07": [
+      {
+        "name": "linkage",
+        "phases": [
+          "articulate#1",
+          "continue#1"
+        ],
+        "participants": [
+          "walking_links"
+        ],
+        "action": "Track the rigid links and their pinned joints in the walking mechanism, relative to its main frame. Successive joint rotations change leg posture through the walking cycle rather than stretching the links.",
+        "outcome": "The links retain their lengths and connections as the legs articulate; camera movement or a rigidly moving unarticulated assembly is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      }
+    ],
+    "E08": [
+      {
+        "name": "feed",
+        "phases": [
+          "feed#1",
+          "continue#1"
+        ],
+        "participants": [
+          "textile"
+        ],
+        "action": "Track the continuous textile web passing through the machine rollers and forming a suspended loop between supports. Material advances through the supports while the hanging part changes bend and the rollers turn.",
+        "outcome": "The web stays continuous as it advances and flexes; roller rotation alone or a camera view change of static cloth does not establish feeding.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      }
+    ],
+    "F01": [
+      {
+        "name": "packing",
+        "phases": [
+          "chocolate_lift#1"
+        ],
+        "participants": [
+          "chocolates_and_robots"
+        ],
+        "action": "Track the leading chocolate bars arriving from the cooling/conveyor section and the adjacent pickup robots. A robot engages a bar, lifts it clear of its own lane, carries it toward a packing carton and lowers it inside.",
+        "outcome": "Transferred chocolate reaches a packing carton rather than merely advancing on the belt; an empty robot cycle or pickup from an unrelated object is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "chocolate_lift",
+        "phases": [
+          "chocolate_lift#1"
+        ],
+        "participants": [
+          "Chocolate -1 0"
+        ],
+        "action": "Target: the leading chocolate bar in the conveyor lane nearer the camera at the opening, closest to that lane's pickup robot (Chocolate -1 0), not the parallel farther lane or a later bar. Event: this bar is first picked up from the conveyor. Onset: its world height first increases above its belt-supported level. Conveyor translation, gripper descent, or another chocolate being lifted does not count. Only the first upward-motion onset is scored.",
+        "outcome": "Target: the leading chocolate bar in the conveyor lane nearer the camera at the opening, closest to that lane's pickup robot (Chocolate -1 0), not the parallel farther lane or a later bar. Event: this bar is first picked up from the conveyor. Onset: its world height first increases above its belt-supported level. Conveyor translation, gripper descent, or another chocolate being lifted does not count. Only the first upward-motion onset is scored.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset"
+          ],
+          "parent_event": "packing",
+          "occurrence": 1
+        }
+      }
+    ],
+    "F02": [
+      {
+        "name": "transfer",
+        "phases": [
+          "ball_lift#1"
+        ],
+        "participants": [
+          "balls_and_figure"
+        ],
+        "action": "Track the three balls initially on the pickup support, starting with the leftmost ball in the opening view, and the LEGO mechanism that handles them. Follow a ball as it is raised, carried and delivered toward a receiving tray.",
+        "outcome": "The handled ball reaches the receiving support rather than remaining at its original pickup position; movement of the figure or linkage alone is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "ball_lift",
+        "phases": [
+          "ball_lift#1"
+        ],
+        "participants": [
+          "Ball 0"
+        ],
+        "action": "Target: the first of the three balls in the opening left-to-right order (Ball 0), resting at the pickup side of the LEGO transfer mechanism. Follow this same ball in the mechanism. Event: its first upward transfer stroke. Onset: this ball starts gaining world height from its lower resting position. Offset: that first increase ends at its first upper turning point or plateau. Motion of the figure's arms or a different ball is not a boundary of this ball's rise.",
+        "outcome": "Target: the first of the three balls in the opening left-to-right order (Ball 0), resting at the pickup side of the LEGO transfer mechanism. Follow this same ball in the mechanism. Event: its first upward transfer stroke. Onset: this ball starts gaining world height from its lower resting position. Offset: that first increase ends at its first upper turning point or plateau. Motion of the figure's arms or a different ball is not a boundary of this ball's rise.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "transfer",
+          "occurrence": 1
+        }
+      }
+    ],
+    "F03": [
+      {
+        "name": "trigger",
+        "phases": [
+          "first_trigger#1",
+          "last_fall#1"
+        ],
+        "participants": [
+          "dominoes"
+        ],
+        "action": "Track the marble on the launch ramp and the first tall distributor domino beside the field of smaller dominoes. The marble rolls into the starting distributor and tips it into the distributor sequence.",
+        "outcome": "The distributor chain begins toppling and transmits motion toward the field; marble motion without triggering the blocks is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "cascade",
+        "phases": [
+          "first_trigger#1",
+          "last_fall#1"
+        ],
+        "participants": [
+          "dominoes"
+        ],
+        "action": "Track the small dominoes arranged in parallel field rows, distinct from the taller distributor chain. The distributor triggers adjacent falls that progress through the field toward the terminal block in the farthest row.",
+        "outcome": "The fall reaches the far field end while blocks already reached remain down; isolated distributor falls without field propagation do not establish the cascade.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "first_trigger",
+        "phases": [
+          "first_trigger#1"
+        ],
+        "participants": [
+          "Distributor 00"
+        ],
+        "action": "Target: the first tall distributor domino next to the trigger-marble ramp at the near end of the distributor chain, beside the array of smaller field dominoes. Event: the arriving marble initiates its fall. Time: this distributor first exceeds five degrees of tilt from its initial pose. Marble release, marble contact without sufficient tilt, and a small field domino tipping do not define the crossing. There is only one timed boundary.",
+        "outcome": "Target: the first tall distributor domino next to the trigger-marble ramp at the near end of the distributor chain, beside the array of smaller field dominoes. Event: the arriving marble initiates its fall. Time: this distributor first exceeds five degrees of tilt from its initial pose. Marble release, marble contact without sufficient tilt, and a small field domino tipping do not define the crossing. There is only one timed boundary.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "time"
+          ],
+          "parent_event": "trigger",
+          "occurrence": 1
+        }
+      },
+      {
+        "name": "last_fall",
+        "phases": [
+          "last_fall#1"
+        ],
+        "participants": [
+          "Field 09 19"
+        ],
+        "action": "Target: the terminal small domino at the far-right end of the row farthest from the camera in the opening field array (Field 09 19), not a tall distributor or an earlier row endpoint. Event: the cascade reaches this final field block. Time: its tilt first exceeds five degrees from its initial pose. Do not use the last block you happen to see falling or wait until the target lies flat. This is a single crossing boundary.",
+        "outcome": "Target: the terminal small domino at the far-right end of the row farthest from the camera in the opening field array (Field 09 19), not a tall distributor or an earlier row endpoint. Event: the cascade reaches this final field block. Time: its tilt first exceeds five degrees from its initial pose. Do not use the last block you happen to see falling or wait until the target lies flat. This is a single crossing boundary.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "time"
+          ],
+          "parent_event": "cascade",
+          "occurrence": 1
+        }
+      }
+    ],
+    "F04": [
+      {
+        "name": "hoist",
+        "phases": [
+          "container_hoist#1",
+          "container_lower#1"
+        ],
+        "participants": [
+          "container_and_spreader"
+        ],
+        "action": "Track the handling container on the first vehicle under the crane spreader, distinct from the stationary stacked containers. The spreader engages it and hoists the same container clear of its starting vehicle toward the transfer height.",
+        "outcome": "The container is suspended above its starting support by the crane; an empty spreader rising is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "place",
+        "phases": [
+          "container_hoist#1",
+          "container_lower#1"
+        ],
+        "participants": [
+          "container_and_spreader"
+        ],
+        "action": "Track the same hoisted container as the crane positions it over the receiving vehicle and lowers it from transfer height onto that vehicle's deck.",
+        "outcome": "The container reaches the receiving deck and is supported there; horizontal travel without placement or lowering beside the vehicle is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "container_hoist",
+        "phases": [
+          "container_hoist#1"
+        ],
+        "participants": [
+          "Handling container"
+        ],
+        "action": "Target: the handling container initially on the vehicle beneath the crane spreader, distinct from the stationary stacked containers beside the work area. Follow this same container throughout transfer. Event: its first hoisting stroke. Onset: the container begins gaining world height from its starting support. Offset: this increase ends at the upper transfer level. Spreader motion before lifting or horizontal crane travel does not set these vertical boundaries.",
+        "outcome": "Target: the handling container initially on the vehicle beneath the crane spreader, distinct from the stationary stacked containers beside the work area. Follow this same container throughout transfer. Event: its first hoisting stroke. Onset: the container begins gaining world height from its starting support. Offset: this increase ends at the upper transfer level. Spreader motion before lifting or horizontal crane travel does not set these vertical boundaries.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "hoist",
+          "occurrence": 1
+        }
+      },
+      {
+        "name": "container_lower",
+        "phases": [
+          "container_lower#1"
+        ],
+        "participants": [
+          "Handling container"
+        ],
+        "action": "Target: the same container lifted from the first vehicle under the crane, not a stationary stacked container. Event: its first lowering stroke from the upper transfer level toward the receiving vehicle. Onset: its world height starts decreasing. Offset: that decrease ends at the receiving support level. Horizontal positioning, spreader release and vehicle departure are separate actions.",
+        "outcome": "Target: the same container lifted from the first vehicle under the crane, not a stationary stacked container. Event: its first lowering stroke from the upper transfer level toward the receiving vehicle. Onset: its world height starts decreasing. Offset: that decrease ends at the receiving support level. Horizontal positioning, spreader release and vehicle departure are separate actions.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "place",
+          "occurrence": 1
+        }
+      }
+    ],
+    "F05": [
+      {
+        "name": "hold",
+        "phases": [
+          "barrier_close#1",
+          "barrier_open#1"
+        ],
+        "participants": [
+          "cars_train_and_barriers"
+        ],
+        "action": "Track the road barrier arms and the cars waiting on both sides of the railway, separately from the car already clearing the crossing at the opening. Barriers lower across the road before the train passage and the waiting cars remain behind them.",
+        "outcome": "Road traffic is held clear of the tracks while the train crosses; barriers moving without the waiting traffic remaining stopped is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "release",
+        "phases": [
+          "barrier_close#1",
+          "barrier_open#1"
+        ],
+        "participants": [
+          "cars_train_and_barriers"
+        ],
+        "action": "Track the same barriers and queued road cars after the train clears the crossing. The arms rise from the blocking position, then the waiting cars advance through the crossing.",
+        "outcome": "Road vehicles resume passage across the cleared tracks after reopening; the opening car leaving before closure is not this release event.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "barrier_close",
+        "phases": [
+          "barrier_close#1"
+        ],
+        "participants": [
+          "Barrier hinge"
+        ],
+        "action": "Target: the hinged road-crossing barrier arm initially upright beside the near-side waiting traffic, not the train, a warning lamp or a fixed post. Event: its first closing stroke toward the horizontal road-blocking position. Onset: the arm first rotates downward about its hinge. Offset: that rotation ends at the lowered position. Cars stopping or the train arriving is not the arm-motion boundary.",
+        "outcome": "Target: the hinged road-crossing barrier arm initially upright beside the near-side waiting traffic, not the train, a warning lamp or a fixed post. Event: its first closing stroke toward the horizontal road-blocking position. Onset: the arm first rotates downward about its hinge. Offset: that rotation ends at the lowered position. Cars stopping or the train arriving is not the arm-motion boundary.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "hold",
+          "occurrence": 1
+        }
+      },
+      {
+        "name": "barrier_open",
+        "phases": [
+          "barrier_open#1"
+        ],
+        "participants": [
+          "Barrier hinge"
+        ],
+        "action": "Target: the same hinged road barrier that previously lowered across the waiting traffic. Event: its first reopening stroke after the train passage. Onset: the arm begins rotating upward from the lowered position. Offset: the upward rotation ends at its upright position. The train clearing the crossing or cars beginning to move is not the angular-motion boundary.",
+        "outcome": "Target: the same hinged road barrier that previously lowered across the waiting traffic. Event: its first reopening stroke after the train passage. Onset: the arm begins rotating upward from the lowered position. Offset: the upward rotation ends at its upright position. The train clearing the crossing or cars beginning to move is not the angular-motion boundary.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "release",
+          "occurrence": 1
+        }
+      }
+    ],
+    "F06": [
+      {
+        "name": "pickup",
+        "phases": [
+          "carton_lift#1",
+          "carton_place#1"
+        ],
+        "participants": [
+          "cartons_and_robot"
+        ],
+        "action": "Track the first arriving carton at the conveyor end nearest the robot, not the cartons already on the pallet. The gripper engages this carton, lifts it from the conveyor and carries it toward the pallet.",
+        "outcome": "The selected carton is supported off the conveyor by the gripper; empty gripper motion or belt advance alone is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "stack",
+        "phases": [
+          "carton_lift#1",
+          "carton_place#1"
+        ],
+        "participants": [
+          "cartons_and_robot"
+        ],
+        "action": "Track the same carton in the robot gripper through lowering onto the pallet stack, release, and withdrawal of the gripper.",
+        "outcome": "The transferred carton remains supported on the pallet after the gripper moves away; a carton already present in the opening stack is not evidence of transfer.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "carton_lift",
+        "phases": [
+          "carton_lift#1"
+        ],
+        "participants": [
+          "Moving carton 0"
+        ],
+        "action": "Target: the leading arriving carton at the conveyor pickup end nearest the robot in the opening view (Moving carton 0), distinct from the cartons already stacked on the pallet. Event: this carton's first upward pickup stroke. Onset: its world height begins increasing from the conveyor-supported level. Offset: that increase ends at the first high transfer position. Robot approach and horizontal carton travel do not extend this rise.",
+        "outcome": "Target: the leading arriving carton at the conveyor pickup end nearest the robot in the opening view (Moving carton 0), distinct from the cartons already stacked on the pallet. Event: this carton's first upward pickup stroke. Onset: its world height begins increasing from the conveyor-supported level. Offset: that increase ends at the first high transfer position. Robot approach and horizontal carton travel do not extend this rise.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "pickup",
+          "occurrence": 1
+        }
+      },
+      {
+        "name": "carton_place",
+        "phases": [
+          "carton_place#1"
+        ],
+        "participants": [
+          "Moving carton 0"
+        ],
+        "action": "Target: the same first arriving carton picked from the conveyor (Moving carton 0), followed in the gripper to the pallet; not a carton already in the stack. Event: its first lowering stroke from the transfer height. Onset: its world height begins decreasing. Offset: that decrease ends at the pallet placement level. Gripper opening and retreat happen separately and do not define this vertical-motion offset.",
+        "outcome": "Target: the same first arriving carton picked from the conveyor (Moving carton 0), followed in the gripper to the pallet; not a carton already in the stack. Event: its first lowering stroke from the transfer height. Onset: its world height begins decreasing. Offset: that decrease ends at the pallet placement level. Gripper opening and retreat happen separately and do not define this vertical-motion offset.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "stack",
+          "occurrence": 1
+        }
+      }
+    ],
+    "F07": [
+      {
+        "name": "coasters",
+        "phases": [
+          "coasters#1",
+          "wheel#1"
+        ],
+        "participants": [
+          "coaster_trains"
+        ],
+        "action": "Track the two connected roller-coaster trains, each composed of ordered cars on the undulating track. Follow their travel through climbs, crests and curves relative to the rails, with no unique start or end stop required.",
+        "outcome": "The trains reach new rail positions while their cars stay connected and on track; camera movement alone is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "wheel",
+        "phases": [
+          "coasters#1",
+          "wheel#1"
+        ],
+        "participants": [
+          "coaster_trains"
+        ],
+        "action": "Track the separate Ferris wheel and its attached gondolas, not the coaster trains in the same scene. Observe gondolas circulating around the fixed wheel hub during the continuous rotation.",
+        "outcome": "The gondolas change angular positions while remaining attached; coaster travel alone does not establish wheel rotation.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      }
+    ],
+    "F08": [
+      {
+        "name": "handling",
+        "phases": [
+          "packet_lift#1",
+          "packet_place#1"
+        ],
+        "participants": [
+          "packets_and_robot"
+        ],
+        "action": "Track the leading packet at the conveyor pickup end beneath the LEGO robot gripper, followed continuously rather than switching to a trailing packet. The robot lifts it, swings it toward a receiving pocket, and lowers it into that pocket before withdrawing.",
+        "outcome": "The same packet is supported in a receiving pocket as the gripper leaves; empty robot motion or conveyor advance alone is insufficient.",
+        "worlddraft": {
+          "purpose": "binary_event_qa",
+          "window": [
+            0,
+            5
+          ]
+        }
+      },
+      {
+        "name": "packet_lift",
+        "phases": [
+          "packet_lift#1"
+        ],
+        "participants": [
+          "Packet 0"
+        ],
+        "action": "Target: the leading snack packet at the conveyor pickup end directly beneath the LEGO robot gripper in the opening view (Packet 0), not the trailing packets or an empty receiving pocket. Event: this packet's first upward pickup stroke. Onset: its world height starts increasing from the conveyor-supported level. Offset: this rise ends at the upper transfer height. Gripper approach, conveyor advance and horizontal transfer are separate motions.",
+        "outcome": "Target: the leading snack packet at the conveyor pickup end directly beneath the LEGO robot gripper in the opening view (Packet 0), not the trailing packets or an empty receiving pocket. Event: this packet's first upward pickup stroke. Onset: its world height starts increasing from the conveyor-supported level. Offset: this rise ends at the upper transfer height. Gripper approach, conveyor advance and horizontal transfer are separate motions.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "handling",
+          "occurrence": 1
+        }
+      },
+      {
+        "name": "packet_place",
+        "phases": [
+          "packet_place#1"
+        ],
+        "participants": [
+          "Packet 0"
+        ],
+        "action": "Target: the same leading packet first picked from the conveyor (Packet 0), tracked in the LEGO robot gripper to a receiving pocket. Event: its first downward placement stroke. Onset: its world height starts decreasing from transfer height. Offset: this decrease ends at the receiving-pocket support level. Do not time a later packet, gripper release or the robot returning toward the conveyor.",
+        "outcome": "Target: the same leading packet first picked from the conveyor (Packet 0), tracked in the LEGO robot gripper to a receiving pocket. Event: its first downward placement stroke. Onset: its world height starts decreasing from transfer height. Offset: this decrease ends at the receiving-pocket support level. Do not time a later packet, gripper release or the robot returning toward the conveyor.",
+        "worlddraft_timing": {
+          "rule_version": "evaluated-motion-boundaries",
+          "status": "complete",
+          "required_boundaries": [
+            "onset",
+            "offset"
+          ],
+          "parent_event": "handling",
+          "occurrence": 1
+        }
+      }
+    ]
+  }
+}

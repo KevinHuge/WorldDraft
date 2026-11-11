@@ -1,0 +1,53 @@
+{
+  "case": "D04",
+  "noun": "wind-turbine tower or nacelle",
+  "gt_root_pattern": "(?:Turbine [1-5] tapered tower|Nacelle(?:\\.\\d{3})?)",
+  "attributes": [
+    {
+      "entities": [
+        "Turbine 1 tapered tower",
+        "Turbine 2 tapered tower",
+        "Turbine 3 tapered tower",
+        "Turbine 4 tapered tower",
+        "Turbine 5 tapered tower"
+      ],
+      "surface": "horizontal band around the tower middle",
+      "target": "blue",
+      "source": "red",
+      "pattern": "one broad horizontal band around the tower middle",
+      "id": "T1"
+    },
+    {
+      "entities": [
+        "Nacelle",
+        "Nacelle.001",
+        "Nacelle.002",
+        "Nacelle.003",
+        "Nacelle.004"
+      ],
+      "surface": "nacelle body excluding dark vents",
+      "target": "yellow",
+      "source": "gray/silver",
+      "id": "T2"
+    },
+    {
+      "entities": [
+        "Turbine 1 tapered tower",
+        "Turbine 2 tapered tower",
+        "Turbine 3 tapered tower",
+        "Turbine 4 tapered tower",
+        "Turbine 5 tapered tower"
+      ],
+      "surface": "tower body excluding middle band",
+      "target": "white",
+      "source": null,
+      "id": "T3"
+    }
+  ],
+  "notes": [
+    "Target colour authority: target_prompt.txt and appearance.json only; AC colours come from appearance.json AC or AC_recipe. No scene-level contract attributes or material names are used.",
+    "Entity names and hierarchy verified by read-only inspection of the final P2_AA.blend. Attribute selection is fixed before model scoring.",
+    "cobalt-blue -> blue; golden-yellow -> yellow; light gray -> gray/silver; red/white map directly. Tower white is unchanged in AC, source=null. Nacelles and towers are independent meshes; rotor blades are outside this representative subset.",
+    "D-series uses protocol letterbox initially; camera-motion registration limitations are recorded by controls and are not corrected by per-case contract tuning."
+  ]
+}

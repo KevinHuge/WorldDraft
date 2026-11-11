@@ -1,0 +1,51 @@
+{
+  "case": "A03",
+  "noun": "bottle",
+  "gt_root_pattern": "Bottle_\\d{2}",
+  "attributes": [
+    {
+      "id": "T7",
+      "entities": [
+        "Bottle_07"
+      ],
+      "surface": "body",
+      "target": "green",
+      "source": "purple"
+    },
+    {
+      "id": "T8",
+      "entities": [
+        "Bottle_08"
+      ],
+      "surface": "body",
+      "target": "purple",
+      "source": "blue"
+    },
+    {
+      "id": "T12",
+      "entities": [
+        "Bottle_12"
+      ],
+      "surface": "body",
+      "target": "blue",
+      "source": "brown"
+    },
+    {
+      "id": "T13",
+      "entities": [
+        "Bottle_13"
+      ],
+      "surface": "body",
+      "target": "brown",
+      "source": "green"
+    }
+  ],
+  "notes": [
+    "Colour truth comes only from target_prompt.txt and appearance.json; scene metadata and material names are not colour authority.",
+    "T7: target emerald green -> green; AC violet -> purple.",
+    "T8: target violet -> purple; AC navy blue -> blue.",
+    "T12: target cobalt blue -> blue; AC chocolate brown -> brown.",
+    "T13: target chocolate brown -> brown; AC lime green -> green.",
+    "Four representative numbered bottles are scored; all seventeen bottles remain GT entities. Bottle_01 is never >=100 visible pixels in the eight canonical samples and is not selected."
+  ]
+}

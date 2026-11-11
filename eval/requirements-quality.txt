@@ -1,0 +1,16 @@
+# Image quality (MUSIQ), aesthetic quality (CLIP ViT-L/14 + LAION head) and CLIP alignment (Python 3.11).
+# Separate environment: these versions conflict with the judge and tracker. Install the CUDA 12.1 build of PyTorch first.
+torch==2.4.1
+torchvision==0.19.1
+transformers==4.51.3
+pyiqa==0.1.10
+openai-clip==1.0.1
+timm==1.0.12
+numpy==1.26.4
+scipy==1.16.3
+pillow==12.3.0
+opencv-python==5.0.0.93
+av==18.1.0
+decord==0.6.0
+pyyaml==6.0.3
+huggingface-hub==0.36.0

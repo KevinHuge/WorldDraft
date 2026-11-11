@@ -1,0 +1,4 @@
+# Added to the ViPE environment (nv-tlabs/vipe v1.2.0, installed per its README) for the camera stage.
+scipy==1.17.1
+opencv-python==4.13.0.92
+pyyaml==6.0.3

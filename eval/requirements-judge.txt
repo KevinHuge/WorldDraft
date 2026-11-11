@@ -1,0 +1,15 @@
+# QA and event judge: vLLM serving Qwen/Qwen3.6-27B (Python 3.12, one GPU with about 80 GB per worker).
+# Install the CUDA 12.8 build of PyTorch first (USAGE.md section 1). vllm 0.17.0 declares an older Transformers;
+# install it with --no-deps after the rest, as done for the reported scores.
+torch==2.10.0
+torchvision==0.25.0
+vllm==0.17.0
+transformers==5.5.0
+accelerate==1.15.0
+huggingface-hub==1.33.0
+numpy==2.2.6
+scipy==1.17.1
+pillow==13.0.0
+opencv-python-headless==5.0.0.93
+av==16.1.0
+pyyaml==6.0.3

@@ -1,0 +1,31 @@
+{
+  "case": "E03",
+  "noun": "umbrella canopy",
+  "gt_root_pattern": "Canopy\\ •\\ eight\\ sewn\\ panels\\ with\\ unfolding\\ pleats",
+  "attributes": [
+    {
+      "entities": [
+        "Canopy • eight sewn panels with unfolding pleats"
+      ],
+      "surface": "canopy fabric excluding outer-hem band",
+      "target": "yellow",
+      "source": "red",
+      "id": "T1"
+    },
+    {
+      "entities": [
+        "Canopy • eight sewn panels with unfolding pleats"
+      ],
+      "surface": "band near the canopy outer hem",
+      "target": "blue",
+      "source": "white",
+      "pattern": "one broad band near the outer hem leaving a narrow edge of the main fabric",
+      "id": "T2"
+    }
+  ],
+  "notes": [
+    "Target colour authority: target_prompt.txt and appearance.json only; AC colours come from appearance.json AC or AC_recipe. No scene-level contract attributes or material names are used.",
+    "Entity names and hierarchy verified by read-only inspection of the final P2_AA.blend. Attribute selection is fixed before model scoring.",
+    "egg-yolk-yellow -> yellow; navy-blue -> blue; red -> red; ivory -> white. The canopy is an actual deforming mesh, including its eight sewn panels."
+  ]
+}

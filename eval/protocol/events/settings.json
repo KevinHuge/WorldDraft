@@ -1,0 +1,45 @@
+{
+  "dataset": "worlddraft",
+  "files": {
+    "events": "events.json",
+    "descriptions": "descriptions.json",
+    "registry": "data/gt/events/registry.json",
+    "legacy_qa": "eval/protocol/motion-scope.json",
+    "motion_protocol": "motion_protocol.json"
+  },
+  "judge": {
+    "model": "Qwen3.6-27B",
+    "temperature": 0,
+    "answers": "yes/no only; legacy scores excluded from the new benchmark"
+  },
+  "interaction": {
+    "interaction_frames": 8,
+    "interaction_pad_s": 0.15,
+    "alignment_frames": 12,
+    "alignment_pad_s": 0.3,
+    "end_state_frames": 4,
+    "end_state_seconds": 0.5,
+    "appearance_frames": 12,
+    "crop_margin": 0,
+    "tile_height": 360,
+    "persistence_frames": 8
+  },
+  "event_timing": {
+    "protocol": "evaluated-motion-boundaries-descriptions",
+    "coarse_frames": 11,
+    "fine_hz": 8,
+    "fine_radius_s": 0.625,
+    "missing": "no finite timing error; detection coverage reported",
+    "gt_point": "midpoint of preserved GT interval",
+    "prediction_point": "midpoint of adjacent evidence-frame interval",
+    "repeated_events": "declared target identity and occurrence; never nearest-to-GT matching",
+    "source_issues": [
+      {
+        "case": "A08",
+        "removed": "collection event and terminal tray facts",
+        "reason": "Final evaluated source contains no tray contact during the published clip.",
+        "evidence": "data/gt/events/source_states/A08.json"
+      }
+    ]
+  }
+}

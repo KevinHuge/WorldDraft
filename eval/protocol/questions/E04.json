@@ -1,0 +1,79 @@
+{
+  "dataset": "worlddraft",
+  "protocol": "benchmark-literal-ap-gated",
+  "episode": "E04",
+  "files": {
+    "questions": "../qa/questions.csv",
+    "question_provenance": "../qa/provenance.json",
+    "factual_contrasts": "../qa/factual-contrasts.json",
+    "source_material_audit": "../qa/source-material-audit.json",
+    "visibility_gt": "data/gt/E04/gt.json",
+    "entities_gt": "data/gt/entities/E04.json",
+    "target_prompt": "data/scenes/E04/target_prompt.txt",
+    "appearance": "data/scenes/E04/appearance.json"
+  },
+  "judge": {
+    "model": "Qwen/Qwen3.6-27B",
+    "temperature": 0,
+    "enable_thinking": false
+  },
+  "qa": {
+    "groups": {
+      "E04": {
+        "pairs of curtain panels": [
+          "Silk curtains — real cloth simulation"
+        ]
+      }
+    },
+    "bindings": {
+      "E04": {
+        "1": {
+          "count_scope": "global"
+        },
+        "2": {
+          "count_scope": "region"
+        },
+        "16": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        }
+      }
+    },
+    "times_s": [
+      0.0,
+      0.6875,
+      1.4375,
+      2.125,
+      2.875,
+      3.5625,
+      4.3125,
+      5.0
+    ],
+    "count_times_s": [
+      0.0,
+      2.125,
+      5.0
+    ],
+    "crop_side": 224,
+    "rf_sampling": "one frame per question; max GT visible mask area, earliest tie; scene questions use first frame",
+    "count_scoring": "exact_count_accuracy_global_and_local_separate",
+    "crop": "gt_bbox",
+    "binary_answers": [
+      "yes",
+      "no"
+    ],
+    "count_answers": "nonnegative_integer",
+    "entity_labels": {
+      "Silk curtains — real cloth simulation": "pair of curtain panels"
+    },
+    "global_count_view": "full_frame",
+    "visibility_from_masks": true,
+    "entity_mapping_audit": {
+      "sparse_only": [],
+      "dense_only": [],
+      "policy": "Sparse visible instance masks define regions and count units. Dense-only objects use named full-frame RF questions; no amodal bbox substitutes for visibility."
+    }
+  }
+}

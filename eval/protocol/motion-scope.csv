@@ -1,0 +1,1024 @@
+﻿case,metric,category,question_id,field,start_s,end_s,frames,participants,statement,expected_answer
+A01,ISR,,ISR_cross,action,0,5,8,cars,Straight-driving cars traverse the junction.,yes
+A01,ISR,,ISR_cross,outcome,0,5,8,cars,They reach the opposite road arms without changing into turning cars.,yes
+A01,ISR,,ISR_cross,participants,0,5,8,cars,"[""cars""]",yes
+A01,ISR,,ISR_turn,action,0,5,8,cars,The designated turning cars follow left-turning paths through the junction.,yes
+A01,ISR,,ISR_turn,outcome,0,5,8,cars,They depart on perpendicular road arms after completing their turns.,yes
+A01,ISR,,ISR_turn,participants,0,5,8,cars,"[""cars""]",yes
+A01,LRA,,LRA_straight,action,0,5,12,cars,The straight-driving cars cross the intersection along their lanes and continue onto the opposite road arms.,yes
+A01,LRA,,LRA_straight,details,0,5,12,cars,The straight-driving cars cross the intersection along their lanes and continue onto the opposite road arms.,yes
+A01,LRA,,LRA_turn,action,0,5,12,cars,The cars in the inner incoming lanes make left turns through the junction and join the perpendicular outgoing roads.,yes
+A01,LRA,,LRA_turn,details,0,5,12,cars,The cars in the inner incoming lanes make left turns through the junction and join the perpendicular outgoing roads.,yes
+A01,EndState,,EndState,1,4.5,5,4,cars,Cars have progressed away from their opening positions along their assigned roads.,yes
+A01,EndState,,EndState,2,4.5,5,4,cars,The road layout remains fixed while the cars move.,yes
+A01,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The left-turning car initially in the inner incoming lane at the bottom has emerald-green bodywork.,yes
+A01,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The left-turning car initially entering from the right has cobalt-blue bodywork.,yes
+A01,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The cars have painted-metal body surfaces.,yes
+A01,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The cars have glass windows.,yes
+A01,RF_fullframe,Environment,RF_fullframe,5,0,5,12,,The road has dark charcoal asphalt.,yes
+A01,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+A01,AP,,AP,1,0,5,8,,The left-turning car initially in the inner incoming lane at the bottom has emerald-green bodywork.,yes
+A01,AP,,AP,2,0,5,8,,The left-turning car initially entering from the right has cobalt-blue bodywork.,yes
+A01,AP,,AP,3,0,5,8,,The cars have painted-metal body surfaces.,yes
+A01,AP,,AP,4,0,5,8,,The cars have glass windows.,yes
+A02,ISR,,ISR_break,action,0,2.35,8,balls,Ball collisions break up the initially compact rack.,yes
+A02,ISR,,ISR_break,outcome,0,2.35,8,balls,Several object balls have separated and moved away from the rack.,yes
+A02,ISR,,ISR_break,participants,0,2.35,8,balls,"[""balls""]",yes
+A02,ISR,,ISR_spread,action,0.65,5,8,balls,The scattered balls continue rolling along different paths.,yes
+A02,ISR,,ISR_spread,outcome,0.65,5,8,balls,The visible balls are spread over the table rather than remaining in the initial rack.,yes
+A02,ISR,,ISR_spread,participants,0.65,5,8,balls,"[""balls""]",yes
+A02,LRA,,LRA_rack,action,0,1.1,12,balls,The object balls remain grouped in a compact rack on the table.,yes
+A02,LRA,,LRA_rack,details,0,1.1,12,balls,The object balls remain grouped in a compact rack on the table.,yes
+A02,LRA,,LRA_break,action,0.5,2.5,12,balls,The compact group breaks apart as balls collide and scatter across the felt.,yes
+A02,LRA,,LRA_break,details,0.5,2.5,12,balls,The compact group breaks apart as balls collide and scatter across the felt.,yes
+A02,LRA,,LRA_spread,action,1.9000000000000001,5,12,balls,The separated balls continue rolling across the table and become more widely dispersed.,yes
+A02,LRA,,LRA_spread,details,1.9000000000000001,5,12,balls,The separated balls continue rolling across the table and become more widely dispersed.,yes
+A02,EndState,,EndState,1,4.5,5,4,balls,The original compact rack has dispersed.,yes
+A02,EndState,,EndState,2,4.5,5,4,balls,The visible balls remain on the table surface.,yes
+A02,RF_fullframe,Color,RF_fullframe,1,0,5,12,,Ball 1 has a golden-yellow body.,yes
+A02,RF_fullframe,Color,RF_fullframe,2,0,5,12,,Ball 2 has a sky-blue body.,yes
+A02,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The object balls have resin surfaces.,yes
+A02,RF_fullframe,Environment,RF_fullframe,4,0,5,12,,The table has deep-green felt.,yes
+A02,RF_fullframe,Texture,RF_fullframe,5,0,5,12,,The felt has a fine woven texture.,yes
+A02,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+A02,AP,,AP,1,0,5,8,,Ball 1 has a golden-yellow body.,yes
+A02,AP,,AP,2,0,5,8,,Ball 2 has a sky-blue body.,yes
+A02,AP,,AP,3,0,5,8,,The object balls have polished resin surfaces.,yes
+A03,ISR,,ISR_convey,action,0,5,8,bottles,The conveyor carries a line of bottles through the machine section.,yes
+A03,ISR,,ISR_convey,outcome,0,5,8,bottles,The visible bottle identities and positions have advanced while the conveyor structure stays fixed.,yes
+A03,ISR,,ISR_convey,participants,0,5,8,bottles,"[""bottles""]",yes
+A03,LRA,,LRA_advance,action,0,2.8,12,bottles,"Upright numbered bottles advance laterally along the conveyor, with bottles entering and leaving the visible machine section.",yes
+A03,LRA,,LRA_advance,details,0,2.8,12,bottles,"Upright numbered bottles advance laterally along the conveyor, with bottles entering and leaving the visible machine section.",yes
+A03,LRA,,LRA_continue,action,2.2,5,12,bottles,The bottle line continues advancing through the same conveyor section while the bottles remain upright.,yes
+A03,LRA,,LRA_continue,details,2.2,5,12,bottles,The bottle line continues advancing through the same conveyor section while the bottles remain upright.,yes
+A03,EndState,,EndState,1,4.5,5,4,bottles,A line of upright bottles remains on the conveyor.,yes
+A03,EndState,,EndState,2,4.5,5,4,bottles,Different bottles occupy the visible section compared with the opening.,yes
+A03,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The bottle identified as 12 has a cobalt-blue coating.,yes
+A03,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The bottle identified as 13 has a chocolate-brown coating.,yes
+A03,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The bottles have coated-glass surfaces.,yes
+A03,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The conveyor and machine frames have stainless-steel surfaces.,yes
+A03,RF_fullframe,Texture,RF_fullframe,5,0,5,12,,The bottle coatings are smooth and glossy.,yes
+A03,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+A03,AP,,AP,1,0,5,8,,The bottle identified as 12 has a cobalt-blue coating.,yes
+A03,AP,,AP,2,0,5,8,,The bottle identified as 13 has a chocolate-brown coating.,yes
+A03,AP,,AP,3,0,5,8,,The bottles have smooth glossy coated-glass surfaces.,yes
+A04,ISR,,ISR_sail,action,0,5,8,boats,The fleet sails across the water on separate paths.,yes
+A04,ISR,,ISR_sail,outcome,0,5,8,boats,Individual boats have changed position without merging into one another.,yes
+A04,ISR,,ISR_sail,participants,0,5,8,boats,"[""boats""]",yes
+A04,LRA,,LRA_sail,action,0,2.8,12,boats,The sailboats move laterally across the lake on distinct courses.,yes
+A04,LRA,,LRA_sail,details,0,2.8,12,boats,The sailboats move laterally across the lake on distinct courses.,yes
+A04,LRA,,LRA_pass,action,2.2,5,12,boats,The boats continue sailing past one another with their hulls and masts remaining upright.,yes
+A04,LRA,,LRA_pass,details,2.2,5,12,boats,The boats continue sailing past one another with their hulls and masts remaining upright.,yes
+A04,EndState,,EndState,1,4.5,5,4,boats,Several boats remain upright on the water.,yes
+A04,EndState,,EndState,2,4.5,5,4,boats,Their arrangement has changed from the opening fleet arrangement.,yes
+A04,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The boat at the left of the nearest opening row has a golden-yellow hull.,yes
+A04,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The boat at the right of the nearest opening row has a sky-blue hull.,yes
+A04,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The boat hulls have painted-fiberglass surfaces.,yes
+A04,RF_fullframe,Texture,RF_fullframe,4,0,5,12,,The sails have woven-fabric texture.,yes
+A04,RF_fullframe,Environment,RF_fullframe,5,0,5,12,,The lake water is blue.,yes
+A04,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+A04,AP,,AP,1,0,5,8,,The boat at the left of the nearest opening row has a golden-yellow hull.,yes
+A04,AP,,AP,2,0,5,8,,The boat at the right of the nearest opening row has a sky-blue hull.,yes
+A04,AP,,AP,3,0,5,8,,The boat hulls have painted-fiberglass surfaces.,yes
+A04,AP,,AP,4,0,5,8,,The sails have woven-fabric texture.,yes
+A05,ISR,,ISR_rotate,action,0,5,8,horses,The horses circulate with the carousel platform.,yes
+A05,ISR,,ISR_rotate,outcome,0,5,8,horses,They have changed angular positions around the central axis.,yes
+A05,ISR,,ISR_rotate,participants,0,5,8,horses,"[""horses""]",yes
+A05,ISR,,ISR_bob,action,0,5,8,horses,The horses move up and down on their poles.,yes
+A05,ISR,,ISR_bob,outcome,0,5,8,horses,Different horses occupy different heights while remaining attached to the carousel.,yes
+A05,ISR,,ISR_bob,participants,0,5,8,horses,"[""horses""]",yes
+A05,LRA,,LRA_rotate,action,0,5,12,horses,The carousel carries the horses around the central axis.,yes
+A05,LRA,,LRA_rotate,details,0,5,12,horses,The carousel carries the horses around the central axis.,yes
+A05,LRA,,LRA_bob,action,0,5,12,horses,The horses rise and fall along their vertical poles while being carried around the carousel.,yes
+A05,LRA,,LRA_bob,details,0,5,12,horses,The horses rise and fall along their vertical poles while being carried around the carousel.,yes
+A05,EndState,,EndState,1,4.5,5,4,horses,The horses remain attached to their poles and arranged in rings.,yes
+A05,EndState,,EndState,2,4.5,5,4,horses,The carousel structure remains assembled.,yes
+A05,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The outer-ring horse bodies alternate between warm ivory and chestnut brown.,yes
+A05,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The inner-ring horse bodies are slate blue.,yes
+A05,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The horse bodies have molded-fiberglass surfaces.,yes
+A05,RF_fullframe,Texture,RF_fullframe,4,0,5,12,,The canopy panels have a lacquered finish.,yes
+A05,RF_fullframe,Lighting,RF_fullframe,5,0,5,12,,"The scene has soft, neutral illumination.",yes
+A05,AP,,AP,1,0,5,8,,The outer-ring horse bodies alternate between warm ivory and chestnut brown.,yes
+A05,AP,,AP,2,0,5,8,,The inner-ring horse bodies are slate blue.,yes
+A05,AP,,AP,3,0,5,8,,The horse bodies have molded-fiberglass surfaces.,yes
+A05,AP,,AP,4,0,5,8,,The canopy panels have a lacquered finish.,yes
+A06,ISR,,ISR_oscillate,action,0,5,8,pendulums,The suspended balls repeatedly reverse direction beneath their supports.,yes
+A06,ISR,,ISR_oscillate,outcome,0,5,8,pendulums,The ball arrangement changes while their suspension points remain fixed.,yes
+A06,ISR,,ISR_oscillate,participants,0,5,8,pendulums,"[""pendulums""]",yes
+A06,LRA,,LRA_swing,action,0,2.8,12,pendulums,The suspended balls swing back and forth about their fixed upper attachment points.,yes
+A06,LRA,,LRA_swing,details,0,2.8,12,pendulums,The suspended balls swing back and forth about their fixed upper attachment points.,yes
+A06,LRA,,LRA_phases,action,2.2,5,12,pendulums,The pendulums continue swinging with changing relative phases rather than moving as one rigid group.,yes
+A06,LRA,,LRA_phases,details,2.2,5,12,pendulums,The pendulums continue swinging with changing relative phases rather than moving as one rigid group.,yes
+A06,EndState,,EndState,1,4.5,5,4,pendulums,The balls remain suspended from the support rail.,yes
+A06,EndState,,EndState,2,4.5,5,4,pendulums,The support frame stays stationary while the balls move.,yes
+A06,RF_fullframe,Color,RF_fullframe,1,0,5,12,,"The ball colours along the fixed suspension rail from nearest to farthest at the opening are red, blue, yellow, red, blue, yellow, red, blue, yellow, red.",yes
+A06,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The support frame is charcoal.,yes
+A06,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The balls have enamel-coated metal surfaces.,yes
+A06,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The suspension wires have a stainless-steel finish.,yes
+A06,RF_fullframe,Texture,RF_fullframe,5,0,5,12,,The enamel ball surfaces are glossy.,yes
+A06,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+A06,AP,,AP,1,0,5,8,,"The ball colours along the fixed suspension rail from nearest to farthest at the opening are red, blue, yellow, red, blue, yellow, red, blue, yellow, red.",yes
+A06,AP,,AP,2,0,5,8,,The balls have glossy enamel-coated metal surfaces.,yes
+A06,AP,,AP,3,0,5,8,,The suspension wires have a stainless-steel finish.,yes
+A07,ISR,,ISR_circulate,action,0,5,8,gondolas,The Ferris wheel carries the gondolas around its rim.,yes
+A07,ISR,,ISR_circulate,outcome,0,5,8,gondolas,The gondolas have changed positions while their baskets retain an upright orientation.,yes
+A07,ISR,,ISR_circulate,participants,0,5,8,gondolas,"[""gondolas""]",yes
+A07,LRA,,LRA_rotate,action,0,2.8,12,gondolas,"The wheel rotates, carrying gondolas along its circular rim.",yes
+A07,LRA,,LRA_rotate,details,0,2.8,12,gondolas,"The wheel rotates, carrying gondolas along its circular rim.",yes
+A07,LRA,,LRA_continue,action,2.2,5,12,gondolas,The gondolas continue around the wheel while their passenger baskets remain upright.,yes
+A07,LRA,,LRA_continue,details,2.2,5,12,gondolas,The gondolas continue around the wheel while their passenger baskets remain upright.,yes
+A07,EndState,,EndState,1,4.5,5,4,gondolas,The gondolas remain attached around the wheel rim.,yes
+A07,EndState,,EndState,2,4.5,5,4,gondolas,The passenger baskets remain upright.,yes
+A07,RF_fullframe,Color,RF_fullframe,1,0,5,12,,"The gondola canopies repeat scarlet red, cobalt blue and golden yellow along the wheel rim.",yes
+A07,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The wheel framework is warm ivory.,yes
+A07,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The gondola canopies have painted-fiberglass surfaces.,yes
+A07,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The passenger baskets have painted-metal surfaces.,yes
+A07,RF_fullframe,Lighting,RF_fullframe,5,0,5,12,,"The scene has soft, neutral illumination.",yes
+A07,AP,,AP,1,0,5,8,,"The gondola canopies repeat scarlet red, cobalt blue and golden yellow along the wheel rim.",yes
+A07,AP,,AP,2,0,5,8,,The wheel framework is warm ivory.,yes
+A07,AP,,AP,3,0,5,8,,The gondola canopies have painted-fiberglass surfaces.,yes
+A07,AP,,AP,4,0,5,8,,The passenger baskets have painted-metal surfaces.,yes
+A08,ISR,,ISR_descend,action,0,3.65,8,marbles,Marbles roll through the descending sequence of funnels.,yes
+A08,ISR,,ISR_descend,outcome,0,3.65,8,marbles,Marbles reach funnels below their opening positions.,yes
+A08,ISR,,ISR_descend,participants,0,3.65,8,marbles,"[""marbles""]",yes
+A08,ISR,,ISR_collect,action,1.35,5,8,marbles,Marbles pass from the final funnels into the collection tray.,yes
+A08,ISR,,ISR_collect,outcome,1.35,5,8,marbles,Marbles are present in the lower collection area.,yes
+A08,ISR,,ISR_collect,participants,1.35,5,8,marbles,"[""marbles""]",yes
+A08,LRA,,LRA_upper,action,0,1.8,12,marbles,Marbles circulate in the upper funnels and begin transferring downward.,yes
+A08,LRA,,LRA_upper,details,0,1.8,12,marbles,Marbles circulate in the upper funnels and begin transferring downward.,yes
+A08,LRA,,LRA_descend,action,1.2,3.8,12,marbles,Marbles move through successive lower funnels under gravity.,yes
+A08,LRA,,LRA_descend,details,1.2,3.8,12,marbles,Marbles move through successive lower funnels under gravity.,yes
+A08,LRA,,LRA_collect,action,3.2,5,12,marbles,Marbles reach the lower funnels and collection tray while the upper funnels empty.,yes
+A08,LRA,,LRA_collect,details,3.2,5,12,marbles,Marbles reach the lower funnels and collection tray while the upper funnels empty.,yes
+A08,EndState,,EndState,1,4.5,5,4,marbles,The upper funnels are largely empty.,yes
+A08,EndState,,EndState,2,4.5,5,4,marbles,Marbles are visible in the bottom collection area.,yes
+A08,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The leftmost marble by centre position in the opening image is scarlet red.,yes
+A08,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The second marble from the left in the opening image is cobalt blue.,yes
+A08,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The marbles have opaque glass surfaces.,yes
+A08,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The funnels have molded-plastic surfaces.,yes
+A08,RF_fullframe,Texture,RF_fullframe,5,0,5,12,,The marble surfaces are smooth and glossy.,yes
+A08,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+A08,AP,,AP,1,0,5,8,,The leftmost marble by centre position in the opening image is scarlet red.,yes
+A08,AP,,AP,2,0,5,8,,The second marble from the left in the opening image is cobalt blue.,yes
+A08,AP,,AP,3,0,5,8,,The marbles have opaque polished-glass surfaces.,yes
+A08,AP,,AP,4,0,5,8,,The funnels have molded-plastic surfaces.,yes
+B01,ISR,,ISR_initiation,action,0,1.4,8,dominoes,The first domino tips into its neighbor at the starting end.,yes
+B01,ISR,,ISR_initiation,outcome,0,1.4,8,dominoes,Toppling has begun spreading from the starting end while the later dominoes are still upright.,yes
+B01,ISR,,ISR_initiation,participants,0,1.4,8,dominoes,"[""dominoes""]",yes
+B01,ISR,,ISR_cascade,action,1.1,5,8,dominoes,The falling progresses through adjacent dominoes along the curved row to its far end.,yes
+B01,ISR,,ISR_cascade,outcome,1.1,5,8,dominoes,The row is toppled to the far end and the dominoes that fell earlier remain down.,yes
+B01,ISR,,ISR_cascade,participants,1.1,5,8,dominoes,"[""dominoes""]",yes
+B01,LRA,,LRA_start,action,0,1.55,12,dominoes,Toppling begins at the upper-left end of the curved domino row.,yes
+B01,LRA,,LRA_start,details,0,1.55,12,dominoes,Toppling begins at the upper-left end of the curved domino row.,yes
+B01,LRA,,LRA_propagate,action,0.95,3.55,12,dominoes,The toppling front advances through the middle of the row; dominoes ahead of it stay upright.,yes
+B01,LRA,,LRA_propagate,details,0.95,3.55,12,dominoes,The toppling front advances through the middle of the row; dominoes ahead of it stay upright.,yes
+B01,LRA,,LRA_finish,action,2.95,4.8,12,dominoes,The toppling front reaches the lower-right end of the row.,yes
+B01,LRA,,LRA_finish,details,2.95,4.8,12,dominoes,The toppling front reaches the lower-right end of the row.,yes
+B01,LRA,,LRA_settled,action,4.2,5,12,dominoes,"The entire row remains toppled, with earlier dominoes staying down.",yes
+B01,LRA,,LRA_settled,details,4.2,5,12,dominoes,"The entire row remains toppled, with earlier dominoes staying down.",yes
+B01,EndState,,EndState,1,4.5,5,4,dominoes,The whole domino row is toppled.,yes
+B01,EndState,,EndState,2,4.5,5,4,dominoes,The fallen dominoes remain down.,yes
+B01,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The dominoes form an alternating black-and-white sequence.,yes
+B01,RF_fullframe,Material,RF_fullframe,2,0,5,12,,The dominoes have plastic surfaces.,yes
+B01,RF_fullframe,Environment,RF_fullframe,3,0,5,12,,The tabletop is light oak in color.,yes
+B01,RF_fullframe,Texture,RF_fullframe,4,0,5,12,,Fine wood grain is visible on the tabletop.,yes
+B01,RF_fullframe,Lighting,RF_fullframe,5,0,5,12,,"The scene has soft, neutral illumination.",yes
+B01,AP,,AP,1,0,5,8,,The same dominoes retain their individual alternating black-and-white assignments.,yes
+B01,AP,,AP,2,0,5,8,,The domino surfaces remain smooth satin plastic.,yes
+B02,ISR,,ISR_first_exchange,action,0.44999999999999996,2.35,8,balls;hand,The rightmost ball is released and swings into the row.,yes
+B02,ISR,,ISR_first_exchange,outcome,0.44999999999999996,2.35,8,balls;hand,The leftmost ball has swung outward while the middle balls remain approximately centered.,yes
+B02,ISR,,ISR_first_exchange,participants,0.44999999999999996,2.35,8,balls;hand,"[""balls"", ""hand""]",yes
+B02,ISR,,ISR_return_exchange,action,2.0500000000000003,4.05,8,balls,The leftmost ball swings back into the row.,yes
+B02,ISR,,ISR_return_exchange,outcome,2.0500000000000003,4.05,8,balls,The rightmost ball swings outward again.,yes
+B02,ISR,,ISR_return_exchange,participants,2.0500000000000003,4.05,8,balls,"[""balls""]",yes
+B02,ISR,,ISR_catch,action,2.95,5,8,balls;hand,The hand catches the rightmost ball near its raised position.,yes
+B02,ISR,,ISR_catch,outcome,2.95,5,8,balls;hand,The rightmost ball is held raised and no longer continues its free swing.,yes
+B02,ISR,,ISR_catch,participants,2.95,5,8,balls;hand,"[""balls"", ""hand""]",yes
+B02,LRA,,LRA_hold,action,0,0.8999999999999999,12,balls;hand,A hand holds the rightmost ball raised away from the row.,yes
+B02,LRA,,LRA_hold,details,0,0.8999999999999999,12,balls;hand,A hand holds the rightmost ball raised away from the row.,yes
+B02,LRA,,LRA_release,action,0.3,1.7,12,balls;hand,The hand releases the rightmost ball and it swings inward toward the row.,yes
+B02,LRA,,LRA_release,details,0.3,1.7,12,balls;hand,The hand releases the rightmost ball and it swings inward toward the row.,yes
+B02,LRA,,LRA_left_out,action,1.0999999999999999,2.5,12,balls;hand,The leftmost ball swings outward while the middle three balls stay approximately centered.,yes
+B02,LRA,,LRA_left_out,details,1.0999999999999999,2.5,12,balls;hand,The leftmost ball swings outward while the middle three balls stay approximately centered.,yes
+B02,LRA,,LRA_left_return,action,1.9000000000000001,3.4,12,balls;hand,The leftmost ball swings back inward toward the row.,yes
+B02,LRA,,LRA_left_return,details,1.9000000000000001,3.4,12,balls;hand,The leftmost ball swings back inward toward the row.,yes
+B02,LRA,,LRA_right_out,action,2.8000000000000003,4.2,12,balls;hand,The rightmost ball swings outward again.,yes
+B02,LRA,,LRA_right_out,details,2.8000000000000003,4.2,12,balls;hand,The rightmost ball swings outward again.,yes
+B02,LRA,,LRA_catch,action,3.6,5,12,balls;hand,The hand catches the raised rightmost ball and holds it still.,yes
+B02,LRA,,LRA_catch,details,3.6,5,12,balls;hand,The hand catches the raised rightmost ball and holds it still.,yes
+B02,EndState,,EndState,1,4.5,5,4,balls;hand,The hand holds the rightmost ball raised.,yes
+B02,EndState,,EndState,2,4.5,5,4,balls;hand,The other balls hang approximately at the central resting position.,yes
+B02,RF_fullframe,Material,RF_fullframe,1,0,5,12,,The four balls other than the rightmost ball have steel surfaces.,yes
+B02,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The rightmost ball is cobalt blue with a broad ivory band.,yes
+B02,RF_fullframe,Color,RF_fullframe,3,0,5,12,,The cradle frame is charcoal in color.,yes
+B02,RF_fullframe,Color,RF_fullframe,4,0,5,12,,The visible hand has a natural warm skin tone.,yes
+B02,RF_fullframe,Texture,RF_fullframe,5,0,5,12,,The four steel balls have polished surfaces.,yes
+B02,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+B02,AP,,AP,1,0,5,8,,The rightmost suspended ball has a cobalt-blue body.,yes
+B02,AP,,AP,2,0,5,8,,The same rightmost ball retains its broad ivory band.,yes
+B02,AP,,AP,3,0,5,8,,The other suspended balls retain polished silver-steel surfaces.,yes
+B03,ISR,,ISR_impact,action,0.75,1.75,8,ball;pins,The ball rolls into and contacts the front pins.,yes
+B03,ISR,,ISR_impact,outcome,0.75,1.75,8,ball;pins,The front pins have begun tipping or moving out of their original positions.,yes
+B03,ISR,,ISR_impact,participants,0.75,1.75,8,ball;pins,"[""ball"", ""pins""]",yes
+B03,ISR,,ISR_scatter,action,1.4500000000000002,5,8,ball;pins,The disturbance spreads through the pin group as pins topple and scatter.,yes
+B03,ISR,,ISR_scatter,outcome,1.4500000000000002,5,8,ball;pins,Most pins are down and at least one pin remains upright.,yes
+B03,ISR,,ISR_scatter,participants,1.4500000000000002,5,8,ball;pins,"[""ball"", ""pins""]",yes
+B03,LRA,,LRA_approach,action,0,1.2,12,ball;pins,The bowling ball rolls toward the upright pins.,yes
+B03,LRA,,LRA_approach,details,0,1.2,12,ball;pins,The bowling ball rolls toward the upright pins.,yes
+B03,LRA,,LRA_impact,action,0.6000000000000001,1.9000000000000001,12,ball;pins,The bowling ball strikes and moves into the front pins.,yes
+B03,LRA,,LRA_impact,details,0.6000000000000001,1.9000000000000001,12,ball;pins,The bowling ball strikes and moves into the front pins.,yes
+B03,LRA,,LRA_scatter,action,1.3,3.3,12,ball;pins,Toppling spreads through the pins and they scatter across the end of the lane.,yes
+B03,LRA,,LRA_scatter,details,1.3,3.3,12,ball;pins,Toppling spreads through the pins and they scatter across the end of the lane.,yes
+B03,LRA,,LRA_settled,action,2.7,5,12,ball;pins,Most pins remain down while a pin is still upright.,yes
+B03,LRA,,LRA_settled,details,2.7,5,12,ball;pins,Most pins remain down while a pin is still upright.,yes
+B03,EndState,,EndState,1,4.5,5,4,ball;pins,Most pins are lying down at the end of the lane.,yes
+B03,EndState,,EndState,2,4.5,5,4,ball;pins,At least one pin is still standing.,yes
+B03,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The bowling ball is deep navy.,yes
+B03,RF_fullframe,Material,RF_fullframe,2,0,5,12,,The bowling ball has a resin surface.,yes
+B03,RF_fullframe,Color,RF_fullframe,3,0,5,12,,The pins have white bodies.,yes
+B03,RF_fullframe,Environment,RF_fullframe,4,0,5,12,,The lane is light honey-brown wood.,yes
+B03,RF_fullframe,Texture,RF_fullframe,5,0,5,12,,The bowling-ball surface is polished.,yes
+B03,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+B03,AP,,AP,1,0,5,8,,The same bowling ball retains its deep-navy colour.,yes
+B03,AP,,AP,2,0,5,8,,The bowling ball retains a polished-resin surface.,yes
+B03,AP,,AP,3,0,5,8,,The pins retain white lacquered bodies.,yes
+B04,ISR,,ISR_top_transfer,action,0,5,8,marble_01;lift,A marble is carried to the top of the lift and transferred onto the upper track.,yes
+B04,ISR,,ISR_top_transfer,outcome,0,5,8,marble_01;lift,That marble continues away from the lift along the upper track.,yes
+B04,ISR,,ISR_top_transfer,participants,0,5,8,marble_01;lift,"[""marble_01"", ""lift""]",yes
+B04,ISR,,ISR_bottom_return,action,0,2.15,8,marble_10,A marble approaches the lift along the lower return track and enters its bottom inlet.,yes
+B04,ISR,,ISR_bottom_return,outcome,0,2.15,8,marble_10,The marble is received at the lift inlet rather than continuing off the track.,yes
+B04,ISR,,ISR_bottom_return,participants,0,2.15,8,marble_10,"[""marble_10""]",yes
+B04,LRA,,LRA_lift,action,0,5,12,marbles;lift;marble_01;marble_10,Marbles are carried upward by the lift on the right.,yes
+B04,LRA,,LRA_lift,details,0,5,12,marbles;lift;marble_01;marble_10,Marbles are carried upward by the lift on the right.,yes
+B04,LRA,,LRA_top_transfer,action,0,5,12,marbles;lift;marble_01;marble_10,Marbles reaching the top of the lift enter the upper track.,yes
+B04,LRA,,LRA_top_transfer,details,0,5,12,marbles;lift;marble_01;marble_10,Marbles reaching the top of the lift enter the upper track.,yes
+B04,LRA,,LRA_track_descent,action,0,5,12,marbles;lift;marble_01;marble_10,Marbles travel along the curved track from higher to lower levels.,yes
+B04,LRA,,LRA_track_descent,details,0,5,12,marbles;lift;marble_01;marble_10,Marbles travel along the curved track from higher to lower levels.,yes
+B04,LRA,,LRA_bottom_return,action,0,2.3,12,marbles;lift;marble_01;marble_10,Marbles reaching the lower-track exit enter the bottom inlet of the lift.,yes
+B04,LRA,,LRA_bottom_return,details,0,2.3,12,marbles;lift;marble_01;marble_10,Marbles reaching the lower-track exit enter the bottom inlet of the lift.,yes
+B04,EndState,,EndState,1,4.5,5,4,marbles;lift;marble_01;marble_10,Marbles are still moving on the apparatus near the end.,yes
+B04,EndState,,EndState,2,4.5,5,4,marbles;lift;marble_01;marble_10,The lift continues carrying marbles upward.,yes
+B04,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The structural frame is industrial red.,yes
+B04,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The tracks are silver gray.,yes
+B04,RF_fullframe,Color,RF_fullframe,3,0,5,12,,The marbles are cobalt blue with broad ivory bands.,yes
+B04,RF_fullframe,Texture,RF_fullframe,4,0,5,12,,The marbles have polished surfaces.,yes
+B04,RF_fullframe,Material,RF_fullframe,5,0,5,12,,The marbles have opaque-glass surfaces.,yes
+B04,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+B04,AP,,AP,1,0,5,8,,The marbles retain cobalt-blue bodies.,yes
+B04,AP,,AP,2,0,5,8,,The same marbles retain their broad ivory bands.,yes
+B04,AP,,AP,3,0,5,8,,The marbles retain polished surfaces.,yes
+B05,ISR,,ISR_scoop_lift,action,0.44999999999999996,2.6,8,bucket;earth,The bucket scoops soil from the ground and lifts it.,yes
+B05,ISR,,ISR_scoop_lift,outcome,0.44999999999999996,2.6,8,bucket;earth,Soil is carried in the raised bucket.,yes
+B05,ISR,,ISR_scoop_lift,participants,0.44999999999999996,2.6,8,bucket;earth,"[""bucket"", ""earth""]",yes
+B05,ISR,,ISR_load_truck,action,2.3000000000000003,4.45,8,bucket;earth;bed,The raised bucket moves over the truck bed and tips its load.,yes
+B05,ISR,,ISR_load_truck,outcome,2.3000000000000003,4.45,8,bucket;earth;bed,Soil visibly falls from the bucket into the truck bed.,yes
+B05,ISR,,ISR_load_truck,participants,2.3000000000000003,4.45,8,bucket;earth;bed,"[""bucket"", ""earth"", ""bed""]",yes
+B05,LRA,,LRA_approach,action,0,0.8999999999999999,12,excavator;bucket;earth;bed,The excavator chassis moves closer to the soil pile.,yes
+B05,LRA,,LRA_approach,details,0,0.8999999999999999,12,excavator;bucket;earth;bed,The excavator chassis moves closer to the soil pile.,yes
+B05,LRA,,LRA_scoop,action,0.3,2.25,12,excavator;bucket;earth;bed,The bucket lowers into the ground-level soil and curls inward to scoop it.,yes
+B05,LRA,,LRA_scoop,details,0.3,2.25,12,excavator;bucket;earth;bed,The bucket lowers into the ground-level soil and curls inward to scoop it.,yes
+B05,LRA,,LRA_lift,action,1.65,2.75,12,excavator;bucket;earth;bed,The loaded bucket rises away from the ground.,yes
+B05,LRA,,LRA_lift,details,1.65,2.75,12,excavator;bucket;earth;bed,The loaded bucket rises away from the ground.,yes
+B05,LRA,,LRA_slew,action,2.1500000000000004,3.75,12,excavator;bucket;earth;bed,The upper body turns to move the raised bucket over the truck bed.,yes
+B05,LRA,,LRA_slew,details,2.1500000000000004,3.75,12,excavator;bucket;earth;bed,The upper body turns to move the raised bucket over the truck bed.,yes
+B05,LRA,,LRA_dump,action,3.1500000000000004,4.6,12,excavator;bucket;earth;bed,The bucket tips and soil falls from it into the truck bed.,yes
+B05,LRA,,LRA_dump,details,3.1500000000000004,4.6,12,excavator;bucket;earth;bed,The bucket tips and soil falls from it into the truck bed.,yes
+B05,LRA,,LRA_return,action,4.0,5,12,excavator;bucket;earth;bed,The bucket begins moving back toward the digging side.,yes
+B05,LRA,,LRA_return,details,4.0,5,12,excavator;bucket;earth;bed,The bucket begins moving back toward the digging side.,yes
+B05,EndState,,EndState,1,4.5,5,4,excavator;bucket;earth;bed,The bucket has left its tipped unloading pose.,yes
+B05,EndState,,EndState,2,4.5,5,4,excavator;bucket;earth;bed,The excavator has begun turning back toward the digging side.,yes
+B05,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The excavator is yellow.,yes
+B05,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The dump truck is deep orange.,yes
+B05,RF_fullframe,Environment,RF_fullframe,3,0,5,12,,The ground is warm brown granular soil.,yes
+B05,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The vehicles have painted metal bodywork.,yes
+B05,RF_fullframe,Texture,RF_fullframe,5,0,5,12,,The soil has a granular texture.,yes
+B05,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+B05,AP,,AP,1,0,5,8,,The excavator retains yellow bodywork.,yes
+B05,AP,,AP,2,0,5,8,,The dump truck retains deep-orange bodywork.,yes
+B05,AP,,AP,3,0,5,8,,The same vehicles retain painted-metal body surfaces.,yes
+B06,ISR,,ISR_road_before,action,0,1.25,8,leaves;cars,The first car travels across the closed bridge.,yes
+B06,ISR,,ISR_road_before,outcome,0,1.25,8,leaves;cars,The first car reaches the far side of the crossing.,yes
+B06,ISR,,ISR_road_before,participants,0,1.25,8,leaves;cars,"[""leaves"", ""cars""]",yes
+B06,ISR,,ISR_boat_pass,action,0.9500000000000001,3.25,8,leaves;boat,The bridge opens and the boat passes through the water passage.,yes
+B06,ISR,,ISR_boat_pass,outcome,0.9500000000000001,3.25,8,leaves;boat,The boat clears the area under the bridge before the leaves start lowering.,yes
+B06,ISR,,ISR_boat_pass,participants,0.9500000000000001,3.25,8,leaves;boat,"[""leaves"", ""boat""]",yes
+B06,ISR,,ISR_road_restore,action,2.95,5,8,leaves;cars,The bridge leaves lower and reconnect the roadway.,yes
+B06,ISR,,ISR_road_restore,outcome,2.95,5,8,leaves;cars,Cars cross the bridge again after it has closed.,yes
+B06,ISR,,ISR_road_restore,participants,2.95,5,8,leaves;cars,"[""leaves"", ""cars""]",yes
+B06,LRA,,LRA_road_before,action,0,1.4000000000000001,12,leaves;boat;cars,A car crosses the closed bridge.,yes
+B06,LRA,,LRA_road_before,details,0,1.4000000000000001,12,leaves;boat;cars,A car crosses the closed bridge.,yes
+B06,LRA,,LRA_open,action,0.8,2.0,12,leaves;boat;cars,Both bridge leaves rise to open the water passage.,yes
+B06,LRA,,LRA_open,details,0.8,2.0,12,leaves;boat;cars,Both bridge leaves rise to open the water passage.,yes
+B06,LRA,,LRA_boat_pass,action,1.4,3.4,12,leaves;boat;cars,The boat passes between the raised bridge leaves and clears the crossing.,yes
+B06,LRA,,LRA_boat_pass,details,1.4,3.4,12,leaves;boat;cars,The boat passes between the raised bridge leaves and clears the crossing.,yes
+B06,LRA,,LRA_close,action,2.8000000000000003,4.05,12,leaves;boat;cars,"After the boat clears the crossing, the leaves lower and close the bridge.",yes
+B06,LRA,,LRA_close,details,2.8000000000000003,4.05,12,leaves;boat;cars,"After the boat clears the crossing, the leaves lower and close the bridge.",yes
+B06,LRA,,LRA_road_after,action,3.45,5,12,leaves;boat;cars,Cars resume crossing the closed bridge.,yes
+B06,LRA,,LRA_road_after,details,3.45,5,12,leaves;boat;cars,Cars resume crossing the closed bridge.,yes
+B06,EndState,,EndState,1,4.5,5,4,leaves;boat;cars,Both bridge leaves are closed and form a continuous road.,yes
+B06,EndState,,EndState,2,4.5,5,4,leaves;boat;cars,Cars are crossing the restored roadway.,yes
+B06,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The bridge framework is dark blue.,yes
+B06,RF_fullframe,Material,RF_fullframe,2,0,5,12,,The bridge framework has steel surfaces.,yes
+B06,RF_fullframe,Color,RF_fullframe,3,0,5,12,,The boat has a warm white hull and cabin.,yes
+B06,RF_fullframe,Color,RF_fullframe,4,0,5,12,,The cars have red bodywork.,yes
+B06,RF_fullframe,Environment,RF_fullframe,5,0,5,12,,The canal water is deep blue-green.,yes
+B06,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+B06,AP,,AP,1,0,5,8,,The bridge framework retains its dark-blue colour.,yes
+B06,AP,,AP,2,0,5,8,,The boat retains a warm-white hull and cabin.,yes
+B06,AP,,AP,3,0,5,8,,The moving bridge leaves retain steel framework surfaces.,yes
+B07,ISR,,ISR_raise,action,1.2000000000000002,2.8,8,forks;cargo,The forklift lifts the pallet before advancing into the truck.,yes
+B07,ISR,,ISR_raise,outcome,1.2000000000000002,2.8,8,forks;cargo,The pallet reaches a height that clears the truck bed.,yes
+B07,ISR,,ISR_raise,participants,1.2000000000000002,2.8,8,forks;cargo,"[""forks"", ""cargo""]",yes
+B07,ISR,,ISR_unload,action,2.5,5,8,forks;cargo,"The forklift carries the load into the truck, sets it down, and withdraws.",yes
+B07,ISR,,ISR_unload,outcome,2.5,5,8,forks;cargo,The load stays on the truck bed as the forklift reverses away.,yes
+B07,ISR,,ISR_unload,participants,2.5,5,8,forks;cargo,"[""forks"", ""cargo""]",yes
+B07,LRA,,LRA_approach,action,0,1.6500000000000001,12,forklift;cargo;truck;forks,The forklift approaches the truck side opening while already carrying a pallet of cartons.,yes
+B07,LRA,,LRA_approach,details,0,1.6500000000000001,12,forklift;cargo;truck;forks,The forklift approaches the truck side opening while already carrying a pallet of cartons.,yes
+B07,LRA,,LRA_raise,action,1.05,2.9499999999999997,12,forklift;cargo;truck;forks,The forklift raises its load to the height of the truck bed before inserting it.,yes
+B07,LRA,,LRA_raise,details,1.05,2.9499999999999997,12,forklift;cargo;truck;forks,The forklift raises its load to the height of the truck bed before inserting it.,yes
+B07,LRA,,LRA_insert,action,2.35,3.9499999999999997,12,forklift;cargo;truck;forks,The forklift advances with the raised load into the truck.,yes
+B07,LRA,,LRA_insert,details,2.35,3.9499999999999997,12,forklift;cargo;truck;forks,The forklift advances with the raised load into the truck.,yes
+B07,LRA,,LRA_set_down,action,3.35,4.6,12,forklift;cargo;truck;forks,The load is lowered onto the truck bed and released from the forks.,yes
+B07,LRA,,LRA_set_down,details,3.35,4.6,12,forklift;cargo;truck;forks,The load is lowered onto the truck bed and released from the forks.,yes
+B07,LRA,,LRA_withdraw,action,4.0,5,12,forklift;cargo;truck;forks,The forklift reverses away while the load remains in the truck.,yes
+B07,LRA,,LRA_withdraw,details,4.0,5,12,forklift;cargo;truck;forks,The forklift reverses away while the load remains in the truck.,yes
+B07,EndState,,EndState,1,4.5,5,4,forklift;cargo;truck;forks,The pallet of cartons remains inside the truck.,yes
+B07,EndState,,EndState,2,4.5,5,4,forklift;cargo;truck;forks,The forklift is separated from the deposited load as it reverses away.,yes
+B07,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The truck is deep blue.,yes
+B07,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The forklift is yellow.,yes
+B07,RF_fullframe,Color,RF_fullframe,3,0,5,12,,The cartons are kraft brown.,yes
+B07,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The pallet has a wooden appearance.,yes
+B07,RF_fullframe,Texture,RF_fullframe,5,0,5,12,,The cartons have corrugated-cardboard texture.,yes
+B07,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+B07,AP,,AP,1,0,5,8,,The truck retains deep-blue bodywork.,yes
+B07,AP,,AP,2,0,5,8,,The forklift retains yellow bodywork.,yes
+B07,AP,,AP,3,0,5,8,,The transferred cartons retain kraft-brown cardboard surfaces.,yes
+B08,ISR,,ISR_slow,action,0.6,1.4,8,cartons,The leading carton moves from the machine onto the output rollers.,yes
+B08,ISR,,ISR_slow,outcome,0.6,1.4,8,cartons,Its forward motion has noticeably slowed.,yes
+B08,ISR,,ISR_slow,participants,0.6,1.4,8,cartons,"[""cartons""]",yes
+B08,ISR,,ISR_accumulate,action,1.1,5,8,cartons,Arriving cartons catch up with the preceding cartons and push the queue forward.,yes
+B08,ISR,,ISR_accumulate,outcome,1.1,5,8,cartons,The cartons form a closely packed queue that is approximately stationary near the end.,yes
+B08,ISR,,ISR_accumulate,participants,1.1,5,8,cartons,"[""cartons""]",yes
+B08,LRA,,LRA_feed,action,0,1.5,12,cartons,Cartons pass through the machine and emerge one after another.,yes
+B08,LRA,,LRA_feed,details,0,1.5,12,cartons,Cartons pass through the machine and emerge one after another.,yes
+B08,LRA,,LRA_slow,action,0.45,1.55,12,cartons,The leading carton slows after entering the output rollers.,yes
+B08,LRA,,LRA_slow,details,0.45,1.55,12,cartons,The leading carton slows after entering the output rollers.,yes
+B08,LRA,,LRA_accumulate,action,0.95,4.8,12,cartons,"Following cartons catch up, contact the queue, and push the preceding cartons farther along the rollers.",yes
+B08,LRA,,LRA_accumulate,details,0.95,4.8,12,cartons,"Following cartons catch up, contact the queue, and push the preceding cartons farther along the rollers.",yes
+B08,LRA,,LRA_stop,action,4.2,5,12,cartons,The accumulated queue of cartons comes approximately to rest.,yes
+B08,LRA,,LRA_stop,details,4.2,5,12,cartons,The accumulated queue of cartons comes approximately to rest.,yes
+B08,EndState,,EndState,1,4.5,5,4,cartons,The cartons form a closely packed queue on the output rollers.,yes
+B08,EndState,,EndState,2,4.5,5,4,cartons,The queue is approximately stationary.,yes
+B08,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The machine panels are deep blue.,yes
+B08,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The conveyor belt is dark green.,yes
+B08,RF_fullframe,Color,RF_fullframe,3,0,5,12,,The cartons are kraft brown.,yes
+B08,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The output conveyor has metallic steel rollers.,yes
+B08,RF_fullframe,Texture,RF_fullframe,5,0,5,12,,The cartons have corrugated-cardboard texture.,yes
+B08,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+B08,AP,,AP,1,0,5,8,,The machine panels retain a deep-blue colour.,yes
+B08,AP,,AP,2,0,5,8,,The same cartons retain kraft-brown cardboard surfaces.,yes
+B08,AP,,AP,3,0,5,8,,The output rollers retain metallic-steel surfaces.,yes
+C01,ISR,,ISR_enter,action,0,2.9499999999999997,8,train,"The train enters the tunnel progressively, coach after coach.",yes
+C01,ISR,,ISR_enter,outcome,0,2.9499999999999997,8,train,The train becomes hidden by the tunnel structure.,yes
+C01,ISR,,ISR_enter,participants,0,2.9499999999999997,8,train,"[""train""]",yes
+C01,ISR,,ISR_exit,action,1.55,5,8,train,The train emerges from the other tunnel portal.,yes
+C01,ISR,,ISR_exit,outcome,1.55,5,8,train,Connected coaches are visible outside on the right-hand track.,yes
+C01,ISR,,ISR_exit,participants,1.55,5,8,train,"[""train""]",yes
+C01,LRA,,LRA_enter,action,0,2.0,12,train,The connected train moves along the left approach and into the tunnel.,yes
+C01,LRA,,LRA_enter,details,0,2.0,12,train,The connected train moves along the left approach and into the tunnel.,yes
+C01,LRA,,LRA_hidden,action,1.4,3.0999999999999996,12,train,The train becomes hidden inside the opaque tunnel.,yes
+C01,LRA,,LRA_hidden,details,1.4,3.0999999999999996,12,train,The train becomes hidden inside the opaque tunnel.,yes
+C01,LRA,,LRA_exit,action,2.5,5,12,train,The train reappears from the right tunnel portal and advances down the right track.,yes
+C01,LRA,,LRA_exit,details,2.5,5,12,train,The train reappears from the right tunnel portal and advances down the right track.,yes
+C01,EndState,,EndState,1,4.5,5,4,train,The train is visible outside the right tunnel portal.,yes
+C01,EndState,,EndState,2,4.5,5,4,train,Its coaches remain connected in sequence.,yes
+C01,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The carriage body panels are deep green.,yes
+C01,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The carriages have a broad ivory waist stripe below the windows.,yes
+C01,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The carriages have painted-metal surfaces.,yes
+C01,RF_fullframe,Environment,RF_fullframe,4,0,5,12,,The tunnel structure has warm-beige stone surfaces.,yes
+C01,RF_fullframe,Lighting,RF_fullframe,5,0,5,12,,"The scene has soft, neutral illumination.",yes
+C01,AP,,AP,1,0,5,8,,The carriage body panels are deep green.,yes
+C01,AP,,AP,2,0,5,8,,The carriages have a broad ivory waist stripe below the windows.,yes
+C01,AP,,AP,3,0,5,8,,The carriages have painted-metal surfaces.,yes
+C02,ISR,,ISR_underpass,action,0,5,8,boats,Boats travel under the bridge and become occluded by its deck.,yes
+C02,ISR,,ISR_underpass,outcome,0,5,8,boats,Boats emerge beyond the bridge while continuing on the water.,yes
+C02,ISR,,ISR_underpass,participants,0,5,8,boats,"[""boats""]",yes
+C02,LRA,,LRA_approach,action,0,5,12,boats,Passenger boats approach the bridge along the water from both sides.,yes
+C02,LRA,,LRA_approach,details,0,5,12,boats,Passenger boats approach the bridge along the water from both sides.,yes
+C02,LRA,,LRA_occlude,action,0,5,12,boats,Boats become partially or fully hidden as they pass under the opaque bridge deck.,yes
+C02,LRA,,LRA_occlude,details,0,5,12,boats,Boats become partially or fully hidden as they pass under the opaque bridge deck.,yes
+C02,LRA,,LRA_emerge,action,0,5,12,boats,Boats reappear on the other side after passing under the bridge.,yes
+C02,LRA,,LRA_emerge,details,0,5,12,boats,Boats reappear on the other side after passing under the bridge.,yes
+C02,EndState,,EndState,1,4.5,5,4,boats,Boats remain upright on the water on both sides of the bridge.,yes
+C02,EndState,,EndState,2,4.5,5,4,boats,The bridge remains fixed while the boats change position.,yes
+C02,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The boat hulls are warm white.,yes
+C02,RF_fullframe,Color,RF_fullframe,2,0,5,12,,Each boat canopy has a broad navy-blue stripe along the centre of its roof.,yes
+C02,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The boat hulls have painted-metal surfaces.,yes
+C02,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The boat canopies have painted-metal surfaces.,yes
+C02,RF_fullframe,Environment,RF_fullframe,5,0,5,12,,The water is deep blue-green with natural reflections.,yes
+C02,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+C02,AP,,AP,1,0,5,8,,The boat hulls are warm white.,yes
+C02,AP,,AP,2,0,5,8,,Each boat canopy has a broad navy-blue stripe along the centre of its roof.,yes
+C02,AP,,AP,3,0,5,8,,The boat hulls have painted-metal surfaces.,yes
+C02,AP,,AP,4,0,5,8,,The boat canopies have painted-metal surfaces.,yes
+C03,ISR,,ISR_enter,action,0,4.25,8,person_and_door,The person walks into the revolving door while the panels rotate.,yes
+C03,ISR,,ISR_enter,outcome,0,4.25,8,person_and_door,The person becomes hidden behind the door panels.,yes
+C03,ISR,,ISR_enter,participants,0,4.25,8,person_and_door,"[""person_and_door""]",yes
+C03,ISR,,ISR_exit,action,1.4500000000000002,5,8,person_and_door,The person completes passage through the enclosure and emerges.,yes
+C03,ISR,,ISR_exit,outcome,1.4500000000000002,5,8,person_and_door,"The person is outside to the right, moving away from the door.",yes
+C03,ISR,,ISR_exit,participants,1.4500000000000002,5,8,person_and_door,"[""person_and_door""]",yes
+C03,LRA,,LRA_enter,action,0,1.9000000000000001,12,person_and_door,The person approaches and enters the revolving-door enclosure.,yes
+C03,LRA,,LRA_enter,details,0,1.9000000000000001,12,person_and_door,The person approaches and enters the revolving-door enclosure.,yes
+C03,LRA,,LRA_hidden,action,1.3,4.3999999999999995,12,person_and_door,The rotating opaque door panels conceal the person inside the enclosure.,yes
+C03,LRA,,LRA_hidden,details,1.3,4.3999999999999995,12,person_and_door,The rotating opaque door panels conceal the person inside the enclosure.,yes
+C03,LRA,,LRA_exit,action,3.8,5,12,person_and_door,The person reappears to the right of the enclosure and walks away.,yes
+C03,LRA,,LRA_exit,details,3.8,5,12,person_and_door,The person reappears to the right of the enclosure and walks away.,yes
+C03,EndState,,EndState,1,4.5,5,4,person_and_door,The person is visible outside to the right of the door.,yes
+C03,EndState,,EndState,2,4.5,5,4,person_and_door,The revolving-door structure remains in place.,yes
+C03,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The person wears a teal sweater.,yes
+C03,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The sweater has a broad ivory horizontal band around the chest and back.,yes
+C03,RF_fullframe,Texture,RF_fullframe,3,0,5,12,,The sweater has knit-fabric texture.,yes
+C03,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The revolving door framing has metal surfaces.,yes
+C03,RF_fullframe,Environment,RF_fullframe,5,0,5,12,,The floor is terracotta-brown stone.,yes
+C03,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+C03,AP,,AP,1,0,5,8,,The person wears a teal sweater.,yes
+C03,AP,,AP,2,0,5,8,,The sweater has a broad ivory horizontal band around the chest and back.,yes
+C03,AP,,AP,3,0,5,8,,The sweater has knit-fabric texture.,yes
+C04,ISR,,ISR_reappear,action,0,5,8,cable_cars,The cable cars continue along their route through tree occlusions.,yes
+C04,ISR,,ISR_reappear,outcome,0,5,8,cable_cars,The cabins reappear farther along the cable without detaching from the route.,yes
+C04,ISR,,ISR_reappear,participants,0,5,8,cable_cars,"[""cable_cars""]",yes
+C04,LRA,,LRA_travel,action,0,5,12,cable_cars,Two cable cars travel in opposite directions along the elevated cable route.,yes
+C04,LRA,,LRA_travel,details,0,5,12,cable_cars,Two cable cars travel in opposite directions along the elevated cable route.,yes
+C04,LRA,,LRA_occlude,action,0,5,12,cable_cars,The cabins pass behind foreground tree crowns and reappear beyond them.,yes
+C04,LRA,,LRA_occlude,details,0,5,12,cable_cars,The cabins pass behind foreground tree crowns and reappear beyond them.,yes
+C04,EndState,,EndState,1,4.5,5,4,cable_cars,The two cabins remain on the elevated cable route.,yes
+C04,EndState,,EndState,2,4.5,5,4,cable_cars,Their positions along the route have changed.,yes
+C04,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The cable cars have red lower cabin panels.,yes
+C04,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The lower cabin sides have a broad ivory horizontal band.,yes
+C04,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The cabins have painted-metal surfaces.,yes
+C04,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The cable hardware has a steel appearance.,yes
+C04,RF_fullframe,Environment,RF_fullframe,5,0,5,12,,The water is bright blue.,yes
+C04,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+C04,AP,,AP,1,0,5,8,,The cable cars have red lower cabin panels.,yes
+C04,AP,,AP,2,0,5,8,,The lower cabin sides have a broad ivory horizontal band.,yes
+C04,AP,,AP,3,0,5,8,,The cabins have painted-metal surfaces.,yes
+C05,ISR,,ISR_aisle,action,0,5,8,forklift,The forklift travels through the warehouse behind the shelving.,yes
+C05,ISR,,ISR_aisle,outcome,0,5,8,forklift,It emerges on the right after being occluded by the racks.,yes
+C05,ISR,,ISR_aisle,participants,0,5,8,forklift,"[""forklift""]",yes
+C05,LRA,,LRA_enter,action,0,1.3,12,forklift,The forklift moves from the left opening into the shelving aisles.,yes
+C05,LRA,,LRA_enter,details,0,1.3,12,forklift,The forklift moves from the left opening into the shelving aisles.,yes
+C05,LRA,,LRA_hidden,action,0.7,4.3,12,forklift,The forklift progresses behind the racks and is hidden by shelves and cartons.,yes
+C05,LRA,,LRA_hidden,details,0.7,4.3,12,forklift,The forklift progresses behind the racks and is hidden by shelves and cartons.,yes
+C05,LRA,,LRA_exit,action,3.7,5,12,forklift,The forklift reappears from the shelving on the right side.,yes
+C05,LRA,,LRA_exit,details,3.7,5,12,forklift,The forklift reappears from the shelving on the right side.,yes
+C05,EndState,,EndState,1,4.5,5,4,forklift,The forklift is visible on the right side of the shelving.,yes
+C05,EndState,,EndState,2,4.5,5,4,forklift,The shelving and stored cartons remain stationary.,yes
+C05,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The forklift has yellow bodywork.,yes
+C05,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The rear counterweight has a broad navy-blue horizontal band.,yes
+C05,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The forklift has painted-metal bodywork.,yes
+C05,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The forklift tires have rubber surfaces.,yes
+C05,RF_fullframe,Environment,RF_fullframe,5,0,5,12,,The warehouse floor has a concrete appearance.,yes
+C05,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+C05,AP,,AP,1,0,5,8,,The forklift has yellow bodywork.,yes
+C05,AP,,AP,2,0,5,8,,The rear counterweight has a broad navy-blue horizontal band.,yes
+C05,AP,,AP,3,0,5,8,,The forklift has painted-metal bodywork.,yes
+C05,AP,,AP,4,0,5,8,,The forklift tires have a black-rubber appearance.,yes
+C06,ISR,,ISR_roads,action,0,5,8,cars,Cars follow their curved or straight road paths through structural occlusions.,yes
+C06,ISR,,ISR_roads,outcome,0,5,8,cars,Cars advance along the road network while remaining on their respective road surfaces.,yes
+C06,ISR,,ISR_roads,participants,0,5,8,cars,"[""cars""]",yes
+C06,LRA,,LRA_ring,action,0,5,12,cars,Cars circulate on the curved elevated roadway.,yes
+C06,LRA,,LRA_ring,details,0,5,12,cars,Cars circulate on the curved elevated roadway.,yes
+C06,LRA,,LRA_straight,action,0,5,12,cars,Cars travel along the diagonal straight roadway at a different level.,yes
+C06,LRA,,LRA_straight,details,0,5,12,cars,Cars travel along the diagonal straight roadway at a different level.,yes
+C06,LRA,,LRA_occlusion,action,0,5,12,cars,Moving cars are briefly hidden by overlapping road structures and reappear along their lanes.,yes
+C06,LRA,,LRA_occlusion,details,0,5,12,cars,Moving cars are briefly hidden by overlapping road structures and reappear along their lanes.,yes
+C06,EndState,,EndState,1,4.5,5,4,cars,Cars remain on the road surfaces.,yes
+C06,EndState,,EndState,2,4.5,5,4,cars,The elevated road structures remain fixed.,yes
+C06,RF_fullframe,Color,RF_fullframe,1,0,5,12,,Each car has a single broad ivory stripe along the centre of its hood and roof.,yes
+C06,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The two cars grouped at the lower left in the opening have red bodywork.,yes
+C06,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The cars have painted bodywork.,yes
+C06,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The tires have rubber surfaces.,yes
+C06,RF_fullframe,Texture,RF_fullframe,5,0,5,12,,The painted car bodywork is glossy.,yes
+C06,RF_fullframe,Environment,RF_fullframe,6,0,5,12,,The road has dark charcoal asphalt with white lane markings.,yes
+C06,RF_fullframe,Lighting,RF_fullframe,7,0,5,12,,"The scene has soft, neutral illumination.",yes
+C06,AP,,AP,1,0,5,8,,Each car has a single broad ivory stripe along the centre of its hood and roof.,yes
+C06,AP,,AP,2,0,5,8,,The two cars grouped at the lower left in the opening have red bodywork.,yes
+C06,AP,,AP,3,0,5,8,,The cars have glossy painted bodywork.,yes
+C06,AP,,AP,4,0,5,8,,The tires have a black-rubber appearance.,yes
+C07,ISR,,ISR_wash,action,0,5,8,car_and_brushes,The car enters the wash housing and later emerges through the opening.,yes
+C07,ISR,,ISR_wash,outcome,0,5,8,car_and_brushes,The car is visible outside the housing again.,yes
+C07,ISR,,ISR_wash,participants,0,5,8,car_and_brushes,"[""car_and_brushes""]",yes
+C07,LRA,,LRA_enter,action,0,1.7,12,car_and_brushes,The car moves into the wash housing and becomes hidden behind its entrance and brushes.,yes
+C07,LRA,,LRA_enter,details,0,1.7,12,car_and_brushes,The car moves into the wash housing and becomes hidden behind its entrance and brushes.,yes
+C07,LRA,,LRA_inside,action,1.0999999999999999,3.0999999999999996,12,car_and_brushes,The car is mostly concealed inside the wash housing while the brush assembly operates.,yes
+C07,LRA,,LRA_inside,details,1.0999999999999999,3.0999999999999996,12,car_and_brushes,The car is mostly concealed inside the wash housing while the brush assembly operates.,yes
+C07,LRA,,LRA_emerge,action,2.5,5,12,car_and_brushes,The car reappears through the visible wash opening and moves out onto the approach lane.,yes
+C07,LRA,,LRA_emerge,details,2.5,5,12,car_and_brushes,The car reappears through the visible wash opening and moves out onto the approach lane.,yes
+C07,EndState,,EndState,1,4.5,5,4,car_and_brushes,The car is visible on the lane outside the wash opening.,yes
+C07,EndState,,EndState,2,4.5,5,4,car_and_brushes,The wash housing remains in place.,yes
+C07,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The car has cobalt-blue bodywork.,yes
+C07,RF_fullframe,Color,RF_fullframe,2,0,5,12,,"The car has two broad ivory longitudinal stripes across its hood and roof, separated by a blue centre strip.",yes
+C07,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The car has painted bodywork.,yes
+C07,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The car tires have rubber surfaces.,yes
+C07,RF_fullframe,Texture,RF_fullframe,5,0,5,12,,The painted car bodywork is glossy.,yes
+C07,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+C07,AP,,AP,1,0,5,8,,The car has cobalt-blue bodywork.,yes
+C07,AP,,AP,2,0,5,8,,"The car has two broad ivory longitudinal stripes across its hood and roof, separated by a blue centre strip.",yes
+C07,AP,,AP,3,0,5,8,,The car has glossy painted bodywork.,yes
+C07,AP,,AP,4,0,5,8,,The car tires have a black-rubber appearance.,yes
+C08,ISR,,ISR_cover,action,0,1.75,8,cups_and_ball,A cup lowers over the visible ball.,yes
+C08,ISR,,ISR_cover,outcome,0,1.75,8,cups_and_ball,The ball is hidden underneath the cup.,yes
+C08,ISR,,ISR_cover,participants,0,1.75,8,cups_and_ball,"[""cups_and_ball""]",yes
+C08,ISR,,ISR_shuffle_reveal,action,1.4500000000000002,5,8,cups_and_ball,The cups shuffle and the covering cup is lifted.,yes
+C08,ISR,,ISR_shuffle_reveal,outcome,1.4500000000000002,5,8,cups_and_ball,The same small ball is visible again after the shuffle.,yes
+C08,ISR,,ISR_shuffle_reveal,participants,1.4500000000000002,5,8,cups_and_ball,"[""cups_and_ball""]",yes
+C08,LRA,,LRA_cover,action,0,1.9000000000000001,12,cups_and_ball,The initially left cup lowers over the small ball and hides it.,yes
+C08,LRA,,LRA_cover,details,0,1.9000000000000001,12,cups_and_ball,The initially left cup lowers over the small ball and hides it.,yes
+C08,LRA,,LRA_shuffle,action,1.3,4.5,12,cups_and_ball,The cups slide around one another across the tabletop while the ball remains covered.,yes
+C08,LRA,,LRA_shuffle,details,1.3,4.5,12,cups_and_ball,The cups slide around one another across the tabletop while the ball remains covered.,yes
+C08,LRA,,LRA_reveal,action,3.9000000000000004,5,12,cups_and_ball,The cup covering the ball lifts and reveals the ball at its new position.,yes
+C08,LRA,,LRA_reveal,details,3.9000000000000004,5,12,cups_and_ball,The cup covering the ball lifts and reveals the ball at its new position.,yes
+C08,EndState,,EndState,1,4.5,5,4,cups_and_ball,The small ball is visible on the tabletop.,yes
+C08,EndState,,EndState,2,4.5,5,4,cups_and_ball,The cups occupy a different arrangement from the opening.,yes
+C08,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The cup initially on the left is scarlet red.,yes
+C08,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The small ball is emerald green.,yes
+C08,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The cups have molded-plastic surfaces.,yes
+C08,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The ball has a resin surface.,yes
+C08,RF_fullframe,Texture,RF_fullframe,5,0,5,12,,The cup surfaces have a satin finish.,yes
+C08,RF_fullframe,Environment,RF_fullframe,6,0,5,12,,The tabletop is warm brown wood.,yes
+C08,RF_fullframe,Lighting,RF_fullframe,7,0,5,12,,"The scene has soft, neutral illumination.",yes
+C08,AP,,AP,1,0,5,8,,The cup initially on the left is scarlet red.,yes
+C08,AP,,AP,2,0,5,8,,The small ball is emerald green.,yes
+C08,AP,,AP,3,0,5,8,,The cups have satin molded-plastic surfaces.,yes
+C08,AP,,AP,4,0,5,8,,The ball has a glossy-resin surface.,yes
+D01,ISR,,ISR_drive,action,0,5,8,car,The car drives around the bend relative to the fixed road.,yes
+D01,ISR,,ISR_drive,outcome,0,5,8,car,It has progressed along the road while remaining on the pavement.,yes
+D01,ISR,,ISR_drive,participants,0,5,8,car,"[""car""]",yes
+D01,LRA,,LRA_drive,action,0,2.8,12,car,The car advances along the curved road relative to the lane markings while the camera follows it.,yes
+D01,LRA,,LRA_drive,details,0,2.8,12,car,The car advances along the curved road relative to the lane markings while the camera follows it.,yes
+D01,LRA,,LRA_continue,action,2.2,5,12,car,"The car continues around the road bend, staying on the roadway.",yes
+D01,LRA,,LRA_continue,details,2.2,5,12,car,"The car continues around the road bend, staying on the roadway.",yes
+D01,EndState,,EndState,1,4.5,5,4,car,The car remains upright on the road.,yes
+D01,EndState,,EndState,2,4.5,5,4,car,The road and roadside scenery remain fixed in the world.,yes
+D01,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The car has brick-red bodywork.,yes
+D01,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The car has one broad ivory stripe along the centre of its hood and roof.,yes
+D01,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The car has painted-metal surfaces.,yes
+D01,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The tires have rubber surfaces.,yes
+D01,RF_fullframe,Texture,RF_fullframe,5,0,5,12,,The painted car surfaces are glossy.,yes
+D01,RF_fullframe,Environment,RF_fullframe,6,0,5,12,,The road has dark charcoal asphalt with white markings.,yes
+D01,RF_fullframe,Lighting,RF_fullframe,7,0,5,12,,"The scene has soft, neutral illumination.",yes
+D01,AP,,AP,1,0,5,8,,The car has brick-red bodywork.,yes
+D01,AP,,AP,2,0,5,8,,The car has one broad ivory stripe along the centre of its hood and roof.,yes
+D01,AP,,AP,3,0,5,8,,The car has glossy painted-metal surfaces.,yes
+D01,AP,,AP,4,0,5,8,,The tires have a black-rubber appearance.,yes
+D02,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The upper tank is warm beige.,yes
+D02,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The tank has one broad navy-blue horizontal band around its middle.,yes
+D02,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The tank has painted-metal surfaces.,yes
+D02,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The fixed support shaft has a concrete appearance.,yes
+D02,RF_fullframe,Texture,RF_fullframe,5,0,5,12,,The painted tank surface has a matte finish.,yes
+D02,RF_fullframe,Environment,RF_fullframe,6,0,5,12,,The surrounding houses have muted-red roofs and cream walls.,yes
+D02,RF_fullframe,Lighting,RF_fullframe,7,0,5,12,,"The scene has soft, neutral illumination.",yes
+D02,AP,,AP,1,0,5,8,,The upper tank is warm beige.,yes
+D02,AP,,AP,2,0,5,8,,The tank has one broad navy-blue horizontal band around its middle.,yes
+D02,AP,,AP,3,0,5,8,,The tank has a matte painted-metal finish.,yes
+D02,AP,,AP,4,0,5,8,,The fixed support shaft has a concrete appearance.,yes
+D03,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The wall-mounted service boxes have cobalt-blue housings.,yes
+D03,RF_fullframe,Color,RF_fullframe,2,0,5,12,,Each service box has one broad ivory horizontal band around its middle.,yes
+D03,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The service boxes have painted-metal surfaces.,yes
+D03,RF_fullframe,Environment,RF_fullframe,4,0,5,12,,The tunnel walls have warm-beige cast-concrete surfaces.,yes
+D03,RF_fullframe,Lighting,RF_fullframe,5,0,5,12,,"The scene has soft, neutral illumination.",yes
+D03,AP,,AP,1,0,5,8,,The wall-mounted service boxes have cobalt-blue housings.,yes
+D03,AP,,AP,2,0,5,8,,Each service box has one broad ivory horizontal band around its middle.,yes
+D03,AP,,AP,3,0,5,8,,The service boxes have painted-metal surfaces.,yes
+D03,AP,,AP,4,0,5,8,,The tunnel walls have warm-beige cast-concrete surfaces.,yes
+D04,ISR,,ISR_spin,action,0,5,8,turbine_rotors,The wind turbine rotors rotate on their stationary towers.,yes
+D04,ISR,,ISR_spin,outcome,0,5,8,turbine_rotors,The blades have changed angular positions without detaching from the hubs.,yes
+D04,ISR,,ISR_spin,participants,0,5,8,turbine_rotors,"[""turbine_rotors""]",yes
+D04,LRA,,LRA_rotate,action,0,2.8,12,turbine_rotors,The turbine rotors turn around their hubs relative to the stationary towers.,yes
+D04,LRA,,LRA_rotate,details,0,2.8,12,turbine_rotors,The turbine rotors turn around their hubs relative to the stationary towers.,yes
+D04,LRA,,LRA_continue,action,2.2,5,12,turbine_rotors,The rotor blades continue sweeping around their hubs while the towers stay fixed.,yes
+D04,LRA,,LRA_continue,details,2.2,5,12,turbine_rotors,The rotor blades continue sweeping around their hubs while the towers stay fixed.,yes
+D04,EndState,,EndState,1,4.5,5,4,turbine_rotors,The turbines remain mounted on their towers.,yes
+D04,EndState,,EndState,2,4.5,5,4,turbine_rotors,The tower bases remain fixed to the ground.,yes
+D04,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The turbine towers are white.,yes
+D04,RF_fullframe,Color,RF_fullframe,2,0,5,12,,Each tower has a broad cobalt-blue horizontal band around its middle.,yes
+D04,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The turbine surfaces have a painted-metal appearance.,yes
+D04,RF_fullframe,Color,RF_fullframe,4,0,5,12,,The nacelles are golden yellow.,yes
+D04,RF_fullframe,Environment,RF_fullframe,5,0,5,12,,The ground vegetation is green.,yes
+D04,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+D04,AP,,AP,1,0,5,8,,The turbine towers are white.,yes
+D04,AP,,AP,2,0,5,8,,Each tower has a broad cobalt-blue horizontal band around its middle.,yes
+D04,AP,,AP,3,0,5,8,,The turbine surfaces have a painted-metal appearance.,yes
+D04,AP,,AP,4,0,5,8,,The nacelles are golden yellow.,yes
+D05,ISR,,ISR_departure,action,0,5,8,boats,The followed yacht leaves the dock and travels through open water.,yes
+D05,ISR,,ISR_departure,outcome,0,5,8,boats,The yacht is farther from its berth while the other docked yachts remain moored.,yes
+D05,ISR,,ISR_departure,participants,0,5,8,boats,"[""boats""]",yes
+D05,LRA,,LRA_depart,action,0,2.8,12,boats,The followed yacht moves away from the dock into the harbour while another vessel crosses farther out.,yes
+D05,LRA,,LRA_depart,details,0,2.8,12,boats,The followed yacht moves away from the dock into the harbour while another vessel crosses farther out.,yes
+D05,LRA,,LRA_navigate,action,2.2,5,12,boats,The moving vessels continue through the harbour as the berthed yachts remain moored.,yes
+D05,LRA,,LRA_navigate,details,2.2,5,12,boats,The moving vessels continue through the harbour as the berthed yachts remain moored.,yes
+D05,EndState,,EndState,1,4.5,5,4,boats,The followed yacht is out on the water away from its starting berth.,yes
+D05,EndState,,EndState,2,4.5,5,4,boats,The other yachts remain at the docks.,yes
+D05,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The departing yacht followed by the camera has a blue hull.,yes
+D05,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The boat cabin roofs have a broad navy-blue longitudinal stripe along the centre.,yes
+D05,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The boats have painted surfaces.,yes
+D05,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The boat windows have dark glazing.,yes
+D05,RF_fullframe,Environment,RF_fullframe,5,0,5,12,,The harbor water is deep blue-green.,yes
+D05,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+D05,AP,,AP,1,0,5,8,,The departing yacht followed by the camera has a blue hull.,yes
+D05,AP,,AP,2,0,5,8,,The boat cabin roofs have a broad navy-blue longitudinal stripe along the centre.,yes
+D05,AP,,AP,3,0,5,8,,The boats have painted surfaces.,yes
+D05,AP,,AP,4,0,5,8,,The boat windows have dark glazing.,yes
+D06,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The dining-chair seats and backs are teal.,yes
+D06,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The rectangular artwork has a navy-blue face.,yes
+D06,RF_fullframe,Texture,RF_fullframe,3,0,5,12,,The chair upholstery has woven-fabric texture.,yes
+D06,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The artwork has a painted surface.,yes
+D06,RF_fullframe,Environment,RF_fullframe,5,0,5,12,,The interior walls are warm off-white.,yes
+D06,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+D06,AP,,AP,1,0,5,8,,The dining-chair seats and backs are teal.,yes
+D06,AP,,AP,2,0,5,8,,The rectangular artwork has a navy-blue face.,yes
+D06,AP,,AP,3,0,5,8,,The chair upholstery has woven-fabric texture.,yes
+D06,AP,,AP,4,0,5,8,,The artwork has a matte painted surface.,yes
+D07,ISR,,ISR_travel,action,0,5,8,train,The train advances along the curved elevated railway.,yes
+D07,ISR,,ISR_travel,outcome,0,5,8,train,Its locomotive and coaches remain on the track and connected in order.,yes
+D07,ISR,,ISR_travel,participants,0,5,8,train,"[""train""]",yes
+D07,LRA,,LRA_travel,action,0,2.8,12,train,The locomotive pulls its connected coaches along the curved viaduct relative to the rails and bridge piers.,yes
+D07,LRA,,LRA_travel,details,0,2.8,12,train,The locomotive pulls its connected coaches along the curved viaduct relative to the rails and bridge piers.,yes
+D07,LRA,,LRA_continue,action,2.2,5,12,train,The connected train continues following the curved track around the viaduct.,yes
+D07,LRA,,LRA_continue,details,2.2,5,12,train,The connected train continues following the curved track around the viaduct.,yes
+D07,EndState,,EndState,1,4.5,5,4,train,The train remains on the railway viaduct.,yes
+D07,EndState,,EndState,2,4.5,5,4,train,The coaches remain connected behind the locomotive.,yes
+D07,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The locomotive and passenger coaches have deep-green body panels.,yes
+D07,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The train has a broad ivory waist stripe below the windows.,yes
+D07,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The train body panels have painted-metal surfaces.,yes
+D07,RF_fullframe,Texture,RF_fullframe,4,0,5,12,,The train roofs have a satin-metal finish.,yes
+D07,RF_fullframe,Environment,RF_fullframe,5,0,5,12,,The railway viaduct is neutral-gray concrete.,yes
+D07,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+D07,AP,,AP,1,0,5,8,,The locomotive and passenger coaches have deep-green body panels.,yes
+D07,AP,,AP,2,0,5,8,,The train has a broad ivory waist stripe below the windows.,yes
+D07,AP,,AP,3,0,5,8,,The train body panels have painted-metal surfaces.,yes
+D07,AP,,AP,4,0,5,8,,The train roofs have a satin-metal finish.,yes
+D08,ISR,,ISR_rides,action,0,5,8,ride_vehicles,The amusement rides move relative to their fixed support structures.,yes
+D08,ISR,,ISR_rides,outcome,0,5,8,ride_vehicles,"The gondolas, coaster cars and tower seats change positions while remaining attached to their respective rides.",yes
+D08,ISR,,ISR_rides,participants,0,5,8,ride_vehicles,"[""ride_vehicles""]",yes
+D08,LRA,,LRA_wheel,action,0,5,12,ride_vehicles,The Ferris wheel rotates and carries its gondolas around the rim.,yes
+D08,LRA,,LRA_wheel,details,0,5,12,ride_vehicles,The Ferris wheel rotates and carries its gondolas around the rim.,yes
+D08,LRA,,LRA_coaster,action,0,5,12,ride_vehicles,The roller-coaster train advances along its elevated track.,yes
+D08,LRA,,LRA_coaster,details,0,5,12,ride_vehicles,The roller-coaster train advances along its elevated track.,yes
+D08,LRA,,LRA_tower,action,0,5,12,ride_vehicles,The drop-tower seat carriage changes height along the vertical tower.,yes
+D08,LRA,,LRA_tower,details,0,5,12,ride_vehicles,The drop-tower seat carriage changes height along the vertical tower.,yes
+D08,EndState,,EndState,1,4.5,5,4,ride_vehicles,The amusement rides remain assembled on their support structures.,yes
+D08,EndState,,EndState,2,4.5,5,4,ride_vehicles,The ride vehicles remain attached to their intended routes.,yes
+D08,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The Ferris-wheel gondolas have coral-red lower shells.,yes
+D08,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The roller-coaster cars have golden-yellow bodies.,yes
+D08,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The cabin and vehicle panels have painted surfaces.,yes
+D08,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The ride seats have molded-plastic surfaces.,yes
+D08,RF_fullframe,Environment,RF_fullframe,5,0,5,12,,The pathways are light gray.,yes
+D08,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+D08,AP,,AP,1,0,5,8,,The Ferris-wheel gondolas have coral-red lower shells.,yes
+D08,AP,,AP,2,0,5,8,,The roller-coaster cars have golden-yellow bodies.,yes
+D08,AP,,AP,3,0,5,8,,The cabin and vehicle panels have painted surfaces.,yes
+D08,AP,,AP,4,0,5,8,,The ride seats have molded-plastic surfaces.,yes
+E01,ISR,,ISR_pickup,action,0,2.9499999999999997,8,robot_and_payload,The robot lowers its gripper to the cassette and lifts it.,yes
+E01,ISR,,ISR_pickup,outcome,0,2.9499999999999997,8,robot_and_payload,The cassette is clear of the pickup table and held by the gripper.,yes
+E01,ISR,,ISR_pickup,participants,0,2.9499999999999997,8,robot_and_payload,"[""robot_and_payload""]",yes
+E01,ISR,,ISR_carry,action,1.4500000000000002,5,8,robot_and_payload,The arm changes its joint configuration while carrying the cassette.,yes
+E01,ISR,,ISR_carry,outcome,1.4500000000000002,5,8,robot_and_payload,The cassette stays attached to the gripper as it is moved away from the pickup position.,yes
+E01,ISR,,ISR_carry,participants,1.4500000000000002,5,8,robot_and_payload,"[""robot_and_payload""]",yes
+E01,LRA,,LRA_reach,action,0,1.9000000000000001,12,robot_and_payload,The robot bends its shoulder and elbow to lower the gripper toward the roller cassette on the table.,yes
+E01,LRA,,LRA_reach,details,0,1.9000000000000001,12,robot_and_payload,The robot bends its shoulder and elbow to lower the gripper toward the roller cassette on the table.,yes
+E01,LRA,,LRA_lift,action,1.3,3.0999999999999996,12,robot_and_payload,The gripper grasps and lifts the roller cassette clear of the table.,yes
+E01,LRA,,LRA_lift,details,1.3,3.0999999999999996,12,robot_and_payload,The gripper grasps and lifts the roller cassette clear of the table.,yes
+E01,LRA,,LRA_carry,action,2.5,5,12,robot_and_payload,The articulated arm rotates and reorients the raised cassette while its flexible elbow cable bends.,yes
+E01,LRA,,LRA_carry,details,2.5,5,12,robot_and_payload,The articulated arm rotates and reorients the raised cassette while its flexible elbow cable bends.,yes
+E01,EndState,,EndState,1,4.5,5,4,robot_and_payload,The cassette is held off the pickup table.,yes
+E01,EndState,,EndState,2,4.5,5,4,robot_and_payload,The arm links remain connected at their joints.,yes
+E01,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The upper-arm and forearm casings are safety orange.,yes
+E01,RF_fullframe,Color,RF_fullframe,2,0,5,12,,Each arm casing has a broad ivory band around its middle.,yes
+E01,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The arm casings have painted-metal surfaces.,yes
+E01,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The flexible elbow cable has a rubber jacket.,yes
+E01,RF_fullframe,Texture,RF_fullframe,5,0,5,12,,The cable jacket has a matte finish.,yes
+E01,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+E01,AP,,AP,1,0,5,8,,The upper-arm and forearm casings are safety orange.,yes
+E01,AP,,AP,2,0,5,8,,Each arm casing has a broad ivory band around its middle.,yes
+E01,AP,,AP,3,0,5,8,,The arm casings have painted-metal surfaces.,yes
+E01,AP,,AP,4,0,5,8,,The flexible elbow cable has a matte-rubber jacket.,yes
+E02,ISR,,ISR_cycle,action,0,3.25,8,scissor_lift,The scissor mechanism raises and then lowers the platform.,yes
+E02,ISR,,ISR_cycle,outcome,0,3.25,8,scissor_lift,The platform changes height while staying level above its base.,yes
+E02,ISR,,ISR_cycle,participants,0,3.25,8,scissor_lift,"[""scissor_lift""]",yes
+E02,ISR,,ISR_repeat,action,2.95,5,8,scissor_lift,The lift repeats the up-and-down cycle.,yes
+E02,ISR,,ISR_repeat,outcome,2.95,5,8,scissor_lift,The platform returns toward a low height without disconnecting the linkage.,yes
+E02,ISR,,ISR_repeat,participants,2.95,5,8,scissor_lift,"[""scissor_lift""]",yes
+E02,LRA,,LRA_raise,action,0,1.9000000000000001,12,scissor_lift,The crossed scissor links open and raise the level platform.,yes
+E02,LRA,,LRA_raise,details,0,1.9000000000000001,12,scissor_lift,The crossed scissor links open and raise the level platform.,yes
+E02,LRA,,LRA_lower,action,1.3,3.4,12,scissor_lift,The scissor links close and lower the platform.,yes
+E02,LRA,,LRA_lower,details,1.3,3.4,12,scissor_lift,The scissor links close and lower the platform.,yes
+E02,LRA,,LRA_raise_again,action,2.8000000000000003,4.6,12,scissor_lift,The lift opens again and raises the platform.,yes
+E02,LRA,,LRA_raise_again,details,2.8000000000000003,4.6,12,scissor_lift,The lift opens again and raises the platform.,yes
+E02,LRA,,LRA_lower_again,action,4.0,5,12,scissor_lift,The platform returns toward a low position as the scissor links close.,yes
+E02,LRA,,LRA_lower_again,details,4.0,5,12,scissor_lift,The platform returns toward a low position as the scissor links close.,yes
+E02,EndState,,EndState,1,4.5,5,4,scissor_lift,The platform is near a low position above the base.,yes
+E02,EndState,,EndState,2,4.5,5,4,scissor_lift,The crossed arms remain connected at their pivots.,yes
+E02,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The lift platform is vivid orange.,yes
+E02,RF_fullframe,Color,RF_fullframe,2,0,5,12,,Each scissor arm has a broad ivory band around its middle.,yes
+E02,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The platform and arms have painted-steel surfaces.,yes
+E02,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The hydraulic hoses have rubber jackets.,yes
+E02,RF_fullframe,Texture,RF_fullframe,5,0,5,12,,The hydraulic-hose jackets have a matte finish.,yes
+E02,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+E02,AP,,AP,1,0,5,8,,The lift platform is vivid orange.,yes
+E02,AP,,AP,2,0,5,8,,Each scissor arm has a broad ivory band around its middle.,yes
+E02,AP,,AP,3,0,5,8,,The platform and arms have painted-steel surfaces.,yes
+E02,AP,,AP,4,0,5,8,,The hydraulic hoses have matte-rubber jackets.,yes
+E03,ISR,,ISR_unfold,action,0,5,8,umbrella,The ribs spread and unfold the canopy.,yes
+E03,ISR,,ISR_unfold,outcome,0,5,8,umbrella,The canopy is broadly open above the shaft.,yes
+E03,ISR,,ISR_unfold,participants,0,5,8,umbrella,"[""umbrella""]",yes
+E03,LRA,,LRA_closed,action,0,1.3,12,umbrella,The canopy begins in a narrow folded configuration around the shaft.,yes
+E03,LRA,,LRA_closed,details,0,1.3,12,umbrella,The canopy begins in a narrow folded configuration around the shaft.,yes
+E03,LRA,,LRA_open,action,0.7,4.1,12,umbrella,The ribs spread and the pleated canopy widens outward from the shaft.,yes
+E03,LRA,,LRA_open,details,0.7,4.1,12,umbrella,The ribs spread and the pleated canopy widens outward from the shaft.,yes
+E03,LRA,,LRA_expanded,action,3.5,5,12,umbrella,The umbrella finishes opening into a broad canopy and remains open.,yes
+E03,LRA,,LRA_expanded,details,3.5,5,12,umbrella,The umbrella finishes opening into a broad canopy and remains open.,yes
+E03,EndState,,EndState,1,4.5,5,4,umbrella,The umbrella canopy is open.,yes
+E03,EndState,,EndState,2,4.5,5,4,umbrella,The canopy remains attached to the ribs and central shaft.,yes
+E03,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The umbrella canopy is egg-yolk yellow.,yes
+E03,RF_fullframe,Color,RF_fullframe,2,0,5,12,,"The canopy has a broad navy-blue band near the outer hem, with a narrow yellow edge beyond it.",yes
+E03,RF_fullframe,Texture,RF_fullframe,3,0,5,12,,The canopy has tightly woven polyester texture.,yes
+E03,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The ribs have a stainless-steel appearance.,yes
+E03,RF_fullframe,Lighting,RF_fullframe,5,0,5,12,,"The scene has soft, neutral illumination.",yes
+E03,AP,,AP,1,0,5,8,,The umbrella canopy is egg-yolk yellow.,yes
+E03,AP,,AP,2,0,5,8,,"The canopy has a broad navy-blue band near the outer hem, with a narrow yellow edge beyond it.",yes
+E03,AP,,AP,3,0,5,8,,The canopy has tightly woven polyester texture.,yes
+E03,AP,,AP,4,0,5,8,,The ribs have a stainless-steel appearance.,yes
+E04,ISR,,ISR_flutter,action,0,5,8,curtains,The curtain fabric deforms and sways in front of the window.,yes
+E04,ISR,,ISR_flutter,outcome,0,5,8,curtains,Its folds and lower hems change shape while the top edges remain attached.,yes
+E04,ISR,,ISR_flutter,participants,0,5,8,curtains,"[""curtains""]",yes
+E04,LRA,,LRA_billow,action,0,2.8,12,curtains,The two curtain panels billow away from the window and form moving folds while their upper edges remain supported.,yes
+E04,LRA,,LRA_billow,details,0,2.8,12,curtains,The two curtain panels billow away from the window and form moving folds while their upper edges remain supported.,yes
+E04,LRA,,LRA_continue,action,2.2,5,12,curtains,"The curtains continue swaying and folding, alternately covering and revealing parts of the window.",yes
+E04,LRA,,LRA_continue,details,2.2,5,12,curtains,"The curtains continue swaying and folding, alternately covering and revealing parts of the window.",yes
+E04,EndState,,EndState,1,4.5,5,4,curtains,The curtains remain suspended from their upper support.,yes
+E04,EndState,,EndState,2,4.5,5,4,curtains,The panels retain a continuous fabric surface.,yes
+E04,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The curtain fabric is warm ivory.,yes
+E04,RF_fullframe,Color,RF_fullframe,2,0,5,12,,Each curtain panel has three broad navy-blue vertical stripes from top to bottom.,yes
+E04,RF_fullframe,Texture,RF_fullframe,3,0,5,12,,The curtains have sheer-linen texture.,yes
+E04,RF_fullframe,Environment,RF_fullframe,4,0,5,12,,The walls have a matte-plaster texture.,yes
+E04,RF_fullframe,Material,RF_fullframe,5,0,5,12,,The curtains have a linen-fabric appearance.,yes
+E04,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+E04,AP,,AP,1,0,5,8,,The curtain fabric is warm ivory.,yes
+E04,AP,,AP,2,0,5,8,,Each curtain panel has three broad navy-blue vertical stripes from top to bottom.,yes
+E04,AP,,AP,3,0,5,8,,The curtains have sheer-linen texture.,yes
+E05,ISR,,ISR_waves,action,0,5,8,ropes,The held rope ends move and generate travelling waves.,yes
+E05,ISR,,ISR_waves,outcome,0,5,8,ropes,The ropes have changing curved shapes along their lengths while remaining continuous.,yes
+E05,ISR,,ISR_waves,participants,0,5,8,ropes,"[""ropes""]",yes
+E05,LRA,,LRA_waves,action,0,2.8,12,ropes,The athlete drives alternating waves along the two ropes by moving their held ends.,yes
+E05,LRA,,LRA_waves,details,0,2.8,12,ropes,The athlete drives alternating waves along the two ropes by moving their held ends.,yes
+E05,LRA,,LRA_continue,action,2.2,5,12,ropes,Waves continue propagating along the flexible ropes toward their far ends.,yes
+E05,LRA,,LRA_continue,details,2.2,5,12,ropes,Waves continue propagating along the flexible ropes toward their far ends.,yes
+E05,EndState,,EndState,1,4.5,5,4,ropes,Both ropes remain continuous.,yes
+E05,EndState,,EndState,2,4.5,5,4,ropes,The athlete still holds the near ends of the ropes.,yes
+E05,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The main rope fibre is tan.,yes
+E05,RF_fullframe,Color,RF_fullframe,2,0,5,12,,Each rope has three broad navy-blue sections spaced along its length.,yes
+E05,RF_fullframe,Texture,RF_fullframe,3,0,5,12,,The ropes have braided-fibre texture.,yes
+E05,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The grips at the athlete end have rubber surfaces.,yes
+E05,RF_fullframe,Environment,RF_fullframe,5,0,5,12,,The gym floor is neutral gray.,yes
+E05,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+E05,AP,,AP,1,0,5,8,,The main rope fibre is tan.,yes
+E05,AP,,AP,2,0,5,8,,Each rope has three broad navy-blue sections spaced along its length.,yes
+E05,AP,,AP,3,0,5,8,,The ropes have braided-fibre texture.,yes
+E05,AP,,AP,4,0,5,8,,The grips at the athlete end have a black-rubber appearance.,yes
+E06,ISR,,ISR_squeeze,action,0,2.9499999999999997,8,sponge_and_basin,The sponge compresses and then rebounds.,yes
+E06,ISR,,ISR_squeeze,outcome,0,2.9499999999999997,8,sponge_and_basin,Its width recovers after the squeeze.,yes
+E06,ISR,,ISR_squeeze,participants,0,2.9499999999999997,8,sponge_and_basin,"[""sponge_and_basin""]",yes
+E06,ISR,,ISR_water,action,2.65,5,8,sponge_and_basin,The sponge is squeezed again and releases droplets toward the basin.,yes
+E06,ISR,,ISR_water,outcome,2.65,5,8,sponge_and_basin,Droplets fall below the sponge into the receiving area.,yes
+E06,ISR,,ISR_water,participants,2.65,5,8,sponge_and_basin,"[""sponge_and_basin""]",yes
+E06,LRA,,LRA_compress,action,0,1.9000000000000001,12,sponge_and_basin,The sponge narrows as it is squeezed over the receiving basin.,yes
+E06,LRA,,LRA_compress,details,0,1.9000000000000001,12,sponge_and_basin,The sponge narrows as it is squeezed over the receiving basin.,yes
+E06,LRA,,LRA_release,action,1.3,3.0999999999999996,12,sponge_and_basin,The sponge expands back toward its wider shape after compression.,yes
+E06,LRA,,LRA_release,details,1.3,3.0999999999999996,12,sponge_and_basin,The sponge expands back toward its wider shape after compression.,yes
+E06,LRA,,LRA_compress_again,action,2.5,4.3999999999999995,12,sponge_and_basin,The sponge narrows again and droplets fall toward the basin.,yes
+E06,LRA,,LRA_compress_again,details,2.5,4.3999999999999995,12,sponge_and_basin,The sponge narrows again and droplets fall toward the basin.,yes
+E06,LRA,,LRA_recover,action,3.8,5,12,sponge_and_basin,The sponge expands again above the basin.,yes
+E06,LRA,,LRA_recover,details,3.8,5,12,sponge_and_basin,The sponge expands again above the basin.,yes
+E06,EndState,,EndState,1,4.5,5,4,sponge_and_basin,The sponge has expanded toward its wider shape.,yes
+E06,EndState,,EndState,2,4.5,5,4,sponge_and_basin,The basin remains beneath the sponge.,yes
+E06,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The sponge is warm yellow.,yes
+E06,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The sponge has a broad navy-blue band around the middle of its side faces.,yes
+E06,RF_fullframe,Texture,RF_fullframe,3,0,5,12,,The sponge has an open-cell porous texture.,yes
+E06,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The receiving basin has a ceramic surface.,yes
+E06,RF_fullframe,Lighting,RF_fullframe,5,0,5,12,,"The scene has soft, neutral illumination.",yes
+E06,AP,,AP,1,0,5,8,,The sponge is warm yellow.,yes
+E06,AP,,AP,2,0,5,8,,The sponge has a broad navy-blue band around the middle of its side faces.,yes
+E06,AP,,AP,3,0,5,8,,The sponge has an open-cell porous texture.,yes
+E07,ISR,,ISR_linkage,action,0,5,8,walking_links,The walking mechanism changes configuration through rotations at its joints.,yes
+E07,ISR,,ISR_linkage,outcome,0,5,8,walking_links,The links retain their lengths and connections while the legs change posture.,yes
+E07,ISR,,ISR_linkage,participants,0,5,8,walking_links,"[""walking_links""]",yes
+E07,LRA,,LRA_articulate,action,0,2.8,12,walking_links,The connected walking links pivot at their joints and cycle through changing leg configurations.,yes
+E07,LRA,,LRA_articulate,details,0,2.8,12,walking_links,The connected walking links pivot at their joints and cycle through changing leg configurations.,yes
+E07,LRA,,LRA_continue,action,2.2,5,12,walking_links,"The linkage continues its articulated cycle, with the legs changing posture while the rigid links remain connected.",yes
+E07,LRA,,LRA_continue,details,2.2,5,12,walking_links,"The linkage continues its articulated cycle, with the legs changing posture while the rigid links remain connected.",yes
+E07,EndState,,EndState,1,4.5,5,4,walking_links,The walking links remain connected at the joints.,yes
+E07,EndState,,EndState,2,4.5,5,4,walking_links,The rigid links retain their shape.,yes
+E07,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The main walking links are red.,yes
+E07,RF_fullframe,Color,RF_fullframe,2,0,5,12,,Each main walking link has a broad ivory band around its middle.,yes
+E07,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The links have painted-metal surfaces.,yes
+E07,RF_fullframe,Texture,RF_fullframe,4,0,5,12,,The joint surfaces have a satin finish.,yes
+E07,RF_fullframe,Environment,RF_fullframe,5,0,5,12,,The supporting ground has a light-oak-brown wood finish.,yes
+E07,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+E07,AP,,AP,1,0,5,8,,The main walking links are red.,yes
+E07,AP,,AP,2,0,5,8,,Each main walking link has a broad ivory band around its middle.,yes
+E07,AP,,AP,3,0,5,8,,The links have painted-metal surfaces.,yes
+E07,AP,,AP,4,0,5,8,,The joints have satin-steel surfaces.,yes
+E08,ISR,,ISR_feed,action,0,5,8,textile,A continuous textile web is transported through the rollers.,yes
+E08,ISR,,ISR_feed,outcome,0,5,8,textile,The web remains continuous as its material advances and its suspended section bends.,yes
+E08,ISR,,ISR_feed,participants,0,5,8,textile,"[""textile""]",yes
+E08,LRA,,LRA_feed,action,0,2.8,12,textile,The textile web advances through the rollers while bending into a hanging loop between supports.,yes
+E08,LRA,,LRA_feed,details,0,2.8,12,textile,The textile web advances through the rollers while bending into a hanging loop between supports.,yes
+E08,LRA,,LRA_continue,action,2.2,5,12,textile,The fabric continues feeding through the machine while its hanging section flexes and the rollers turn.,yes
+E08,LRA,,LRA_continue,details,2.2,5,12,textile,The fabric continues feeding through the machine while its hanging section flexes and the rollers turn.,yes
+E08,EndState,,EndState,1,4.5,5,4,textile,The textile web remains continuous through the rollers.,yes
+E08,EndState,,EndState,2,4.5,5,4,textile,The machine supports remain fixed around the moving fabric.,yes
+E08,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The fabric is warm ivory.,yes
+E08,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The fabric has a navy-blue longitudinal stripe near each side edge.,yes
+E08,RF_fullframe,Texture,RF_fullframe,3,0,5,12,,The fabric has woven-cotton texture.,yes
+E08,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The rollers have a stainless-steel appearance.,yes
+E08,RF_fullframe,Lighting,RF_fullframe,5,0,5,12,,"The scene has soft, neutral illumination.",yes
+E08,AP,,AP,1,0,5,8,,The fabric is warm ivory.,yes
+E08,AP,,AP,2,0,5,8,,The fabric has a navy-blue longitudinal stripe near each side edge.,yes
+E08,AP,,AP,3,0,5,8,,The fabric has woven-cotton texture.,yes
+E08,AP,,AP,4,0,5,8,,The rollers have a stainless-steel appearance.,yes
+F01,ISR,,ISR_packing,action,0,5,8,chocolates_and_robots,The conveyor feeds chocolate bars to the robot packing stations and the arms transfer bars toward cartons.,yes
+F01,ISR,,ISR_packing,outcome,0,5,8,chocolates_and_robots,Bars reach the packing area while the arms move between the conveyor and cartons.,yes
+F01,ISR,,ISR_packing,participants,0,5,8,chocolates_and_robots,"[""chocolates_and_robots""]",yes
+F01,LRA,,LRA_convey,action,0,5,12,chocolates_and_robots,Chocolate bars advance in two lanes along the conveyor and through the cooling hood.,yes
+F01,LRA,,LRA_convey,details,0,5,12,chocolates_and_robots,Chocolate bars advance in two lanes along the conveyor and through the cooling hood.,yes
+F01,LRA,,LRA_pick,action,0,5,12,chocolates_and_robots,The articulated robot arms reach from the conveyor toward the packing cartons and transfer bars.,yes
+F01,LRA,,LRA_pick,details,0,5,12,chocolates_and_robots,The articulated robot arms reach from the conveyor toward the packing cartons and transfer bars.,yes
+F01,EndState,,EndState,1,4.5,5,4,chocolates_and_robots,Chocolate bars remain in two conveyor lanes.,yes
+F01,EndState,,EndState,2,4.5,5,4,chocolates_and_robots,The robot arms and packing cartons remain at the conveyor output stations.,yes
+F01,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The bars in the conveyor lane nearer the camera at the opening are dark cocoa brown.,yes
+F01,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The bars in the farther conveyor lane at the opening are creamy white chocolate.,yes
+F01,RF_fullframe,Texture,RF_fullframe,3,0,5,12,,The bars have a soft chocolate sheen.,yes
+F01,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The robot arms and conveyor frames have metal surfaces.,yes
+F01,RF_fullframe,Lighting,RF_fullframe,5,0,5,12,,"The scene has soft, neutral illumination.",yes
+F01,AP,,AP,1,0,5,8,,The bars in the conveyor lane nearer the camera at the opening are dark cocoa brown.,yes
+F01,AP,,AP,2,0,5,8,,The bars in the farther conveyor lane at the opening are creamy white chocolate.,yes
+F01,AP,,AP,3,0,5,8,,The bars have a soft chocolate sheen.,yes
+F02,ISR,,ISR_transfer,action,0,5,8,balls_and_figure,The articulated LEGO mechanism lifts and transfers balls.,yes
+F02,ISR,,ISR_transfer,outcome,0,5,8,balls_and_figure,The balls occupy changed receiving or gripper positions while the figure remains assembled.,yes
+F02,ISR,,ISR_transfer,participants,0,5,8,balls_and_figure,"[""balls_and_figure""]",yes
+F02,LRA,,LRA_lift,action,0,2.8,12,balls_and_figure,The articulated LEGO figure and gripper mechanism raise and reposition balls among the receiving stations.,yes
+F02,LRA,,LRA_lift,details,0,2.8,12,balls_and_figure,The articulated LEGO figure and gripper mechanism raise and reposition balls among the receiving stations.,yes
+F02,LRA,,LRA_transfer,action,2.2,5,12,balls_and_figure,"The arms and grippers continue cycling, carrying balls between the mechanism stations.",yes
+F02,LRA,,LRA_transfer,details,2.2,5,12,balls_and_figure,"The arms and grippers continue cycling, carrying balls between the mechanism stations.",yes
+F02,EndState,,EndState,1,4.5,5,4,balls_and_figure,The LEGO figure remains assembled at its joints.,yes
+F02,EndState,,EndState,2,4.5,5,4,balls_and_figure,The balls remain associated with the transfer mechanism rather than floating away.,yes
+F02,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The ball initially farthest left is cobalt blue.,yes
+F02,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The ball initially in the middle is orange.,yes
+F02,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The balls have plastic surfaces.,yes
+F02,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The LEGO parts have molded-ABS surfaces.,yes
+F02,RF_fullframe,Texture,RF_fullframe,5,0,5,12,,The ball surfaces are smooth and glossy.,yes
+F02,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+F02,AP,,AP,1,0,5,8,,The ball initially farthest left is cobalt blue.,yes
+F02,AP,,AP,2,0,5,8,,The ball initially in the middle is orange.,yes
+F02,AP,,AP,3,0,5,8,,The balls have smooth glossy-plastic surfaces.,yes
+F02,AP,,AP,4,0,5,8,,The LEGO parts have glossy molded-ABS surfaces.,yes
+F03,ISR,,ISR_trigger,action,0,2.9499999999999997,8,dominoes,The trigger reaches the distributor and starts a domino cascade.,yes
+F03,ISR,,ISR_trigger,outcome,0,2.9499999999999997,8,dominoes,The distributor has fallen and the field rows begin toppling.,yes
+F03,ISR,,ISR_trigger,participants,0,2.9499999999999997,8,dominoes,"[""dominoes""]",yes
+F03,ISR,,ISR_cascade,action,1.25,5,8,dominoes,The toppling front propagates across the field rows.,yes
+F03,ISR,,ISR_cascade,outcome,1.25,5,8,dominoes,Most of the domino field is down by the end.,yes
+F03,ISR,,ISR_cascade,participants,1.25,5,8,dominoes,"[""dominoes""]",yes
+F03,LRA,,LRA_trigger,action,0,1.7,12,dominoes,The trigger marble travels down the launch path toward the distributor dominoes.,yes
+F03,LRA,,LRA_trigger,details,0,1.7,12,dominoes,The trigger marble travels down the launch path toward the distributor dominoes.,yes
+F03,LRA,,LRA_distribute,action,1.0999999999999999,3.0999999999999996,12,dominoes,The distributor dominoes topple and initiate the field rows.,yes
+F03,LRA,,LRA_distribute,details,1.0999999999999999,3.0999999999999996,12,dominoes,The distributor dominoes topple and initiate the field rows.,yes
+F03,LRA,,LRA_cascade,action,2.5,5,12,dominoes,Toppling spreads across the parallel field rows until most of the field lies down.,yes
+F03,LRA,,LRA_cascade,details,2.5,5,12,dominoes,Toppling spreads across the parallel field rows until most of the field lies down.,yes
+F03,EndState,,EndState,1,4.5,5,4,dominoes,Most field dominoes are toppled.,yes
+F03,EndState,,EndState,2,4.5,5,4,dominoes,Previously toppled dominoes remain down.,yes
+F03,RF_fullframe,Color,RF_fullframe,1,0,5,12,,"The field-domino rows alternate red and deep blue, starting with red in the nearest opening row.",yes
+F03,RF_fullframe,Color,RF_fullframe,2,0,5,12,,Each small field domino has a broad ivory band around its middle.,yes
+F03,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The dominoes have plastic surfaces.,yes
+F03,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The trigger marble has a glass surface.,yes
+F03,RF_fullframe,Texture,RF_fullframe,5,0,5,12,,The domino surfaces are smooth.,yes
+F03,RF_fullframe,Environment,RF_fullframe,6,0,5,12,,The tabletop ramp and raised field platform are light wood brown.,yes
+F03,RF_fullframe,Lighting,RF_fullframe,7,0,5,12,,"The scene has soft, neutral illumination.",yes
+F03,AP,,AP,1,0,5,8,,"The field-domino rows alternate red and deep blue, starting with red in the nearest opening row.",yes
+F03,AP,,AP,2,0,5,8,,Each small field domino has a broad ivory band around its middle.,yes
+F03,AP,,AP,3,0,5,8,,The dominoes have smooth-plastic surfaces.,yes
+F03,AP,,AP,4,0,5,8,,The trigger marble has a polished-glass surface.,yes
+F04,ISR,,ISR_hoist,action,0,3.15,8,container_and_spreader,The crane hoists the container and traverses with it suspended.,yes
+F04,ISR,,ISR_hoist,outcome,0,3.15,8,container_and_spreader,The container is clear of its starting support and shifted toward the receiving vehicle.,yes
+F04,ISR,,ISR_hoist,participants,0,3.15,8,container_and_spreader,"[""container_and_spreader""]",yes
+F04,ISR,,ISR_place,action,2.85,5,8,container_and_spreader,The crane sets the container on the AGV and withdraws its spreader.,yes
+F04,ISR,,ISR_place,outcome,2.85,5,8,container_and_spreader,The container rests on the AGV and is no longer suspended from the crane.,yes
+F04,ISR,,ISR_place,participants,2.85,5,8,container_and_spreader,"[""container_and_spreader""]",yes
+F04,LRA,,LRA_lift,action,0,1.8,12,container_and_spreader,The crane spreader lifts the container clear of its initial support.,yes
+F04,LRA,,LRA_lift,details,0,1.8,12,container_and_spreader,The crane spreader lifts the container clear of its initial support.,yes
+F04,LRA,,LRA_traverse,action,1.2,3.3,12,container_and_spreader,The trolley carries the suspended container laterally toward the receiving AGV.,yes
+F04,LRA,,LRA_traverse,details,1.2,3.3,12,container_and_spreader,The trolley carries the suspended container laterally toward the receiving AGV.,yes
+F04,LRA,,LRA_lower,action,2.7,4.5,12,container_and_spreader,The crane lowers the container onto the receiving AGV.,yes
+F04,LRA,,LRA_lower,details,2.7,4.5,12,container_and_spreader,The crane lowers the container onto the receiving AGV.,yes
+F04,LRA,,LRA_depart,action,3.9000000000000004,5,12,container_and_spreader,The spreader rises clear and the loaded AGV starts moving away.,yes
+F04,LRA,,LRA_depart,details,3.9000000000000004,5,12,container_and_spreader,The spreader rises clear and the loaded AGV starts moving away.,yes
+F04,EndState,,EndState,1,4.5,5,4,container_and_spreader,The transferred container rests on the receiving AGV.,yes
+F04,EndState,,EndState,2,4.5,5,4,container_and_spreader,The spreader is clear above the placed container.,yes
+F04,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The lifted container has a brick-red shell.,yes
+F04,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The lifted container end doors are ivory.,yes
+F04,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The lifted container has painted-steel surfaces.,yes
+F04,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The crane has painted-steel surfaces.,yes
+F04,RF_fullframe,Texture,RF_fullframe,5,0,5,12,,The lifted container shell is corrugated.,yes
+F04,RF_fullframe,Environment,RF_fullframe,6,0,5,12,,The pavement is dark gray asphalt.,yes
+F04,RF_fullframe,Lighting,RF_fullframe,7,0,5,12,,"The scene has soft, neutral illumination.",yes
+F04,AP,,AP,1,0,5,8,,The lifted container has a brick-red shell.,yes
+F04,AP,,AP,2,0,5,8,,The lifted container end doors are ivory.,yes
+F04,AP,,AP,3,0,5,8,,The lifted container has painted-steel surfaces.,yes
+F04,AP,,AP,4,0,5,8,,The crane has painted-steel surfaces.,yes
+F05,ISR,,ISR_hold,action,0,3.65,8,cars_train_and_barriers,The barriers lower and hold road traffic while the train passes.,yes
+F05,ISR,,ISR_hold,outcome,0,3.65,8,cars_train_and_barriers,The waiting cars remain outside the rail path during the train passage.,yes
+F05,ISR,,ISR_hold,participants,0,3.65,8,cars_train_and_barriers,"[""cars_train_and_barriers""]",yes
+F05,ISR,,ISR_release,action,3.35,5,8,cars_train_and_barriers,The barriers reopen after the train has passed.,yes
+F05,ISR,,ISR_release,outcome,3.35,5,8,cars_train_and_barriers,Road vehicles move through the crossing again.,yes
+F05,ISR,,ISR_release,participants,3.35,5,8,cars_train_and_barriers,"[""cars_train_and_barriers""]",yes
+F05,LRA,,LRA_close,action,0,1.4000000000000001,12,cars_train_and_barriers,The lead road car clears the crossing while the barriers lower ahead of the approaching train.,yes
+F05,LRA,,LRA_close,details,0,1.4000000000000001,12,cars_train_and_barriers,The lead road car clears the crossing while the barriers lower ahead of the approaching train.,yes
+F05,LRA,,LRA_train,action,0.8,3.8,12,cars_train_and_barriers,The train traverses the road crossing while the waiting road vehicles remain behind the lowered barriers.,yes
+F05,LRA,,LRA_train,details,0.8,3.8,12,cars_train_and_barriers,The train traverses the road crossing while the waiting road vehicles remain behind the lowered barriers.,yes
+F05,LRA,,LRA_open,action,3.2,4.6,12,cars_train_and_barriers,"After the train clears the crossing, the barriers rise.",yes
+F05,LRA,,LRA_open,details,3.2,4.6,12,cars_train_and_barriers,"After the train clears the crossing, the barriers rise.",yes
+F05,LRA,,LRA_traffic,action,4.0,5,12,cars_train_and_barriers,The waiting road vehicles begin driving across the cleared railway crossing.,yes
+F05,LRA,,LRA_traffic,details,4.0,5,12,cars_train_and_barriers,The waiting road vehicles begin driving across the cleared railway crossing.,yes
+F05,EndState,,EndState,1,4.5,5,4,cars_train_and_barriers,The train has cleared the road crossing.,yes
+F05,EndState,,EndState,2,4.5,5,4,cars_train_and_barriers,Road traffic resumes through the crossing.,yes
+F05,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The train has a deep-blue body.,yes
+F05,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The crossing barriers have red-and-white stripes.,yes
+F05,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The vehicle bodies have painted-metal surfaces.,yes
+F05,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The warning-light lenses have glass surfaces.,yes
+F05,RF_fullframe,Environment,RF_fullframe,5,0,5,12,,The road is charcoal asphalt.,yes
+F05,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+F05,AP,,AP,1,0,5,8,,The train has a deep-blue body.,yes
+F05,AP,,AP,2,0,5,8,,The crossing barriers have red-and-white stripes.,yes
+F05,AP,,AP,3,0,5,8,,The vehicle bodies have painted-metal surfaces.,yes
+F05,AP,,AP,4,0,5,8,,The warning-light lenses have a red-glass appearance.,yes
+F06,ISR,,ISR_pickup,action,0,3.25,8,cartons_and_robot,The robot picks a carton from the conveyor and carries it toward the pallet.,yes
+F06,ISR,,ISR_pickup,outcome,0,3.25,8,cartons_and_robot,The selected carton is held off the conveyor by the gripper.,yes
+F06,ISR,,ISR_pickup,participants,0,3.25,8,cartons_and_robot,"[""cartons_and_robot""]",yes
+F06,ISR,,ISR_stack,action,1.25,5,8,cartons_and_robot,The robot places the carried carton on the pallet.,yes
+F06,ISR,,ISR_stack,outcome,1.25,5,8,cartons_and_robot,The carton remains on the pallet after the gripper moves away.,yes
+F06,ISR,,ISR_stack,participants,1.25,5,8,cartons_and_robot,"[""cartons_and_robot""]",yes
+F06,LRA,,LRA_approach,action,0,1.7,12,cartons_and_robot,The robot moves its gripper toward a carton arriving on the conveyor.,yes
+F06,LRA,,LRA_approach,details,0,1.7,12,cartons_and_robot,The robot moves its gripper toward a carton arriving on the conveyor.,yes
+F06,LRA,,LRA_transfer,action,1.0999999999999999,3.4,12,cartons_and_robot,"The robot grips and lifts a carton, then swings it toward the pallet.",yes
+F06,LRA,,LRA_transfer,details,1.0999999999999999,3.4,12,cartons_and_robot,"The robot grips and lifts a carton, then swings it toward the pallet.",yes
+F06,LRA,,LRA_place,action,2.8000000000000003,5,12,cartons_and_robot,The robot lowers the carton onto the pallet and returns toward the conveyor for another transfer.,yes
+F06,LRA,,LRA_place,details,2.8000000000000003,5,12,cartons_and_robot,The robot lowers the carton onto the pallet and returns toward the conveyor for another transfer.,yes
+F06,EndState,,EndState,1,4.5,5,4,cartons_and_robot,A transferred carton is supported on the pallet.,yes
+F06,EndState,,EndState,2,4.5,5,4,cartons_and_robot,The robot and conveyor remain assembled at the work cell.,yes
+F06,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The cartons have kraft-brown shells.,yes
+F06,RF_fullframe,Color,RF_fullframe,2,0,5,12,,Each carton arriving on the conveyor has a broad deep-blue packing band around its middle.,yes
+F06,RF_fullframe,Texture,RF_fullframe,3,0,5,12,,The carton shells have corrugated-cardboard texture.,yes
+F06,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The pallet has a natural wooden appearance.,yes
+F06,RF_fullframe,Lighting,RF_fullframe,5,0,5,12,,"The scene has soft, neutral illumination.",yes
+F06,AP,,AP,1,0,5,8,,The cartons have kraft-brown shells.,yes
+F06,AP,,AP,2,0,5,8,,Each carton arriving on the conveyor has a broad deep-blue packing band around its middle.,yes
+F06,AP,,AP,3,0,5,8,,The carton shells have corrugated-cardboard texture.,yes
+F07,ISR,,ISR_coasters,action,0,5,8,coaster_trains,The trains advance along the coaster rails through elevation changes and curves.,yes
+F07,ISR,,ISR_coasters,outcome,0,5,8,coaster_trains,The train cars remain connected and on the track at their new positions.,yes
+F07,ISR,,ISR_coasters,participants,0,5,8,coaster_trains,"[""coaster_trains""]",yes
+F07,ISR,,ISR_wheel,action,0,5,8,coaster_trains,The Ferris wheel carries its gondolas around its rim.,yes
+F07,ISR,,ISR_wheel,outcome,0,5,8,coaster_trains,The gondolas change angular positions while remaining attached to the wheel.,yes
+F07,ISR,,ISR_wheel,participants,0,5,8,coaster_trains,"[""coaster_trains""]",yes
+F07,LRA,,LRA_coasters,action,0,5,12,coaster_trains,"Two connected roller-coaster trains travel around the undulating track, passing climbs, crests and curves.",yes
+F07,LRA,,LRA_coasters,details,0,5,12,coaster_trains,"Two connected roller-coaster trains travel around the undulating track, passing climbs, crests and curves.",yes
+F07,LRA,,LRA_wheel,action,0,5,12,coaster_trains,The Ferris wheel rotates independently while the coaster trains move.,yes
+F07,LRA,,LRA_wheel,details,0,5,12,coaster_trains,The Ferris wheel rotates independently while the coaster trains move.,yes
+F07,EndState,,EndState,1,4.5,5,4,coaster_trains,The coaster cars remain connected into trains on the rails.,yes
+F07,EndState,,EndState,2,4.5,5,4,coaster_trains,The Ferris-wheel gondolas remain attached to the wheel.,yes
+F07,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The train initially extending along the left climb has golden-yellow car bodies.,yes
+F07,RF_fullframe,Color,RF_fullframe,2,0,5,12,,The other train initially on the right-hand curve has teal car bodies.,yes
+F07,RF_fullframe,Material,RF_fullframe,3,0,5,12,,The ride bodies and structures have painted surfaces.,yes
+F07,RF_fullframe,Color,RF_fullframe,4,0,5,12,,The rails are blue.,yes
+F07,RF_fullframe,Environment,RF_fullframe,5,0,5,12,,The landscaped ground is green.,yes
+F07,RF_fullframe,Lighting,RF_fullframe,6,0,5,12,,"The scene has soft, neutral illumination.",yes
+F07,AP,,AP,1,0,5,8,,The train initially extending along the left climb has golden-yellow car bodies.,yes
+F07,AP,,AP,2,0,5,8,,The other train initially on the right-hand curve has teal car bodies.,yes
+F07,AP,,AP,3,0,5,8,,The ride bodies and structures have painted surfaces.,yes
+F08,ISR,,ISR_handling,action,0,5,8,packets_and_robot,The articulated robot lifts a packet from the infeed and transfers it to a receiving pocket.,yes
+F08,ISR,,ISR_handling,outcome,0,5,8,packets_and_robot,The packet reaches a receiving pocket as the gripper withdraws.,yes
+F08,ISR,,ISR_handling,participants,0,5,8,packets_and_robot,"[""packets_and_robot""]",yes
+F08,LRA,,LRA_pickup,action,0,2.8,12,packets_and_robot,"The packet-handling arm reaches to the infeed, grips a packet and raises it.",yes
+F08,LRA,,LRA_pickup,details,0,2.8,12,packets_and_robot,"The packet-handling arm reaches to the infeed, grips a packet and raises it.",yes
+F08,LRA,,LRA_transfer,action,2.2,5,12,packets_and_robot,"The arm swings the packet toward a receiving pocket, lowers it and releases it.",yes
+F08,LRA,,LRA_transfer,details,2.2,5,12,packets_and_robot,"The arm swings the packet toward a receiving pocket, lowers it and releases it.",yes
+F08,EndState,,EndState,1,4.5,5,4,packets_and_robot,The robot remains assembled at its joints.,yes
+F08,EndState,,EndState,2,4.5,5,4,packets_and_robot,Transferred packets are supported by receiving pockets.,yes
+F08,RF_fullframe,Color,RF_fullframe,1,0,5,12,,The snack packets have golden-yellow bodies.,yes
+F08,RF_fullframe,Color,RF_fullframe,2,0,5,12,,Each packet has a broad deep-blue horizontal band around its middle.,yes
+F08,RF_fullframe,Texture,RF_fullframe,3,0,5,12,,The packet foil has a satin finish with visible folds.,yes
+F08,RF_fullframe,Material,RF_fullframe,4,0,5,12,,The LEGO robot parts have molded-ABS surfaces.,yes
+F08,RF_fullframe,Lighting,RF_fullframe,5,0,5,12,,"The scene has soft, neutral illumination.",yes
+F08,AP,,AP,1,0,5,8,,The snack packets have golden-yellow bodies.,yes
+F08,AP,,AP,2,0,5,8,,Each packet has a broad deep-blue horizontal band around its middle.,yes
+F08,AP,,AP,3,0,5,8,,The packet foil has a satin finish with visible folds.,yes
+F08,AP,,AP,4,0,5,8,,The LEGO robot parts have glossy molded-ABS surfaces.,yes

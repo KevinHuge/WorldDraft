@@ -1,0 +1,52 @@
+{
+  "case": "B08",
+  "noun": "carton",
+  "gt_root_pattern": "Carton [1-5]",
+  "attributes": [
+    {
+      "entities": [
+        "Carton 1",
+        "Carton 2",
+        "Carton 3",
+        "Carton 4",
+        "Carton 5"
+      ],
+      "surface": "cardboard body excluding label and stripe",
+      "target": "brown",
+      "source": "white",
+      "id": "T1"
+    },
+    {
+      "entities": [
+        "Carton 1",
+        "Carton 2",
+        "Carton 3",
+        "Carton 4",
+        "Carton 5"
+      ],
+      "surface": "vertical stripe beside the side label",
+      "target": "blue",
+      "source": "red",
+      "pattern": "a broad vertical stripe beside a large blank label",
+      "id": "T2"
+    },
+    {
+      "entities": [
+        "Carton 1",
+        "Carton 2",
+        "Carton 3",
+        "Carton 4",
+        "Carton 5"
+      ],
+      "surface": "large blank side label",
+      "target": "white",
+      "source": null,
+      "id": "T3"
+    }
+  ],
+  "notes": [
+    "Target colour authority: target_prompt.txt and appearance.json only; AC colours come from appearance.json AC or AC_recipe. No scene-level contract attributes or material names are used.",
+    "Entity names and hierarchy verified by read-only inspection of the final P2_AA.blend. Attribute selection is fixed before model scoring.",
+    "kraft-brown -> brown; cobalt-blue -> blue; ivory -> white; AC white and red map directly. AC does not specify a conflicting label colour, so label source=null."
+  ]
+}

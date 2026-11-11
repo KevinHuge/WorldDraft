@@ -1,0 +1,138 @@
+{
+  "dataset": "worlddraft",
+  "protocol": "benchmark-literal-ap-gated",
+  "episode": "F08",
+  "files": {
+    "questions": "../qa/questions.csv",
+    "question_provenance": "../qa/provenance.json",
+    "factual_contrasts": "../qa/factual-contrasts.json",
+    "source_material_audit": "../qa/source-material-audit.json",
+    "visibility_gt": "data/gt/F08/gt.json",
+    "entities_gt": "data/gt/entities/F08.json",
+    "target_prompt": "data/scenes/F08/target_prompt.txt",
+    "appearance": "data/scenes/F08/appearance.json"
+  },
+  "judge": {
+    "model": "Qwen/Qwen3.6-27B",
+    "temperature": 0,
+    "enable_thinking": false
+  },
+  "qa": {
+    "groups": {
+      "F08": {
+        "packets": [
+          "Packet 0",
+          "Packet 1",
+          "Packet 2",
+          "Packet 3"
+        ]
+      }
+    },
+    "bindings": {
+      "F08": {
+        "1": {
+          "count_scope": "global"
+        },
+        "2": {
+          "count_scope": "region"
+        },
+        "3": {
+          "count_scope": "region"
+        },
+        "4": {
+          "count_scope": "region"
+        },
+        "5": {
+          "count_scope": "region"
+        },
+        "70": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "71": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "72": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "73": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "74": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "75": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "76": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "77": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        }
+      }
+    },
+    "times_s": [
+      0.0,
+      0.6875,
+      1.4375,
+      2.125,
+      2.875,
+      3.5625,
+      4.3125,
+      5.0
+    ],
+    "count_times_s": [
+      0.0,
+      2.125,
+      5.0
+    ],
+    "crop_side": 224,
+    "rf_sampling": "one frame per question; max GT visible mask area, earliest tie; scene questions use first frame",
+    "count_scoring": "exact_count_accuracy_global_and_local_separate",
+    "crop": "gt_bbox",
+    "binary_answers": [
+      "yes",
+      "no"
+    ],
+    "count_answers": "nonnegative_integer",
+    "entity_labels": {
+      "Packet 0": "packet",
+      "Packet 1": "packet",
+      "Packet 2": "packet",
+      "Packet 3": "packet"
+    },
+    "global_count_view": "full_frame",
+    "visibility_from_masks": true,
+    "entity_mapping_audit": {
+      "sparse_only": [],
+      "dense_only": [
+        "robot_arm"
+      ],
+      "policy": "Sparse visible instance masks define regions and count units. Dense-only objects use named full-frame RF questions; no amodal bbox substitutes for visibility."
+    }
+  }
+}

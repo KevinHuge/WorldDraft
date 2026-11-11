@@ -1,0 +1,67 @@
+{
+  "case": "B03",
+  "noun": "bowling pin or bowling ball",
+  "gt_root_pattern": "B03 \\| (?:pin \\d{2}|bowling ball)",
+  "attributes": [
+    {
+      "entities": [
+        "B03 | bowling ball"
+      ],
+      "surface": "ball body",
+      "target": "blue",
+      "source": "red",
+      "id": "T1"
+    },
+    {
+      "entities": [
+        "B03 | pin 01"
+      ],
+      "surface": "neck bands",
+      "target": "blue",
+      "source": "red",
+      "pattern": "two broad rings around the neck",
+      "id": "T2"
+    },
+    {
+      "entities": [
+        "B03 | pin 02",
+        "B03 | pin 03",
+        "B03 | pin 04",
+        "B03 | pin 05",
+        "B03 | pin 06",
+        "B03 | pin 07",
+        "B03 | pin 08",
+        "B03 | pin 09",
+        "B03 | pin 10"
+      ],
+      "surface": "neck bands",
+      "target": "red",
+      "source": "blue",
+      "pattern": "two broad rings around the neck",
+      "id": "T3"
+    },
+    {
+      "entities": [
+        "B03 | pin 01",
+        "B03 | pin 02",
+        "B03 | pin 03",
+        "B03 | pin 04",
+        "B03 | pin 05",
+        "B03 | pin 06",
+        "B03 | pin 07",
+        "B03 | pin 08",
+        "B03 | pin 09",
+        "B03 | pin 10"
+      ],
+      "surface": "pin body excluding neck bands",
+      "target": "white",
+      "source": null,
+      "id": "T4"
+    }
+  ],
+  "notes": [
+    "Target colour authority: target_prompt.txt and appearance.json only; AC colours come from appearance.json AC or AC_recipe. No scene-level contract attributes or material names are used.",
+    "Entity names and hierarchy verified by read-only inspection of the final P2_AA.blend. Attribute selection is fixed before model scoring.",
+    "deep navy/cobalt-blue -> blue; red -> red; white -> white. White pin bodies are unchanged in AC and have source=null. Neck-ring children remain part of each pin bbox; surface-specific questions inspect the neck bands."
+  ]
+}

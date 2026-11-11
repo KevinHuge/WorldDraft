@@ -1,0 +1,517 @@
+{
+  "schema": "worlddraft.event_timing_rules",
+  "rule_version": "evaluated-motion-boundaries",
+  "rules": {
+    "A01": [
+      {
+        "name": "turn",
+        "parent_event": "turn",
+        "object": "Vehicle_02",
+        "signal": "rotation_z",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the car initially approaching from the bottom of the opening frame in the inner incoming lane, facing upward; follow this same car as it turns toward the left side of the image. Event: its first left turn through the intersection. Onset: its body heading first changes from its initial straight-ahead orientation. Offset: its heading finishes changing and settles along the outgoing road toward image-left. Forward travel with unchanged heading before or after the turn is outside this interval; do not time another car or the moment it crosses a road marking."
+      }
+    ],
+    "A02": [
+      {
+        "name": "rack_motion",
+        "parent_event": "break",
+        "object": "BALL 01 • solid.002",
+        "signal": "displacement",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "crossing",
+        "description": "Target: object ball 1 in the initially compact group of billiard balls, near the lower/front edge of that group in the opening view, identified by its numbered patch when visible; not the incoming cue ball. Event: this same ball is displaced by the break. Time: the first crossing of 0.03 scene units of distance from its own opening position, not the cue-ball launch, another ball moving, or completion of rack dispersal. This is a single displacement-threshold crossing, with no separate end boundary.",
+        "threshold": 0.03
+      }
+    ],
+    "A03": [
+      {
+        "name": "gate_release",
+        "parent_event": "convey",
+        "object": "A03 retracting metering stop",
+        "signal": "world_z",
+        "direction": -1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the narrow retractable metering stop across the bottle conveyor at the downstream end of the held bottle queue, not a bottle or the fixed machine frame. Event: the stop retracts downward to let bottles advance. Onset: the stop itself first moves downward relative to the conveyor. Offset: that downward stroke ends at its lowered position. Bottle motion before or after this stroke is not a boundary of the stop motion."
+      }
+    ],
+    "B01": [
+      {
+        "name": "first_domino",
+        "parent_event": "initiation",
+        "object": "B01 | domino 01",
+        "signal": "tilt_deg",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "crossing",
+        "description": "Target: the first upright domino at the starting end of the curved single row, initially at the upper-left end in the opening view; track this block rather than its neighbor. Event: the initiating block tips and transmits the fall into the row. Time: the first instant its tilt exceeds five degrees from its opening upright orientation. Do not use contact with the next block or the time it lies flat; this event has one threshold-crossing boundary.",
+        "threshold": 5
+      },
+      {
+        "name": "last_domino",
+        "parent_event": "cascade",
+        "object": "B01 | domino 30",
+        "signal": "tilt_deg",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "crossing",
+        "description": "Target: the last domino at the opposite end of the curved single row, initially at the right-hand end in the opening view. Event: the propagating cascade reaches this terminal block and it starts tipping. Time: this block first exceeds five degrees of tilt from its opening upright orientation. Earlier blocks falling or this block finally lying flat do not define the time; there is one crossing boundary.",
+        "threshold": 5
+      }
+    ],
+    "B02": [
+      {
+        "name": "hand_withdrawal",
+        "parent_event": "first_exchange",
+        "object": "B02 | release hand controller",
+        "signal": "local_x",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the hand initially holding the raised rightmost ball of the five-ball Newton cradle. Event: the hand withdraws outward from that ball to release it. Onset: the hand begins its first outward withdrawal from the held position. Offset: this outward withdrawal stops. Track hand translation, not the ball reaching the central row, the leftmost ball swinging, or the later return of the hand to catch the rightmost ball."
+      }
+    ],
+    "B03": [
+      {
+        "name": "headpin_fall",
+        "parent_event": "impact",
+        "object": "B03 | pin 01",
+        "signal": "tilt_deg",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "crossing",
+        "description": "Target: the single front/head pin at the apex of the bowling-pin formation facing the approaching ball, centered ahead of the other pins. Event: this pin tips after the ball arrives. Time: its first tilt exceeding five degrees from its opening upright orientation. Do not substitute first ball-pin contact, sliding without tilt, another pin falling, or the head pin reaching the floor. Only this crossing is timed.",
+        "threshold": 5
+      }
+    ],
+    "B04": [
+      {
+        "name": "top_transfer",
+        "parent_event": "top_transfer",
+        "object": "Marble_01",
+        "signal": "world_z",
+        "direction": -1,
+        "occurrence": 1,
+        "take": "onset",
+        "description": "Target: the marble initially at the lower inlet beside the vertical elevator on the right of the apparatus (Marble_01); follow this same marble as the lift raises it to the top. Event: it transfers from the lift onto the descending return track. Onset: its world height first starts decreasing after the upward ride. Horizontal motion or the elevator mechanism rotating is not this boundary; only the start of descent is scored."
+      }
+    ],
+    "B05": [
+      {
+        "name": "slew_to_truck",
+        "parent_event": "load_truck",
+        "object": "Upper carriage slew",
+        "signal": "rotation_z",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the excavator upper carriage carrying its cab, boom and bucket, rotating on the stationary lower chassis beside the dump truck. Event: its first swivel toward the truck after loading the bucket. Onset: the upper carriage first changes yaw toward the truck. Offset: this yaw rotation stops at its truck-facing orientation. Boom raising, bucket curling and soil falling are separate motions and must not set these yaw boundaries."
+      }
+    ],
+    "B06": [
+      {
+        "name": "bridge_open",
+        "parent_event": "boat_pass",
+        "object": "Left lifting bridge leaf",
+        "signal": "rotation_y",
+        "direction": -1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the movable bridge leaf on the left half of the canal crossing in the opening view, attached to its bank hinge; not a car or the boat. Event: its first opening stroke from the horizontal road position. Onset: the leaf first rotates upward about its hinge. Offset: that upward rotation ends at its raised position. A car leaving the bridge or the boat entering the gap is not the leaf boundary."
+      },
+      {
+        "name": "bridge_close",
+        "parent_event": "road_restore",
+        "object": "Left lifting bridge leaf",
+        "signal": "rotation_y",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the same bank-hinged left bridge leaf used for bridge opening. Event: its first downward closing stroke from the raised position toward the road. Onset: the leaf starts rotating downward. Offset: its downward rotation ends at the closed road position. Do not use the boat passing or cars restarting as the boundary; observe the leaf angle itself."
+      }
+    ],
+    "B07": [
+      {
+        "name": "forks_raise",
+        "parent_event": "raise",
+        "object": "Moving carriage and L forks",
+        "signal": "local_z",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the forklift front moving carriage and its pair of L-shaped forks beneath the loaded pallet, not the vehicle chassis or truck. Event: the first upward fork stroke carrying the pallet. Onset: the fork carriage starts rising relative to the mast. Offset: that upward stroke stops at the raised level. Driving the forklift forward, moving the camera, or later withdrawing the forks does not extend this vertical-motion interval."
+      }
+    ],
+    "B08": [
+      {
+        "name": "final_carton_stop",
+        "parent_event": "accumulate",
+        "object": "Carton 1",
+        "signal": "local_x",
+        "direction": 1,
+        "occurrence": -1,
+        "take": "offset",
+        "description": "Target: the leading carton nearest the downstream end of the output rollers (Carton 1), followed continuously from its opening position as other cartons queue behind it. Event: its final forward movement during accumulation. Offset: its last forward translation ends and it remains at that position for the rest of the clip. An earlier temporary pause is not the final stop, and movement of an arriving carton is not movement of this target. Only the final offset is scored."
+      }
+    ],
+    "C01": [
+      {
+        "name": "occlusion",
+        "parent_event": "enter",
+        "object": "C01 | coach 01 controller",
+        "signal": "visibility",
+        "direction": -1,
+        "occurrence": 1,
+        "take": "hidden",
+        "description": "Target: the leading coach of the connected train, the first coach to enter the tunnel; keep this coach identity through disappearance and reappearance. Event: its first almost-complete tunnel occlusion. Onset: the visible fraction of this coach drops to at most 10 percent. Offset: its visible fraction first rises above 10 percent as it emerges. Initial partial covering and the last trailing coach entering or exiting do not define these boundaries.",
+        "threshold": 0.1
+      }
+    ],
+    "C02": [
+      {
+        "name": "occlusion",
+        "parent_event": "underpass",
+        "object": "Ferry 1",
+        "signal": "visibility",
+        "direction": -1,
+        "occurrence": 1,
+        "take": "hidden",
+        "description": "Target: Ferry 1, the boat initially nearest the left end of the bridge on the lower/near side of its deck in the opening view, heading toward the passage beneath the bridge. Track this same boat, not one on the opposite side or farther right. Event: its first almost-complete bridge occlusion. Onset: at most 10 percent of the target remains visible behind the bridge. Offset: more than 10 percent becomes visible again beyond the obstruction. Passing a bridge edge with most of the boat still visible is not the onset.",
+        "threshold": 0.1
+      }
+    ],
+    "C03": [
+      {
+        "name": "occlusion",
+        "parent_event": "enter",
+        "object": "Person torso",
+        "signal": "visibility",
+        "direction": -1,
+        "occurrence": 1,
+        "take": "hidden",
+        "description": "Target: the torso of the single walking person approaching the revolving-door enclosure from image-left; track the torso, not the head, legs or a door panel. Event: the torso becomes almost fully blocked by the rotating door structure and then reappears. Onset: at most 10 percent of the torso is visible. Offset: the visible torso fraction first exceeds 10 percent again. The person starting to walk, entering the doorway, or finally leaving the entire enclosure are different boundaries.",
+        "threshold": 0.1
+      }
+    ],
+    "C04": [
+      {
+        "name": "occlusion",
+        "parent_event": "reappear",
+        "object": "Cable car 1",
+        "signal": "visibility",
+        "direction": -1,
+        "occurrence": 1,
+        "take": "hidden",
+        "description": "Target: the cable-car cabin initially at the left of the opening view (Cable car 1), followed along its route; do not switch to the cabin initially on the right. Event: this cabin first becomes almost completely occluded along the route, then reappears. Onset: at most 10 percent of its target cabin geometry remains visible behind scene obstructions. Offset: the visible fraction first exceeds 10 percent again. Partial overlap with foliage or supports alone is insufficient.",
+        "threshold": 0.1
+      }
+    ],
+    "C05": [
+      {
+        "name": "occlusion",
+        "parent_event": "aisle",
+        "object": "Forklift motion root",
+        "signal": "visibility",
+        "direction": -1,
+        "occurrence": 1,
+        "take": "hidden",
+        "description": "Target: the forklift initially at image-left of the warehouse, tracked as one vehicle behind the racks; do not follow the shelving or a carton on it. Event: its first almost-complete occlusion by the shelving and stored goods. Onset: at most 10 percent of the forklift target remains visible. Offset: its visible fraction first exceeds 10 percent again. Do not wait for the whole vehicle to clear the rack or time the beginning of driving.",
+        "threshold": 0.1
+      }
+    ],
+    "C06": [
+      {
+        "name": "occlusion",
+        "parent_event": "roads",
+        "object": "Ring 2 car 1",
+        "signal": "visibility",
+        "direction": -1,
+        "occurrence": 1,
+        "take": "hidden",
+        "description": "Target: the car initially in the lower-middle part of the opening image on the curved ring roadway (Ring 2 car 1), not the nearby car on the straight diagonal bridge. Follow that same car around its ring. Event: its first almost-complete occlusion by the elevated road structure. Onset: at most 10 percent of the target remains visible. Offset: more than 10 percent becomes visible again. Do not switch to another car or time ordinary travel along the curve.",
+        "threshold": 0.1
+      }
+    ],
+    "C07": [
+      {
+        "name": "occlusion",
+        "parent_event": "wash",
+        "object": "Car motion root",
+        "signal": "visibility",
+        "direction": -1,
+        "occurrence": 1,
+        "take": "hidden",
+        "description": "Target: the single car approaching the car-wash housing, followed through the wash passage. Event: its first almost-complete hiding inside the wash structure, followed by reappearance. Onset: at most 10 percent of the car target remains visible. Offset: the visible fraction first exceeds 10 percent again. The nose entering the opening, brush contact, and the whole car finally clearing the housing are not these boundaries.",
+        "threshold": 0.1
+      }
+    ],
+    "C08": [
+      {
+        "name": "cup_cover",
+        "parent_event": "cover",
+        "object": "C08 | cup 1",
+        "signal": "local_z",
+        "direction": -1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the cup initially on the left above the small ball (cup 1); preserve this identity even when cups exchange positions. Event: this cup first lowers to cover the ball. Onset: the cup begins descending vertically. Offset: its downward stroke ends at the tabletop level. Lateral shuffling, another cup moving, and the first instant the ball is visually blocked are not the vertical-stroke boundaries."
+      },
+      {
+        "name": "cup_reveal",
+        "parent_event": "shuffle_reveal",
+        "object": "C08 | cup 1",
+        "signal": "local_z",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the same cup initially on the left that covered the ball (cup 1), tracked through the shuffle rather than chosen by its final position or color. Event: this cup rises after the shuffle to reveal the ball. Onset: the cup starts its upward stroke from the tabletop. Offset: that upward stroke ends at its raised position. The ball first becoming visible may occur within the stroke and is not the end boundary."
+      }
+    ],
+    "E01": [
+      {
+        "name": "payload_first_lift",
+        "parent_event": "pickup",
+        "object": "Roller cassette payload",
+        "signal": "world_z",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the roller-cassette payload initially resting on the pickup fixture beneath the robot gripper, not the gripper or the arm links. Event: the payload first rises with the gripper. Onset: the payload world height begins increasing from its supported level. Offset: this first upward segment ends at its first local maximum height, whether followed by a pause or descent. Horizontal transfer or continued arm articulation does not extend the rise."
+      }
+    ],
+    "E02": [
+      {
+        "name": "first_top",
+        "parent_event": "cycle",
+        "object": "Rigid upper table",
+        "signal": "world_z",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "offset",
+        "description": "Target: the rigid upper load platform supported by the scissor arms above the fixed base, not an individual arm or hose. Event: the platform completes its first upward stroke. Offset: its height reaches the first local maximum and stops increasing before lowering. The start of rising or a linkage joint rotating is not this boundary. Only this first top offset is timed."
+      },
+      {
+        "name": "second_rise",
+        "parent_event": "repeat",
+        "object": "Rigid upper table",
+        "signal": "world_z",
+        "direction": 1,
+        "occurrence": 2,
+        "take": "interval",
+        "description": "Target: the same rigid upper scissor-lift platform above the fixed base. Event: its second upward stroke, after the first rise and intervening lowering. Onset: its height starts increasing from the intervening low turning point. Offset: that second increase ends at the next local maximum. Count upward strokes of this platform; do not substitute its first rise or a later cycle."
+      }
+    ],
+    "E03": [
+      {
+        "name": "umbrella_open",
+        "parent_event": "unfold",
+        "object": "Canopy • eight sewn panels with unfolding pleats",
+        "signal": "shape_time",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the fabric canopy attached to the umbrella ribs around the central shaft, initially folded closed. Event: its first unfolding stroke as the ribs spread. Onset: the canopy begins deforming away from the closed shape. Offset: the opening deformation finishes at the fully expanded shape. Translation of the whole umbrella, shaft motion or later fabric movement is not the opening stroke."
+      }
+    ],
+    "E06": [
+      {
+        "name": "first_compression",
+        "parent_event": "squeeze",
+        "object": "Wet sponge • reduced compressible continuum",
+        "signal": "height",
+        "direction": -1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the sponge block above the receiving basin, judged by its top-to-bottom height, not a water droplet or basin edge. Event: the first sustained decrease in sponge height. Onset: that first downward compression starts. Offset: height reaches its first local minimum before recovery. Sideways bulging or droplets appearing does not define the boundary; track thickness rather than whole-object translation."
+      },
+      {
+        "name": "first_recovery",
+        "parent_event": "squeeze",
+        "object": "Wet sponge • reduced compressible continuum",
+        "signal": "height",
+        "direction": 1,
+        "occurrence": 2,
+        "take": "interval",
+        "description": "Target: the same sponge block above the basin. Event: the upward height segment after the first compression, which is the second increasing-height segment overall because a small initial expansion precedes the compression. Onset: height starts increasing from the first compressed minimum. Offset: this recovery ends at the next local maximum height. Do not count the opening expansion as this recovery or use droplets as a boundary."
+      }
+    ],
+    "F01": [
+      {
+        "name": "chocolate_lift",
+        "parent_event": "packing",
+        "object": "Chocolate -1 0",
+        "signal": "world_z",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "onset",
+        "description": "Target: the leading chocolate bar in the conveyor lane nearer the camera at the opening, closest to that lane's pickup robot (Chocolate -1 0), not the parallel farther lane or a later bar. Event: this bar is first picked up from the conveyor. Onset: its world height first increases above its belt-supported level. Conveyor translation, gripper descent, or another chocolate being lifted does not count. Only the first upward-motion onset is scored."
+      }
+    ],
+    "F02": [
+      {
+        "name": "ball_lift",
+        "parent_event": "transfer",
+        "object": "Ball 0",
+        "signal": "world_z",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the first of the three balls in the opening left-to-right order (Ball 0), resting at the pickup side of the LEGO transfer mechanism. Follow this same ball in the mechanism. Event: its first upward transfer stroke. Onset: this ball starts gaining world height from its lower resting position. Offset: that first increase ends at its first upper turning point or plateau. Motion of the figure's arms or a different ball is not a boundary of this ball's rise."
+      }
+    ],
+    "F03": [
+      {
+        "name": "first_trigger",
+        "parent_event": "trigger",
+        "object": "Distributor 00",
+        "signal": "tilt_deg",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "crossing",
+        "description": "Target: the first tall distributor domino next to the trigger-marble ramp at the near end of the distributor chain, beside the array of smaller field dominoes. Event: the arriving marble initiates its fall. Time: this distributor first exceeds five degrees of tilt from its initial pose. Marble release, marble contact without sufficient tilt, and a small field domino tipping do not define the crossing. There is only one timed boundary.",
+        "threshold": 5
+      },
+      {
+        "name": "last_fall",
+        "parent_event": "cascade",
+        "object": "Field 09 19",
+        "signal": "tilt_deg",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "crossing",
+        "description": "Target: the terminal small domino at the far-right end of the row farthest from the camera in the opening field array (Field 09 19), not a tall distributor or an earlier row endpoint. Event: the cascade reaches this final field block. Time: its tilt first exceeds five degrees from its initial pose. Do not use the last block you happen to see falling or wait until the target lies flat. This is a single crossing boundary.",
+        "threshold": 5
+      }
+    ],
+    "F04": [
+      {
+        "name": "container_hoist",
+        "parent_event": "hoist",
+        "object": "Handling container",
+        "signal": "world_z",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the handling container initially on the vehicle beneath the crane spreader, distinct from the stationary stacked containers beside the work area. Follow this same container throughout transfer. Event: its first hoisting stroke. Onset: the container begins gaining world height from its starting support. Offset: this increase ends at the upper transfer level. Spreader motion before lifting or horizontal crane travel does not set these vertical boundaries."
+      },
+      {
+        "name": "container_lower",
+        "parent_event": "place",
+        "object": "Handling container",
+        "signal": "world_z",
+        "direction": -1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the same container lifted from the first vehicle under the crane, not a stationary stacked container. Event: its first lowering stroke from the upper transfer level toward the receiving vehicle. Onset: its world height starts decreasing. Offset: that decrease ends at the receiving support level. Horizontal positioning, spreader release and vehicle departure are separate actions."
+      }
+    ],
+    "F05": [
+      {
+        "name": "barrier_close",
+        "parent_event": "hold",
+        "object": "Barrier hinge",
+        "signal": "rotation_y",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the hinged road-crossing barrier arm initially upright beside the near-side waiting traffic, not the train, a warning lamp or a fixed post. Event: its first closing stroke toward the horizontal road-blocking position. Onset: the arm first rotates downward about its hinge. Offset: that rotation ends at the lowered position. Cars stopping or the train arriving is not the arm-motion boundary."
+      },
+      {
+        "name": "barrier_open",
+        "parent_event": "release",
+        "object": "Barrier hinge",
+        "signal": "rotation_y",
+        "direction": -1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the same hinged road barrier that previously lowered across the waiting traffic. Event: its first reopening stroke after the train passage. Onset: the arm begins rotating upward from the lowered position. Offset: the upward rotation ends at its upright position. The train clearing the crossing or cars beginning to move is not the angular-motion boundary."
+      }
+    ],
+    "F06": [
+      {
+        "name": "carton_lift",
+        "parent_event": "pickup",
+        "object": "Moving carton 0",
+        "signal": "world_z",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the leading arriving carton at the conveyor pickup end nearest the robot in the opening view (Moving carton 0), distinct from the cartons already stacked on the pallet. Event: this carton's first upward pickup stroke. Onset: its world height begins increasing from the conveyor-supported level. Offset: that increase ends at the first high transfer position. Robot approach and horizontal carton travel do not extend this rise."
+      },
+      {
+        "name": "carton_place",
+        "parent_event": "stack",
+        "object": "Moving carton 0",
+        "signal": "world_z",
+        "direction": -1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the same first arriving carton picked from the conveyor (Moving carton 0), followed in the gripper to the pallet; not a carton already in the stack. Event: its first lowering stroke from the transfer height. Onset: its world height begins decreasing. Offset: that decrease ends at the pallet placement level. Gripper opening and retreat happen separately and do not define this vertical-motion offset."
+      }
+    ],
+    "F08": [
+      {
+        "name": "packet_lift",
+        "parent_event": "handling",
+        "object": "Packet 0",
+        "signal": "world_z",
+        "direction": 1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the leading snack packet at the conveyor pickup end directly beneath the LEGO robot gripper in the opening view (Packet 0), not the trailing packets or an empty receiving pocket. Event: this packet's first upward pickup stroke. Onset: its world height starts increasing from the conveyor-supported level. Offset: this rise ends at the upper transfer height. Gripper approach, conveyor advance and horizontal transfer are separate motions."
+      },
+      {
+        "name": "packet_place",
+        "parent_event": "handling",
+        "object": "Packet 0",
+        "signal": "world_z",
+        "direction": -1,
+        "occurrence": 1,
+        "take": "interval",
+        "description": "Target: the same leading packet first picked from the conveyor (Packet 0), tracked in the LEGO robot gripper to a receiving pocket. Event: its first downward placement stroke. Onset: its world height starts decreasing from transfer height. Offset: this decrease ends at the receiving-pocket support level. Do not time a later packet, gripper release or the robot returning toward the conveyor."
+      }
+    ],
+    "A08": [
+      {
+        "name": "tray_collection",
+        "parent_event": "collect",
+        "object": "Glass marble 08",
+        "receiver": "Finish tray",
+        "signal": "tray_gap",
+        "description": "Target: the lowest marble in the opening funnel apparatus (Glass marble 08), followed through the lower funnels toward the finish tray. Event: this marble reaches the tray support surface. Time: the target-to-tray gap first crosses downward through 0.01 scene units. Entering a lower funnel or merely approaching the tray does not count. This is one contact-proximity crossing; if the reference clip never reaches it, the event remains excluded rather than assigned an artificial time.",
+        "direction": -1,
+        "occurrence": 1,
+        "take": "crossing",
+        "threshold": 0.01
+      }
+    ]
+  },
+  "excluded": {
+    "A04": "Continuous or repeating motion without a unique start/end boundary in the published clip.",
+    "A05": "Continuous or repeating motion without a unique start/end boundary in the published clip.",
+    "A06": "Continuous or repeating motion without a unique start/end boundary in the published clip.",
+    "A07": "Continuous or repeating motion without a unique start/end boundary in the published clip.",
+    "D01": "Continuous or repeating motion without a unique start/end boundary in the published clip.",
+    "D04": "Continuous or repeating motion without a unique start/end boundary in the published clip.",
+    "D05": "Continuous or repeating motion without a unique start/end boundary in the published clip.",
+    "D07": "Continuous or repeating motion without a unique start/end boundary in the published clip.",
+    "D08": "Continuous or repeating motion without a unique start/end boundary in the published clip.",
+    "E04": "Continuous or repeating motion without a unique start/end boundary in the published clip.",
+    "E05": "Continuous or repeating motion without a unique start/end boundary in the published clip.",
+    "E07": "Continuous or repeating motion without a unique start/end boundary in the published clip.",
+    "E08": "Continuous or repeating motion without a unique start/end boundary in the published clip.",
+    "F07": "Continuous or repeating motion without a unique start/end boundary in the published clip.",
+    "D02": "Motion/event evaluation is inactive for this case.",
+    "D03": "Motion/event evaluation is inactive for this case.",
+    "D06": "Motion/event evaluation is inactive for this case."
+  },
+  "numerical_tolerance": "Per-frame scalar change exceeds max(1e-7, total signal range * 1e-5). A directional episode must span at least 3 Blender frames and 0.5% of total signal range.",
+  "visibility_rule": "Fraction of 64 deterministic evaluated target surface samples whose camera ray first hits any target mesh; almost-hidden means <=0.10. Uses final P2_AA world geometry, not a claim of exact visible mask area.",
+  "timestamp_rule": "Published draft PTS bracket the first and last Blender samples satisfying the declared rule; point estimate is bracket midpoint, interval retained.",
+  "reference": "Final P2_AA Blender scene evaluated read-only; condition preprocessing maps must agree. Source frame/fps is never directly treated as output seconds.",
+  "description_revision": "target-and-boundaries"
+}

@@ -1,0 +1,48 @@
+{
+  "case": "A06",
+  "noun": "pendulum ball",
+  "gt_root_pattern": "White bob \\d{2}",
+  "attributes": [
+    {
+      "id": "T1",
+      "entities": [
+        "White bob 01",
+        "White bob 04",
+        "White bob 07",
+        "White bob 10"
+      ],
+      "surface": "ball body",
+      "target": "red",
+      "source": "purple"
+    },
+    {
+      "id": "T2",
+      "entities": [
+        "White bob 02",
+        "White bob 05",
+        "White bob 08"
+      ],
+      "surface": "ball body",
+      "target": "blue",
+      "source": "orange"
+    },
+    {
+      "id": "T3",
+      "entities": [
+        "White bob 03",
+        "White bob 06",
+        "White bob 09"
+      ],
+      "surface": "ball body",
+      "target": "yellow",
+      "source": "blue"
+    }
+  ],
+  "notes": [
+    "Colour truth comes only from target_prompt.txt and appearance.json; scene metadata and material names are not colour authority.",
+    "All semantic roots are retained for DF. Shared-colour entities are grouped in one attribute, fixed across all nine cells.",
+    "T1: target scarlet red -> red; AC magenta -> purple.",
+    "T2: target cobalt blue -> blue; AC burnt orange -> orange.",
+    "T3: target golden yellow -> yellow; AC cyan -> blue."
+  ]
+}

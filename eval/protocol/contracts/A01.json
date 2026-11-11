@@ -1,0 +1,50 @@
+{
+  "case": "A01",
+  "noun": "car",
+  "gt_root_pattern": "Vehicle_\\d{2}",
+  "attributes": [
+    {
+      "id": "T1",
+      "entities": [
+        "Vehicle_02"
+      ],
+      "surface": "body",
+      "target": "green",
+      "source": "blue"
+    },
+    {
+      "id": "T2",
+      "entities": [
+        "Vehicle_05"
+      ],
+      "surface": "body",
+      "target": "blue",
+      "source": "red"
+    },
+    {
+      "id": "T3",
+      "entities": [
+        "Vehicle_08"
+      ],
+      "surface": "body",
+      "target": "red",
+      "source": "yellow"
+    },
+    {
+      "id": "T4",
+      "entities": [
+        "Vehicle_11"
+      ],
+      "surface": "body",
+      "target": "yellow",
+      "source": "green"
+    }
+  ],
+  "notes": [
+    "Colour truth comes only from target_prompt.txt and appearance.json; scene metadata and material names are not colour authority.",
+    "T1: target emerald green -> green; AC cobalt blue -> blue.",
+    "T2: target cobalt blue -> blue; AC brick red -> red.",
+    "T3: target brick red -> red; AC golden yellow -> yellow.",
+    "T4: target golden yellow -> yellow; AC emerald green -> green."
+  ]
+}

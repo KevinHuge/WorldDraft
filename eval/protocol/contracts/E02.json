@@ -1,0 +1,56 @@
+{
+  "case": "E02",
+  "noun": "scissor-lift arm, platform or hydraulic hose",
+  "gt_root_pattern": "(?:(?:Ascending|Descending) rigid arm(?:\\.\\d{3})?|Rigid upper table|Flexible hydraulic hose(?:\\.\\d{3})?)",
+  "attributes": [
+    {
+      "entities": [
+        "Ascending rigid arm",
+        "Descending rigid arm",
+        "Ascending rigid arm.001",
+        "Descending rigid arm.001"
+      ],
+      "surface": "scissor arm surface excluding middle band",
+      "target": "gray/silver",
+      "source": "blue",
+      "id": "T1"
+    },
+    {
+      "entities": [
+        "Ascending rigid arm",
+        "Descending rigid arm",
+        "Ascending rigid arm.001",
+        "Descending rigid arm.001"
+      ],
+      "surface": "band around the scissor arm middle",
+      "target": "white",
+      "source": "yellow",
+      "pattern": "one broad band around the middle of the arm",
+      "id": "T2"
+    },
+    {
+      "entities": [
+        "Rigid upper table"
+      ],
+      "surface": "platform surface",
+      "target": "orange",
+      "source": "blue",
+      "id": "T3"
+    },
+    {
+      "entities": [
+        "Flexible hydraulic hose",
+        "Flexible hydraulic hose.001"
+      ],
+      "surface": "hydraulic hose jacket excluding middle section",
+      "target": "gray/silver",
+      "source": "blue",
+      "id": "T4"
+    }
+  ],
+  "notes": [
+    "Target colour authority: target_prompt.txt and appearance.json only; AC colours come from appearance.json AC or AC_recipe. No scene-level contract attributes or material names are used.",
+    "Entity names and hierarchy verified by read-only inspection of the final P2_AA.blend. Attribute selection is fixed before model scoring.",
+    "charcoal -> gray/silver; ivory -> white; cobalt blue -> blue; golden -> yellow; vivid orange -> orange. Hose middle-band colour is omitted as a fixed representative subset; each hose remains a DF entity."
+  ]
+}

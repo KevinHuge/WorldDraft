@@ -1,0 +1,59 @@
+{
+  "case": "A04",
+  "noun": "sailboat",
+  "gt_root_pattern": "Sailboat \\d{2}",
+  "attributes": [
+    {
+      "id": "T1",
+      "entities": [
+        "Sailboat 01",
+        "Sailboat 05",
+        "Sailboat 09"
+      ],
+      "surface": "hull and both sails",
+      "target": "yellow",
+      "source": "blue"
+    },
+    {
+      "id": "T2",
+      "entities": [
+        "Sailboat 02",
+        "Sailboat 06",
+        "Sailboat 10"
+      ],
+      "surface": "hull and both sails",
+      "target": "blue",
+      "source": "red"
+    },
+    {
+      "id": "T3",
+      "entities": [
+        "Sailboat 03",
+        "Sailboat 07",
+        "Sailboat 11"
+      ],
+      "surface": "hull and both sails",
+      "target": "red",
+      "source": "green"
+    },
+    {
+      "id": "T4",
+      "entities": [
+        "Sailboat 04",
+        "Sailboat 08",
+        "Sailboat 12"
+      ],
+      "surface": "hull and both sails",
+      "target": "green",
+      "source": "yellow"
+    }
+  ],
+  "notes": [
+    "Colour truth comes only from target_prompt.txt and appearance.json; scene metadata and material names are not colour authority.",
+    "All semantic roots are retained for DF. Shared-colour entities are grouped in one attribute, fixed across all nine cells.",
+    "T1: target golden yellow -> yellow; AC sky blue -> blue.",
+    "T2: target sky blue -> blue; AC scarlet red -> red.",
+    "T3: target scarlet red -> red; AC emerald green -> green.",
+    "T4: target emerald green -> green; AC golden yellow -> yellow."
+  ]
+}

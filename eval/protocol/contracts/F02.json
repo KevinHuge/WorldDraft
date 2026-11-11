@@ -1,0 +1,39 @@
+{
+  "case": "F02",
+  "noun": "ball",
+  "gt_root_pattern": "Ball [0-2]",
+  "attributes": [
+    {
+      "entities": [
+        "Ball 0"
+      ],
+      "surface": "ball body",
+      "target": "blue",
+      "source": "yellow",
+      "id": "T1"
+    },
+    {
+      "entities": [
+        "Ball 1"
+      ],
+      "surface": "ball body",
+      "target": "orange",
+      "source": "purple",
+      "id": "T2"
+    },
+    {
+      "entities": [
+        "Ball 2"
+      ],
+      "surface": "ball body",
+      "target": "green",
+      "source": "red",
+      "id": "T3"
+    }
+  ],
+  "notes": [
+    "Target colour authority: target_prompt.txt and appearance.json only; AC colours come from appearance.json AC or AC_recipe. No scene-level contract attributes or material names are used.",
+    "Entity names and hierarchy verified by read-only inspection of the final P2_AA.blend. Attribute selection is fixed before model scoring.",
+    "Opening camera x projections verify Ball 0,1,2 appear left to right. cobalt blue -> blue; teal -> green (coarse family with possible blue/green ambiguity); gold -> yellow; orange/purple/red map directly."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "case": "A07",
+  "noun": "Ferris-wheel gondola",
+  "gt_root_pattern": "Gondola \\d{2}",
+  "attributes": [
+    {
+      "id": "T1",
+      "entities": [
+        "Gondola 01",
+        "Gondola 05",
+        "Gondola 09",
+        "Gondola 13",
+        "Gondola 17",
+        "Gondola 21"
+      ],
+      "surface": "canopy, excluding the passenger basket",
+      "target": "red",
+      "source": "purple"
+    },
+    {
+      "id": "T2",
+      "entities": [
+        "Gondola 02",
+        "Gondola 06",
+        "Gondola 10",
+        "Gondola 14",
+        "Gondola 18",
+        "Gondola 22"
+      ],
+      "surface": "canopy, excluding the passenger basket",
+      "target": "blue",
+      "source": "orange"
+    },
+    {
+      "id": "T3",
+      "entities": [
+        "Gondola 03",
+        "Gondola 07",
+        "Gondola 11",
+        "Gondola 15",
+        "Gondola 19",
+        "Gondola 23"
+      ],
+      "surface": "canopy, excluding the passenger basket",
+      "target": "yellow",
+      "source": "blue"
+    }
+  ],
+  "notes": [
+    "Colour truth comes only from target_prompt.txt and appearance.json; scene metadata and material names are not colour authority.",
+    "All semantic roots are retained for DF. Shared-colour entities are grouped in one attribute, fixed across all nine cells.",
+    "T1: target scarlet red -> red; AC magenta -> purple.",
+    "T2: target cobalt blue -> blue; AC burnt orange -> orange.",
+    "T3: target golden yellow -> yellow; AC cyan -> blue.",
+    "Only canopy colour is scored, not ivory baskets. Rim alternation is represented by fixed per-gondola colour bindings; no independent whole-wheel pattern score."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "case": "D07",
+  "noun": "locomotive or passenger coach",
+  "gt_root_pattern": "(?:Locomotive|Coach [1-5])",
+  "attributes": [
+    {
+      "entities": [
+        "Locomotive",
+        "Coach 1",
+        "Coach 2",
+        "Coach 3",
+        "Coach 4",
+        "Coach 5"
+      ],
+      "surface": "body panels excluding waist stripe",
+      "target": "green",
+      "source": "red",
+      "id": "T1"
+    },
+    {
+      "entities": [
+        "Locomotive",
+        "Coach 1",
+        "Coach 2",
+        "Coach 3",
+        "Coach 4",
+        "Coach 5"
+      ],
+      "surface": "horizontal waist stripe below the windows",
+      "target": "white",
+      "source": "blue",
+      "pattern": "one broad horizontal stripe below the windows wrapping around the body",
+      "id": "T2"
+    },
+    {
+      "entities": [
+        "Locomotive",
+        "Coach 1",
+        "Coach 2",
+        "Coach 3",
+        "Coach 4",
+        "Coach 5"
+      ],
+      "surface": "roof",
+      "target": "gray/silver",
+      "source": null,
+      "id": "T3"
+    }
+  ],
+  "notes": [
+    "Target colour authority: target_prompt.txt and appearance.json only; AC colours come from appearance.json AC or AC_recipe. No scene-level contract attributes or material names are used.",
+    "Entity names and hierarchy verified by read-only inspection of the final P2_AA.blend. Attribute selection is fixed before model scoring.",
+    "deep-green -> green; brick-red -> red; ivory -> white; navy blue -> blue; silver-gray -> gray/silver. Roof colour is unchanged in AC, source=null.",
+    "D-series uses protocol letterbox initially; camera-motion registration limitations are recorded by controls and are not corrected by per-case contract tuning."
+  ]
+}

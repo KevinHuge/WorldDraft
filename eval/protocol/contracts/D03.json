@@ -1,0 +1,35 @@
+{
+  "case": "D03",
+  "noun": "wall-mounted service box",
+  "gt_root_pattern": "D03 \\| wall service boxes -?1",
+  "attributes": [
+    {
+      "entities": [
+        "D03 | wall service boxes -1",
+        "D03 | wall service boxes 1"
+      ],
+      "surface": "service-box housing excluding middle bands",
+      "target": "blue",
+      "source": "orange",
+      "id": "T1"
+    },
+    {
+      "entities": [
+        "D03 | wall service boxes -1",
+        "D03 | wall service boxes 1"
+      ],
+      "surface": "service-box middle bands",
+      "target": "white",
+      "source": "gray/silver",
+      "pattern": "one broad horizontal band around the middle of each box",
+      "id": "T2"
+    }
+  ],
+  "notes": [
+    "Target colour authority: target_prompt.txt and appearance.json only; AC colours come from appearance.json AC or AC_recipe. No scene-level contract attributes or material names are used.",
+    "Entity names and hierarchy verified by read-only inspection of the final P2_AA.blend. Attribute selection is fixed before model scoring.",
+    "cobalt-blue -> blue; ivory -> white; orange -> orange; charcoal -> gray/silver.",
+    "The final blend merges all service-box housings on each tunnel side into one mesh. Each side is therefore one GT region, not an individual box. Broad/disconnected bboxes may make region presence unreliable; retain this limitation in control results.",
+    "D-series uses protocol letterbox initially; camera-motion registration limitations are recorded by controls and are not corrected by per-case contract tuning."
+  ]
+}

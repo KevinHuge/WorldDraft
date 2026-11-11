@@ -1,0 +1,40 @@
+{
+  "case": "B01",
+  "noun": "domino",
+  "gt_root_pattern": "B01 \\| domino \\d{2}",
+  "attributes": [
+    {
+      "entities": [
+        "B01 | domino 08",
+        "B01 | domino 20",
+        "B01 | domino 28"
+      ],
+      "surface": "main domino body",
+      "target": "other",
+      "source": null,
+      "pattern": "a black or white body",
+      "score_color": false,
+      "id": "T1"
+    },
+    {
+      "entities": [
+        "B01 | domino 08",
+        "B01 | domino 20",
+        "B01 | domino 28"
+      ],
+      "surface": "pips and their surrounding face",
+      "target": "other",
+      "source": null,
+      "pattern": "pips contrasting with the body (white on black or black on white)",
+      "score_color": false,
+      "id": "T2"
+    }
+  ],
+  "notes": [
+    "Target colour authority: target_prompt.txt and appearance.json only; AC colours come from appearance.json AC or AC_recipe. No scene-level contract attributes or material names are used.",
+    "Entity names and hierarchy verified by read-only inspection of the final P2_AA.blend. Attribute selection is fixed before model scoring.",
+    "The prompt specifies alternating black/white but does not anchor the starting phase or map colours to numbered dominoes. No per-ID phase is inferred from materials or metadata.",
+    "This contract scores local black/white membership and contrasting pip structure only. score_color=false means target=other is a schema placeholder, not a judged colour.",
+    "AC_recipe names blue/yellow without identity mapping. source=null and SL is undefined. Whole-sequence alternation is not independently scored. All thirty dominoes remain GT entities; the three recipe-selected examples supply local pattern observations."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "case": "B02",
+  "noun": "suspended ball",
+  "gt_root_pattern": "B02 \\| ball [1-5]",
+  "attributes": [
+    {
+      "entities": [
+        "B02 | ball 5"
+      ],
+      "surface": "body excluding the middle band",
+      "target": "blue",
+      "source": "red",
+      "id": "T1"
+    },
+    {
+      "entities": [
+        "B02 | ball 5"
+      ],
+      "surface": "broad band around the middle",
+      "target": "white",
+      "source": null,
+      "pattern": "one broad continuous band encircling the middle",
+      "id": "T2"
+    },
+    {
+      "entities": [
+        "B02 | ball 1",
+        "B02 | ball 2",
+        "B02 | ball 3",
+        "B02 | ball 4"
+      ],
+      "surface": "ball body",
+      "target": "gray/silver",
+      "source": null,
+      "id": "T3"
+    }
+  ],
+  "notes": [
+    "Target colour authority: target_prompt.txt and appearance.json only; AC colours come from appearance.json AC or AC_recipe. No scene-level contract attributes or material names are used.",
+    "Entity names and hierarchy verified by read-only inspection of the final P2_AA.blend. Attribute selection is fixed before model scoring.",
+    "cobalt-blue -> blue; ivory -> white; polished silver steel -> gray/silver; AC main ball red -> red. AC middle band is only described as dark, so its source colour is unknown and excluded from SL."
+  ]
+}

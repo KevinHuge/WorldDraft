@@ -1,0 +1,16 @@
+# Interpreter per evaluation stage and tool locations; see eval/USAGE.md "Environments".
+# Machine-specific values go in envs.local.yaml next to this file (not tracked); it overrides these keys one by one.
+# Relative paths are relative to the repository root.
+python:
+  qa: python          # requirements-judge.txt (vLLM, Qwen3.6-27B judge)
+  events: python      # same environment as qa
+  geometry: python    # requirements-track.txt (SAM3 / SAM2 / DINOv2)
+  camera: python      # ViPE environment
+  quality: python     # requirements-quality.txt
+  report: python      # requirements.txt
+gpus: [0, 1, 2, 3]
+vipe_root: null       # camera stage: checkout of https://github.com/nv-tlabs/vipe at v1.2.0
+# Weights are downloaded from Hugging Face on first use (facebook/sam3 is gated: request access, then `hf auth login`).
+# To use existing copies, map Hugging Face ids to local directories here or in envs.local.yaml.
+models: {}
+quality_weights: ~/.cache/worlddraft/vbench-quality   # filled by eval/download_quality_weights.sh

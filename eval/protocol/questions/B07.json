@@ -1,0 +1,235 @@
+{
+  "dataset": "worlddraft",
+  "protocol": "benchmark-literal-ap-gated",
+  "episode": "B07",
+  "files": {
+    "questions": "../qa/questions.csv",
+    "question_provenance": "../qa/provenance.json",
+    "factual_contrasts": "../qa/factual-contrasts.json",
+    "source_material_audit": "../qa/source-material-audit.json",
+    "visibility_gt": "data/gt/B07/gt.json",
+    "entities_gt": "data/gt/entities/B07.json",
+    "target_prompt": "data/scenes/B07/target_prompt.txt",
+    "appearance": "data/scenes/B07/appearance.json"
+  },
+  "judge": {
+    "model": "Qwen/Qwen3.6-27B",
+    "temperature": 0,
+    "enable_thinking": false
+  },
+  "qa": {
+    "groups": {
+      "B07": {
+        "forklifts": [
+          "Forklift chassis"
+        ],
+        "trucks": [
+          "Parked open-side cargo truck"
+        ],
+        "cartons": [
+          "Wrapped carton",
+          "Wrapped carton.001",
+          "Wrapped carton.002",
+          "Wrapped carton.003",
+          "Wrapped carton.004",
+          "Wrapped carton.005",
+          "Wrapped carton.006",
+          "Wrapped carton.007",
+          "Wrapped carton.008",
+          "Wrapped carton.009",
+          "Wrapped carton.010",
+          "Wrapped carton.011"
+        ]
+      }
+    },
+    "bindings": {
+      "B07": {
+        "1": {
+          "count_scope": "global"
+        },
+        "2": {
+          "count_scope": "global"
+        },
+        "3": {
+          "count_scope": "global"
+        },
+        "4": {
+          "count_scope": "region"
+        },
+        "5": {
+          "count_scope": "region"
+        },
+        "6": {
+          "count_scope": "region"
+        },
+        "7": {
+          "count_scope": "region"
+        },
+        "8": {
+          "count_scope": "region"
+        },
+        "9": {
+          "count_scope": "region"
+        },
+        "10": {
+          "count_scope": "region"
+        },
+        "11": {
+          "count_scope": "region"
+        },
+        "12": {
+          "count_scope": "region"
+        },
+        "13": {
+          "count_scope": "region"
+        },
+        "14": {
+          "count_scope": "region"
+        },
+        "15": {
+          "count_scope": "region"
+        },
+        "16": {
+          "count_scope": "region"
+        },
+        "17": {
+          "count_scope": "region"
+        },
+        "141": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "142": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "143": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "144": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "145": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "146": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "147": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "148": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "149": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "150": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "151": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "152": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        }
+      }
+    },
+    "times_s": [
+      0.0,
+      0.6875,
+      1.4375,
+      2.125,
+      2.875,
+      3.5625,
+      4.3125,
+      5.0
+    ],
+    "count_times_s": [
+      0.0,
+      2.125,
+      5.0
+    ],
+    "crop_side": 224,
+    "rf_sampling": "one frame per question; max GT visible mask area, earliest tie; scene questions use first frame",
+    "count_scoring": "exact_count_accuracy_global_and_local_separate",
+    "crop": "gt_bbox",
+    "binary_answers": [
+      "yes",
+      "no"
+    ],
+    "count_answers": "nonnegative_integer",
+    "entity_labels": {
+      "Forklift chassis": "forklift",
+      "Parked open-side cargo truck": "truck",
+      "Wrapped carton": "carton",
+      "Wrapped carton.001": "carton",
+      "Wrapped carton.002": "carton",
+      "Wrapped carton.003": "carton",
+      "Wrapped carton.004": "carton",
+      "Wrapped carton.005": "carton",
+      "Wrapped carton.006": "carton",
+      "Wrapped carton.007": "carton",
+      "Wrapped carton.008": "carton",
+      "Wrapped carton.009": "carton",
+      "Wrapped carton.010": "carton",
+      "Wrapped carton.011": "carton"
+    },
+    "global_count_view": "full_frame",
+    "visibility_from_masks": true,
+    "entity_mapping_audit": {
+      "sparse_only": [
+        "Wrapped carton",
+        "Wrapped carton.001",
+        "Wrapped carton.002",
+        "Wrapped carton.003",
+        "Wrapped carton.004",
+        "Wrapped carton.005",
+        "Wrapped carton.006",
+        "Wrapped carton.007",
+        "Wrapped carton.008",
+        "Wrapped carton.009",
+        "Wrapped carton.010",
+        "Wrapped carton.011"
+      ],
+      "dense_only": [
+        "Pallet and cargo — same continuous load"
+      ],
+      "policy": "Sparse visible instance masks define regions and count units. Dense-only objects use named full-frame RF questions; no amodal bbox substitutes for visibility."
+    }
+  }
+}

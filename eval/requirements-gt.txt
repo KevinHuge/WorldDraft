@@ -1,0 +1,4 @@
+# Optional: regenerate the ground truth from the Blender scenes (Python 3.13). Not needed to evaluate.
+bpy==5.2.2
+numpy==2.5.4
+pyyaml==6.0.3

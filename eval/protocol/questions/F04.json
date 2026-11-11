@@ -1,0 +1,150 @@
+{
+  "dataset": "worlddraft",
+  "protocol": "benchmark-literal-ap-gated",
+  "episode": "F04",
+  "files": {
+    "questions": "../qa/questions.csv",
+    "question_provenance": "../qa/provenance.json",
+    "factual_contrasts": "../qa/factual-contrasts.json",
+    "source_material_audit": "../qa/source-material-audit.json",
+    "visibility_gt": "data/gt/F04/gt.json",
+    "entities_gt": "data/gt/entities/F04.json",
+    "target_prompt": "data/scenes/F04/target_prompt.txt",
+    "appearance": "data/scenes/F04/appearance.json"
+  },
+  "judge": {
+    "model": "Qwen/Qwen3.6-27B",
+    "temperature": 0,
+    "enable_thinking": false
+  },
+  "qa": {
+    "groups": {
+      "F04": {
+        "shipping containers": [
+          "Parked lower container",
+          "Parked upper container",
+          "Container shell"
+        ],
+        "end doors of the lifted container": [
+          "End door",
+          "End door.001",
+          "End door.002",
+          "End door.003"
+        ]
+      }
+    },
+    "bindings": {
+      "F04": {
+        "1": {
+          "count_scope": "global"
+        },
+        "2": {
+          "count_scope": "global"
+        },
+        "3": {
+          "count_scope": "region"
+        },
+        "4": {
+          "count_scope": "region"
+        },
+        "5": {
+          "count_scope": "region"
+        },
+        "6": {
+          "count_scope": "region"
+        },
+        "7": {
+          "count_scope": "region"
+        },
+        "8": {
+          "count_scope": "region"
+        },
+        "9": {
+          "count_scope": "region"
+        },
+        "51": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "52": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "53": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "54": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "56": {
+          "question_by_cell": {
+            "P0_AC": "Is this upper parked container oxide red?",
+            "P1_AC": "Is this upper parked container light gray?",
+            "P2_AC": "Is this upper parked container light gray?"
+          }
+        }
+      }
+    },
+    "times_s": [
+      0.0,
+      0.6875,
+      1.4375,
+      2.125,
+      2.875,
+      3.5625,
+      4.3125,
+      5.0
+    ],
+    "count_times_s": [
+      0.0,
+      2.125,
+      5.0
+    ],
+    "crop_side": 224,
+    "rf_sampling": "one frame per question; max GT visible mask area, earliest tie; scene questions use first frame",
+    "count_scoring": "exact_count_accuracy_global_and_local_separate",
+    "crop": "gt_bbox",
+    "binary_answers": [
+      "yes",
+      "no"
+    ],
+    "count_answers": "nonnegative_integer",
+    "entity_labels": {
+      "Parked lower container": "shipping container",
+      "Parked upper container": "shipping container",
+      "Container shell": "shipping container",
+      "End door": "end door of the lifted container",
+      "End door.001": "end door of the lifted container",
+      "End door.002": "end door of the lifted container",
+      "End door.003": "end door of the lifted container"
+    },
+    "global_count_view": "full_frame",
+    "visibility_from_masks": true,
+    "entity_mapping_audit": {
+      "sparse_only": [
+        "Container shell",
+        "End door",
+        "End door.001",
+        "End door.002",
+        "End door.003"
+      ],
+      "dense_only": [
+        "Background passing AGV",
+        "Handling container",
+        "Receiving AGV",
+        "Suspended anti-sway head"
+      ],
+      "policy": "Sparse visible instance masks define regions and count units. Dense-only objects use named full-frame RF questions; no amodal bbox substitutes for visibility."
+    }
+  }
+}

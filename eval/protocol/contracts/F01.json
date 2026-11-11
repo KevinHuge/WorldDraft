@@ -1,0 +1,44 @@
+{
+  "case": "F01",
+  "noun": "chocolate bar",
+  "gt_root_pattern": "Chocolate -?1 \\d+",
+  "attributes": [
+    {
+      "entities": [
+        "Chocolate -1 0",
+        "Chocolate -1 1",
+        "Chocolate -1 2",
+        "Chocolate -1 3",
+        "Chocolate -1 4",
+        "Chocolate -1 5",
+        "Chocolate -1 6"
+      ],
+      "surface": "chocolate bar surface",
+      "target": "brown",
+      "source": "white",
+      "pattern": "raised rectangular scored segments",
+      "id": "T1"
+    },
+    {
+      "entities": [
+        "Chocolate 1 0",
+        "Chocolate 1 1",
+        "Chocolate 1 2",
+        "Chocolate 1 3",
+        "Chocolate 1 4",
+        "Chocolate 1 5",
+        "Chocolate 1 6"
+      ],
+      "surface": "chocolate bar surface",
+      "target": "white",
+      "source": "brown",
+      "pattern": "raised rectangular scored segments",
+      "id": "T2"
+    }
+  ],
+  "notes": [
+    "Target colour authority: target_prompt.txt and appearance.json only; AC colours come from appearance.json AC or AC_recipe. No scene-level contract attributes or material names are used.",
+    "Entity names and hierarchy verified by read-only inspection of the final P2_AA.blend. Attribute selection is fixed before model scoring.",
+    "Opening camera projection/depth verifies lane -1 is nearer than lane +1; roles are anchored geometrically, not by material names. dark cocoa brown -> brown; creamy white -> white. AC swaps these two lanes."
+  ]
+}

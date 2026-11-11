@@ -1,0 +1,677 @@
+{
+  "version": "entity",
+  "upstream_commit": "e01d0187a53b45a3a0eccc12f015e72815ea2ebd",
+  "settings": {
+    "grid_hz": 8.0,
+    "duration_s": 5.0,
+    "source_fps": 16,
+    "entities": "dynamic_or_candidate",
+    "sam3_model": "facebook/sam3",
+    "sam3_score_thresh": 0.2,
+    "sam3_fallback": "sam2",
+    "sam3_fallback_engine_renders": "sam2_unmatched",
+    "sam2_model": "facebook/sam2.1-hiera-large",
+    "identity_model": "facebook/dinov2-base",
+    "min_visible_area": 0.0001,
+    "min_track_iou": 0.05
+  },
+  "prompts": {
+    "automated vehicle": "automated vehicle",
+    "ball": "ball",
+    "basin": "basin",
+    "boat": "boat",
+    "bottle": "bottle",
+    "bowling pin": "bowling pin",
+    "bridge leaf": "bridge leaf",
+    "cable car": "cable car",
+    "car": "car",
+    "car wash brush": "car wash brush",
+    "carton": "carton",
+    "chair": "chair",
+    "chocolate bar": "chocolate bar",
+    "crane spreader": "crane spreader",
+    "crossing barrier": "crossing barrier",
+    "cup": "cup",
+    "curtain": "curtain",
+    "domino": "domino",
+    "door": "door",
+    "excavator": "excavator",
+    "fabric": "fabric",
+    "forklift": "forklift",
+    "gondola": "gondola",
+    "gripper": "gripper",
+    "hand": "hand",
+    "horse": "horse",
+    "lift platform": "lift platform",
+    "linkage": "linkage",
+    "packet": "packet",
+    "painting": "painting",
+    "pallet load": "pallet load",
+    "person": "person",
+    "ride seat": "ride seat",
+    "robot arm": "robot arm",
+    "roller cassette": "roller cassette",
+    "roller coaster car": "roller coaster car",
+    "rope": "rope",
+    "scissor lift": "scissor lift",
+    "service box": "service box",
+    "shipping container": "shipping container",
+    "soil": "soil",
+    "sponge": "sponge",
+    "toy figure": "toy figure",
+    "train carriage": "train carriage",
+    "truck": "truck",
+    "umbrella": "umbrella",
+    "water tank": "water tank",
+    "wind turbine": "wind turbine"
+  },
+  "cases": {
+    "A01": [
+      {
+        "label": "car",
+        "root_pattern": "Vehicle_\\d{2}",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "A02": [
+      {
+        "label": "ball",
+        "root_pattern": "Ball_\\d{2}",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "A03": [
+      {
+        "label": "bottle",
+        "root_pattern": "Bottle_\\d{2}",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "A04": [
+      {
+        "label": "boat",
+        "root_pattern": "Sailboat \\d{2}",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "A05": [
+      {
+        "label": "horse",
+        "root_pattern": "A05 \\| horse \\d{2} lift",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "A06": [
+      {
+        "label": "ball",
+        "root_pattern": "White bob \\d{2}",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "A07": [
+      {
+        "label": "gondola",
+        "root_pattern": "Gondola \\d{2}",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "A08": [
+      {
+        "label": "ball",
+        "root_pattern": "Glass marble \\d{2}",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "B01": [
+      {
+        "label": "domino",
+        "root_pattern": "B01 \\| domino \\d{2}",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "B02": [
+      {
+        "label": "ball",
+        "root_pattern": "B02 \\| ball [1-5]",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "hand",
+        "root_pattern": "B02 \\| release hand controller",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "B03": [
+      {
+        "label": "ball",
+        "root_pattern": "B03 \\| bowling ball",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "bowling pin",
+        "root_pattern": "B03 \\| pin \\d{2}",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "B04": [
+      {
+        "label": "ball",
+        "root_pattern": "Marble_\\d{2}",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "lift platform",
+        "root_pattern": "Carrier_\\d{2}",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "B05": [
+      {
+        "label": "excavator",
+        "root_pattern": "Excavator travel",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "truck",
+        "root_pattern": "Stationary dump truck",
+        "dynamic": false,
+        "interaction_candidate": true
+      },
+      {
+        "label": "soil",
+        "root_pattern": "Transferred earth \\d{2}",
+        "dynamic": true,
+        "interaction_candidate": true,
+        "merge_as": "transferred_soil"
+      }
+    ],
+    "B06": [
+      {
+        "label": "bridge leaf",
+        "root_pattern": "Left lifting bridge leaf|Right lifting bridge leaf",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "boat",
+        "root_pattern": "Passing cabin boat",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "car",
+        "root_pattern": "First crossing car|Final eastbound car|Final westbound car",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "B07": [
+      {
+        "label": "forklift",
+        "root_pattern": "Forklift chassis",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "pallet load",
+        "root_pattern": "Pallet and cargo — same continuous load",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "truck",
+        "root_pattern": "Parked open-side cargo truck",
+        "dynamic": false,
+        "interaction_candidate": true
+      }
+    ],
+    "B08": [
+      {
+        "label": "carton",
+        "root_pattern": "Carton [1-5]",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "C01": [
+      {
+        "label": "train carriage",
+        "root_pattern": "C01 \\| coach \\d{2} controller",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "C02": [
+      {
+        "label": "boat",
+        "root_pattern": "Ferry [1-5]",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "C03": [
+      {
+        "label": "person",
+        "root_pattern": "Person .*",
+        "dynamic": true,
+        "interaction_candidate": true,
+        "merge_as": "person"
+      },
+      {
+        "label": "door",
+        "root_pattern": "Revolving door shaft controller",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "C04": [
+      {
+        "label": "cable car",
+        "root_pattern": "Cable car [12]",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "C05": [
+      {
+        "label": "forklift",
+        "root_pattern": "Forklift motion root",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "C06": [
+      {
+        "label": "car",
+        "root_pattern": "(?:Ring \\d car \\d|Straight -?\\d car \\d)",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "C07": [
+      {
+        "label": "car",
+        "root_pattern": "Car motion root",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "car wash brush",
+        "root_pattern": "Side brush pivot(?:\\.\\d{3})?|Contour following top brush",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "C08": [
+      {
+        "label": "cup",
+        "root_pattern": "C08 \\| cup [1-3]",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "ball",
+        "root_pattern": "C08 \\| green ball",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "D01": [
+      {
+        "label": "car",
+        "root_pattern": "Car motion root",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "D02": [
+      {
+        "label": "water tank",
+        "root_pattern": "Rotating upper water tank",
+        "dynamic": false,
+        "interaction_candidate": true
+      }
+    ],
+    "D03": [
+      {
+        "label": "service box",
+        "root_pattern": "D03 \\| wall service boxes -?1",
+        "dynamic": false,
+        "interaction_candidate": true
+      }
+    ],
+    "D04": [
+      {
+        "label": "wind turbine",
+        "root_pattern": "Rotor 1|Turbine 1 tapered tower|Nacelle",
+        "dynamic": true,
+        "interaction_candidate": true,
+        "merge_as": "turbine_1"
+      },
+      {
+        "label": "wind turbine",
+        "root_pattern": "Rotor 2|Turbine 2 tapered tower|Nacelle\\.001",
+        "dynamic": true,
+        "interaction_candidate": true,
+        "merge_as": "turbine_2"
+      },
+      {
+        "label": "wind turbine",
+        "root_pattern": "Rotor 3|Turbine 3 tapered tower|Nacelle\\.002",
+        "dynamic": true,
+        "interaction_candidate": true,
+        "merge_as": "turbine_3"
+      },
+      {
+        "label": "wind turbine",
+        "root_pattern": "Rotor 4|Turbine 4 tapered tower|Nacelle\\.003",
+        "dynamic": true,
+        "interaction_candidate": true,
+        "merge_as": "turbine_4"
+      },
+      {
+        "label": "wind turbine",
+        "root_pattern": "Rotor 5|Turbine 5 tapered tower|Nacelle\\.004",
+        "dynamic": true,
+        "interaction_candidate": true,
+        "merge_as": "turbine_5"
+      }
+    ],
+    "D05": [
+      {
+        "label": "boat",
+        "root_pattern": "(?:Moored yacht [0-3]|Departing hero yacht|Crossing passenger vessel)",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "D06": [
+      {
+        "label": "painting",
+        "root_pattern": "Artwork panel",
+        "dynamic": false,
+        "interaction_candidate": true
+      },
+      {
+        "label": "chair",
+        "root_pattern": "Dining chair(?:\\.\\d{3})?",
+        "dynamic": false,
+        "interaction_candidate": true
+      }
+    ],
+    "D07": [
+      {
+        "label": "train carriage",
+        "root_pattern": "(?:Locomotive|Coach [1-5])",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "D08": [
+      {
+        "label": "gondola",
+        "root_pattern": "Upright gondola \\d+",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "ride seat",
+        "root_pattern": "Seat row(?:\\.\\d{3})?",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "roller coaster car",
+        "root_pattern": "Coaster car \\d+",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "E01": [
+      {
+        "label": "robot arm",
+        "root_pattern": "J1 base yaw|Flexible elbow cable",
+        "dynamic": true,
+        "interaction_candidate": true,
+        "merge_as": "robot_arm"
+      },
+      {
+        "label": "roller cassette",
+        "root_pattern": "Roller cassette payload",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "E02": [
+      {
+        "label": "scissor lift",
+        "root_pattern": "(?:(?:Ascending|Descending) rigid arm(?:\\.\\d{3})?|Rigid upper table|Flexible hydraulic hose(?:\\.\\d{3})?)",
+        "dynamic": true,
+        "interaction_candidate": true,
+        "merge_as": "scissor_lift"
+      }
+    ],
+    "E03": [
+      {
+        "label": "umbrella",
+        "root_pattern": "Canopy\\ •\\ eight\\ sewn\\ panels\\ with\\ unfolding\\ pleats",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "E04": [
+      {
+        "label": "curtain",
+        "root_pattern": "Silk\\ curtains\\ —\\ real\\ cloth\\ simulation",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "E05": [
+      {
+        "label": "rope",
+        "root_pattern": "Battle rope [01]",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "E06": [
+      {
+        "label": "sponge",
+        "root_pattern": "Wet sponge • reduced compressible continuum",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "basin",
+        "root_pattern": "Hollow receiving basin",
+        "dynamic": false,
+        "interaction_candidate": true
+      }
+    ],
+    "E07": [
+      {
+        "label": "linkage",
+        "root_pattern": "Constant length walking link(?:\\.\\d{3})?",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "E08": [
+      {
+        "label": "fabric",
+        "root_pattern": "Continuous\\ deforming\\ textile\\ web",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "F01": [
+      {
+        "label": "chocolate bar",
+        "root_pattern": "Chocolate -?1 \\d+",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "carton",
+        "root_pattern": "Carton -?1",
+        "dynamic": false,
+        "interaction_candidate": true
+      },
+      {
+        "label": "robot arm",
+        "root_pattern": "Upper\\ arm|Forearm|Axis reducer -1 [0-2]|Vacuum wrist -1",
+        "dynamic": true,
+        "interaction_candidate": true,
+        "merge_as": "robot_arm_-1"
+      },
+      {
+        "label": "robot arm",
+        "root_pattern": "Upper\\ arm\\.001|Forearm\\.001|Axis reducer 1 [0-2]|Vacuum wrist 1",
+        "dynamic": true,
+        "interaction_candidate": true,
+        "merge_as": "robot_arm_1"
+      }
+    ],
+    "F02": [
+      {
+        "label": "ball",
+        "root_pattern": "Ball [0-2]",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "toy figure",
+        "root_pattern": "LEGO torso pivot|(?:Thigh|Shin|Upper arm|Forearm|C hand) -?1",
+        "dynamic": true,
+        "interaction_candidate": true,
+        "merge_as": "figure"
+      },
+      {
+        "label": "gripper",
+        "root_pattern": "Parallel-motion gripper",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "F03": [
+      {
+        "label": "domino",
+        "root_pattern": "Field \\d{2} \\d{2}|Distributor \\d{2}|Corner branch \\d{2}",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "ball",
+        "root_pattern": "Trigger marble",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "F04": [
+      {
+        "label": "shipping container",
+        "root_pattern": "Handling container",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "shipping container",
+        "root_pattern": "Parked lower container|Parked upper container",
+        "dynamic": false,
+        "interaction_candidate": true
+      },
+      {
+        "label": "crane spreader",
+        "root_pattern": "Suspended anti-sway head",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "automated vehicle",
+        "root_pattern": "Receiving AGV|Background passing AGV",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "F05": [
+      {
+        "label": "car",
+        "root_pattern": "Clearing lead car|Waiting car -?1 [01]",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "train carriage",
+        "root_pattern": "Train car [0-2]",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "crossing barrier",
+        "root_pattern": "Barrier hinge(?:\\.\\d{3})?",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "F06": [
+      {
+        "label": "carton",
+        "root_pattern": "Moving carton [0-3]",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "carton",
+        "root_pattern": "Lower pallet carton(?:\\.\\d{3})?",
+        "dynamic": false,
+        "interaction_candidate": true
+      },
+      {
+        "label": "robot arm",
+        "root_pattern": "Robot seventh axis carriage",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "F07": [
+      {
+        "label": "roller coaster car",
+        "root_pattern": "Train [01] car [0-5]",
+        "dynamic": true,
+        "interaction_candidate": true
+      }
+    ],
+    "F08": [
+      {
+        "label": "packet",
+        "root_pattern": "Packet [0-3]",
+        "dynamic": true,
+        "interaction_candidate": true
+      },
+      {
+        "label": "robot arm",
+        "root_pattern": "Powered turret yaw|Level distal wrist",
+        "dynamic": true,
+        "interaction_candidate": true,
+        "merge_as": "robot_arm"
+      }
+    ]
+  }
+}

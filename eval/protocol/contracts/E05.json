@@ -1,0 +1,34 @@
+{
+  "case": "E05",
+  "noun": "battle rope",
+  "gt_root_pattern": "Battle rope [01]",
+  "attributes": [
+    {
+      "entities": [
+        "Battle rope 0",
+        "Battle rope 1"
+      ],
+      "surface": "rope fiber between marked sections",
+      "target": "brown",
+      "source": "gray/silver",
+      "id": "T1"
+    },
+    {
+      "entities": [
+        "Battle rope 0",
+        "Battle rope 1"
+      ],
+      "surface": "three marked rope sections",
+      "target": "blue",
+      "source": "white",
+      "pattern": "three broad sections spaced along the rope with unmarked rope between them",
+      "id": "T2"
+    }
+  ],
+  "notes": [
+    "Target colour authority: target_prompt.txt and appearance.json only; AC colours come from appearance.json AC or AC_recipe. No scene-level contract attributes or material names are used.",
+    "Entity names and hierarchy verified by read-only inspection of the final P2_AA.blend. Attribute selection is fixed before model scoring.",
+    "tan -> brown; navy-blue -> blue; charcoal -> gray/silver; ivory -> white.",
+    "Both ropes exist as separate renderable deforming meshes in the final P2_AA scene. Attempt ordinary GT masks and controls; elongated rope bboxes may make center-based presence unreliable. If no usable crop is obtained, record that run-level skip without changing the contract."
+  ]
+}

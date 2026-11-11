@@ -1,0 +1,103 @@
+<section aria-labelledby="grid-title">
+<h2 id="grid-title">One scene · P × A grid</h2>
+<p>P is the draft polish, A the relation between source and target appearance. Click a cell to see all its metrics.</p>
+<div class="grid-controls">
+<label>Model <select id="grid-model"></select></label>
+<label>Scene <select id="grid-case"></select></label>
+<label>Metric <select id="grid-metric"></select></label>
+<label>View <select id="grid-mode">
+<option value="grid">Grid: P × A</option>
+<option value="merge-a">Merge A: compare P0 / P1 / P2</option>
+<option value="merge-p">Merge P: compare AN / AA / AC</option>
+<option value="all">Merge P and A: whole scene</option>
+</select></label>
+</div>
+<p id="grid-note" aria-live="polite"></p>
+<div class="grid-scroll" id="grid-view"></div>
+<h3 id="detail-title">All metrics</h3>
+<div class="grid-scroll" id="grid-detail"></div>
+<p>Merged values are equal-weight means, shown only when every applicable cell has a score. Coverage reads "scored cells / applicable cells"; SL applies to AC only. When a blank cannot be attributed, it is marked "missing or not applicable".</p>
+<button type="button" id="grid-reset">Show all metrics for this view</button>
+<button type="button" id="grid-export">Export these metrics (CSV)</button>
+</section>
+<style>
+.grid-controls{display:flex;flex-wrap:wrap;gap:10px;background:#f3f6fa;padding:12px;border-radius:8px}.grid-controls label{display:flex;align-items:center;gap:4px}.grid-scroll{overflow:auto;margin:14px 0;max-height:65vh}.grid-scroll table{min-width:560px;width:100%}.grid-score{font-size:24px;display:block;font-variant-numeric:tabular-nums}.grid-coverage{display:block;color:#596575;font-size:12px}.grid-cell{background:#f7fbff}.grid-cell button{border:0;background:none;width:100%;padding:12px;cursor:pointer;color:#164d8b}.grid-cell button:hover{background:#e3edfa}button:focus-visible,select:focus-visible{outline:3px solid #2479c9}#grid-reset,#grid-export{padding:8px 12px;margin:4px}section{border:1px solid #d6deea;padding:18px;border-radius:10px;margin-bottom:30px}#grid-detail td small{display:block;color:#596575}
+</style>
+<script>
+const GRID_DATA = __GRID_DATA__;
+const P_LEVELS = ['P0','P1','P2'], A_LEVELS = ['AN','AA','AC'];
+const GRID_CELLS = P_LEVELS.flatMap(p => A_LEVELS.map(a => p+'_'+a));
+function groupCells(mode) {
+ if(mode === 'merge-a') return P_LEVELS.map(p => ({name:p+' (merged A)',cells:GRID_CELLS.filter(c => c.startsWith(p+'_'))}));
+ if(mode === 'merge-p') return A_LEVELS.map(a => ({name:a+' (merged P)',cells:GRID_CELLS.filter(c => c.endsWith('_'+a))}));
+ if(mode === 'all') return [{name:'whole scene',cells:GRID_CELLS}];
+ return GRID_CELLS.map(c => ({name:c,cells:[c]}));
+}
+function aggregateGrid(scores, metric, cells) {
+ const eligible = cells.filter(c => metric !== 'SL_color' || c.endsWith('_AC'));
+ const values = eligible.map(c => scores[c]?.[metric]).filter(v => Number.isFinite(v));
+ return {value: eligible.length && values.length === eligible.length ? values.reduce((a,b)=>a+b,0)/values.length : null,
+         available:values.length, expected:eligible.length};
+}
+function escapeGrid(value) { return String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function gridScore(result) {
+ if(result.value !== null) return result.value.toFixed(2);
+ return result.expected === 0 ? 'n/a' : '—';
+}
+function gridCoverage(r) { return r.available+'/'+r.expected+' cells'+(r.expected && !r.available ? ' · missing or not applicable' : r.available < r.expected ? ' · incomplete' : ''); }
+if(typeof document !== 'undefined') {
+ const controls = Object.fromEntries(['model','case','metric','mode'].map(k=>[k,document.getElementById('grid-'+k)]));
+ function options(select, entries) { select.innerHTML=entries.map(([value,label])=>'<option value="'+escapeGrid(value)+'">'+escapeGrid(label)+'</option>').join(''); }
+ options(controls.model, GRID_DATA.models.map(m=>[m,m]));
+ options(controls.case, GRID_DATA.cases.map(c=>[c,c]));
+ options(controls.metric, GRID_DATA.metrics.map(m=>[m,GRID_DATA.labels[m] || m]));
+ controls.model.value='Wan-3.0'; controls.metric.value='RF_total';
+ let focusCell = null, exportRows = [];
+ const scores = () => GRID_DATA.values[controls.model.value]?.[controls.case.value] || {};
+ function renderDetail() {
+  const groups = focusCell ? [{name:focusCell,cells:[focusCell]}] : groupCells(controls.mode.value);
+  document.getElementById('detail-title').textContent=controls.model.value+' / '+controls.case.value+' / '+(focusCell || controls.mode.selectedOptions[0].text)+' · all metrics';
+  exportRows=[['model','case','group','metric','value','available_cells','expected_cells']];
+  let table='<table><thead><tr><th>Metric</th>'+groups.map(g=>'<th>'+escapeGrid(g.name)+'</th>').join('')+'</tr></thead><tbody>';
+  for(const metric of GRID_DATA.metrics) {
+   table+='<tr><th scope="row">'+escapeGrid(GRID_DATA.labels[metric] || metric)+'</th>';
+   for(const g of groups) {
+    const r=aggregateGrid(scores(),metric,g.cells);
+    exportRows.push([controls.model.value,controls.case.value,g.name,metric,r.value ?? '',r.available,r.expected]);
+    table+='<td>'+gridScore(r)+'<small>'+gridCoverage(r)+'</small></td>';
+   }
+   table+='</tr>';
+  }
+  document.getElementById('grid-detail').innerHTML=table+'</tbody></table>';
+ }
+ function render() {
+  focusCell=null;
+  const metric=controls.metric.value, mode=controls.mode.value;
+  document.getElementById('grid-note').textContent=controls.model.value+' / '+controls.case.value+' / '+(GRID_DATA.labels[metric] || metric)+'; proportions and CLIP ×100, camera errors in their own units.';
+  const cellHTML=(cells,cell)=>{
+   const r=aggregateGrid(scores(),metric,cells);
+   const content='<span class="grid-score">'+gridScore(r)+'</span><span class="grid-coverage">'+gridCoverage(r)+'</span>';
+   return '<td class="grid-cell">'+(cell ? '<button type="button" data-cell="'+cell+'" aria-label="All metrics of '+cell+'">'+content+'</button>' : content)+'</td>';
+  };
+  let table='<table>';
+  if(mode==='grid') {
+   table+='<thead><tr><th scope="col">P ＼ A</th>'+A_LEVELS.map(a=>'<th scope="col">'+a+'</th>').join('')+'</tr></thead><tbody>';
+   for(const p of P_LEVELS) table+='<tr><th scope="row">'+p+'</th>'+A_LEVELS.map(a=>cellHTML([p+'_'+a],p+'_'+a)).join('')+'</tr>';
+  } else {
+   const groups=groupCells(mode);
+   table+='<thead><tr>'+groups.map(g=>'<th scope="col">'+g.name+'</th>').join('')+'</tr></thead><tbody><tr>'+groups.map(g=>cellHTML(g.cells)).join('')+'</tr>';
+  }
+  document.getElementById('grid-view').innerHTML=table+'</tbody></table>';
+  renderDetail();
+ }
+ Object.values(controls).forEach(c=>c.addEventListener('change',render));
+ document.getElementById('grid-view').addEventListener('click',e=>{const button=e.target.closest('[data-cell]');if(button){focusCell=button.dataset.cell;renderDetail();}});
+ document.getElementById('grid-reset').addEventListener('click',()=>{focusCell=null;renderDetail();});
+ document.getElementById('grid-export').addEventListener('click',()=>{
+  const csv='\uFEFF'+exportRows.map(row=>row.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\r\n');
+  const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));
+  const a=document.createElement('a');a.href=url;a.download=controls.model.value+'_'+controls.case.value+'_'+(focusCell || controls.mode.value)+'.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ });
+ render();
+}
+</script>

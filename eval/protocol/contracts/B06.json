@@ -1,0 +1,53 @@
+{
+  "case": "B06",
+  "noun": "drawbridge leaf, car or cabin boat",
+  "gt_root_pattern": "(?:(?:Left|Right) lifting bridge leaf|First crossing car|Final eastbound car|Final westbound car|Passing cabin boat)",
+  "attributes": [
+    {
+      "entities": [
+        "Left lifting bridge leaf",
+        "Right lifting bridge leaf"
+      ],
+      "surface": "outer side girder excluding stripe",
+      "target": "blue",
+      "source": "gray/silver",
+      "id": "T1"
+    },
+    {
+      "entities": [
+        "Left lifting bridge leaf",
+        "Right lifting bridge leaf"
+      ],
+      "surface": "broad stripe along the outer side girder",
+      "target": "yellow",
+      "source": "red",
+      "pattern": "one broad stripe running along the outer side girder",
+      "id": "T2"
+    },
+    {
+      "entities": [
+        "First crossing car",
+        "Final eastbound car",
+        "Final westbound car"
+      ],
+      "surface": "painted car body",
+      "target": "red",
+      "source": "blue",
+      "id": "T3"
+    },
+    {
+      "entities": [
+        "Passing cabin boat"
+      ],
+      "surface": "boat hull",
+      "target": "white",
+      "source": "blue",
+      "id": "T4"
+    }
+  ],
+  "notes": [
+    "Target colour authority: target_prompt.txt and appearance.json only; AC colours come from appearance.json AC or AC_recipe. No scene-level contract attributes or material names are used.",
+    "Entity names and hierarchy verified by read-only inspection of the final P2_AA.blend. Attribute selection is fixed before model scoring.",
+    "dark blue -> blue; golden-yellow -> yellow; warm white -> white; AC light gray -> gray/silver; red/blue map directly. Girder children stay within the moving leaf bbox; road and frame background are not separate colour targets."
+  ]
+}

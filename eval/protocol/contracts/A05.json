@@ -1,0 +1,59 @@
+{
+  "case": "A05",
+  "noun": "carousel horse",
+  "gt_root_pattern": "A05 \\| horse \\d{2} lift",
+  "attributes": [
+    {
+      "id": "T1",
+      "entities": [
+        "A05 | horse 01 lift",
+        "A05 | horse 03 lift",
+        "A05 | horse 06 lift",
+        "A05 | horse 09 lift",
+        "A05 | horse 11 lift",
+        "A05 | horse 14 lift"
+      ],
+      "surface": "horse body, excluding the saddle",
+      "target": "white",
+      "source": "brown"
+    },
+    {
+      "id": "T2",
+      "entities": [
+        "A05 | horse 02 lift",
+        "A05 | horse 05 lift",
+        "A05 | horse 07 lift",
+        "A05 | horse 10 lift",
+        "A05 | horse 13 lift",
+        "A05 | horse 15 lift"
+      ],
+      "surface": "horse body, excluding the saddle",
+      "target": "brown",
+      "source": "blue"
+    },
+    {
+      "id": "T3",
+      "entities": [
+        "A05 | horse 17 lift",
+        "A05 | horse 18 lift",
+        "A05 | horse 20 lift",
+        "A05 | horse 21 lift",
+        "A05 | horse 22 lift",
+        "A05 | horse 23 lift",
+        "A05 | horse 25 lift",
+        "A05 | horse 26 lift"
+      ],
+      "surface": "horse body, excluding the saddle",
+      "target": "blue",
+      "source": "white"
+    }
+  ],
+  "notes": [
+    "Colour truth comes only from target_prompt.txt and appearance.json; scene metadata and material names are not colour authority.",
+    "All semantic roots are retained for DF. Shared-colour entities are grouped in one attribute, fixed across all nine cells.",
+    "T1: target warm ivory -> white; AC chestnut brown -> brown.",
+    "T2: target chestnut brown -> brown; AC slate blue -> blue.",
+    "T3: target slate blue -> blue; AC warm ivory -> white.",
+    "Outer-ring alternation and inner-ring colours are represented by fixed per-horse bindings from appearance.json, not the numeric parity of non-contiguous object IDs."
+  ]
+}

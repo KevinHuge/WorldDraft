@@ -1,0 +1,400 @@
+{
+  "version": "factual-contrasts",
+  "policy": "Append one false factual alternative for each original RF/AP proposition. Keep the same subject, object part, scope, and AP persistence wording. Palette alternatives lie outside the entire accepted set; material, finish, texture, transparency, and lighting alternatives assert incompatible visible properties. No grammatical negation is used.",
+  "original_catalog": {
+    "questions": 4013,
+    "per_scene": {
+      "A01": {
+        "questions": 83,
+        "rows_sha256": "76bff540feb29d38aef7d76d68b70c81c8decac9f4c19ee0b9aa7d9062692349"
+      },
+      "A02": {
+        "questions": 162,
+        "rows_sha256": "1d79abf5dd23d24905b1ea98914e234b1350d803b5755924ed605031ac03ccd4"
+      },
+      "A03": {
+        "questions": 175,
+        "rows_sha256": "35471b06c8aa40fcf58f2a3380d6da54f79fff81f264b1e541c3c3ab3c8ddeb7"
+      },
+      "A04": {
+        "questions": 137,
+        "rows_sha256": "f8fa17ed0dc3f5fa485d741cd4e946c8704535b57bb73df2989e3bc1d40afadf"
+      },
+      "A05": {
+        "questions": 124,
+        "rows_sha256": "3a347d0df5b1f5a674ebad675031d143776e8e63c7874025ab3e1f47ee013e9f"
+      },
+      "A06": {
+        "questions": 87,
+        "rows_sha256": "4533892db38db0c4f10c8a90d4c1f2065f7e20a9d718d2a1235c62f1bbd14fba"
+      },
+      "A07": {
+        "questions": 186,
+        "rows_sha256": "87e9f4ba8f5c8b6ba56c7177fdbb92a13ddcaa7989b86325e57f346307334ac4"
+      },
+      "A08": {
+        "questions": 89,
+        "rows_sha256": "7bf12c4792e11d830710d164c2d94172141a88b3f0505169662f542f9625fb95"
+      },
+      "B01": {
+        "questions": 366,
+        "rows_sha256": "00955096d68475f7c7b6c6a8d81da7987f33bceb1a8153ee0e5ffa1da4b196a2"
+      },
+      "B02": {
+        "questions": 43,
+        "rows_sha256": "5dada157dcfec56da788965a7603c464b96427193dc774c469ecc294126040fa"
+      },
+      "B03": {
+        "questions": 85,
+        "rows_sha256": "6635918b62343a8274dfe9191d22628edbe6c485c1f2cc4f23f791ab06c1e98d"
+      },
+      "B04": {
+        "questions": 118,
+        "rows_sha256": "29935326a12d31f19805ca8fdcac9a82e7c0f6e66305d16d0706fa7a2bca157c"
+      },
+      "B05": {
+        "questions": 24,
+        "rows_sha256": "232a0e073dd7e92bd103913a286262afce12694e42df0b1b48ce5d8bd6c4ad23"
+      },
+      "B06": {
+        "questions": 54,
+        "rows_sha256": "004d6817530372420e5a2a5a4a63c16efc51d18271f328160182b696d94c190e"
+      },
+      "B07": {
+        "questions": 154,
+        "rows_sha256": "77903a0f9110f479cbd9f1c1c5af6b3287c9af1148aba08ac4c6811f8b8e3d93"
+      },
+      "B08": {
+        "questions": 63,
+        "rows_sha256": "0de732e6258462c5b4364f9a51a93e0ee7c3e0e63acd6a397b45a50b483f5cd6"
+      },
+      "C01": {
+        "questions": 45,
+        "rows_sha256": "e1e1430406160e221330c2d3a5c4fa3947c314c306fe070607cfbdcee1f5e4b5"
+      },
+      "C02": {
+        "questions": 66,
+        "rows_sha256": "484563e283c68d7160c4f76cf10fa947a40e486aa38f80fa9b0ad3d5843c1708"
+      },
+      "C03": {
+        "questions": 19,
+        "rows_sha256": "1bba2ca5666901c3b87c63a19b885a80f247de95e9afc9306d88f499208ebc21"
+      },
+      "C04": {
+        "questions": 36,
+        "rows_sha256": "b7cdc2cf729c4b31bce736674d2b5aae62324f16aab9ba9c3ceda23f440d3389"
+      },
+      "C05": {
+        "questions": 18,
+        "rows_sha256": "b65a35ef52d7c7e4e7ce998daeb70f8e1509f39081a8d7d704058c3c18fdee25"
+      },
+      "C06": {
+        "questions": 118,
+        "rows_sha256": "095c6b3e70c7baea946c7cf6ed12862f790a7f32582caffefffefac3239c8ca2"
+      },
+      "C07": {
+        "questions": 20,
+        "rows_sha256": "778b0b827f5562a4f62647583c49bd9fcee8d6247a58172a73b3652e5b59294e"
+      },
+      "C08": {
+        "questions": 47,
+        "rows_sha256": "c8c118a00e40d656c237dc62dc1f06bee9ed2121c865aaed8bcdb7a9312c21e9"
+      },
+      "D01": {
+        "questions": 25,
+        "rows_sha256": "d178f58e5333624d700f2e9b5fbb9afff043773671af9246ec3bb331fa6ecda4"
+      },
+      "D02": {
+        "questions": 23,
+        "rows_sha256": "e4a81e9f380907969295d6cfe70cc90dc2172669bd9e3427e6bc00cb03a8cadf"
+      },
+      "D03": {
+        "questions": 26,
+        "rows_sha256": "8424e6bccd206a7a6721de263a8e2cb0b978e98b2e5e9e623fd7dff1651c1a86"
+      },
+      "D04": {
+        "questions": 61,
+        "rows_sha256": "c521fce591a65dad5d2865d3dc1c9cdd108eddce350a325dd3e62271130c4122"
+      },
+      "D05": {
+        "questions": 93,
+        "rows_sha256": "34d31babf983ba999bd26e5bc817e3639f27f4434df99426671e10410cc9336f"
+      },
+      "D06": {
+        "questions": 85,
+        "rows_sha256": "a2e4e3d816487754a06a27db91d34dcfcda0ada4841a3cb20e2e50f6bfebe0bc"
+      },
+      "D07": {
+        "questions": 94,
+        "rows_sha256": "9bd5854c7c1a545400f7d2dd30d93b0b3fb1eee7a447e6328988cbefbb4c2150"
+      },
+      "D08": {
+        "questions": 259,
+        "rows_sha256": "07b023502009110374ba5343a51f7fc1249e6f13a65fb0b0fe179487fdc9b490"
+      },
+      "E01": {
+        "questions": 37,
+        "rows_sha256": "8115e207e7586e7a6933aee086ad37ed99b0c1c8ac7a8cd6018f8d8430ced686"
+      },
+      "E02": {
+        "questions": 71,
+        "rows_sha256": "05359a9c7b8be826397f23cddbd539d4649637c02646cf6f1d85f3c274156b1a"
+      },
+      "E03": {
+        "questions": 19,
+        "rows_sha256": "cede3334553dbb3252c8708a604b4c00dbdd3a7525d7f4936e20646e4ab37e94"
+      },
+      "E04": {
+        "questions": 16,
+        "rows_sha256": "bae4bbe98a3841d6b8e8901ba6e8e11dbf9418ec8977460cc792a3df00ecf544"
+      },
+      "E05": {
+        "questions": 26,
+        "rows_sha256": "8012adc926bd6515ede32a106132412d49e47cbd11d52043844ea2b5a0d56821"
+      },
+      "E06": {
+        "questions": 21,
+        "rows_sha256": "c405ce46a820cd9ea16195080e2db4db33d9be305423ac91c65add09acf80915"
+      },
+      "E07": {
+        "questions": 45,
+        "rows_sha256": "278dc57b4a34b68d9bcbf7406c2b34c185a2d631f81d83e27e7cd0240d42ab9e"
+      },
+      "E08": {
+        "questions": 19,
+        "rows_sha256": "8c37c984fcd56af323168348f5cc16149b214b230a635ffa129d8644d70177cf"
+      },
+      "F01": {
+        "questions": 121,
+        "rows_sha256": "363d3db5eb9a5a2efabbe2ba66937c18f092db98ed863339cf7e187dab52b15c"
+      },
+      "F02": {
+        "questions": 42,
+        "rows_sha256": "a53996fe41c67f519df44e217a382fadb20830ab7b67d235d1bf8c2448793d4a"
+      },
+      "F03": {
+        "questions": 170,
+        "rows_sha256": "d2f2cf00ccfa43fa2ae3c1e4db4e2d0e0368b4a69982e5b01fceb52deaac7546"
+      },
+      "F04": {
+        "questions": 56,
+        "rows_sha256": "033b908fef52f30f71977de679f36f322ab14b7bdc9df52a6974d2c2343d4820"
+      },
+      "F05": {
+        "questions": 60,
+        "rows_sha256": "39591cb616951f6fd15b07004ef98a227eba3215c03015470b76797c782e9203"
+      },
+      "F06": {
+        "questions": 96,
+        "rows_sha256": "d1b0827cb6d80e470fd9630f79471602cb0711f25b48b1c21b457f2fd994c12a"
+      },
+      "F07": {
+        "questions": 152,
+        "rows_sha256": "da4ab26f711dc5149e5ff65596f2f0fdee13a1c2caef41929de8268a520d4fdb"
+      },
+      "F08": {
+        "questions": 77,
+        "rows_sha256": "456e7675a32998816f61665f5fce8999ba3ac302e488be809e501186265f66ce"
+      }
+    }
+  },
+  "a01_question_spans": {
+    "painted metal": "painted-metal"
+  },
+  "contrasts": {
+    "color": {
+      "a natural warm skin tone": "a vivid blue skin tone",
+      "a natural warm tone": "a vivid blue tone",
+      "alternating scarlet red, cobalt blue, and golden yellow": "uniformly emerald green",
+      "alternating warm ivory and chestnut brown": "uniformly cobalt blue",
+      "amber": "cobalt blue",
+      "black": "bright white",
+      "black or white": "vivid red",
+      "blue": "vivid orange",
+      "brick red": "emerald green",
+      "burnt orange": "cobalt blue",
+      "charcoal": "bright yellow",
+      "charcoal gray": "bright yellow",
+      "chocolate brown": "cobalt blue",
+      "cobalt blue": "vivid orange",
+      "coral": "emerald green",
+      "coral red": "emerald green",
+      "cream": "deep violet",
+      "creamy white": "deep violet",
+      "cyan": "scarlet red",
+      "dark": "bright white",
+      "dark blue": "vivid orange",
+      "dark charcoal": "bright yellow",
+      "dark cocoa brown": "cobalt blue",
+      "deep blue": "vivid orange",
+      "deep green": "vivid magenta",
+      "deep navy": "vivid orange",
+      "deep orange": "cobalt blue",
+      "egg-yolk yellow": "deep violet",
+      "emerald green": "vivid magenta",
+      "golden yellow": "deep violet",
+      "ivory": "deep violet",
+      "kraft brown": "cobalt blue",
+      "light gray": "deep violet",
+      "lime green": "vivid magenta",
+      "magenta": "emerald green",
+      "medium gray": "vivid orange",
+      "navy blue": "vivid orange",
+      "ochre yellow": "deep violet",
+      "orange": "cobalt blue",
+      "pink": "emerald green",
+      "red": "emerald green",
+      "safety orange": "cobalt blue",
+      "safety yellow": "deep violet",
+      "scarlet red": "emerald green",
+      "scarlet red, cobalt blue, or golden yellow": "emerald green",
+      "silver": "vivid magenta",
+      "silver gray": "vivid magenta",
+      "sky blue": "vivid orange",
+      "slate blue": "vivid orange",
+      "strictly alternating black and white": "uniformly vivid red",
+      "striped red and white": "solid cobalt blue",
+      "tan": "cobalt blue",
+      "teal": "vivid orange",
+      "the opposite black-or-white color to its body": "vivid red",
+      "violet": "golden yellow",
+      "vivid orange": "cobalt blue",
+      "warm beige": "deep violet",
+      "warm ivory": "deep violet",
+      "warm ivory or chestnut brown": "cobalt blue",
+      "warm white": "deep violet",
+      "warm yellow": "deep violet",
+      "white": "deep violet",
+      "yellow": "deep violet"
+    },
+    "material": {
+      "bare metal": "bare wood",
+      "black rubber": "black ceramic",
+      "brushed metal": "brushed wood",
+      "concrete": "solid wood",
+      "dark asphalt": "dark marble",
+      "enamel": "leather",
+      "flexible polymer": "flexible steel",
+      "glass": "wood",
+      "kraft-brown corrugated cardboard": "kraft-brown corrugated steel",
+      "made of black rubber": "made of black ceramic",
+      "made of ceramic": "made of cardboard",
+      "made of coated glass": "made of coated wood",
+      "made of corrugated cardboard": "made of corrugated steel",
+      "made of enamel-coated metal": "made of enamel-coated wood",
+      "made of foil": "made of cotton",
+      "made of glass": "made of wood",
+      "made of maple": "made of marble",
+      "made of metal": "made of solid wood",
+      "made of molded fiberglass": "made of molded ceramic",
+      "made of molded plastic": "made of molded ceramic",
+      "made of opaque glass": "made of opaque steel",
+      "made of painted fiberglass": "made of painted wood",
+      "made of painted metal": "made of painted wood",
+      "made of painted steel": "made of painted wood",
+      "made of plastic": "made of steel",
+      "made of polyester": "made of leather",
+      "made of resin": "made of wood",
+      "made of rubber": "made of steel",
+      "made of stainless steel": "made of solid wood",
+      "made of steel": "made of solid wood",
+      "made of wood": "made of marble",
+      "matte polymer": "matte steel",
+      "molded ABS": "molded ceramic",
+      "painted metal": "painted wood",
+      "painted steel": "painted wood",
+      "rubber": "stone",
+      "satin steel": "satin wood",
+      "stainless steel": "solid wood",
+      "steel": "solid wood",
+      "wood": "marble"
+    },
+    "texture": {
+      "braided": "smooth and featureless",
+      "brushed": "highly polished and mirrorlike",
+      "corrugated": "flat and featureless",
+      "finely woven": "smooth and featureless",
+      "folded": "flat and crease-free",
+      "glossy": "rough and matte",
+      "granular": "smooth and featureless",
+      "knitted": "smooth and featureless",
+      "lacquered": "rough and unfinished",
+      "matte": "highly glossy and mirrorlike",
+      "matte plaster": "glossy plaster",
+      "open-cell porous": "a smooth solid block",
+      "painted": "bare unfinished metal",
+      "polished": "rough and pitted",
+      "rubber": "deeply pitted and rough",
+      "satin": "highly glossy and mirrorlike",
+      "satin wood grain": "smooth and uniform",
+      "scored into raised rectangular segments": "flat and featureless",
+      "sheer linen": "thick opaque velvet",
+      "showing fine oak grain": "smooth and uniform",
+      "showing natural wood grain": "smooth and uniform",
+      "smooth": "rough and deeply pitted",
+      "soft": "highly glossy and mirrorlike",
+      "tightly woven": "smooth and featureless",
+      "woven": "smooth and featureless",
+      "woven athletic fabric": "smooth and featureless",
+      "woven cotton": "smooth and featureless",
+      "woven fabric": "smooth and featureless"
+    },
+    "environment": {
+      "blue": "vivid orange",
+      "bright blue": "vivid orange",
+      "brown wood": "brown marble",
+      "charcoal": "bright yellow",
+      "charcoal asphalt": "charcoal marble",
+      "clear": "opaque milky white",
+      "concrete": "solid wood",
+      "cream": "deep violet",
+      "dark bronze-brown": "bright cyan",
+      "dark brown": "bright cyan",
+      "dark charcoal": "bright yellow",
+      "dark charcoal asphalt": "dark charcoal marble",
+      "dark gray": "bright yellow",
+      "dark gray asphalt": "dark gray marble",
+      "dark green": "vivid magenta",
+      "dark steel gray": "vivid magenta",
+      "deep blue": "vivid orange",
+      "deep blue-green": "vivid orange",
+      "deep burgundy": "emerald green",
+      "deep green": "vivid magenta",
+      "earth brown": "bright cyan",
+      "green": "vivid magenta",
+      "honey-brown oak": "honey-brown ceramic tile",
+      "industrial red": "emerald green",
+      "ivory": "deep violet",
+      "kraft brown": "cobalt blue",
+      "light gray": "deep violet",
+      "light gray cast concrete": "light gray brick",
+      "light honey-brown": "bright cyan",
+      "light oak brown": "bright cyan",
+      "light wood brown": "bright cyan",
+      "muted red": "emerald green",
+      "neutral gray": "bright yellow",
+      "neutral-gray concrete": "neutral-gray brick",
+      "opaque navy": "opaque vivid orange",
+      "pale warm gray": "deep violet",
+      "red": "emerald green",
+      "silver gray": "vivid magenta",
+      "terracotta-brown stone": "terracotta-brown ceramic tile",
+      "walnut brown": "bright cyan",
+      "warm beige concrete": "warm beige brick",
+      "warm beige stone": "warm beige ceramic tile",
+      "warm brass-gold": "deep violet",
+      "warm brown": "bright cyan",
+      "warm cream": "deep violet",
+      "warm ivory": "deep violet",
+      "warm off-white": "deep violet",
+      "warm yellow": "deep violet",
+      "warm-beige cast concrete": "warm-beige brick",
+      "white": "deep violet"
+    },
+    "lighting": {
+      "soft": "hard and strongly directional",
+      "neutral": "strongly red-tinted",
+      "neutral in color": "strongly red-tinted"
+    }
+  }
+}
