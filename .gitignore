@@ -1,5 +1,6 @@
 # Benchmark data (eval/download_data.sh), generated videos and evaluation outputs.
-/data/
+/data/*
+!/data/README.md
 /results/
 /eval/results/
 *.blend
@@ -11,6 +12,9 @@
 *.jpg
 *.jpeg
 *.gif
+
+# README artwork.
+!/assets/*.png
 
 # Model weights.
 *.safetensors
