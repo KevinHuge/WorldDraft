@@ -1,0 +1,200 @@
+{
+  "dataset": "worlddraft",
+  "protocol": "benchmark-literal-ap-gated",
+  "episode": "A04",
+  "files": {
+    "questions": "../qa/questions.csv",
+    "question_provenance": "../qa/provenance.json",
+    "factual_contrasts": "../qa/factual-contrasts.json",
+    "source_material_audit": "../qa/source-material-audit.json",
+    "visibility_gt": "data/gt/A04/gt.json",
+    "entities_gt": "data/gt/entities/A04.json",
+    "target_prompt": "data/scenes/A04/target_prompt.txt",
+    "appearance": "data/scenes/A04/appearance.json"
+  },
+  "judge": {
+    "model": "Qwen/Qwen3.6-27B",
+    "temperature": 0,
+    "enable_thinking": false
+  },
+  "qa": {
+    "groups": {
+      "A04": {
+        "boats": [
+          "Sailboat 01",
+          "Sailboat 02",
+          "Sailboat 03",
+          "Sailboat 04",
+          "Sailboat 05",
+          "Sailboat 06",
+          "Sailboat 07",
+          "Sailboat 08",
+          "Sailboat 09",
+          "Sailboat 10",
+          "Sailboat 11",
+          "Sailboat 12"
+        ]
+      }
+    },
+    "bindings": {
+      "A04": {
+        "1": {
+          "count_scope": "global"
+        },
+        "2": {
+          "count_scope": "region"
+        },
+        "3": {
+          "count_scope": "region"
+        },
+        "4": {
+          "count_scope": "region"
+        },
+        "5": {
+          "count_scope": "region"
+        },
+        "6": {
+          "count_scope": "region"
+        },
+        "7": {
+          "count_scope": "region"
+        },
+        "8": {
+          "count_scope": "region"
+        },
+        "9": {
+          "count_scope": "region"
+        },
+        "10": {
+          "count_scope": "region"
+        },
+        "11": {
+          "count_scope": "region"
+        },
+        "12": {
+          "count_scope": "region"
+        },
+        "13": {
+          "count_scope": "region"
+        },
+        "115": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "117": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "119": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "121": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "123": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "125": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "127": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "129": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "131": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "133": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "135": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "137": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        }
+      }
+    },
+    "times_s": [
+      0.0,
+      0.6875,
+      1.4375,
+      2.125,
+      2.875,
+      3.5625,
+      4.3125,
+      5.0
+    ],
+    "count_times_s": [
+      0.0,
+      2.125,
+      5.0
+    ],
+    "crop_side": 224,
+    "rf_sampling": "one frame per question; max GT visible mask area, earliest tie; scene questions use first frame",
+    "count_scoring": "exact_count_accuracy_global_and_local_separate",
+    "crop": "gt_bbox",
+    "binary_answers": [
+      "yes",
+      "no"
+    ],
+    "count_answers": "nonnegative_integer",
+    "entity_labels": {
+      "Sailboat 01": "boat",
+      "Sailboat 02": "boat",
+      "Sailboat 03": "boat",
+      "Sailboat 04": "boat",
+      "Sailboat 05": "boat",
+      "Sailboat 06": "boat",
+      "Sailboat 07": "boat",
+      "Sailboat 08": "boat",
+      "Sailboat 09": "boat",
+      "Sailboat 10": "boat",
+      "Sailboat 11": "boat",
+      "Sailboat 12": "boat"
+    },
+    "global_count_view": "full_frame",
+    "visibility_from_masks": true,
+    "entity_mapping_audit": {
+      "sparse_only": [],
+      "dense_only": [],
+      "policy": "Sparse visible instance masks define regions and count units. Dense-only objects use named full-frame RF questions; no amodal bbox substitutes for visibility."
+    }
+  }
+}

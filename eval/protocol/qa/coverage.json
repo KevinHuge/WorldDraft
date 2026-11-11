@@ -1,0 +1,320 @@
+{
+  "scenes": 48,
+  "questions": 9875,
+  "metrics": {
+    "EntityCount": 434,
+    "RF": 3378,
+    "AP": 5564,
+    "SL": 499
+  },
+  "expected_answers": {
+    "RF": {
+      "yes": 1689,
+      "no": 1689
+    },
+    "AP": {
+      "yes": 2782,
+      "no": 2782
+    },
+    "SL": {
+      "no": 499
+    }
+  },
+  "rf_attributes": {
+    "color": 1574,
+    "material": 718,
+    "environment": 200,
+    "lighting": 192,
+    "texture": 694
+  },
+  "per_scene": {
+    "A01": {
+      "EntityCount": 9,
+      "RF": 76,
+      "AP": 128,
+      "SL": 4
+    },
+    "A02": {
+      "EntityCount": 17,
+      "RF": 134,
+      "AP": 252,
+      "SL": 15
+    },
+    "A03": {
+      "EntityCount": 18,
+      "RF": 144,
+      "AP": 272,
+      "SL": 17
+    },
+    "A04": {
+      "EntityCount": 13,
+      "RF": 104,
+      "AP": 192,
+      "SL": 24
+    },
+    "A05": {
+      "EntityCount": 21,
+      "RF": 98,
+      "AP": 160,
+      "SL": 14
+    },
+    "A06": {
+      "EntityCount": 11,
+      "RF": 72,
+      "AP": 120,
+      "SL": 10
+    },
+    "A07": {
+      "EntityCount": 19,
+      "RF": 154,
+      "AP": 288,
+      "SL": 18
+    },
+    "A08": {
+      "EntityCount": 9,
+      "RF": 80,
+      "AP": 128,
+      "SL": 8
+    },
+    "B01": {
+      "EntityCount": 31,
+      "RF": 310,
+      "AP": 600,
+      "SL": 30
+    },
+    "B02": {
+      "EntityCount": 6,
+      "RF": 40,
+      "AP": 60,
+      "SL": 2
+    },
+    "B03": {
+      "EntityCount": 13,
+      "RF": 74,
+      "AP": 132,
+      "SL": 2
+    },
+    "B04": {
+      "EntityCount": 11,
+      "RF": 94,
+      "AP": 160,
+      "SL": 20
+    },
+    "B05": {
+      "EntityCount": 4,
+      "RF": 24,
+      "AP": 20,
+      "SL": 3
+    },
+    "B06": {
+      "EntityCount": 9,
+      "RF": 40,
+      "AP": 64,
+      "SL": 9
+    },
+    "B07": {
+      "EntityCount": 17,
+      "RF": 114,
+      "AP": 216,
+      "SL": 26
+    },
+    "B08": {
+      "EntityCount": 6,
+      "RF": 54,
+      "AP": 80,
+      "SL": 10
+    },
+    "C01": {
+      "EntityCount": 4,
+      "RF": 40,
+      "AP": 60,
+      "SL": 6
+    },
+    "C02": {
+      "EntityCount": 6,
+      "RF": 50,
+      "AP": 80,
+      "SL": 15
+    },
+    "C03": {
+      "EntityCount": 2,
+      "RF": 24,
+      "AP": 12,
+      "SL": 2
+    },
+    "C04": {
+      "EntityCount": 3,
+      "RF": 34,
+      "AP": 48,
+      "SL": 4
+    },
+    "C05": {
+      "EntityCount": 2,
+      "RF": 20,
+      "AP": 16,
+      "SL": 2
+    },
+    "C06": {
+      "EntityCount": 9,
+      "RF": 90,
+      "AP": 160,
+      "SL": 24
+    },
+    "C07": {
+      "EntityCount": 2,
+      "RF": 22,
+      "AP": 20,
+      "SL": 2
+    },
+    "C08": {
+      "EntityCount": 6,
+      "RF": 42,
+      "AP": 64,
+      "SL": 4
+    },
+    "D01": {
+      "EntityCount": 2,
+      "RF": 26,
+      "AP": 28,
+      "SL": 3
+    },
+    "D02": {
+      "EntityCount": 4,
+      "RF": 24,
+      "AP": 20,
+      "SL": 2
+    },
+    "D03": {
+      "EntityCount": 3,
+      "RF": 26,
+      "AP": 24,
+      "SL": 4
+    },
+    "D04": {
+      "EntityCount": 12,
+      "RF": 48,
+      "AP": 60,
+      "SL": 10
+    },
+    "D05": {
+      "EntityCount": 7,
+      "RF": 80,
+      "AP": 144,
+      "SL": 10
+    },
+    "D06": {
+      "EntityCount": 11,
+      "RF": 70,
+      "AP": 116,
+      "SL": 10
+    },
+    "D07": {
+      "EntityCount": 7,
+      "RF": 78,
+      "AP": 144,
+      "SL": 12
+    },
+    "D08": {
+      "EntityCount": 28,
+      "RF": 196,
+      "AP": 368,
+      "SL": 41
+    },
+    "E01": {
+      "EntityCount": 5,
+      "RF": 32,
+      "AP": 40,
+      "SL": 6
+    },
+    "E02": {
+      "EntityCount": 10,
+      "RF": 52,
+      "AP": 88,
+      "SL": 13
+    },
+    "E03": {
+      "EntityCount": 2,
+      "RF": 22,
+      "AP": 16,
+      "SL": 2
+    },
+    "E04": {
+      "EntityCount": 2,
+      "RF": 18,
+      "AP": 12,
+      "SL": 2
+    },
+    "E05": {
+      "EntityCount": 3,
+      "RF": 26,
+      "AP": 24,
+      "SL": 4
+    },
+    "E06": {
+      "EntityCount": 4,
+      "RF": 18,
+      "AP": 24,
+      "SL": 2
+    },
+    "E07": {
+      "EntityCount": 5,
+      "RF": 40,
+      "AP": 48,
+      "SL": 8
+    },
+    "E08": {
+      "EntityCount": 2,
+      "RF": 20,
+      "AP": 16,
+      "SL": 3
+    },
+    "F01": {
+      "EntityCount": 15,
+      "RF": 100,
+      "AP": 168,
+      "SL": 14
+    },
+    "F02": {
+      "EntityCount": 4,
+      "RF": 46,
+      "AP": 48,
+      "SL": 3
+    },
+    "F03": {
+      "EntityCount": 18,
+      "RF": 130,
+      "AP": 240,
+      "SL": 27
+    },
+    "F04": {
+      "EntityCount": 9,
+      "RF": 50,
+      "AP": 60,
+      "SL": 7
+    },
+    "F05": {
+      "EntityCount": 6,
+      "RF": 58,
+      "AP": 80,
+      "SL": 5
+    },
+    "F06": {
+      "EntityCount": 9,
+      "RF": 78,
+      "AP": 128,
+      "SL": 16
+    },
+    "F07": {
+      "EntityCount": 13,
+      "RF": 134,
+      "AP": 240,
+      "SL": 12
+    },
+    "F08": {
+      "EntityCount": 5,
+      "RF": 72,
+      "AP": 96,
+      "SL": 12
+    }
+  }
+}

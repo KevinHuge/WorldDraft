@@ -1,0 +1,60 @@
+{
+  "case": "C06",
+  "noun": "car",
+  "gt_root_pattern": "(?:Ring \\d car \\d|Straight -?\\d car \\d)",
+  "attributes": [
+    {
+      "entities": [
+        "Ring 1 car 1",
+        "Ring 3 car 2"
+      ],
+      "surface": "body paint excluding center stripe",
+      "target": "red",
+      "source": null,
+      "id": "T1"
+    },
+    {
+      "entities": [
+        "Ring 1 car 5",
+        "Ring 3 car 6"
+      ],
+      "surface": "body paint excluding center stripe",
+      "target": "blue",
+      "source": null,
+      "id": "T2"
+    },
+    {
+      "entities": [
+        "Ring 2 car 5",
+        "Straight 1 car 3"
+      ],
+      "surface": "body paint excluding center stripe",
+      "target": "green",
+      "source": null,
+      "id": "T3"
+    },
+    {
+      "entities": [
+        "Ring 1 car 1",
+        "Ring 1 car 5",
+        "Ring 2 car 1",
+        "Ring 2 car 5",
+        "Ring 3 car 2",
+        "Ring 3 car 6",
+        "Straight -1 car 4",
+        "Straight 1 car 3"
+      ],
+      "surface": "hood and roof longitudinal center stripe",
+      "target": "white",
+      "source": "blue",
+      "pattern": "a single broad longitudinal stripe along the center of the hood and roof",
+      "id": "T4"
+    }
+  ],
+  "notes": [
+    "Target colour authority: target_prompt.txt and appearance.json only; AC colours come from appearance.json AC or AC_recipe. No scene-level contract attributes or material names are used.",
+    "Entity names and hierarchy verified by read-only inspection of the final P2_AA.blend. Attribute selection is fixed before model scoring.",
+    "Initial camera projections at Blender frame_start anchor the lower-left red pair, upper-right blue pair and upper-left green pair. No material colours are read. Yellow lower-middle bodies are omitted as a fixed representative subset; their stripe and presence remain scored.",
+    "red -> red; cobalt-blue/navy -> blue; emerald-green -> green; ivory -> white. AC body recipe gives white/orange by alternating entity index without defining the index order; body source=null rather than guessing identity-specific source colours."
+  ]
+}

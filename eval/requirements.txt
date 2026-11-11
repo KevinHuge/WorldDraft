@@ -1,0 +1,9 @@
+# CPU stages, aggregation and tests (Python 3.11). Versions are those used for the reported scores.
+numpy==2.4.6
+scipy==1.16.3
+pillow==12.3.0
+opencv-python-headless==4.11.0.86
+av==18.1.0
+pyyaml==6.0.3
+huggingface-hub==0.36.0
+pytest==9.1.1

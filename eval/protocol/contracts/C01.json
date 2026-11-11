@@ -1,0 +1,46 @@
+{
+  "case": "C01",
+  "noun": "train carriage",
+  "gt_root_pattern": "C01 \\| coach \\d{2} controller",
+  "attributes": [
+    {
+      "entities": [
+        "C01 | coach 01 controller",
+        "C01 | coach 02 controller",
+        "C01 | coach 03 controller"
+      ],
+      "surface": "lower carriage body panels excluding waist stripe",
+      "target": "green",
+      "source": "red",
+      "id": "T1"
+    },
+    {
+      "entities": [
+        "C01 | coach 01 controller",
+        "C01 | coach 02 controller",
+        "C01 | coach 03 controller"
+      ],
+      "surface": "waist stripe below the windows",
+      "target": "white",
+      "source": "blue",
+      "pattern": "one broad stripe below the windows",
+      "id": "T2"
+    },
+    {
+      "entities": [
+        "C01 | coach 01 controller",
+        "C01 | coach 02 controller",
+        "C01 | coach 03 controller"
+      ],
+      "surface": "upper carriage panels",
+      "target": "white",
+      "source": null,
+      "id": "T3"
+    }
+  ],
+  "notes": [
+    "Target colour authority: target_prompt.txt and appearance.json only; AC colours come from appearance.json AC or AC_recipe. No scene-level contract attributes or material names are used.",
+    "Entity names and hierarchy verified by read-only inspection of the final P2_AA.blend. Attribute selection is fixed before model scoring.",
+    "deep green -> green; brick red -> red; ivory/cream -> white; navy-blue -> blue. Upper panels remain cream in AC, so source=null."
+  ]
+}

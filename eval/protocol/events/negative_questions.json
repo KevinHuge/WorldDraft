@@ -1,0 +1,816 @@
+{
+  "version": "event-factual-contrasts",
+  "review_basis": "Per-case action, outcome, phase and ending facts in motion_protocol.json with descriptions v2. Contrasts keep the designated entities and change direction, mechanism, destination, ordering or final configuration. Expected answers are no for these factual alternatives; ISR participant identity remains yes. A08 uses funnel levels, with no collection-tray claim. D02, D03 and D06 have no motion questions.",
+  "cases": {
+    "A01": {
+      "ISR": {
+        "cross": {
+          "action": "The cars in the straight-through lanes make U-turns inside the junction and head back toward their incoming road arms.",
+          "outcome": "The same straight-through cars return to the road arms from which they entered."
+        },
+        "turn": {
+          "action": "The car approaching from the bottom in the inner lane makes a right turn toward image-right.",
+          "outcome": "The bottom-entry inner-lane car leaves the junction along the road toward image-right."
+        }
+      },
+      "LRA": {
+        "turn": "The car initially approaching from the bottom in the inner lane turns right and settles onto the outgoing road toward image-right."
+      },
+      "EndState": [
+        "The moving cars have gathered into a compact cluster in the center of the intersection.",
+        "The road arms have rotated around the intersection relative to the surrounding ground."
+      ]
+    },
+    "A02": {
+      "ISR": {
+        "break": {
+          "action": "The cue ball pushes the numbered balls across the table as one compact group, preserving their neighbor arrangement throughout contact.",
+          "outcome": "The numbered balls have shifted together into a compact rack at a new table location."
+        },
+        "spread": {
+          "action": "The numbered balls roll toward one another and assemble into a compact triangular rack after the cue-ball contact.",
+          "outcome": "The numbered balls finish packed together in a single triangular group."
+        }
+      },
+      "LRA": {
+        "rack_motion": "Object ball 1 near the lower front edge of the opening group rises vertically off the table during the cue-ball break."
+      },
+      "EndState": [
+        "The numbered balls form a compact triangular rack at the ending.",
+        "The visible balls are suspended above the table surface."
+      ]
+    },
+    "A03": {
+      "ISR": {
+        "convey": {
+          "action": "The upright bottles travel backward along the conveyor, moving from the machine output toward the incoming queue.",
+          "outcome": "The followed bottles have returned upstream toward the incoming end of the belt."
+        }
+      },
+      "LRA": {
+        "gate_release": "The retractable metering stop rises upward into the bottle path during its release stroke."
+      },
+      "EndState": [
+        "The bottles are lying on their sides across the conveyor.",
+        "The followed bottles have moved upstream relative to their opening locations."
+      ]
+    },
+    "A04": {
+      "ISR": {
+        "sail": {
+          "action": "The sailboats roll sideways until their masts dip toward the water as their hulls capsize.",
+          "outcome": "The followed boats finish on their sides with their masts at the water surface."
+        }
+      },
+      "LRA": {
+        "sail": "The sailboats tip sideways and roll their masts toward the lake surface.",
+        "pass": "The passing boats collide and overturn onto their sides."
+      },
+      "EndState": [
+        "Several boats lie capsized with their masts in the water.",
+        "The boats have gathered hull-to-hull into a single tightly packed cluster."
+      ]
+    },
+    "A05": {
+      "ISR": {
+        "rotate": {
+          "action": "The carousel horses slide radially inward along the platform toward the central axis.",
+          "outcome": "The horses are clustered around the hub at smaller distances from the axis."
+        },
+        "bob": {
+          "action": "Individual horses roll upside down around horizontal axes as the carousel carries them around.",
+          "outcome": "The horses finish inverted beside their poles with their feet pointing upward."
+        }
+      },
+      "LRA": {
+        "rotate": "The carousel horses travel radially inward from the outer ring toward the hub.",
+        "bob": "The horses roll upside down around horizontal axes beside their poles."
+      },
+      "EndState": [
+        "The horses have gathered into a cluster at the central hub.",
+        "The carousel platform and its central support have separated into loose pieces."
+      ]
+    },
+    "A06": {
+      "ISR": {
+        "oscillate": {
+          "action": "The pendulum balls travel steadily upward along their suspension lines toward the support rail.",
+          "outcome": "The suspension lines have shortened and the balls have gathered against the upper rail."
+        }
+      },
+      "LRA": {
+        "swing": "The balls move upward along their suspension lines toward the support rail.",
+        "phases": "The suspension points slide together along the upper rail and bring the hanging balls into one cluster."
+      },
+      "EndState": [
+        "The balls rest on the floor beneath the support frame.",
+        "The support frame has slid sideways across the floor relative to its opening position."
+      ]
+    },
+    "A07": {
+      "ISR": {
+        "circulate": {
+          "action": "The Ferris-wheel gondolas move inward along the spokes toward the fixed hub.",
+          "outcome": "The gondolas have collected beside the hub at the center of the wheel."
+        }
+      },
+      "LRA": {
+        "rotate": "The gondolas slide inward from the wheel rim toward its hub.",
+        "continue": "The passenger baskets turn upside down as they pass around the wheel."
+      },
+      "EndState": [
+        "The gondolas are gathered at the center of the wheel beside the hub.",
+        "The passenger baskets hang upside down with their openings facing the ground."
+      ]
+    },
+    "A08": {
+      "ISR": {
+        "descend": {
+          "action": "The marbles climb out of the lower funnels and travel upward into higher funnel levels.",
+          "outcome": "The followed marbles reach funnel levels above their own opening levels."
+        }
+      },
+      "LRA": {
+        "descend": "The followed marbles climb from their opening funnels through the outlets into higher levels of the apparatus."
+      },
+      "EndState": [
+        "The followed marbles occupy higher funnel levels than at the beginning."
+      ]
+    },
+    "B01": {
+      "ISR": {
+        "initiation": {
+          "action": "The terminal domino at the far end tips first and starts a falling sequence toward the opening trigger end.",
+          "outcome": "Toppling begins at the terminal end and progresses back toward the first domino."
+        },
+        "cascade": {
+          "action": "Fallen dominoes rise upright one after another as a recovery wave travels along the row.",
+          "outcome": "The row has returned to an upright arrangement after the recovery wave."
+        }
+      },
+      "LRA": {
+        "first_domino": "The initiating domino rises from a flat pose into an upright position.",
+        "last_domino": "The terminal domino rises from the surface into an upright position as the sequence reaches it."
+      },
+      "EndState": [
+        "The whole domino row stands upright at the ending.",
+        "The fallen dominoes have risen back onto their narrow bases."
+      ]
+    },
+    "B02": {
+      "ISR": {
+        "first_exchange": {
+          "action": "After the released rightmost ball strikes, all the cradle balls swing outward together as a rigid row.",
+          "outcome": "The central balls and both end balls are displaced outward together as one group."
+        },
+        "return_exchange": {
+          "action": "The returning leftmost ball lifts the entire central row upward during its collision.",
+          "outcome": "The central balls finish raised above both outer balls."
+        },
+        "catch": {
+          "action": "The returning hand catches and holds the leftmost ball at its raised position.",
+          "outcome": "The hand finishes holding the raised leftmost ball."
+        }
+      },
+      "LRA": {
+        "hand_withdrawal": "The hand moves inward toward the rightmost ball and pushes it toward the center of the cradle."
+      },
+      "EndState": [
+        "The hand holds the leftmost ball in a raised position.",
+        "The middle balls are held high above the two end balls."
+      ]
+    },
+    "B03": {
+      "ISR": {
+        "impact": {
+          "action": "The bowling ball strikes the rear of the pin formation after traveling from the back of the lane toward the front pin.",
+          "outcome": "The rear pins start falling before the ball reaches the front headpin."
+        },
+        "scatter": {
+          "action": "The pins slide together into a compact upright group after the ball contact.",
+          "outcome": "Every pin finishes standing upright in a tightly packed formation."
+        }
+      },
+      "LRA": {
+        "headpin_fall": "The front headpin rises from a fallen pose and returns to standing as the bowling ball arrives."
+      },
+      "EndState": [
+        "Most pins stand upright at the end of the lane.",
+        "Every pin is lying flat at the ending."
+      ]
+    },
+    "B04": {
+      "ISR": {
+        "top_transfer": {
+          "action": "The marble travels backward from the upper return track into the top of the elevator and starts descending with the lift.",
+          "outcome": "The followed marble ends back inside the descending lift after leaving the upper track."
+        },
+        "bottom_return": {
+          "action": "The lift ejects the arriving marble backward onto the lower return track.",
+          "outcome": "The followed marble rolls away from the lift inlet along the lower track."
+        }
+      },
+      "LRA": {
+        "top_transfer": "The target marble moves from the upper descending track backward into the elevator at its top exit."
+      },
+      "EndState": [
+        "The marbles have gathered into a stationary pile below the return track.",
+        "The lift carries its marbles downward toward the lower inlet."
+      ]
+    },
+    "B05": {
+      "ISR": {
+        "scoop_lift": {
+          "action": "The excavator lowers a soil-filled bucket and pours its contents back into the digging patch before raising it empty.",
+          "outcome": "The raised bucket is empty and the carried soil has been deposited at the digging patch."
+        },
+        "load_truck": {
+          "action": "The bucket takes soil out of the truck bed and carries it toward the digging side.",
+          "outcome": "Soil has been removed from the truck bed and retained in the excavator bucket."
+        }
+      },
+      "LRA": {
+        "slew_to_truck": "The loaded excavator upper body swivels away from the truck toward the digging patch during its first loaded swivel."
+      },
+      "EndState": [
+        "The bucket remains tipped downward in its truck-unloading pose.",
+        "The excavator is turning from the digging side toward the truck."
+      ]
+    },
+    "B06": {
+      "ISR": {
+        "road_before": {
+          "action": "The opening road car drives off the bridge deck into the canal before the bridge opens.",
+          "outcome": "The followed opening car ends in the canal below the bridge."
+        },
+        "boat_pass": {
+          "action": "The boat climbs onto the raised bridge leaves and crosses along their road surfaces.",
+          "outcome": "The boat finishes supported on top of the bridge roadway."
+        },
+        "road_restore": {
+          "action": "Cars drive across the gap while both bridge leaves remain raised.",
+          "outcome": "The road cars cross above the canal with the bridge leaves still standing upright."
+        }
+      },
+      "LRA": {
+        "bridge_open": "The target bridge leaf rotates downward below the horizontal roadway during its first opening stroke.",
+        "bridge_close": "The raised target bridge leaf rotates farther upward during the closing stroke."
+      },
+      "EndState": [
+        "Both bridge leaves remain raised above a gap in the road.",
+        "The road cars are gathered in the canal under the bridge."
+      ]
+    },
+    "B07": {
+      "ISR": {
+        "raise": {
+          "action": "The loaded forklift lowers its pallet from the opening fork height onto the warehouse floor.",
+          "outcome": "The pallet rests on the floor below the height of the truck bed."
+        },
+        "unload": {
+          "action": "The forklift lifts the pallet back out of the truck and reverses while still carrying the cartons on its forks.",
+          "outcome": "The pallet and cartons leave the truck supported by the reversing forklift."
+        }
+      },
+      "LRA": {
+        "forks_raise": "The loaded forks move downward relative to the forklift mast during the first fork stroke."
+      },
+      "EndState": [
+        "The pallet of cartons is supported on the forks outside the truck.",
+        "The reversing forklift carries the deposited load away from the truck."
+      ]
+    },
+    "B08": {
+      "ISR": {
+        "slow": {
+          "action": "The leading carton accelerates as it enters the output rollers, moving progressively faster relative to the frame.",
+          "outcome": "The leading carton reaches a higher forward speed on the output rollers."
+        },
+        "accumulate": {
+          "action": "The cartons accelerate away from one another as they enter the output rollers and open wider gaps.",
+          "outcome": "The cartons finish widely separated and still advancing rapidly along the rollers."
+        }
+      },
+      "LRA": {
+        "final_carton_stop": "The same leading carton nearest the downstream end accelerates forward from its settled position and opens a gap behind it."
+      },
+      "EndState": [
+        "The cartons are widely spaced along the output rollers.",
+        "The ending queue is traveling rapidly backward toward the incoming conveyor."
+      ]
+    },
+    "C01": {
+      "ISR": {
+        "enter": {
+          "action": "The coaches enter the tunnel tail first while the locomotive reverses behind them.",
+          "outcome": "The rear coach disappears before the locomotive as the train enters backward."
+        },
+        "exit": {
+          "action": "The train reverses and emerges back through the same left-hand portal used for entry.",
+          "outcome": "The connected train is visible outside the left-hand entry portal after reversing."
+        }
+      },
+      "LRA": {
+        "occlusion": "The target train climbs onto the tunnel roof and travels over the tunnel exterior."
+      },
+      "EndState": [
+        "The train is outside the left-hand entry portal after returning backward.",
+        "The coaches are detached and scattered beside the track."
+      ]
+    },
+    "C02": {
+      "ISR": {
+        "underpass": {
+          "action": "The followed boats rise from the water and travel over the bridge roadway.",
+          "outcome": "The followed boats finish supported on top of the bridge deck."
+        }
+      },
+      "LRA": {
+        "occlusion": "The designated boat climbs onto the top of the bridge deck and passes over the roadway."
+      },
+      "EndState": [
+        "The boats rest on their sides on top of the bridge deck.",
+        "The bridge has shifted sideways across the water relative to its opening supports."
+      ]
+    },
+    "C03": {
+      "ISR": {
+        "enter": {
+          "action": "The approaching person climbs onto the roof of the revolving-door enclosure.",
+          "outcome": "The person is standing on top of the door enclosure during passage."
+        },
+        "exit": {
+          "action": "The person reverses through the revolving door and returns to the left-hand approach side.",
+          "outcome": "The person emerges on the left and walks back toward the opening approach location."
+        }
+      },
+      "LRA": {
+        "occlusion": "The followed person climbs above the revolving-door panels onto the enclosure roof."
+      },
+      "EndState": [
+        "The person is visible outside on the left approach side of the door.",
+        "The revolving-door enclosure lies toppled on its side."
+      ]
+    },
+    "C04": {
+      "ISR": {
+        "reappear": {
+          "action": "The cable-car cabins detach from the cable and descend vertically toward the ground during passage.",
+          "outcome": "The followed cabins reach the ground below the elevated cable route."
+        }
+      },
+      "LRA": {
+        "occlusion": "The designated cable-car cabin drops vertically away from the elevated cable toward the ground."
+      },
+      "EndState": [
+        "The two cabins rest on the ground beneath the cable route.",
+        "The two cabins have met at the same point on the cable and formed one cluster."
+      ]
+    },
+    "C05": {
+      "ISR": {
+        "aisle": {
+          "action": "The forklift raises itself onto the upper shelving and drives along the top of the racks.",
+          "outcome": "The forklift finishes supported on the upper shelf above the stored cartons."
+        }
+      },
+      "LRA": {
+        "occlusion": "The followed forklift climbs upward onto the shelving instead of passing through the aisle."
+      },
+      "EndState": [
+        "The forklift is supported on the top shelf above the cartons.",
+        "The shelving and stored cartons have toppled into the aisle."
+      ]
+    },
+    "C06": {
+      "ISR": {
+        "roads": {
+          "action": "The followed cars jump from one road level to another while crossing the interchange.",
+          "outcome": "The followed cars finish on different roadway levels from their own opening routes."
+        }
+      },
+      "LRA": {
+        "occlusion": "The designated car leaves its opening road ring and jumps onto a different elevated road level."
+      },
+      "EndState": [
+        "The followed cars rest on the ground below the elevated roads.",
+        "The elevated road decks have collapsed onto the ground."
+      ]
+    },
+    "C07": {
+      "ISR": {
+        "wash": {
+          "action": "The car climbs onto the roof of the wash housing and drives over the enclosure.",
+          "outcome": "The same car finishes on the roof of the wash housing."
+        }
+      },
+      "LRA": {
+        "occlusion": "The target car drives up onto the roof of the car-wash housing."
+      },
+      "EndState": [
+        "The car rests on top of the wash housing.",
+        "The wash housing has toppled sideways across the lane."
+      ]
+    },
+    "C08": {
+      "ISR": {
+        "cover": {
+          "action": "The cup initially above the ball rises farther away from the tabletop during the covering stroke.",
+          "outcome": "The ball remains exposed below the raised covering cup throughout that stroke."
+        },
+        "shuffle_reveal": {
+          "action": "After the shuffle, the tracked covering cup lowers and presses its rim against the tabletop.",
+          "outcome": "The ball stays hidden underneath the lowered tracked cup at the ending."
+        }
+      },
+      "LRA": {
+        "cup_cover": "The cup initially positioned over the ball moves upward away from the tabletop during the first covering stroke.",
+        "cup_reveal": "The same covering cup moves downward toward the tabletop during its post-shuffle reveal stroke."
+      },
+      "EndState": [
+        "The ball is hidden underneath the tracked covering cup at the ending.",
+        "The cups have been placed in a vertical stack on top of one another."
+      ]
+    },
+    "D01": {
+      "ISR": {
+        "drive": {
+          "action": "The followed car leaves the curved road and drives across the roadside ground.",
+          "outcome": "The car finishes off the pavement in the roadside scenery."
+        }
+      },
+      "LRA": {
+        "drive": "The car drives off the curved road onto the roadside ground.",
+        "continue": "The car rolls onto its roof beside the road bend."
+      },
+      "EndState": [
+        "The car lies upside down beside the pavement.",
+        "The road and roadside scenery rotate together around the car in the world."
+      ]
+    },
+    "D02": {
+      "ISR": {},
+      "LRA": {},
+      "EndState": []
+    },
+    "D03": {
+      "ISR": {},
+      "LRA": {},
+      "EndState": []
+    },
+    "D04": {
+      "ISR": {
+        "spin": {
+          "action": "The turbine blades fold inward along their lengths toward the rotor hubs.",
+          "outcome": "The blades finish folded into compact bundles against the hubs."
+        }
+      },
+      "LRA": {
+        "rotate": "The turbine blades fold inward toward their hubs rather than sweeping around them.",
+        "continue": "The entire turbine towers tip sideways toward the ground."
+      },
+      "EndState": [
+        "The turbine rotors rest on the ground beside the towers.",
+        "The tower bases have slid away from their opening ground locations."
+      ]
+    },
+    "D05": {
+      "ISR": {
+        "departure": {
+          "action": "The followed yacht approaches its starting berth from the harbor and docks alongside it.",
+          "outcome": "The followed yacht finishes back at its berth beside the dock."
+        }
+      },
+      "LRA": {
+        "depart": "The followed yacht moves inward toward its starting berth and docks.",
+        "navigate": "The previously berthed yachts leave the docks together and follow the moving yacht."
+      },
+      "EndState": [
+        "The followed yacht is docked at its starting berth.",
+        "The other yachts have left their berths and gathered in the open harbor."
+      ]
+    },
+    "D06": {
+      "ISR": {},
+      "LRA": {},
+      "EndState": []
+    },
+    "D07": {
+      "ISR": {
+        "travel": {
+          "action": "The train leaves the viaduct rails and descends sideways off the elevated track.",
+          "outcome": "The locomotive and coaches finish below the viaduct beside its piers."
+        }
+      },
+      "LRA": {
+        "travel": "The locomotive drives sideways off the elevated track toward the ground below.",
+        "continue": "The coaches detach from the locomotive and scatter off the viaduct."
+      },
+      "EndState": [
+        "The train rests below the railway viaduct.",
+        "The coaches are detached from one another and scattered beside the locomotive."
+      ]
+    },
+    "D08": {
+      "ISR": {
+        "rides": {
+          "action": "The Ferris-wheel gondolas slide inward to the hub, the coaster leaves its rails, and the tower carriage moves sideways away from its guide.",
+          "outcome": "The ride vehicles finish detached from their wheel rim, track and tower guide."
+        }
+      },
+      "LRA": {
+        "wheel": "The Ferris-wheel gondolas slide inward along the spokes toward the hub.",
+        "coaster": "The roller-coaster train leaves the elevated rails and falls toward the ground.",
+        "tower": "The drop-tower carriage moves sideways off the tower guide."
+      },
+      "EndState": [
+        "The amusement ride support structures have collapsed into separate pieces.",
+        "The ride vehicles rest detached on the ground beneath their routes."
+      ]
+    },
+    "E01": {
+      "ISR": {
+        "pickup": {
+          "action": "The gripper presses the cassette downward through its pickup fixture instead of raising it from the support.",
+          "outcome": "The cassette ends below the pickup table after being pushed downward."
+        },
+        "carry": {
+          "action": "The robot releases the cassette during its transfer and lets it fall from the gripper.",
+          "outcome": "The cassette rests below the arm after dropping away from the gripper."
+        }
+      },
+      "LRA": {
+        "payload_first_lift": "The target cassette moves downward from its opening supported height as the gripper first engages it."
+      },
+      "EndState": [
+        "The cassette rests on the pickup table under an empty gripper.",
+        "The robot arm links are detached and scattered around the base."
+      ]
+    },
+    "E02": {
+      "ISR": {
+        "cycle": {
+          "action": "The lift platform tips onto its side while the crossed support links fold sideways.",
+          "outcome": "The platform finishes vertical beside the base with its top surface facing sideways."
+        },
+        "repeat": {
+          "action": "During the second cycle, the platform rotates upside down over the scissor links.",
+          "outcome": "The platform finishes inverted above the base."
+        }
+      },
+      "LRA": {
+        "first_top": "The platform tilts from level to vertical while completing its first upward stroke.",
+        "second_rise": "The platform moves downward during the second upward-stroke interval after the first cycle."
+      },
+      "EndState": [
+        "The platform remains at its highest extension above the base.",
+        "The crossed arms have detached from their pivots and lie separately on the base."
+      ]
+    },
+    "E03": {
+      "ISR": {
+        "unfold": {
+          "action": "The umbrella ribs fold inward and pull the fabric tight against the central shaft during the opening stroke.",
+          "outcome": "The canopy finishes folded into a narrow bundle around the shaft."
+        }
+      },
+      "LRA": {
+        "umbrella_open": "The ribs fold inward toward the shaft and close the canopy during the first unfolding stroke."
+      },
+      "EndState": [
+        "The umbrella canopy is folded tightly around the central shaft.",
+        "The canopy lies separately from its ribs and shaft."
+      ]
+    },
+    "E04": {
+      "ISR": {
+        "flutter": {
+          "action": "The curtain panels rise upward and wind into tight rolls along their upper support.",
+          "outcome": "The curtains finish rolled into compact cylinders above the window."
+        }
+      },
+      "LRA": {
+        "billow": "The curtain panels wind upward into tight rolls at their upper support.",
+        "continue": "The curtain panels detach from their upper support and fall onto the floor."
+      },
+      "EndState": [
+        "The curtains lie on the floor beneath the window.",
+        "The curtain fabric has split into separate narrow strips."
+      ]
+    },
+    "E05": {
+      "ISR": {
+        "waves": {
+          "action": "The athlete winds both ropes into tight coils around the hands, drawing the far ends inward.",
+          "outcome": "The ropes finish gathered into compact coils beside the athlete's hands."
+        }
+      },
+      "LRA": {
+        "waves": "The athlete winds the ropes into tight coils around the hands.",
+        "continue": "The ropes pull taut into straight rigid lengths while their far ends move toward the athlete."
+      },
+      "EndState": [
+        "Both ropes are broken into disconnected segments.",
+        "The athlete has released both near ends onto the ground."
+      ]
+    },
+    "E06": {
+      "ISR": {
+        "squeeze": {
+          "action": "The sponge moves downward as a rigid block while preserving its opening height and width throughout the squeeze.",
+          "outcome": "The sponge has translated downward with the same rigid rectangular shape throughout."
+        },
+        "water": {
+          "action": "Droplets rise upward from the basin and enter the sponge during compression.",
+          "outcome": "The released droplets travel upward from below the sponge into its surface."
+        }
+      },
+      "LRA": {
+        "first_compression": "The sponge increases its top-to-bottom height throughout the first compression interval.",
+        "first_recovery": "The sponge decreases its top-to-bottom height during the recovery immediately after its first compressed minimum."
+      },
+      "EndState": [
+        "The sponge remains flattened at its minimum compressed thickness.",
+        "The basin is positioned above the sponge."
+      ]
+    },
+    "E07": {
+      "ISR": {
+        "linkage": {
+          "action": "The walking mechanism changes leg posture by stretching and shortening the rigid links between fixed joints.",
+          "outcome": "The leg links have changed their lengths substantially while their joint angles stay fixed."
+        }
+      },
+      "LRA": {
+        "articulate": "The leg links stretch longer between their pinned joints as the walking mechanism cycles.",
+        "continue": "The walking links pull apart at their joints and fall away from the main frame."
+      },
+      "EndState": [
+        "The walking links lie disconnected from their joints.",
+        "The originally rigid links are bent into curved shapes."
+      ]
+    },
+    "E08": {
+      "ISR": {
+        "feed": {
+          "action": "The textile tears across its width as the rollers pull the web into separate pieces.",
+          "outcome": "The fabric emerges as disconnected short strips below the rollers."
+        }
+      },
+      "LRA": {
+        "feed": "The textile tears across its width into separate pieces between the rollers.",
+        "continue": "The hanging textile loop winds into a tight roll and rises completely above the supports."
+      },
+      "EndState": [
+        "The textile is split into disconnected pieces between the rollers.",
+        "The machine supports lie toppled over the fabric."
+      ]
+    },
+    "F01": {
+      "ISR": {
+        "packing": {
+          "action": "The robots lift chocolate bars out of the packing cartons and place them onto the incoming conveyor lanes.",
+          "outcome": "The transferred chocolate has moved from the packing cartons back onto the conveyor."
+        }
+      },
+      "LRA": {
+        "chocolate_lift": "The leading chocolate bar in the near conveyor lane moves downward below its belt-supported height during the first pickup stroke."
+      },
+      "EndState": [
+        "The chocolate bars are gathered into one mixed pile between the two lanes.",
+        "The robot arms and packing cartons have fallen across the incoming conveyor lanes."
+      ]
+    },
+    "F02": {
+      "ISR": {
+        "transfer": {
+          "action": "The mechanism picks a ball out of the receiving tray and carries it back to the opening pickup support.",
+          "outcome": "The transferred ball has returned from the receiving tray to the pickup support."
+        }
+      },
+      "LRA": {
+        "ball_lift": "The first ball in the opening left-to-right order descends from the pickup support during its first upward transfer interval."
+      },
+      "EndState": [
+        "The LEGO figure lies separated into pieces at its joints.",
+        "The balls are suspended in open space away from the transfer mechanism."
+      ]
+    },
+    "F03": {
+      "ISR": {
+        "trigger": {
+          "action": "The first tall distributor domino rises upright from the tabletop and pushes the trigger marble back up its launch ramp.",
+          "outcome": "The trigger marble has returned up the ramp as the distributor stands upright."
+        },
+        "cascade": {
+          "action": "The small field dominoes rise upright in sequence as a recovery wave travels back toward the distributor chain.",
+          "outcome": "The field dominoes finish standing upright after the recovery wave."
+        }
+      },
+      "LRA": {
+        "first_trigger": "The first tall distributor domino rises toward its upright pose as the marble reaches it.",
+        "last_fall": "The terminal small domino at the far-right end of the farthest row rises upright as the sequence reaches it."
+      },
+      "EndState": [
+        "Most field dominoes stand upright at the ending.",
+        "The previously toppled dominoes have risen onto their narrow bases."
+      ]
+    },
+    "F04": {
+      "ISR": {
+        "hoist": {
+          "action": "The spreader pushes the handling container downward into its starting vehicle during the hoisting stroke.",
+          "outcome": "The selected container is below its opening support level within the starting vehicle."
+        },
+        "place": {
+          "action": "The crane returns the hoisted container to the vehicle from which it was picked up.",
+          "outcome": "The container is supported on its original vehicle after the transfer."
+        }
+      },
+      "LRA": {
+        "container_hoist": "The handling container moves downward from its starting vehicle during its first hoisting stroke.",
+        "container_lower": "The same container gains height away from the receiving vehicle during the first placement stroke."
+      },
+      "EndState": [
+        "The handled container rests on the original pickup vehicle.",
+        "The spreader rests directly on the placed container and remains engaged with its top."
+      ]
+    },
+    "F05": {
+      "ISR": {
+        "hold": {
+          "action": "The queued road cars drive onto the tracks while the barrier arms lower and the train passes.",
+          "outcome": "The waiting cars occupy the rail crossing alongside the passing train."
+        },
+        "release": {
+          "action": "After the train clears, the queued cars reverse away from the crossing as the barrier arms rise.",
+          "outcome": "The queued vehicles retreat from the tracks toward their approach roads after reopening."
+        }
+      },
+      "LRA": {
+        "barrier_close": "The near-side barrier arm rotates upward during its first closing stroke.",
+        "barrier_open": "The same barrier arm rotates downward across the road during its first reopening stroke."
+      },
+      "EndState": [
+        "The train is still occupying the road crossing.",
+        "The queued road cars are reversing away from the reopened crossing."
+      ]
+    },
+    "F06": {
+      "ISR": {
+        "pickup": {
+          "action": "The robot carries the selected first arriving carton from the pallet back onto the incoming conveyor.",
+          "outcome": "The same selected first arriving carton rests back on the incoming conveyor after transfer from the pallet."
+        },
+        "stack": {
+          "action": "The robot carries the selected arriving carton back from the pallet and lowers it onto its original conveyor pickup position.",
+          "outcome": "The selected carton rests back on the incoming conveyor after the gripper withdraws."
+        }
+      },
+      "LRA": {
+        "carton_lift": "The leading arriving carton moves downward below its conveyor-supported height during the first pickup stroke.",
+        "carton_place": "The same selected carton rises away from the pallet during its first placement stroke."
+      },
+      "EndState": [
+        "The transferred carton rests back on the conveyor at the pickup end.",
+        "The robot links and conveyor supports lie detached around the work cell."
+      ]
+    },
+    "F07": {
+      "ISR": {
+        "coasters": {
+          "action": "The coaster trains leave their rails and descend off the sides of the elevated track.",
+          "outcome": "The coaster trains finish on the ground below the rails."
+        },
+        "wheel": {
+          "action": "The Ferris-wheel gondolas slide radially inward from the rim toward the hub.",
+          "outcome": "The gondolas gather into a cluster at the center of the wheel."
+        }
+      },
+      "LRA": {
+        "coasters": "The connected coaster trains leave the rails and fall off the elevated track.",
+        "wheel": "The Ferris-wheel gondolas slide inward along the spokes toward the hub."
+      },
+      "EndState": [
+        "The coaster cars lie detached on the ground beneath the track.",
+        "The Ferris-wheel gondolas are gathered at the hub instead of around the rim."
+      ]
+    },
+    "F08": {
+      "ISR": {
+        "handling": {
+          "action": "The LEGO robot lifts the leading packet out of a receiving pocket and returns it to the conveyor pickup end.",
+          "outcome": "The same packet rests back on the conveyor after transfer from the receiving pocket."
+        }
+      },
+      "LRA": {
+        "packet_lift": "The leading packet moves downward below its conveyor-supported height during its first pickup stroke.",
+        "packet_place": "The same selected packet gains height away from the receiving pocket during its first placement stroke."
+      },
+      "EndState": [
+        "The robot links lie detached at their joints.",
+        "The transferred packets rest on the floor below the receiving pockets."
+      ]
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "case": "D08",
+  "noun": "gondola, drop-tower seat row or coaster car",
+  "gt_root_pattern": "(?:Upright gondola \\d+|Seat row(?:\\.\\d{3})?|Coaster car \\d+)",
+  "attributes": [
+    {
+      "entities": [
+        "Upright gondola 0",
+        "Upright gondola 1",
+        "Upright gondola 2",
+        "Upright gondola 3",
+        "Upright gondola 4",
+        "Upright gondola 5",
+        "Upright gondola 6",
+        "Upright gondola 7",
+        "Upright gondola 8",
+        "Upright gondola 9",
+        "Upright gondola 10",
+        "Upright gondola 11",
+        "Upright gondola 12",
+        "Upright gondola 13",
+        "Upright gondola 14",
+        "Upright gondola 15"
+      ],
+      "surface": "lower gondola shell excluding side band",
+      "target": "red",
+      "source": "blue",
+      "id": "T1"
+    },
+    {
+      "entities": [
+        "Upright gondola 0",
+        "Upright gondola 1",
+        "Upright gondola 2",
+        "Upright gondola 3",
+        "Upright gondola 4",
+        "Upright gondola 5",
+        "Upright gondola 6",
+        "Upright gondola 7",
+        "Upright gondola 8",
+        "Upright gondola 9",
+        "Upright gondola 10",
+        "Upright gondola 11",
+        "Upright gondola 12",
+        "Upright gondola 13",
+        "Upright gondola 14",
+        "Upright gondola 15"
+      ],
+      "surface": "horizontal band around the gondola sides",
+      "target": "white",
+      "source": "yellow",
+      "pattern": "one broad horizontal band around the lower shell sides",
+      "id": "T2"
+    },
+    {
+      "entities": [
+        "Seat row",
+        "Seat row.001",
+        "Seat row.002",
+        "Seat row.003"
+      ],
+      "surface": "drop-tower seats",
+      "target": "blue",
+      "source": "orange",
+      "id": "T3"
+    },
+    {
+      "entities": [
+        "Coaster car 0",
+        "Coaster car 1",
+        "Coaster car 2",
+        "Coaster car 3",
+        "Coaster car 4"
+      ],
+      "surface": "coaster car body and seats",
+      "target": "yellow",
+      "source": "red",
+      "id": "T4"
+    }
+  ],
+  "notes": [
+    "Target colour authority: target_prompt.txt and appearance.json only; AC colours come from appearance.json AC or AC_recipe. No scene-level contract attributes or material names are used.",
+    "Entity names and hierarchy verified by read-only inspection of the final P2_AA.blend. Attribute selection is fixed before model scoring.",
+    "coral-red -> red; ivory -> white; cobalt-blue -> blue; golden-yellow -> yellow; AC blue/yellow/orange/red map directly. Drop seats are grouped by their four actual seat-row roots.",
+    "D-series uses protocol letterbox initially; camera-motion registration limitations are recorded by controls and are not corrected by per-case contract tuning."
+  ]
+}

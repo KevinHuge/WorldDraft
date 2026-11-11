@@ -1,0 +1,13 @@
+# Geometry: SAM 3 detection/tracking, SAM 2 fallback, DINOv2 identity features (Python 3.12).
+# Install the CUDA 12.6 build of PyTorch first (USAGE.md section 1). Versions are those used for the reported scores.
+torch==2.10.0
+torchvision==0.25.0
+transformers==5.17.0
+accelerate==1.15.0
+kernels==0.16.2
+huggingface-hub==1.33.0
+numpy==2.2.6
+scipy==1.16.3
+pillow==11.3.0
+opencv-python-headless==4.11.0.86
+pyyaml==6.0.3

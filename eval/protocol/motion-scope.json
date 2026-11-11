@@ -1,0 +1,3749 @@
+{
+  "version": "motion-scope",
+  "upstream_commit": "e01d0187a53b45a3a0eccc12f015e72815ea2ebd",
+  "duration_s": 5,
+  "settings": {
+    "interaction_frames": 8,
+    "interaction_pad_s": 0.15,
+    "alignment_frames": 12,
+    "alignment_pad_s": 0.3,
+    "end_state_frames": 4,
+    "end_state_seconds": 0.5,
+    "appearance_frames": 12,
+    "crop_margin": 0.35,
+    "tile_height": 360,
+    "persistence_frames": 8
+  },
+  "cases": {
+    "A01": {
+      "name": "urban street",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "cars": "Vehicle_\\d{2}"
+      },
+      "timeline": [
+        {
+          "phase": "straight",
+          "t0": 0,
+          "t1": 5,
+          "text": "The straight-driving cars cross the intersection along their lanes and continue onto the opposite road arms."
+        },
+        {
+          "phase": "turn",
+          "t0": 0,
+          "t1": 5,
+          "text": "The cars in the inner incoming lanes make left turns through the junction and join the perpendicular outgoing roads."
+        }
+      ],
+      "events": [
+        {
+          "id": "cross",
+          "phases": [
+            "straight"
+          ],
+          "participants": [
+            "cars"
+          ],
+          "action": "Straight-driving cars traverse the junction.",
+          "outcome": "They reach the opposite road arms without changing into turning cars."
+        },
+        {
+          "id": "turn",
+          "phases": [
+            "turn"
+          ],
+          "participants": [
+            "cars"
+          ],
+          "action": "The designated turning cars follow left-turning paths through the junction.",
+          "outcome": "They depart on perpendicular road arms after completing their turns."
+        }
+      ],
+      "end_state": [
+        "Cars have progressed away from their opening positions along their assigned roads.",
+        "The road layout remains fixed while the cars move."
+      ],
+      "appearance": [
+        "The left-turning car initially in the inner incoming lane at the bottom has emerald-green bodywork.",
+        "The left-turning car initially entering from the right has cobalt-blue bodywork.",
+        "The cars have painted-metal body surfaces.",
+        "The cars have glass windows.",
+        "The road has dark charcoal asphalt.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The left-turning car initially in the inner incoming lane at the bottom has emerald-green bodywork.",
+        "The left-turning car initially entering from the right has cobalt-blue bodywork.",
+        "The cars have painted-metal body surfaces.",
+        "The cars have glass windows."
+      ],
+      "concurrent": true,
+      "target_source": {
+        "path": "data/scenes/A01/target_prompt.txt",
+        "sha256": "2ff8f23e0c93a0df9cd5377144dc44f39a286a9a9f67bd84d3fc35d151340d24"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "A02": {
+      "name": "billiards table",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "balls": "Ball_\\d{2}"
+      },
+      "timeline": [
+        {
+          "phase": "rack",
+          "t0": 0,
+          "t1": 0.8,
+          "text": "The object balls remain grouped in a compact rack on the table."
+        },
+        {
+          "phase": "break",
+          "t0": 0.8,
+          "t1": 2.2,
+          "text": "The compact group breaks apart as balls collide and scatter across the felt."
+        },
+        {
+          "phase": "spread",
+          "t0": 2.2,
+          "t1": 5,
+          "text": "The separated balls continue rolling across the table and become more widely dispersed."
+        }
+      ],
+      "events": [
+        {
+          "id": "break",
+          "phases": [
+            "rack",
+            "break"
+          ],
+          "participants": [
+            "balls"
+          ],
+          "action": "Ball collisions break up the initially compact rack.",
+          "outcome": "Several object balls have separated and moved away from the rack."
+        },
+        {
+          "id": "spread",
+          "phases": [
+            "break",
+            "spread"
+          ],
+          "participants": [
+            "balls"
+          ],
+          "action": "The scattered balls continue rolling along different paths.",
+          "outcome": "The visible balls are spread over the table rather than remaining in the initial rack."
+        }
+      ],
+      "end_state": [
+        "The original compact rack has dispersed.",
+        "The visible balls remain on the table surface."
+      ],
+      "appearance": [
+        "Ball 1 has a golden-yellow body.",
+        "Ball 2 has a sky-blue body.",
+        "The object balls have resin surfaces.",
+        "The table has deep-green felt.",
+        "The felt has a fine woven texture.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "Ball 1 has a golden-yellow body.",
+        "Ball 2 has a sky-blue body.",
+        "The object balls have polished resin surfaces."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/A02/target_prompt.txt",
+        "sha256": "6fb33bacd5a7d8de774a648a148232ee0ed1997b07b434fe6ad3253e1dbbdf7c"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Environment",
+        "Texture",
+        "Lighting"
+      ]
+    },
+    "A03": {
+      "name": "jar-packaging equipment",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "bottles": "Bottle_\\d{2}"
+      },
+      "timeline": [
+        {
+          "phase": "advance",
+          "t0": 0,
+          "t1": 2.5,
+          "text": "Upright numbered bottles advance laterally along the conveyor, with bottles entering and leaving the visible machine section."
+        },
+        {
+          "phase": "continue",
+          "t0": 2.5,
+          "t1": 5,
+          "text": "The bottle line continues advancing through the same conveyor section while the bottles remain upright."
+        }
+      ],
+      "events": [
+        {
+          "id": "convey",
+          "phases": [
+            "advance",
+            "continue"
+          ],
+          "participants": [
+            "bottles"
+          ],
+          "action": "The conveyor carries a line of bottles through the machine section.",
+          "outcome": "The visible bottle identities and positions have advanced while the conveyor structure stays fixed."
+        }
+      ],
+      "end_state": [
+        "A line of upright bottles remains on the conveyor.",
+        "Different bottles occupy the visible section compared with the opening."
+      ],
+      "appearance": [
+        "The bottle identified as 12 has a cobalt-blue coating.",
+        "The bottle identified as 13 has a chocolate-brown coating.",
+        "The bottles have coated-glass surfaces.",
+        "The conveyor and machine frames have stainless-steel surfaces.",
+        "The bottle coatings are smooth and glossy.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The bottle identified as 12 has a cobalt-blue coating.",
+        "The bottle identified as 13 has a chocolate-brown coating.",
+        "The bottles have smooth glossy coated-glass surfaces."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/A03/target_prompt.txt",
+        "sha256": "282c5cdc8b0d9d6df2e1e1f782f31b3a8b93d7ef97de64c057b699e1d7868956"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Texture",
+        "Lighting"
+      ]
+    },
+    "A04": {
+      "name": "sailboats",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "boats": "Sailboat \\d{2}"
+      },
+      "timeline": [
+        {
+          "phase": "sail",
+          "t0": 0,
+          "t1": 2.5,
+          "text": "The sailboats move laterally across the lake on distinct courses."
+        },
+        {
+          "phase": "pass",
+          "t0": 2.5,
+          "t1": 5,
+          "text": "The boats continue sailing past one another with their hulls and masts remaining upright."
+        }
+      ],
+      "events": [
+        {
+          "id": "sail",
+          "phases": [
+            "sail",
+            "pass"
+          ],
+          "participants": [
+            "boats"
+          ],
+          "action": "The fleet sails across the water on separate paths.",
+          "outcome": "Individual boats have changed position without merging into one another."
+        }
+      ],
+      "end_state": [
+        "Several boats remain upright on the water.",
+        "Their arrangement has changed from the opening fleet arrangement."
+      ],
+      "appearance": [
+        "The boat at the left of the nearest opening row has a golden-yellow hull.",
+        "The boat at the right of the nearest opening row has a sky-blue hull.",
+        "The boat hulls have painted-fiberglass surfaces.",
+        "The sails have woven-fabric texture.",
+        "The lake water is blue.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The boat at the left of the nearest opening row has a golden-yellow hull.",
+        "The boat at the right of the nearest opening row has a sky-blue hull.",
+        "The boat hulls have painted-fiberglass surfaces.",
+        "The sails have woven-fabric texture."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/A04/target_prompt.txt",
+        "sha256": "973ff53423ebff0530caddedde383213a716c6d7e6236f0e2d235a0478313e39"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Texture",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "A05": {
+      "name": "carousel",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "horses": "A05 \\| horse \\d{2} lift"
+      },
+      "timeline": [
+        {
+          "phase": "rotate",
+          "t0": 0,
+          "t1": 5,
+          "text": "The carousel carries the horses around the central axis."
+        },
+        {
+          "phase": "bob",
+          "t0": 0,
+          "t1": 5,
+          "text": "The horses rise and fall along their vertical poles while being carried around the carousel."
+        }
+      ],
+      "events": [
+        {
+          "id": "rotate",
+          "phases": [
+            "rotate"
+          ],
+          "participants": [
+            "horses"
+          ],
+          "action": "The horses circulate with the carousel platform.",
+          "outcome": "They have changed angular positions around the central axis."
+        },
+        {
+          "id": "bob",
+          "phases": [
+            "bob"
+          ],
+          "participants": [
+            "horses"
+          ],
+          "action": "The horses move up and down on their poles.",
+          "outcome": "Different horses occupy different heights while remaining attached to the carousel."
+        }
+      ],
+      "end_state": [
+        "The horses remain attached to their poles and arranged in rings.",
+        "The carousel structure remains assembled."
+      ],
+      "appearance": [
+        "The outer-ring horse bodies alternate between warm ivory and chestnut brown.",
+        "The inner-ring horse bodies are slate blue.",
+        "The horse bodies have molded-fiberglass surfaces.",
+        "The canopy panels have a lacquered finish.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The outer-ring horse bodies alternate between warm ivory and chestnut brown.",
+        "The inner-ring horse bodies are slate blue.",
+        "The horse bodies have molded-fiberglass surfaces.",
+        "The canopy panels have a lacquered finish."
+      ],
+      "concurrent": true,
+      "target_source": {
+        "path": "data/scenes/A05/target_prompt.txt",
+        "sha256": "a6da9c1687f859d1d93bba643f0d5d54dd7ef57130e4b5c1bdbc839851050bd9"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Texture",
+        "Lighting"
+      ]
+    },
+    "A06": {
+      "name": "pendulum apparatus",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "pendulums": "White bob \\d{2}"
+      },
+      "timeline": [
+        {
+          "phase": "swing",
+          "t0": 0,
+          "t1": 2.5,
+          "text": "The suspended balls swing back and forth about their fixed upper attachment points."
+        },
+        {
+          "phase": "phases",
+          "t0": 2.5,
+          "t1": 5,
+          "text": "The pendulums continue swinging with changing relative phases rather than moving as one rigid group."
+        }
+      ],
+      "events": [
+        {
+          "id": "oscillate",
+          "phases": [
+            "swing",
+            "phases"
+          ],
+          "participants": [
+            "pendulums"
+          ],
+          "action": "The suspended balls repeatedly reverse direction beneath their supports.",
+          "outcome": "The ball arrangement changes while their suspension points remain fixed."
+        }
+      ],
+      "end_state": [
+        "The balls remain suspended from the support rail.",
+        "The support frame stays stationary while the balls move."
+      ],
+      "appearance": [
+        "The ball colours along the fixed suspension rail from nearest to farthest at the opening are red, blue, yellow, red, blue, yellow, red, blue, yellow, red.",
+        "The support frame is charcoal.",
+        "The balls have enamel-coated metal surfaces.",
+        "The suspension wires have a stainless-steel finish.",
+        "The enamel ball surfaces are glossy.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The ball colours along the fixed suspension rail from nearest to farthest at the opening are red, blue, yellow, red, blue, yellow, red, blue, yellow, red.",
+        "The balls have glossy enamel-coated metal surfaces.",
+        "The suspension wires have a stainless-steel finish."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/A06/target_prompt.txt",
+        "sha256": "a7b37e0a9ea8094cf84a656fcd20ab8ce568aa0696aed211b0f41d7f219d9c72"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Texture",
+        "Lighting"
+      ]
+    },
+    "A07": {
+      "name": "balloon-themed Ferris wheel",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "gondolas": "Gondola \\d{2}"
+      },
+      "timeline": [
+        {
+          "phase": "rotate",
+          "t0": 0,
+          "t1": 2.5,
+          "text": "The wheel rotates, carrying gondolas along its circular rim."
+        },
+        {
+          "phase": "continue",
+          "t0": 2.5,
+          "t1": 5,
+          "text": "The gondolas continue around the wheel while their passenger baskets remain upright."
+        }
+      ],
+      "events": [
+        {
+          "id": "circulate",
+          "phases": [
+            "rotate",
+            "continue"
+          ],
+          "participants": [
+            "gondolas"
+          ],
+          "action": "The Ferris wheel carries the gondolas around its rim.",
+          "outcome": "The gondolas have changed positions while their baskets retain an upright orientation."
+        }
+      ],
+      "end_state": [
+        "The gondolas remain attached around the wheel rim.",
+        "The passenger baskets remain upright."
+      ],
+      "appearance": [
+        "The gondola canopies repeat scarlet red, cobalt blue and golden yellow along the wheel rim.",
+        "The wheel framework is warm ivory.",
+        "The gondola canopies have painted-fiberglass surfaces.",
+        "The passenger baskets have painted-metal surfaces.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The gondola canopies repeat scarlet red, cobalt blue and golden yellow along the wheel rim.",
+        "The wheel framework is warm ivory.",
+        "The gondola canopies have painted-fiberglass surfaces.",
+        "The passenger baskets have painted-metal surfaces."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/A07/target_prompt.txt",
+        "sha256": "1afb0c98c3aa02714adeafcd542d55a8d001079ba915380234eaa5b633b0ede3"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Lighting"
+      ]
+    },
+    "A08": {
+      "name": "marble-run apparatus",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "marbles": "Glass marble \\d{2}"
+      },
+      "timeline": [
+        {
+          "phase": "upper",
+          "t0": 0,
+          "t1": 1.5,
+          "text": "Marbles circulate in the upper funnels and begin transferring downward."
+        },
+        {
+          "phase": "descend",
+          "t0": 1.5,
+          "t1": 3.5,
+          "text": "Marbles move through successive lower funnels under gravity."
+        },
+        {
+          "phase": "collect",
+          "t0": 3.5,
+          "t1": 5,
+          "text": "Marbles reach the lower funnels and collection tray while the upper funnels empty."
+        }
+      ],
+      "events": [
+        {
+          "id": "descend",
+          "phases": [
+            "upper",
+            "descend"
+          ],
+          "participants": [
+            "marbles"
+          ],
+          "action": "Marbles roll through the descending sequence of funnels.",
+          "outcome": "Marbles reach funnels below their opening positions."
+        },
+        {
+          "id": "collect",
+          "phases": [
+            "descend",
+            "collect"
+          ],
+          "participants": [
+            "marbles"
+          ],
+          "action": "Marbles pass from the final funnels into the collection tray.",
+          "outcome": "Marbles are present in the lower collection area."
+        }
+      ],
+      "end_state": [
+        "The upper funnels are largely empty.",
+        "Marbles are visible in the bottom collection area."
+      ],
+      "appearance": [
+        "The leftmost marble by centre position in the opening image is scarlet red.",
+        "The second marble from the left in the opening image is cobalt blue.",
+        "The marbles have opaque glass surfaces.",
+        "The funnels have molded-plastic surfaces.",
+        "The marble surfaces are smooth and glossy.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The leftmost marble by centre position in the opening image is scarlet red.",
+        "The second marble from the left in the opening image is cobalt blue.",
+        "The marbles have opaque polished-glass surfaces.",
+        "The funnels have molded-plastic surfaces."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/A08/target_prompt.txt",
+        "sha256": "04e9081526f9370ed813bb096ced9d3850cfc284dfa92ef12416b0e9b34b3e8a"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Texture",
+        "Lighting"
+      ]
+    },
+    "B01": {
+      "name": "tabletop dominoes",
+      "groups": {
+        "dominoes": "B01 \\| domino \\d{2}"
+      },
+      "timeline": [
+        {
+          "phase": "start",
+          "t0": 0,
+          "t1": 1.25,
+          "text": "Toppling begins at the upper-left end of the curved domino row."
+        },
+        {
+          "phase": "propagate",
+          "t0": 1.25,
+          "t1": 3.25,
+          "text": "The toppling front advances through the middle of the row; dominoes ahead of it stay upright."
+        },
+        {
+          "phase": "finish",
+          "t0": 3.25,
+          "t1": 4.5,
+          "text": "The toppling front reaches the lower-right end of the row."
+        },
+        {
+          "phase": "settled",
+          "t0": 4.5,
+          "t1": 5,
+          "text": "The entire row remains toppled, with earlier dominoes staying down."
+        }
+      ],
+      "events": [
+        {
+          "id": "initiation",
+          "phases": [
+            "start"
+          ],
+          "participants": [
+            "dominoes"
+          ],
+          "action": "The first domino tips into its neighbor at the starting end.",
+          "outcome": "Toppling has begun spreading from the starting end while the later dominoes are still upright."
+        },
+        {
+          "id": "cascade",
+          "phases": [
+            "propagate",
+            "finish",
+            "settled"
+          ],
+          "participants": [
+            "dominoes"
+          ],
+          "action": "The falling progresses through adjacent dominoes along the curved row to its far end.",
+          "outcome": "The row is toppled to the far end and the dominoes that fell earlier remain down."
+        }
+      ],
+      "end_state": [
+        "The whole domino row is toppled.",
+        "The fallen dominoes remain down."
+      ],
+      "appearance": [
+        "The dominoes form an alternating black-and-white sequence.",
+        "The dominoes have plastic surfaces.",
+        "The tabletop is light oak in color.",
+        "Fine wood grain is visible on the tabletop.",
+        "The scene has soft, neutral illumination."
+      ],
+      "motion_active": true,
+      "camera_active": false,
+      "persistence": [
+        "The same dominoes retain their individual alternating black-and-white assignments.",
+        "The domino surfaces remain smooth satin plastic."
+      ],
+      "target_source": {
+        "path": "data/scenes/B01/target_prompt.txt",
+        "sha256": "c2ae8087f962469582e6008d6f99e08024c4f919a07e71050b1ece2698ea5c9f"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Material",
+        "Environment",
+        "Texture",
+        "Lighting"
+      ]
+    },
+    "B02": {
+      "name": "Newton's cradle",
+      "groups": {
+        "balls": "B02 \\| ball [1-5]",
+        "hand": "B02 \\| release hand controller"
+      },
+      "timeline": [
+        {
+          "phase": "hold",
+          "t0": 0,
+          "t1": 0.6,
+          "text": "A hand holds the rightmost ball raised away from the row."
+        },
+        {
+          "phase": "release",
+          "t0": 0.6,
+          "t1": 1.4,
+          "text": "The hand releases the rightmost ball and it swings inward toward the row."
+        },
+        {
+          "phase": "left_out",
+          "t0": 1.4,
+          "t1": 2.2,
+          "text": "The leftmost ball swings outward while the middle three balls stay approximately centered."
+        },
+        {
+          "phase": "left_return",
+          "t0": 2.2,
+          "t1": 3.1,
+          "text": "The leftmost ball swings back inward toward the row."
+        },
+        {
+          "phase": "right_out",
+          "t0": 3.1,
+          "t1": 3.9,
+          "text": "The rightmost ball swings outward again."
+        },
+        {
+          "phase": "catch",
+          "t0": 3.9,
+          "t1": 5,
+          "text": "The hand catches the raised rightmost ball and holds it still."
+        }
+      ],
+      "events": [
+        {
+          "id": "first_exchange",
+          "phases": [
+            "release",
+            "left_out"
+          ],
+          "participants": [
+            "balls",
+            "hand"
+          ],
+          "action": "The rightmost ball is released and swings into the row.",
+          "outcome": "The leftmost ball has swung outward while the middle balls remain approximately centered."
+        },
+        {
+          "id": "return_exchange",
+          "phases": [
+            "left_return",
+            "right_out"
+          ],
+          "participants": [
+            "balls"
+          ],
+          "action": "The leftmost ball swings back into the row.",
+          "outcome": "The rightmost ball swings outward again."
+        },
+        {
+          "id": "catch",
+          "phases": [
+            "right_out",
+            "catch"
+          ],
+          "participants": [
+            "balls",
+            "hand"
+          ],
+          "action": "The hand catches the rightmost ball near its raised position.",
+          "outcome": "The rightmost ball is held raised and no longer continues its free swing."
+        }
+      ],
+      "end_state": [
+        "The hand holds the rightmost ball raised.",
+        "The other balls hang approximately at the central resting position."
+      ],
+      "appearance": [
+        "The four balls other than the rightmost ball have steel surfaces.",
+        "The rightmost ball is cobalt blue with a broad ivory band.",
+        "The cradle frame is charcoal in color.",
+        "The visible hand has a natural warm skin tone.",
+        "The four steel balls have polished surfaces.",
+        "The scene has soft, neutral illumination."
+      ],
+      "motion_active": true,
+      "camera_active": false,
+      "persistence": [
+        "The rightmost suspended ball has a cobalt-blue body.",
+        "The same rightmost ball retains its broad ivory band.",
+        "The other suspended balls retain polished silver-steel surfaces."
+      ],
+      "target_source": {
+        "path": "data/scenes/B02/target_prompt.txt",
+        "sha256": "d03ebe5472255f90763bcabccf2c56dd5003492a12f2804c8de3c808959bbf00"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Material",
+        "Color",
+        "Color",
+        "Color",
+        "Texture",
+        "Lighting"
+      ]
+    },
+    "B03": {
+      "name": "bowling equipment",
+      "groups": {
+        "ball": "B03 \\| bowling ball",
+        "pins": "B03 \\| pin \\d{2}"
+      },
+      "timeline": [
+        {
+          "phase": "approach",
+          "t0": 0,
+          "t1": 0.9,
+          "text": "The bowling ball rolls toward the upright pins."
+        },
+        {
+          "phase": "impact",
+          "t0": 0.9,
+          "t1": 1.6,
+          "text": "The bowling ball strikes and moves into the front pins."
+        },
+        {
+          "phase": "scatter",
+          "t0": 1.6,
+          "t1": 3,
+          "text": "Toppling spreads through the pins and they scatter across the end of the lane."
+        },
+        {
+          "phase": "settled",
+          "t0": 3,
+          "t1": 5,
+          "text": "Most pins remain down while a pin is still upright."
+        }
+      ],
+      "events": [
+        {
+          "id": "impact",
+          "phases": [
+            "impact"
+          ],
+          "participants": [
+            "ball",
+            "pins"
+          ],
+          "action": "The ball rolls into and contacts the front pins.",
+          "outcome": "The front pins have begun tipping or moving out of their original positions."
+        },
+        {
+          "id": "scatter",
+          "phases": [
+            "scatter",
+            "settled"
+          ],
+          "participants": [
+            "ball",
+            "pins"
+          ],
+          "action": "The disturbance spreads through the pin group as pins topple and scatter.",
+          "outcome": "Most pins are down and at least one pin remains upright."
+        }
+      ],
+      "end_state": [
+        "Most pins are lying down at the end of the lane.",
+        "At least one pin is still standing."
+      ],
+      "appearance": [
+        "The bowling ball is deep navy.",
+        "The bowling ball has a resin surface.",
+        "The pins have white bodies.",
+        "The lane is light honey-brown wood.",
+        "The bowling-ball surface is polished.",
+        "The scene has soft, neutral illumination."
+      ],
+      "motion_active": true,
+      "camera_active": false,
+      "persistence": [
+        "The same bowling ball retains its deep-navy colour.",
+        "The bowling ball retains a polished-resin surface.",
+        "The pins retain white lacquered bodies."
+      ],
+      "target_source": {
+        "path": "data/scenes/B03/target_prompt.txt",
+        "sha256": "b70ec7f31ab8baa5c503c0fb9de2746c1f4a31ca6641453980c3035aa8297ceb"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Material",
+        "Color",
+        "Environment",
+        "Texture",
+        "Lighting"
+      ]
+    },
+    "B04": {
+      "name": "marble-loop apparatus",
+      "concurrent": true,
+      "groups": {
+        "marbles": "Marble_\\d{2}",
+        "lift": "Carrier_\\d{2}",
+        "marble_01": "Marble_01",
+        "marble_10": "Marble_10"
+      },
+      "timeline": [
+        {
+          "phase": "lift",
+          "t0": 0,
+          "t1": 5,
+          "text": "Marbles are carried upward by the lift on the right."
+        },
+        {
+          "phase": "top_transfer",
+          "t0": 0,
+          "t1": 5,
+          "text": "Marbles reaching the top of the lift enter the upper track."
+        },
+        {
+          "phase": "track_descent",
+          "t0": 0,
+          "t1": 5,
+          "text": "Marbles travel along the curved track from higher to lower levels."
+        },
+        {
+          "phase": "bottom_return",
+          "t0": 0,
+          "t1": 2,
+          "text": "Marbles reaching the lower-track exit enter the bottom inlet of the lift."
+        }
+      ],
+      "events": [
+        {
+          "id": "top_transfer",
+          "phases": [
+            "top_transfer"
+          ],
+          "participants": [
+            "marble_01",
+            "lift"
+          ],
+          "action": "A marble is carried to the top of the lift and transferred onto the upper track.",
+          "outcome": "That marble continues away from the lift along the upper track."
+        },
+        {
+          "id": "bottom_return",
+          "phases": [
+            "bottom_return"
+          ],
+          "participants": [
+            "marble_10"
+          ],
+          "action": "A marble approaches the lift along the lower return track and enters its bottom inlet.",
+          "outcome": "The marble is received at the lift inlet rather than continuing off the track."
+        }
+      ],
+      "end_state": [
+        "Marbles are still moving on the apparatus near the end.",
+        "The lift continues carrying marbles upward."
+      ],
+      "appearance": [
+        "The structural frame is industrial red.",
+        "The tracks are silver gray.",
+        "The marbles are cobalt blue with broad ivory bands.",
+        "The marbles have polished surfaces.",
+        "The marbles have opaque-glass surfaces.",
+        "The scene has soft, neutral illumination."
+      ],
+      "motion_active": true,
+      "camera_active": false,
+      "persistence": [
+        "The marbles retain cobalt-blue bodies.",
+        "The same marbles retain their broad ivory bands.",
+        "The marbles retain polished surfaces."
+      ],
+      "target_source": {
+        "path": "data/scenes/B04/target_prompt.txt",
+        "sha256": "d204a2a8750d7f286f284b3e8d8da6dd6327c0280a1905502fc8904ebe28d5ee"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Color",
+        "Texture",
+        "Material",
+        "Lighting"
+      ]
+    },
+    "B05": {
+      "name": "excavator and dump truck",
+      "groups": {
+        "excavator": "Excavator travel",
+        "bucket": "Open digging bucket|Bucket tooth(?:\\.\\d+)?",
+        "earth": "Transferred earth \\d{2}",
+        "bed": "Bed floor|Dump bed side(?:\\.\\d+)?|Bed end gate(?:\\.\\d+)?"
+      },
+      "timeline": [
+        {
+          "phase": "approach",
+          "t0": 0,
+          "t1": 0.6,
+          "text": "The excavator chassis moves closer to the soil pile."
+        },
+        {
+          "phase": "scoop",
+          "t0": 0.6,
+          "t1": 1.95,
+          "text": "The bucket lowers into the ground-level soil and curls inward to scoop it."
+        },
+        {
+          "phase": "lift",
+          "t0": 1.95,
+          "t1": 2.45,
+          "text": "The loaded bucket rises away from the ground."
+        },
+        {
+          "phase": "slew",
+          "t0": 2.45,
+          "t1": 3.45,
+          "text": "The upper body turns to move the raised bucket over the truck bed."
+        },
+        {
+          "phase": "dump",
+          "t0": 3.45,
+          "t1": 4.3,
+          "text": "The bucket tips and soil falls from it into the truck bed."
+        },
+        {
+          "phase": "return",
+          "t0": 4.3,
+          "t1": 5,
+          "text": "The bucket begins moving back toward the digging side."
+        }
+      ],
+      "events": [
+        {
+          "id": "scoop_lift",
+          "phases": [
+            "scoop",
+            "lift"
+          ],
+          "participants": [
+            "bucket",
+            "earth"
+          ],
+          "action": "The bucket scoops soil from the ground and lifts it.",
+          "outcome": "Soil is carried in the raised bucket."
+        },
+        {
+          "id": "load_truck",
+          "phases": [
+            "slew",
+            "dump"
+          ],
+          "participants": [
+            "bucket",
+            "earth",
+            "bed"
+          ],
+          "action": "The raised bucket moves over the truck bed and tips its load.",
+          "outcome": "Soil visibly falls from the bucket into the truck bed."
+        }
+      ],
+      "end_state": [
+        "The bucket has left its tipped unloading pose.",
+        "The excavator has begun turning back toward the digging side."
+      ],
+      "appearance": [
+        "The excavator is yellow.",
+        "The dump truck is deep orange.",
+        "The ground is warm brown granular soil.",
+        "The vehicles have painted metal bodywork.",
+        "The soil has a granular texture.",
+        "The scene has soft, neutral illumination."
+      ],
+      "motion_active": true,
+      "camera_active": false,
+      "persistence": [
+        "The excavator retains yellow bodywork.",
+        "The dump truck retains deep-orange bodywork.",
+        "The same vehicles retain painted-metal body surfaces."
+      ],
+      "target_source": {
+        "path": "data/scenes/B05/target_prompt.txt",
+        "sha256": "0de0c9edf7cb54e8e6327ae7b11cf79a04a5f1a71e6d261ca6d271b5b58da666"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Environment",
+        "Material",
+        "Texture",
+        "Lighting"
+      ]
+    },
+    "B06": {
+      "name": "canal drawbridge",
+      "groups": {
+        "leaves": "Left lifting bridge leaf|Right lifting bridge leaf",
+        "boat": "Passing cabin boat",
+        "cars": "First crossing car|Final eastbound car|Final westbound car"
+      },
+      "timeline": [
+        {
+          "phase": "road_before",
+          "t0": 0,
+          "t1": 1.1,
+          "text": "A car crosses the closed bridge."
+        },
+        {
+          "phase": "open",
+          "t0": 1.1,
+          "t1": 1.7,
+          "text": "Both bridge leaves rise to open the water passage."
+        },
+        {
+          "phase": "boat_pass",
+          "t0": 1.7,
+          "t1": 3.1,
+          "text": "The boat passes between the raised bridge leaves and clears the crossing."
+        },
+        {
+          "phase": "close",
+          "t0": 3.1,
+          "t1": 3.75,
+          "text": "After the boat clears the crossing, the leaves lower and close the bridge."
+        },
+        {
+          "phase": "road_after",
+          "t0": 3.75,
+          "t1": 5,
+          "text": "Cars resume crossing the closed bridge."
+        }
+      ],
+      "events": [
+        {
+          "id": "road_before",
+          "phases": [
+            "road_before"
+          ],
+          "participants": [
+            "leaves",
+            "cars"
+          ],
+          "action": "The first car travels across the closed bridge.",
+          "outcome": "The first car reaches the far side of the crossing."
+        },
+        {
+          "id": "boat_pass",
+          "phases": [
+            "open",
+            "boat_pass"
+          ],
+          "participants": [
+            "leaves",
+            "boat"
+          ],
+          "action": "The bridge opens and the boat passes through the water passage.",
+          "outcome": "The boat clears the area under the bridge before the leaves start lowering."
+        },
+        {
+          "id": "road_restore",
+          "phases": [
+            "close",
+            "road_after"
+          ],
+          "participants": [
+            "leaves",
+            "cars"
+          ],
+          "action": "The bridge leaves lower and reconnect the roadway.",
+          "outcome": "Cars cross the bridge again after it has closed."
+        }
+      ],
+      "end_state": [
+        "Both bridge leaves are closed and form a continuous road.",
+        "Cars are crossing the restored roadway."
+      ],
+      "appearance": [
+        "The bridge framework is dark blue.",
+        "The bridge framework has steel surfaces.",
+        "The boat has a warm white hull and cabin.",
+        "The cars have red bodywork.",
+        "The canal water is deep blue-green.",
+        "The scene has soft, neutral illumination."
+      ],
+      "motion_active": true,
+      "camera_active": false,
+      "persistence": [
+        "The bridge framework retains its dark-blue colour.",
+        "The boat retains a warm-white hull and cabin.",
+        "The moving bridge leaves retain steel framework surfaces."
+      ],
+      "target_source": {
+        "path": "data/scenes/B06/target_prompt.txt",
+        "sha256": "1f985b95ae753cc9fec821d0b4ab74e98a7e7ad70ef2f7b9466780eadc4d15aa"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Material",
+        "Color",
+        "Color",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "B07": {
+      "name": "cargo-loading equipment",
+      "groups": {
+        "forklift": "Forklift chassis",
+        "cargo": "Pallet and cargo — same continuous load",
+        "truck": "Parked open-side cargo truck",
+        "forks": "Moving carriage and L forks"
+      },
+      "timeline": [
+        {
+          "phase": "approach",
+          "t0": 0,
+          "t1": 1.35,
+          "text": "The forklift approaches the truck side opening while already carrying a pallet of cartons."
+        },
+        {
+          "phase": "raise",
+          "t0": 1.35,
+          "t1": 2.65,
+          "text": "The forklift raises its load to the height of the truck bed before inserting it."
+        },
+        {
+          "phase": "insert",
+          "t0": 2.65,
+          "t1": 3.65,
+          "text": "The forklift advances with the raised load into the truck."
+        },
+        {
+          "phase": "set_down",
+          "t0": 3.65,
+          "t1": 4.3,
+          "text": "The load is lowered onto the truck bed and released from the forks."
+        },
+        {
+          "phase": "withdraw",
+          "t0": 4.3,
+          "t1": 5,
+          "text": "The forklift reverses away while the load remains in the truck."
+        }
+      ],
+      "events": [
+        {
+          "id": "raise",
+          "phases": [
+            "raise"
+          ],
+          "participants": [
+            "forks",
+            "cargo"
+          ],
+          "action": "The forklift lifts the pallet before advancing into the truck.",
+          "outcome": "The pallet reaches a height that clears the truck bed."
+        },
+        {
+          "id": "unload",
+          "phases": [
+            "insert",
+            "set_down",
+            "withdraw"
+          ],
+          "participants": [
+            "forks",
+            "cargo"
+          ],
+          "action": "The forklift carries the load into the truck, sets it down, and withdraws.",
+          "outcome": "The load stays on the truck bed as the forklift reverses away."
+        }
+      ],
+      "end_state": [
+        "The pallet of cartons remains inside the truck.",
+        "The forklift is separated from the deposited load as it reverses away."
+      ],
+      "appearance": [
+        "The truck is deep blue.",
+        "The forklift is yellow.",
+        "The cartons are kraft brown.",
+        "The pallet has a wooden appearance.",
+        "The cartons have corrugated-cardboard texture.",
+        "The scene has soft, neutral illumination."
+      ],
+      "motion_active": true,
+      "camera_active": false,
+      "persistence": [
+        "The truck retains deep-blue bodywork.",
+        "The forklift retains yellow bodywork.",
+        "The transferred cartons retain kraft-brown cardboard surfaces."
+      ],
+      "target_source": {
+        "path": "data/scenes/B07/target_prompt.txt",
+        "sha256": "7103345700b678ad0332a9bf761180bba4487ed7f566f4fb5329791ce697952a"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Color",
+        "Material",
+        "Texture",
+        "Lighting"
+      ]
+    },
+    "B08": {
+      "name": "packaging conveyor",
+      "groups": {
+        "cartons": "Carton [1-5]"
+      },
+      "timeline": [
+        {
+          "phase": "feed",
+          "t0": 0,
+          "t1": 1.2,
+          "text": "Cartons pass through the machine and emerge one after another."
+        },
+        {
+          "phase": "slow",
+          "t0": 0.75,
+          "t1": 1.25,
+          "text": "The leading carton slows after entering the output rollers."
+        },
+        {
+          "phase": "accumulate",
+          "t0": 1.25,
+          "t1": 4.5,
+          "text": "Following cartons catch up, contact the queue, and push the preceding cartons farther along the rollers."
+        },
+        {
+          "phase": "stop",
+          "t0": 4.5,
+          "t1": 5,
+          "text": "The accumulated queue of cartons comes approximately to rest."
+        }
+      ],
+      "events": [
+        {
+          "id": "slow",
+          "phases": [
+            "slow"
+          ],
+          "participants": [
+            "cartons"
+          ],
+          "action": "The leading carton moves from the machine onto the output rollers.",
+          "outcome": "Its forward motion has noticeably slowed."
+        },
+        {
+          "id": "accumulate",
+          "phases": [
+            "accumulate",
+            "stop"
+          ],
+          "participants": [
+            "cartons"
+          ],
+          "action": "Arriving cartons catch up with the preceding cartons and push the queue forward.",
+          "outcome": "The cartons form a closely packed queue that is approximately stationary near the end."
+        }
+      ],
+      "end_state": [
+        "The cartons form a closely packed queue on the output rollers.",
+        "The queue is approximately stationary."
+      ],
+      "appearance": [
+        "The machine panels are deep blue.",
+        "The conveyor belt is dark green.",
+        "The cartons are kraft brown.",
+        "The output conveyor has metallic steel rollers.",
+        "The cartons have corrugated-cardboard texture.",
+        "The scene has soft, neutral illumination."
+      ],
+      "motion_active": true,
+      "camera_active": false,
+      "persistence": [
+        "The machine panels retain a deep-blue colour.",
+        "The same cartons retain kraft-brown cardboard surfaces.",
+        "The output rollers retain metallic-steel surfaces."
+      ],
+      "target_source": {
+        "path": "data/scenes/B08/target_prompt.txt",
+        "sha256": "4addd60f8afc1a6573e44a7d1873ebb8ca606aa1e02f87eee4885e6b5a591bc3"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Color",
+        "Material",
+        "Texture",
+        "Lighting"
+      ]
+    },
+    "C01": {
+      "name": "model railway",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "train": "C01 \\| coach \\d{2} controller"
+      },
+      "timeline": [
+        {
+          "phase": "enter",
+          "t0": 0,
+          "t1": 1.7,
+          "text": "The connected train moves along the left approach and into the tunnel."
+        },
+        {
+          "phase": "hidden",
+          "t0": 1.7,
+          "t1": 2.8,
+          "text": "The train becomes hidden inside the opaque tunnel."
+        },
+        {
+          "phase": "exit",
+          "t0": 2.8,
+          "t1": 5,
+          "text": "The train reappears from the right tunnel portal and advances down the right track."
+        }
+      ],
+      "events": [
+        {
+          "id": "enter",
+          "phases": [
+            "enter",
+            "hidden"
+          ],
+          "participants": [
+            "train"
+          ],
+          "action": "The train enters the tunnel progressively, coach after coach.",
+          "outcome": "The train becomes hidden by the tunnel structure."
+        },
+        {
+          "id": "exit",
+          "phases": [
+            "hidden",
+            "exit"
+          ],
+          "participants": [
+            "train"
+          ],
+          "action": "The train emerges from the other tunnel portal.",
+          "outcome": "Connected coaches are visible outside on the right-hand track."
+        }
+      ],
+      "end_state": [
+        "The train is visible outside the right tunnel portal.",
+        "Its coaches remain connected in sequence."
+      ],
+      "appearance": [
+        "The carriage body panels are deep green.",
+        "The carriages have a broad ivory waist stripe below the windows.",
+        "The carriages have painted-metal surfaces.",
+        "The tunnel structure has warm-beige stone surfaces.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The carriage body panels are deep green.",
+        "The carriages have a broad ivory waist stripe below the windows.",
+        "The carriages have painted-metal surfaces."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/C01/target_prompt.txt",
+        "sha256": "83f2032732c17674cf103e4fbceb6f2218840dd708440287d577425ec7d70da1"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "C02": {
+      "name": "bridge and boats",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "boats": "Ferry [1-5]"
+      },
+      "timeline": [
+        {
+          "phase": "approach",
+          "t0": 0,
+          "t1": 5,
+          "text": "Passenger boats approach the bridge along the water from both sides."
+        },
+        {
+          "phase": "occlude",
+          "t0": 0,
+          "t1": 5,
+          "text": "Boats become partially or fully hidden as they pass under the opaque bridge deck."
+        },
+        {
+          "phase": "emerge",
+          "t0": 0,
+          "t1": 5,
+          "text": "Boats reappear on the other side after passing under the bridge."
+        }
+      ],
+      "events": [
+        {
+          "id": "underpass",
+          "phases": [
+            "approach",
+            "occlude",
+            "emerge"
+          ],
+          "participants": [
+            "boats"
+          ],
+          "action": "Boats travel under the bridge and become occluded by its deck.",
+          "outcome": "Boats emerge beyond the bridge while continuing on the water."
+        }
+      ],
+      "end_state": [
+        "Boats remain upright on the water on both sides of the bridge.",
+        "The bridge remains fixed while the boats change position."
+      ],
+      "appearance": [
+        "The boat hulls are warm white.",
+        "Each boat canopy has a broad navy-blue stripe along the centre of its roof.",
+        "The boat hulls have painted-metal surfaces.",
+        "The boat canopies have painted-metal surfaces.",
+        "The water is deep blue-green with natural reflections.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The boat hulls are warm white.",
+        "Each boat canopy has a broad navy-blue stripe along the centre of its roof.",
+        "The boat hulls have painted-metal surfaces.",
+        "The boat canopies have painted-metal surfaces."
+      ],
+      "concurrent": true,
+      "target_source": {
+        "path": "data/scenes/C02/target_prompt.txt",
+        "sha256": "96560a5771b4ce65ac0a7db2df8eee5a449a4446dae81770b8c93472595ca664"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "C03": {
+      "name": "revolving-door entrance",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "person_and_door": "(?:Person .*|Revolving door shaft controller)"
+      },
+      "timeline": [
+        {
+          "phase": "enter",
+          "t0": 0,
+          "t1": 1.6,
+          "text": "The person approaches and enters the revolving-door enclosure."
+        },
+        {
+          "phase": "hidden",
+          "t0": 1.6,
+          "t1": 4.1,
+          "text": "The rotating opaque door panels conceal the person inside the enclosure."
+        },
+        {
+          "phase": "exit",
+          "t0": 4.1,
+          "t1": 5,
+          "text": "The person reappears to the right of the enclosure and walks away."
+        }
+      ],
+      "events": [
+        {
+          "id": "enter",
+          "phases": [
+            "enter",
+            "hidden"
+          ],
+          "participants": [
+            "person_and_door"
+          ],
+          "action": "The person walks into the revolving door while the panels rotate.",
+          "outcome": "The person becomes hidden behind the door panels."
+        },
+        {
+          "id": "exit",
+          "phases": [
+            "hidden",
+            "exit"
+          ],
+          "participants": [
+            "person_and_door"
+          ],
+          "action": "The person completes passage through the enclosure and emerges.",
+          "outcome": "The person is outside to the right, moving away from the door."
+        }
+      ],
+      "end_state": [
+        "The person is visible outside to the right of the door.",
+        "The revolving-door structure remains in place."
+      ],
+      "appearance": [
+        "The person wears a teal sweater.",
+        "The sweater has a broad ivory horizontal band around the chest and back.",
+        "The sweater has knit-fabric texture.",
+        "The revolving door framing has metal surfaces.",
+        "The floor is terracotta-brown stone.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The person wears a teal sweater.",
+        "The sweater has a broad ivory horizontal band around the chest and back.",
+        "The sweater has knit-fabric texture."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/C03/target_prompt.txt",
+        "sha256": "94d8f9b8288f0a50bb7b99baa7bfcc9b11321bcee6f5f942acaf8c0c5e78d859"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Texture",
+        "Material",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "C04": {
+      "name": "cable cars",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "cable_cars": "Cable car [12]"
+      },
+      "timeline": [
+        {
+          "phase": "travel",
+          "t0": 0,
+          "t1": 5,
+          "text": "Two cable cars travel in opposite directions along the elevated cable route."
+        },
+        {
+          "phase": "occlude",
+          "t0": 0,
+          "t1": 5,
+          "text": "The cabins pass behind foreground tree crowns and reappear beyond them."
+        }
+      ],
+      "events": [
+        {
+          "id": "reappear",
+          "phases": [
+            "travel",
+            "occlude"
+          ],
+          "participants": [
+            "cable_cars"
+          ],
+          "action": "The cable cars continue along their route through tree occlusions.",
+          "outcome": "The cabins reappear farther along the cable without detaching from the route."
+        }
+      ],
+      "end_state": [
+        "The two cabins remain on the elevated cable route.",
+        "Their positions along the route have changed."
+      ],
+      "appearance": [
+        "The cable cars have red lower cabin panels.",
+        "The lower cabin sides have a broad ivory horizontal band.",
+        "The cabins have painted-metal surfaces.",
+        "The cable hardware has a steel appearance.",
+        "The water is bright blue.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The cable cars have red lower cabin panels.",
+        "The lower cabin sides have a broad ivory horizontal band.",
+        "The cabins have painted-metal surfaces."
+      ],
+      "concurrent": true,
+      "target_source": {
+        "path": "data/scenes/C04/target_prompt.txt",
+        "sha256": "a301300b14db1a2b1a82b0f001d8ee57eaee8d4f1a2e514f82c3428592ee13f3"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "C05": {
+      "name": "warehouse equipment",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "forklift": "Forklift motion root"
+      },
+      "timeline": [
+        {
+          "phase": "enter",
+          "t0": 0,
+          "t1": 1,
+          "text": "The forklift moves from the left opening into the shelving aisles."
+        },
+        {
+          "phase": "hidden",
+          "t0": 1,
+          "t1": 4,
+          "text": "The forklift progresses behind the racks and is hidden by shelves and cartons."
+        },
+        {
+          "phase": "exit",
+          "t0": 4,
+          "t1": 5,
+          "text": "The forklift reappears from the shelving on the right side."
+        }
+      ],
+      "events": [
+        {
+          "id": "aisle",
+          "phases": [
+            "enter",
+            "hidden",
+            "exit"
+          ],
+          "participants": [
+            "forklift"
+          ],
+          "action": "The forklift travels through the warehouse behind the shelving.",
+          "outcome": "It emerges on the right after being occluded by the racks."
+        }
+      ],
+      "end_state": [
+        "The forklift is visible on the right side of the shelving.",
+        "The shelving and stored cartons remain stationary."
+      ],
+      "appearance": [
+        "The forklift has yellow bodywork.",
+        "The rear counterweight has a broad navy-blue horizontal band.",
+        "The forklift has painted-metal bodywork.",
+        "The forklift tires have rubber surfaces.",
+        "The warehouse floor has a concrete appearance.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The forklift has yellow bodywork.",
+        "The rear counterweight has a broad navy-blue horizontal band.",
+        "The forklift has painted-metal bodywork.",
+        "The forklift tires have a black-rubber appearance."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/C05/target_prompt.txt",
+        "sha256": "f6a1b01cac44ecb9e320e006a9e4941552ed7407826f6ba70d9ecf0ca90203ff"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "C06": {
+      "name": "elevated roadway",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "cars": "(?:Ring \\d car \\d|Straight -?\\d car \\d)"
+      },
+      "timeline": [
+        {
+          "phase": "ring",
+          "t0": 0,
+          "t1": 5,
+          "text": "Cars circulate on the curved elevated roadway."
+        },
+        {
+          "phase": "straight",
+          "t0": 0,
+          "t1": 5,
+          "text": "Cars travel along the diagonal straight roadway at a different level."
+        },
+        {
+          "phase": "occlusion",
+          "t0": 0,
+          "t1": 5,
+          "text": "Moving cars are briefly hidden by overlapping road structures and reappear along their lanes."
+        }
+      ],
+      "events": [
+        {
+          "id": "roads",
+          "phases": [
+            "ring",
+            "straight",
+            "occlusion"
+          ],
+          "participants": [
+            "cars"
+          ],
+          "action": "Cars follow their curved or straight road paths through structural occlusions.",
+          "outcome": "Cars advance along the road network while remaining on their respective road surfaces."
+        }
+      ],
+      "end_state": [
+        "Cars remain on the road surfaces.",
+        "The elevated road structures remain fixed."
+      ],
+      "appearance": [
+        "Each car has a single broad ivory stripe along the centre of its hood and roof.",
+        "The two cars grouped at the lower left in the opening have red bodywork.",
+        "The cars have painted bodywork.",
+        "The tires have rubber surfaces.",
+        "The painted car bodywork is glossy.",
+        "The road has dark charcoal asphalt with white lane markings.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "Each car has a single broad ivory stripe along the centre of its hood and roof.",
+        "The two cars grouped at the lower left in the opening have red bodywork.",
+        "The cars have glossy painted bodywork.",
+        "The tires have a black-rubber appearance."
+      ],
+      "concurrent": true,
+      "target_source": {
+        "path": "data/scenes/C06/target_prompt.txt",
+        "sha256": "99f1d78cf7ceaa1a4a736b56d1b068c3183b6709d724c80bc3174069eaf851ac"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Texture",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "C07": {
+      "name": "car-wash equipment",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "car_and_brushes": "(?:Car motion root|Side brush pivot(?:\\.\\d{3})?|Contour following top brush)"
+      },
+      "timeline": [
+        {
+          "phase": "enter",
+          "t0": 0,
+          "t1": 1.4,
+          "text": "The car moves into the wash housing and becomes hidden behind its entrance and brushes."
+        },
+        {
+          "phase": "inside",
+          "t0": 1.4,
+          "t1": 2.8,
+          "text": "The car is mostly concealed inside the wash housing while the brush assembly operates."
+        },
+        {
+          "phase": "emerge",
+          "t0": 2.8,
+          "t1": 5,
+          "text": "The car reappears through the visible wash opening and moves out onto the approach lane."
+        }
+      ],
+      "events": [
+        {
+          "id": "wash",
+          "phases": [
+            "enter",
+            "inside",
+            "emerge"
+          ],
+          "participants": [
+            "car_and_brushes"
+          ],
+          "action": "The car enters the wash housing and later emerges through the opening.",
+          "outcome": "The car is visible outside the housing again."
+        }
+      ],
+      "end_state": [
+        "The car is visible on the lane outside the wash opening.",
+        "The wash housing remains in place."
+      ],
+      "appearance": [
+        "The car has cobalt-blue bodywork.",
+        "The car has two broad ivory longitudinal stripes across its hood and roof, separated by a blue centre strip.",
+        "The car has painted bodywork.",
+        "The car tires have rubber surfaces.",
+        "The painted car bodywork is glossy.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The car has cobalt-blue bodywork.",
+        "The car has two broad ivory longitudinal stripes across its hood and roof, separated by a blue centre strip.",
+        "The car has glossy painted bodywork.",
+        "The car tires have a black-rubber appearance."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/C07/target_prompt.txt",
+        "sha256": "5df8d740be297d66575ecd9df4927f618ebeea2b61116d408f69121e1678d55d"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Texture",
+        "Lighting"
+      ]
+    },
+    "C08": {
+      "name": "tabletop cups",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "cups_and_ball": "C08 \\| (?:cup [1-3]|green ball)"
+      },
+      "timeline": [
+        {
+          "phase": "cover",
+          "t0": 0,
+          "t1": 1.6,
+          "text": "The initially left cup lowers over the small ball and hides it."
+        },
+        {
+          "phase": "shuffle",
+          "t0": 1.6,
+          "t1": 4.2,
+          "text": "The cups slide around one another across the tabletop while the ball remains covered."
+        },
+        {
+          "phase": "reveal",
+          "t0": 4.2,
+          "t1": 5,
+          "text": "The cup covering the ball lifts and reveals the ball at its new position."
+        }
+      ],
+      "events": [
+        {
+          "id": "cover",
+          "phases": [
+            "cover"
+          ],
+          "participants": [
+            "cups_and_ball"
+          ],
+          "action": "A cup lowers over the visible ball.",
+          "outcome": "The ball is hidden underneath the cup."
+        },
+        {
+          "id": "shuffle_reveal",
+          "phases": [
+            "shuffle",
+            "reveal"
+          ],
+          "participants": [
+            "cups_and_ball"
+          ],
+          "action": "The cups shuffle and the covering cup is lifted.",
+          "outcome": "The same small ball is visible again after the shuffle."
+        }
+      ],
+      "end_state": [
+        "The small ball is visible on the tabletop.",
+        "The cups occupy a different arrangement from the opening."
+      ],
+      "appearance": [
+        "The cup initially on the left is scarlet red.",
+        "The small ball is emerald green.",
+        "The cups have molded-plastic surfaces.",
+        "The ball has a resin surface.",
+        "The cup surfaces have a satin finish.",
+        "The tabletop is warm brown wood.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The cup initially on the left is scarlet red.",
+        "The small ball is emerald green.",
+        "The cups have satin molded-plastic surfaces.",
+        "The ball has a glossy-resin surface."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/C08/target_prompt.txt",
+        "sha256": "e2c4ba59c7b3652945d982fda636dc1fe3e04637475aa0a2224a8ba2d59aacb9"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Texture",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "D01": {
+      "name": "road and car",
+      "motion_active": true,
+      "camera_active": true,
+      "groups": {
+        "car": "Car motion root"
+      },
+      "timeline": [
+        {
+          "phase": "drive",
+          "t0": 0,
+          "t1": 2.5,
+          "text": "The car advances along the curved road relative to the lane markings while the camera follows it."
+        },
+        {
+          "phase": "continue",
+          "t0": 2.5,
+          "t1": 5,
+          "text": "The car continues around the road bend, staying on the roadway."
+        }
+      ],
+      "events": [
+        {
+          "id": "drive",
+          "phases": [
+            "drive",
+            "continue"
+          ],
+          "participants": [
+            "car"
+          ],
+          "action": "The car drives around the bend relative to the fixed road.",
+          "outcome": "It has progressed along the road while remaining on the pavement."
+        }
+      ],
+      "end_state": [
+        "The car remains upright on the road.",
+        "The road and roadside scenery remain fixed in the world."
+      ],
+      "appearance": [
+        "The car has brick-red bodywork.",
+        "The car has one broad ivory stripe along the centre of its hood and roof.",
+        "The car has painted-metal surfaces.",
+        "The tires have rubber surfaces.",
+        "The painted car surfaces are glossy.",
+        "The road has dark charcoal asphalt with white markings.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The car has brick-red bodywork.",
+        "The car has one broad ivory stripe along the centre of its hood and roof.",
+        "The car has glossy painted-metal surfaces.",
+        "The tires have a black-rubber appearance."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/D01/target_prompt.txt",
+        "sha256": "542f5317a2b664dd1d889dd735c09584925a1b5b85106bdaa889d4fcaf5ced4a"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Texture",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "D02": {
+      "name": "water-tank tower",
+      "motion_active": false,
+      "camera_active": true,
+      "groups": {},
+      "timeline": [],
+      "events": [],
+      "end_state": [],
+      "appearance": [
+        "The upper tank is warm beige.",
+        "The tank has one broad navy-blue horizontal band around its middle.",
+        "The tank has painted-metal surfaces.",
+        "The fixed support shaft has a concrete appearance.",
+        "The painted tank surface has a matte finish.",
+        "The surrounding houses have muted-red roofs and cream walls.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The upper tank is warm beige.",
+        "The tank has one broad navy-blue horizontal band around its middle.",
+        "The tank has a matte painted-metal finish.",
+        "The fixed support shaft has a concrete appearance."
+      ],
+      "motion_na_reason": "Static world geometry; image motion comes from the moving camera. Camera fidelity is evaluated only by the D-series protocol.",
+      "target_source": {
+        "path": "data/scenes/D02/target_prompt.txt",
+        "sha256": "50cb039ea4c59795efa0fa197720b33cb182b27a15a63db02069c8ae1230d749"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Texture",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "D03": {
+      "name": "railway tunnel",
+      "motion_active": false,
+      "camera_active": true,
+      "groups": {},
+      "timeline": [],
+      "events": [],
+      "end_state": [],
+      "appearance": [
+        "The wall-mounted service boxes have cobalt-blue housings.",
+        "Each service box has one broad ivory horizontal band around its middle.",
+        "The service boxes have painted-metal surfaces.",
+        "The tunnel walls have warm-beige cast-concrete surfaces.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The wall-mounted service boxes have cobalt-blue housings.",
+        "Each service box has one broad ivory horizontal band around its middle.",
+        "The service boxes have painted-metal surfaces.",
+        "The tunnel walls have warm-beige cast-concrete surfaces."
+      ],
+      "motion_na_reason": "Static world geometry; image motion comes from the moving camera. Camera fidelity is evaluated only by the D-series protocol.",
+      "target_source": {
+        "path": "data/scenes/D03/target_prompt.txt",
+        "sha256": "a6e30ef2488874a7a0d27c3d4926203b6962296496c300e9d036b67508964d0d"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "D04": {
+      "name": "wind farm",
+      "motion_active": true,
+      "camera_active": true,
+      "groups": {
+        "turbine_rotors": "Rotor [1-5]"
+      },
+      "timeline": [
+        {
+          "phase": "rotate",
+          "t0": 0,
+          "t1": 2.5,
+          "text": "The turbine rotors turn around their hubs relative to the stationary towers."
+        },
+        {
+          "phase": "continue",
+          "t0": 2.5,
+          "t1": 5,
+          "text": "The rotor blades continue sweeping around their hubs while the towers stay fixed."
+        }
+      ],
+      "events": [
+        {
+          "id": "spin",
+          "phases": [
+            "rotate",
+            "continue"
+          ],
+          "participants": [
+            "turbine_rotors"
+          ],
+          "action": "The wind turbine rotors rotate on their stationary towers.",
+          "outcome": "The blades have changed angular positions without detaching from the hubs."
+        }
+      ],
+      "end_state": [
+        "The turbines remain mounted on their towers.",
+        "The tower bases remain fixed to the ground."
+      ],
+      "appearance": [
+        "The turbine towers are white.",
+        "Each tower has a broad cobalt-blue horizontal band around its middle.",
+        "The turbine surfaces have a painted-metal appearance.",
+        "The nacelles are golden yellow.",
+        "The ground vegetation is green.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The turbine towers are white.",
+        "Each tower has a broad cobalt-blue horizontal band around its middle.",
+        "The turbine surfaces have a painted-metal appearance.",
+        "The nacelles are golden yellow."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/D04/target_prompt.txt",
+        "sha256": "81cf95552796fd81af567247e52ecf9c4c7613e5199f5cdaa9b01e4eecbd9e3b"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Color",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "D05": {
+      "name": "harbor",
+      "motion_active": true,
+      "camera_active": true,
+      "groups": {
+        "boats": "(?:Moored yacht [0-3]|Departing hero yacht|Crossing passenger vessel)"
+      },
+      "timeline": [
+        {
+          "phase": "depart",
+          "t0": 0,
+          "t1": 2.5,
+          "text": "The followed yacht moves away from the dock into the harbour while another vessel crosses farther out."
+        },
+        {
+          "phase": "navigate",
+          "t0": 2.5,
+          "t1": 5,
+          "text": "The moving vessels continue through the harbour as the berthed yachts remain moored."
+        }
+      ],
+      "events": [
+        {
+          "id": "departure",
+          "phases": [
+            "depart",
+            "navigate"
+          ],
+          "participants": [
+            "boats"
+          ],
+          "action": "The followed yacht leaves the dock and travels through open water.",
+          "outcome": "The yacht is farther from its berth while the other docked yachts remain moored."
+        }
+      ],
+      "end_state": [
+        "The followed yacht is out on the water away from its starting berth.",
+        "The other yachts remain at the docks."
+      ],
+      "appearance": [
+        "The departing yacht followed by the camera has a blue hull.",
+        "The boat cabin roofs have a broad navy-blue longitudinal stripe along the centre.",
+        "The boats have painted surfaces.",
+        "The boat windows have dark glazing.",
+        "The harbor water is deep blue-green.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The departing yacht followed by the camera has a blue hull.",
+        "The boat cabin roofs have a broad navy-blue longitudinal stripe along the centre.",
+        "The boats have painted surfaces.",
+        "The boat windows have dark glazing."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/D05/target_prompt.txt",
+        "sha256": "69101a43bcdacb94c9ea20922ea65d3c69775ab1a7d7cbd7f5ec0c3124c8a7f5"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "D06": {
+      "name": "house interior",
+      "motion_active": false,
+      "camera_active": true,
+      "groups": {},
+      "timeline": [],
+      "events": [],
+      "end_state": [],
+      "appearance": [
+        "The dining-chair seats and backs are teal.",
+        "The rectangular artwork has a navy-blue face.",
+        "The chair upholstery has woven-fabric texture.",
+        "The artwork has a painted surface.",
+        "The interior walls are warm off-white.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The dining-chair seats and backs are teal.",
+        "The rectangular artwork has a navy-blue face.",
+        "The chair upholstery has woven-fabric texture.",
+        "The artwork has a matte painted surface."
+      ],
+      "motion_na_reason": "Static world geometry; image motion comes from the moving camera. Camera fidelity is evaluated only by the D-series protocol.",
+      "target_source": {
+        "path": "data/scenes/D06/target_prompt.txt",
+        "sha256": "0e4e9d1cbf2ff77032a70accc3c14d7aa2e2124ae8ca8b09f0fab5846d6e7de5"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Texture",
+        "Material",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "D07": {
+      "name": "train and railway bridge",
+      "motion_active": true,
+      "camera_active": true,
+      "groups": {
+        "train": "(?:Locomotive|Coach [1-5])"
+      },
+      "timeline": [
+        {
+          "phase": "travel",
+          "t0": 0,
+          "t1": 2.5,
+          "text": "The locomotive pulls its connected coaches along the curved viaduct relative to the rails and bridge piers."
+        },
+        {
+          "phase": "continue",
+          "t0": 2.5,
+          "t1": 5,
+          "text": "The connected train continues following the curved track around the viaduct."
+        }
+      ],
+      "events": [
+        {
+          "id": "travel",
+          "phases": [
+            "travel",
+            "continue"
+          ],
+          "participants": [
+            "train"
+          ],
+          "action": "The train advances along the curved elevated railway.",
+          "outcome": "Its locomotive and coaches remain on the track and connected in order."
+        }
+      ],
+      "end_state": [
+        "The train remains on the railway viaduct.",
+        "The coaches remain connected behind the locomotive."
+      ],
+      "appearance": [
+        "The locomotive and passenger coaches have deep-green body panels.",
+        "The train has a broad ivory waist stripe below the windows.",
+        "The train body panels have painted-metal surfaces.",
+        "The train roofs have a satin-metal finish.",
+        "The railway viaduct is neutral-gray concrete.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The locomotive and passenger coaches have deep-green body panels.",
+        "The train has a broad ivory waist stripe below the windows.",
+        "The train body panels have painted-metal surfaces.",
+        "The train roofs have a satin-metal finish."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/D07/target_prompt.txt",
+        "sha256": "4af7b2ff83f199b07f6b5abd8f11e09c3a092b2d4dcfd630a110728b67b892f4"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Texture",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "D08": {
+      "name": "amusement park",
+      "motion_active": true,
+      "camera_active": true,
+      "groups": {
+        "ride_vehicles": "(?:Upright gondola \\d+|Seat row(?:\\.\\d{3})?|Coaster car \\d+)"
+      },
+      "timeline": [
+        {
+          "phase": "wheel",
+          "t0": 0,
+          "t1": 5,
+          "text": "The Ferris wheel rotates and carries its gondolas around the rim."
+        },
+        {
+          "phase": "coaster",
+          "t0": 0,
+          "t1": 5,
+          "text": "The roller-coaster train advances along its elevated track."
+        },
+        {
+          "phase": "tower",
+          "t0": 0,
+          "t1": 5,
+          "text": "The drop-tower seat carriage changes height along the vertical tower."
+        }
+      ],
+      "events": [
+        {
+          "id": "rides",
+          "phases": [
+            "wheel",
+            "coaster",
+            "tower"
+          ],
+          "participants": [
+            "ride_vehicles"
+          ],
+          "action": "The amusement rides move relative to their fixed support structures.",
+          "outcome": "The gondolas, coaster cars and tower seats change positions while remaining attached to their respective rides."
+        }
+      ],
+      "end_state": [
+        "The amusement rides remain assembled on their support structures.",
+        "The ride vehicles remain attached to their intended routes."
+      ],
+      "appearance": [
+        "The Ferris-wheel gondolas have coral-red lower shells.",
+        "The roller-coaster cars have golden-yellow bodies.",
+        "The cabin and vehicle panels have painted surfaces.",
+        "The ride seats have molded-plastic surfaces.",
+        "The pathways are light gray.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The Ferris-wheel gondolas have coral-red lower shells.",
+        "The roller-coaster cars have golden-yellow bodies.",
+        "The cabin and vehicle panels have painted surfaces.",
+        "The ride seats have molded-plastic surfaces."
+      ],
+      "concurrent": true,
+      "target_source": {
+        "path": "data/scenes/D08/target_prompt.txt",
+        "sha256": "2861c7071b795e3a4ba9449f7bfed4053056cafae2a5e746e59ed6e14b32049d"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "E01": {
+      "name": "industrial robot arm",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "robot_and_payload": "(?:J1 base yaw|Roller cassette payload|Flexible elbow cable)"
+      },
+      "timeline": [
+        {
+          "phase": "reach",
+          "t0": 0,
+          "t1": 1.6,
+          "text": "The robot bends its shoulder and elbow to lower the gripper toward the roller cassette on the table."
+        },
+        {
+          "phase": "lift",
+          "t0": 1.6,
+          "t1": 2.8,
+          "text": "The gripper grasps and lifts the roller cassette clear of the table."
+        },
+        {
+          "phase": "carry",
+          "t0": 2.8,
+          "t1": 5,
+          "text": "The articulated arm rotates and reorients the raised cassette while its flexible elbow cable bends."
+        }
+      ],
+      "events": [
+        {
+          "id": "pickup",
+          "phases": [
+            "reach",
+            "lift"
+          ],
+          "participants": [
+            "robot_and_payload"
+          ],
+          "action": "The robot lowers its gripper to the cassette and lifts it.",
+          "outcome": "The cassette is clear of the pickup table and held by the gripper."
+        },
+        {
+          "id": "carry",
+          "phases": [
+            "lift",
+            "carry"
+          ],
+          "participants": [
+            "robot_and_payload"
+          ],
+          "action": "The arm changes its joint configuration while carrying the cassette.",
+          "outcome": "The cassette stays attached to the gripper as it is moved away from the pickup position."
+        }
+      ],
+      "end_state": [
+        "The cassette is held off the pickup table.",
+        "The arm links remain connected at their joints."
+      ],
+      "appearance": [
+        "The upper-arm and forearm casings are safety orange.",
+        "Each arm casing has a broad ivory band around its middle.",
+        "The arm casings have painted-metal surfaces.",
+        "The flexible elbow cable has a rubber jacket.",
+        "The cable jacket has a matte finish.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The upper-arm and forearm casings are safety orange.",
+        "Each arm casing has a broad ivory band around its middle.",
+        "The arm casings have painted-metal surfaces.",
+        "The flexible elbow cable has a matte-rubber jacket."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/E01/target_prompt.txt",
+        "sha256": "172ad8c7faae8e63a49782af2eec2961f936537f41720954fd1d38892cd993ba"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Texture",
+        "Lighting"
+      ]
+    },
+    "E02": {
+      "name": "scissor lift",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "scissor_lift": "(?:(?:Ascending|Descending) rigid arm(?:\\.\\d{3})?|Rigid upper table|Flexible hydraulic hose(?:\\.\\d{3})?)"
+      },
+      "timeline": [
+        {
+          "phase": "raise",
+          "t0": 0,
+          "t1": 1.6,
+          "text": "The crossed scissor links open and raise the level platform."
+        },
+        {
+          "phase": "lower",
+          "t0": 1.6,
+          "t1": 3.1,
+          "text": "The scissor links close and lower the platform."
+        },
+        {
+          "phase": "raise_again",
+          "t0": 3.1,
+          "t1": 4.3,
+          "text": "The lift opens again and raises the platform."
+        },
+        {
+          "phase": "lower_again",
+          "t0": 4.3,
+          "t1": 5,
+          "text": "The platform returns toward a low position as the scissor links close."
+        }
+      ],
+      "events": [
+        {
+          "id": "cycle",
+          "phases": [
+            "raise",
+            "lower"
+          ],
+          "participants": [
+            "scissor_lift"
+          ],
+          "action": "The scissor mechanism raises and then lowers the platform.",
+          "outcome": "The platform changes height while staying level above its base."
+        },
+        {
+          "id": "repeat",
+          "phases": [
+            "raise_again",
+            "lower_again"
+          ],
+          "participants": [
+            "scissor_lift"
+          ],
+          "action": "The lift repeats the up-and-down cycle.",
+          "outcome": "The platform returns toward a low height without disconnecting the linkage."
+        }
+      ],
+      "end_state": [
+        "The platform is near a low position above the base.",
+        "The crossed arms remain connected at their pivots."
+      ],
+      "appearance": [
+        "The lift platform is vivid orange.",
+        "Each scissor arm has a broad ivory band around its middle.",
+        "The platform and arms have painted-steel surfaces.",
+        "The hydraulic hoses have rubber jackets.",
+        "The hydraulic-hose jackets have a matte finish.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The lift platform is vivid orange.",
+        "Each scissor arm has a broad ivory band around its middle.",
+        "The platform and arms have painted-steel surfaces.",
+        "The hydraulic hoses have matte-rubber jackets."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/E02/target_prompt.txt",
+        "sha256": "1f3c7d754686906175666d6c34aa574b21dad3656a7d6e66794c9d4b11e3d558"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Texture",
+        "Lighting"
+      ]
+    },
+    "E03": {
+      "name": "umbrella",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "umbrella": "Canopy\\ •\\ eight\\ sewn\\ panels\\ with\\ unfolding\\ pleats"
+      },
+      "timeline": [
+        {
+          "phase": "closed",
+          "t0": 0,
+          "t1": 1,
+          "text": "The canopy begins in a narrow folded configuration around the shaft."
+        },
+        {
+          "phase": "open",
+          "t0": 1,
+          "t1": 3.8,
+          "text": "The ribs spread and the pleated canopy widens outward from the shaft."
+        },
+        {
+          "phase": "expanded",
+          "t0": 3.8,
+          "t1": 5,
+          "text": "The umbrella finishes opening into a broad canopy and remains open."
+        }
+      ],
+      "events": [
+        {
+          "id": "unfold",
+          "phases": [
+            "closed",
+            "open",
+            "expanded"
+          ],
+          "participants": [
+            "umbrella"
+          ],
+          "action": "The ribs spread and unfold the canopy.",
+          "outcome": "The canopy is broadly open above the shaft."
+        }
+      ],
+      "end_state": [
+        "The umbrella canopy is open.",
+        "The canopy remains attached to the ribs and central shaft."
+      ],
+      "appearance": [
+        "The umbrella canopy is egg-yolk yellow.",
+        "The canopy has a broad navy-blue band near the outer hem, with a narrow yellow edge beyond it.",
+        "The canopy has tightly woven polyester texture.",
+        "The ribs have a stainless-steel appearance.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The umbrella canopy is egg-yolk yellow.",
+        "The canopy has a broad navy-blue band near the outer hem, with a narrow yellow edge beyond it.",
+        "The canopy has tightly woven polyester texture.",
+        "The ribs have a stainless-steel appearance."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/E03/target_prompt.txt",
+        "sha256": "c8ddbd44033619279004f886418aef2f0176a3613f818f4c4395d441fc112ca9"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Texture",
+        "Material",
+        "Lighting"
+      ]
+    },
+    "E04": {
+      "name": "window curtains",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "curtains": "Silk\\ curtains\\ —\\ real\\ cloth\\ simulation"
+      },
+      "timeline": [
+        {
+          "phase": "billow",
+          "t0": 0,
+          "t1": 2.5,
+          "text": "The two curtain panels billow away from the window and form moving folds while their upper edges remain supported."
+        },
+        {
+          "phase": "continue",
+          "t0": 2.5,
+          "t1": 5,
+          "text": "The curtains continue swaying and folding, alternately covering and revealing parts of the window."
+        }
+      ],
+      "events": [
+        {
+          "id": "flutter",
+          "phases": [
+            "billow",
+            "continue"
+          ],
+          "participants": [
+            "curtains"
+          ],
+          "action": "The curtain fabric deforms and sways in front of the window.",
+          "outcome": "Its folds and lower hems change shape while the top edges remain attached."
+        }
+      ],
+      "end_state": [
+        "The curtains remain suspended from their upper support.",
+        "The panels retain a continuous fabric surface."
+      ],
+      "appearance": [
+        "The curtain fabric is warm ivory.",
+        "Each curtain panel has three broad navy-blue vertical stripes from top to bottom.",
+        "The curtains have sheer-linen texture.",
+        "The walls have a matte-plaster texture.",
+        "The curtains have a linen-fabric appearance.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The curtain fabric is warm ivory.",
+        "Each curtain panel has three broad navy-blue vertical stripes from top to bottom.",
+        "The curtains have sheer-linen texture."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/E04/target_prompt.txt",
+        "sha256": "636f678d1cf75fba5d611e3f7219920bea7a55e0a0c283296f5e3babba280063"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Texture",
+        "Environment",
+        "Material",
+        "Lighting"
+      ]
+    },
+    "E05": {
+      "name": "battle-rope exercise",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "ropes": "Battle rope [01]"
+      },
+      "timeline": [
+        {
+          "phase": "waves",
+          "t0": 0,
+          "t1": 2.5,
+          "text": "The athlete drives alternating waves along the two ropes by moving their held ends."
+        },
+        {
+          "phase": "continue",
+          "t0": 2.5,
+          "t1": 5,
+          "text": "Waves continue propagating along the flexible ropes toward their far ends."
+        }
+      ],
+      "events": [
+        {
+          "id": "waves",
+          "phases": [
+            "waves",
+            "continue"
+          ],
+          "participants": [
+            "ropes"
+          ],
+          "action": "The held rope ends move and generate travelling waves.",
+          "outcome": "The ropes have changing curved shapes along their lengths while remaining continuous."
+        }
+      ],
+      "end_state": [
+        "Both ropes remain continuous.",
+        "The athlete still holds the near ends of the ropes."
+      ],
+      "appearance": [
+        "The main rope fibre is tan.",
+        "Each rope has three broad navy-blue sections spaced along its length.",
+        "The ropes have braided-fibre texture.",
+        "The grips at the athlete end have rubber surfaces.",
+        "The gym floor is neutral gray.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The main rope fibre is tan.",
+        "Each rope has three broad navy-blue sections spaced along its length.",
+        "The ropes have braided-fibre texture.",
+        "The grips at the athlete end have a black-rubber appearance."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/E05/target_prompt.txt",
+        "sha256": "92e03e6bdcea7858cd8132aec162e51d61695e742c64fa3ca04cdab6d8994d49"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Texture",
+        "Material",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "E06": {
+      "name": "sponge",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "sponge_and_basin": "(?:Wet sponge • reduced compressible continuum|Hollow receiving basin)"
+      },
+      "timeline": [
+        {
+          "phase": "compress",
+          "t0": 0,
+          "t1": 1.6,
+          "text": "The sponge narrows as it is squeezed over the receiving basin."
+        },
+        {
+          "phase": "release",
+          "t0": 1.6,
+          "t1": 2.8,
+          "text": "The sponge expands back toward its wider shape after compression."
+        },
+        {
+          "phase": "compress_again",
+          "t0": 2.8,
+          "t1": 4.1,
+          "text": "The sponge narrows again and droplets fall toward the basin."
+        },
+        {
+          "phase": "recover",
+          "t0": 4.1,
+          "t1": 5,
+          "text": "The sponge expands again above the basin."
+        }
+      ],
+      "events": [
+        {
+          "id": "squeeze",
+          "phases": [
+            "compress",
+            "release"
+          ],
+          "participants": [
+            "sponge_and_basin"
+          ],
+          "action": "The sponge compresses and then rebounds.",
+          "outcome": "Its width recovers after the squeeze."
+        },
+        {
+          "id": "water",
+          "phases": [
+            "compress_again",
+            "recover"
+          ],
+          "participants": [
+            "sponge_and_basin"
+          ],
+          "action": "The sponge is squeezed again and releases droplets toward the basin.",
+          "outcome": "Droplets fall below the sponge into the receiving area."
+        }
+      ],
+      "end_state": [
+        "The sponge has expanded toward its wider shape.",
+        "The basin remains beneath the sponge."
+      ],
+      "appearance": [
+        "The sponge is warm yellow.",
+        "The sponge has a broad navy-blue band around the middle of its side faces.",
+        "The sponge has an open-cell porous texture.",
+        "The receiving basin has a ceramic surface.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The sponge is warm yellow.",
+        "The sponge has a broad navy-blue band around the middle of its side faces.",
+        "The sponge has an open-cell porous texture."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/E06/target_prompt.txt",
+        "sha256": "ee4aed87f3262fa7012ae81257e635e83b24c798dd3975e9f65acda639c36ffd"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Texture",
+        "Material",
+        "Lighting"
+      ]
+    },
+    "E07": {
+      "name": "linkage mechanism",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "walking_links": "Constant length walking link(?:\\.\\d{3})?"
+      },
+      "timeline": [
+        {
+          "phase": "articulate",
+          "t0": 0,
+          "t1": 2.5,
+          "text": "The connected walking links pivot at their joints and cycle through changing leg configurations."
+        },
+        {
+          "phase": "continue",
+          "t0": 2.5,
+          "t1": 5,
+          "text": "The linkage continues its articulated cycle, with the legs changing posture while the rigid links remain connected."
+        }
+      ],
+      "events": [
+        {
+          "id": "linkage",
+          "phases": [
+            "articulate",
+            "continue"
+          ],
+          "participants": [
+            "walking_links"
+          ],
+          "action": "The walking mechanism changes configuration through rotations at its joints.",
+          "outcome": "The links retain their lengths and connections while the legs change posture."
+        }
+      ],
+      "end_state": [
+        "The walking links remain connected at the joints.",
+        "The rigid links retain their shape."
+      ],
+      "appearance": [
+        "The main walking links are red.",
+        "Each main walking link has a broad ivory band around its middle.",
+        "The links have painted-metal surfaces.",
+        "The joint surfaces have a satin finish.",
+        "The supporting ground has a light-oak-brown wood finish.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The main walking links are red.",
+        "Each main walking link has a broad ivory band around its middle.",
+        "The links have painted-metal surfaces.",
+        "The joints have satin-steel surfaces."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/E07/target_prompt.txt",
+        "sha256": "9c06a485a31f98b4f92f716d6e87e6f5f696b9f30a96faafdc2d8f9664da1dd1"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Texture",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "E08": {
+      "name": "textile machinery",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "textile": "Continuous\\ deforming\\ textile\\ web"
+      },
+      "timeline": [
+        {
+          "phase": "feed",
+          "t0": 0,
+          "t1": 2.5,
+          "text": "The textile web advances through the rollers while bending into a hanging loop between supports."
+        },
+        {
+          "phase": "continue",
+          "t0": 2.5,
+          "t1": 5,
+          "text": "The fabric continues feeding through the machine while its hanging section flexes and the rollers turn."
+        }
+      ],
+      "events": [
+        {
+          "id": "feed",
+          "phases": [
+            "feed",
+            "continue"
+          ],
+          "participants": [
+            "textile"
+          ],
+          "action": "A continuous textile web is transported through the rollers.",
+          "outcome": "The web remains continuous as its material advances and its suspended section bends."
+        }
+      ],
+      "end_state": [
+        "The textile web remains continuous through the rollers.",
+        "The machine supports remain fixed around the moving fabric."
+      ],
+      "appearance": [
+        "The fabric is warm ivory.",
+        "The fabric has a navy-blue longitudinal stripe near each side edge.",
+        "The fabric has woven-cotton texture.",
+        "The rollers have a stainless-steel appearance.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The fabric is warm ivory.",
+        "The fabric has a navy-blue longitudinal stripe near each side edge.",
+        "The fabric has woven-cotton texture.",
+        "The rollers have a stainless-steel appearance."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/E08/target_prompt.txt",
+        "sha256": "972c028546f0372d30b98ba226f4a98e7d38e42c770b9eb264e8eaa8ded1745b"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Texture",
+        "Material",
+        "Lighting"
+      ]
+    },
+    "F01": {
+      "name": "chocolate-production equipment",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "chocolates_and_robots": "(?:Chocolate -?1 \\d+|Upper arm(?:\\.\\d{3})?|Forearm(?:\\.\\d{3})?|Vacuum wrist -?1)"
+      },
+      "timeline": [
+        {
+          "phase": "convey",
+          "t0": 0,
+          "t1": 5,
+          "text": "Chocolate bars advance in two lanes along the conveyor and through the cooling hood."
+        },
+        {
+          "phase": "pick",
+          "t0": 0,
+          "t1": 5,
+          "text": "The articulated robot arms reach from the conveyor toward the packing cartons and transfer bars."
+        }
+      ],
+      "events": [
+        {
+          "id": "packing",
+          "phases": [
+            "convey",
+            "pick"
+          ],
+          "participants": [
+            "chocolates_and_robots"
+          ],
+          "action": "The conveyor feeds chocolate bars to the robot packing stations and the arms transfer bars toward cartons.",
+          "outcome": "Bars reach the packing area while the arms move between the conveyor and cartons."
+        }
+      ],
+      "end_state": [
+        "Chocolate bars remain in two conveyor lanes.",
+        "The robot arms and packing cartons remain at the conveyor output stations."
+      ],
+      "appearance": [
+        "The bars in the conveyor lane nearer the camera at the opening are dark cocoa brown.",
+        "The bars in the farther conveyor lane at the opening are creamy white chocolate.",
+        "The bars have a soft chocolate sheen.",
+        "The robot arms and conveyor frames have metal surfaces.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The bars in the conveyor lane nearer the camera at the opening are dark cocoa brown.",
+        "The bars in the farther conveyor lane at the opening are creamy white chocolate.",
+        "The bars have a soft chocolate sheen."
+      ],
+      "concurrent": true,
+      "target_source": {
+        "path": "data/scenes/F01/target_prompt.txt",
+        "sha256": "d40097521140e07f06fee250936e13e9b5d398ab2690ba8277a92e5ed48ed301"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Texture",
+        "Material",
+        "Lighting"
+      ]
+    },
+    "F02": {
+      "name": "LEGO kinetic mechanism",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "balls_and_figure": "(?:Ball [0-2]|LEGO torso pivot|Parallel-motion gripper)"
+      },
+      "timeline": [
+        {
+          "phase": "lift",
+          "t0": 0,
+          "t1": 2.5,
+          "text": "The articulated LEGO figure and gripper mechanism raise and reposition balls among the receiving stations."
+        },
+        {
+          "phase": "transfer",
+          "t0": 2.5,
+          "t1": 5,
+          "text": "The arms and grippers continue cycling, carrying balls between the mechanism stations."
+        }
+      ],
+      "events": [
+        {
+          "id": "transfer",
+          "phases": [
+            "lift",
+            "transfer"
+          ],
+          "participants": [
+            "balls_and_figure"
+          ],
+          "action": "The articulated LEGO mechanism lifts and transfers balls.",
+          "outcome": "The balls occupy changed receiving or gripper positions while the figure remains assembled."
+        }
+      ],
+      "end_state": [
+        "The LEGO figure remains assembled at its joints.",
+        "The balls remain associated with the transfer mechanism rather than floating away."
+      ],
+      "appearance": [
+        "The ball initially farthest left is cobalt blue.",
+        "The ball initially in the middle is orange.",
+        "The balls have plastic surfaces.",
+        "The LEGO parts have molded-ABS surfaces.",
+        "The ball surfaces are smooth and glossy.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The ball initially farthest left is cobalt blue.",
+        "The ball initially in the middle is orange.",
+        "The balls have smooth glossy-plastic surfaces.",
+        "The LEGO parts have glossy molded-ABS surfaces."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/F02/target_prompt.txt",
+        "sha256": "a05a2130daf41187f11f56962791332a01c68a1a49daa5a23074c35f1293d912"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Texture",
+        "Lighting"
+      ]
+    },
+    "F03": {
+      "name": "tabletop contraption",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "dominoes": "(?:Field (?:00|03|06|09) (?:02|10|18)|Distributor (?:00|10|21)|Trigger.*)"
+      },
+      "timeline": [
+        {
+          "phase": "trigger",
+          "t0": 0,
+          "t1": 1.4,
+          "text": "The trigger marble travels down the launch path toward the distributor dominoes."
+        },
+        {
+          "phase": "distribute",
+          "t0": 1.4,
+          "t1": 2.8,
+          "text": "The distributor dominoes topple and initiate the field rows."
+        },
+        {
+          "phase": "cascade",
+          "t0": 2.8,
+          "t1": 5,
+          "text": "Toppling spreads across the parallel field rows until most of the field lies down."
+        }
+      ],
+      "events": [
+        {
+          "id": "trigger",
+          "phases": [
+            "trigger",
+            "distribute"
+          ],
+          "participants": [
+            "dominoes"
+          ],
+          "action": "The trigger reaches the distributor and starts a domino cascade.",
+          "outcome": "The distributor has fallen and the field rows begin toppling."
+        },
+        {
+          "id": "cascade",
+          "phases": [
+            "distribute",
+            "cascade"
+          ],
+          "participants": [
+            "dominoes"
+          ],
+          "action": "The toppling front propagates across the field rows.",
+          "outcome": "Most of the domino field is down by the end."
+        }
+      ],
+      "end_state": [
+        "Most field dominoes are toppled.",
+        "Previously toppled dominoes remain down."
+      ],
+      "appearance": [
+        "The field-domino rows alternate red and deep blue, starting with red in the nearest opening row.",
+        "Each small field domino has a broad ivory band around its middle.",
+        "The dominoes have plastic surfaces.",
+        "The trigger marble has a glass surface.",
+        "The domino surfaces are smooth.",
+        "The tabletop ramp and raised field platform are light wood brown.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The field-domino rows alternate red and deep blue, starting with red in the nearest opening row.",
+        "Each small field domino has a broad ivory band around its middle.",
+        "The dominoes have smooth-plastic surfaces.",
+        "The trigger marble has a polished-glass surface."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/F03/target_prompt.txt",
+        "sha256": "dc278fce30134f417e1dd39d2f093738c3c1bc3fef1fc54163a3df5edfe1d094"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Texture",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "F04": {
+      "name": "container-port equipment",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "container_and_spreader": "(?:Handling container|Rotating twistlock spreader|Receiving AGV)"
+      },
+      "timeline": [
+        {
+          "phase": "lift",
+          "t0": 0,
+          "t1": 1.5,
+          "text": "The crane spreader lifts the container clear of its initial support."
+        },
+        {
+          "phase": "traverse",
+          "t0": 1.5,
+          "t1": 3,
+          "text": "The trolley carries the suspended container laterally toward the receiving AGV."
+        },
+        {
+          "phase": "lower",
+          "t0": 3,
+          "t1": 4.2,
+          "text": "The crane lowers the container onto the receiving AGV."
+        },
+        {
+          "phase": "depart",
+          "t0": 4.2,
+          "t1": 5,
+          "text": "The spreader rises clear and the loaded AGV starts moving away."
+        }
+      ],
+      "events": [
+        {
+          "id": "hoist",
+          "phases": [
+            "lift",
+            "traverse"
+          ],
+          "participants": [
+            "container_and_spreader"
+          ],
+          "action": "The crane hoists the container and traverses with it suspended.",
+          "outcome": "The container is clear of its starting support and shifted toward the receiving vehicle."
+        },
+        {
+          "id": "place",
+          "phases": [
+            "lower",
+            "depart"
+          ],
+          "participants": [
+            "container_and_spreader"
+          ],
+          "action": "The crane sets the container on the AGV and withdraws its spreader.",
+          "outcome": "The container rests on the AGV and is no longer suspended from the crane."
+        }
+      ],
+      "end_state": [
+        "The transferred container rests on the receiving AGV.",
+        "The spreader is clear above the placed container."
+      ],
+      "appearance": [
+        "The lifted container has a brick-red shell.",
+        "The lifted container end doors are ivory.",
+        "The lifted container has painted-steel surfaces.",
+        "The crane has painted-steel surfaces.",
+        "The lifted container shell is corrugated.",
+        "The pavement is dark gray asphalt.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The lifted container has a brick-red shell.",
+        "The lifted container end doors are ivory.",
+        "The lifted container has painted-steel surfaces.",
+        "The crane has painted-steel surfaces."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/F04/target_prompt.txt",
+        "sha256": "5481afe77deb820449b34be2f416da872b9f99492918018e05e05e91551aab3d"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Texture",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "F05": {
+      "name": "railway crossing",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "cars_train_and_barriers": "(?:Clearing lead car|Waiting car -?1 [01]|Train car [0-2]|Barrier hinge(?:\\.\\d{3})?)"
+      },
+      "timeline": [
+        {
+          "phase": "close",
+          "t0": 0,
+          "t1": 1.1,
+          "text": "The lead road car clears the crossing while the barriers lower ahead of the approaching train."
+        },
+        {
+          "phase": "train",
+          "t0": 1.1,
+          "t1": 3.5,
+          "text": "The train traverses the road crossing while the waiting road vehicles remain behind the lowered barriers."
+        },
+        {
+          "phase": "open",
+          "t0": 3.5,
+          "t1": 4.3,
+          "text": "After the train clears the crossing, the barriers rise."
+        },
+        {
+          "phase": "traffic",
+          "t0": 4.3,
+          "t1": 5,
+          "text": "The waiting road vehicles begin driving across the cleared railway crossing."
+        }
+      ],
+      "events": [
+        {
+          "id": "hold",
+          "phases": [
+            "close",
+            "train"
+          ],
+          "participants": [
+            "cars_train_and_barriers"
+          ],
+          "action": "The barriers lower and hold road traffic while the train passes.",
+          "outcome": "The waiting cars remain outside the rail path during the train passage."
+        },
+        {
+          "id": "release",
+          "phases": [
+            "open",
+            "traffic"
+          ],
+          "participants": [
+            "cars_train_and_barriers"
+          ],
+          "action": "The barriers reopen after the train has passed.",
+          "outcome": "Road vehicles move through the crossing again."
+        }
+      ],
+      "end_state": [
+        "The train has cleared the road crossing.",
+        "Road traffic resumes through the crossing."
+      ],
+      "appearance": [
+        "The train has a deep-blue body.",
+        "The crossing barriers have red-and-white stripes.",
+        "The vehicle bodies have painted-metal surfaces.",
+        "The warning-light lenses have glass surfaces.",
+        "The road is charcoal asphalt.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The train has a deep-blue body.",
+        "The crossing barriers have red-and-white stripes.",
+        "The vehicle bodies have painted-metal surfaces.",
+        "The warning-light lenses have a red-glass appearance."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/F05/target_prompt.txt",
+        "sha256": "b6dcafe53358ebd7b5f608c84cd7f4b738c53ffd3d9f3a29fd3e727cb6d54fd8"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Material",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "F06": {
+      "name": "robotic palletizing cell",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "cartons_and_robot": "(?:Moving carton [0-3]|Lower pallet carton(?:\\.\\d{3})?|Robot seventh axis carriage)"
+      },
+      "timeline": [
+        {
+          "phase": "approach",
+          "t0": 0,
+          "t1": 1.4,
+          "text": "The robot moves its gripper toward a carton arriving on the conveyor."
+        },
+        {
+          "phase": "transfer",
+          "t0": 1.4,
+          "t1": 3.1,
+          "text": "The robot grips and lifts a carton, then swings it toward the pallet."
+        },
+        {
+          "phase": "place",
+          "t0": 3.1,
+          "t1": 5,
+          "text": "The robot lowers the carton onto the pallet and returns toward the conveyor for another transfer."
+        }
+      ],
+      "events": [
+        {
+          "id": "pickup",
+          "phases": [
+            "approach",
+            "transfer"
+          ],
+          "participants": [
+            "cartons_and_robot"
+          ],
+          "action": "The robot picks a carton from the conveyor and carries it toward the pallet.",
+          "outcome": "The selected carton is held off the conveyor by the gripper."
+        },
+        {
+          "id": "stack",
+          "phases": [
+            "transfer",
+            "place"
+          ],
+          "participants": [
+            "cartons_and_robot"
+          ],
+          "action": "The robot places the carried carton on the pallet.",
+          "outcome": "The carton remains on the pallet after the gripper moves away."
+        }
+      ],
+      "end_state": [
+        "A transferred carton is supported on the pallet.",
+        "The robot and conveyor remain assembled at the work cell."
+      ],
+      "appearance": [
+        "The cartons have kraft-brown shells.",
+        "Each carton arriving on the conveyor has a broad deep-blue packing band around its middle.",
+        "The carton shells have corrugated-cardboard texture.",
+        "The pallet has a natural wooden appearance.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The cartons have kraft-brown shells.",
+        "Each carton arriving on the conveyor has a broad deep-blue packing band around its middle.",
+        "The carton shells have corrugated-cardboard texture."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/F06/target_prompt.txt",
+        "sha256": "bb4dc0d74fb62d1149fa0afec32449ca8cee7ee0c497fe8a526036b31249af6b"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Texture",
+        "Material",
+        "Lighting"
+      ]
+    },
+    "F07": {
+      "name": "amusement rides",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "coaster_trains": "Train [01] car [0-5]"
+      },
+      "timeline": [
+        {
+          "phase": "coasters",
+          "t0": 0,
+          "t1": 5,
+          "text": "Two connected roller-coaster trains travel around the undulating track, passing climbs, crests and curves."
+        },
+        {
+          "phase": "wheel",
+          "t0": 0,
+          "t1": 5,
+          "text": "The Ferris wheel rotates independently while the coaster trains move."
+        }
+      ],
+      "events": [
+        {
+          "id": "coasters",
+          "phases": [
+            "coasters"
+          ],
+          "participants": [
+            "coaster_trains"
+          ],
+          "action": "The trains advance along the coaster rails through elevation changes and curves.",
+          "outcome": "The train cars remain connected and on the track at their new positions."
+        },
+        {
+          "id": "wheel",
+          "phases": [
+            "wheel"
+          ],
+          "participants": [
+            "coaster_trains"
+          ],
+          "action": "The Ferris wheel carries its gondolas around its rim.",
+          "outcome": "The gondolas change angular positions while remaining attached to the wheel."
+        }
+      ],
+      "end_state": [
+        "The coaster cars remain connected into trains on the rails.",
+        "The Ferris-wheel gondolas remain attached to the wheel."
+      ],
+      "appearance": [
+        "The train initially extending along the left climb has golden-yellow car bodies.",
+        "The other train initially on the right-hand curve has teal car bodies.",
+        "The ride bodies and structures have painted surfaces.",
+        "The rails are blue.",
+        "The landscaped ground is green.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The train initially extending along the left climb has golden-yellow car bodies.",
+        "The other train initially on the right-hand curve has teal car bodies.",
+        "The ride bodies and structures have painted surfaces."
+      ],
+      "concurrent": true,
+      "target_source": {
+        "path": "data/scenes/F07/target_prompt.txt",
+        "sha256": "9c73df63870a8fafef461d7fc315fa04802c1d2439a529ab2b0860008d281f31"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Material",
+        "Color",
+        "Environment",
+        "Lighting"
+      ]
+    },
+    "F08": {
+      "name": "LEGO robot arm",
+      "motion_active": true,
+      "camera_active": false,
+      "groups": {
+        "packets_and_robot": "(?:Packet [0-3]|Powered turret yaw|Level distal wrist)"
+      },
+      "timeline": [
+        {
+          "phase": "pickup",
+          "t0": 0,
+          "t1": 2.5,
+          "text": "The packet-handling arm reaches to the infeed, grips a packet and raises it."
+        },
+        {
+          "phase": "transfer",
+          "t0": 2.5,
+          "t1": 5,
+          "text": "The arm swings the packet toward a receiving pocket, lowers it and releases it."
+        }
+      ],
+      "events": [
+        {
+          "id": "handling",
+          "phases": [
+            "pickup",
+            "transfer"
+          ],
+          "participants": [
+            "packets_and_robot"
+          ],
+          "action": "The articulated robot lifts a packet from the infeed and transfers it to a receiving pocket.",
+          "outcome": "The packet reaches a receiving pocket as the gripper withdraws."
+        }
+      ],
+      "end_state": [
+        "The robot remains assembled at its joints.",
+        "Transferred packets are supported by receiving pockets."
+      ],
+      "appearance": [
+        "The snack packets have golden-yellow bodies.",
+        "Each packet has a broad deep-blue horizontal band around its middle.",
+        "The packet foil has a satin finish with visible folds.",
+        "The LEGO robot parts have molded-ABS surfaces.",
+        "The scene has soft, neutral illumination."
+      ],
+      "persistence": [
+        "The snack packets have golden-yellow bodies.",
+        "Each packet has a broad deep-blue horizontal band around its middle.",
+        "The packet foil has a satin finish with visible folds.",
+        "The LEGO robot parts have glossy molded-ABS surfaces."
+      ],
+      "concurrent": false,
+      "target_source": {
+        "path": "data/scenes/F08/target_prompt.txt",
+        "sha256": "727bc13021236e26b91f41a46872977b263a7f70ca299d88947806f3fb3c3524"
+      },
+      "reference_notes": "Timeline reviewed against final P2_AA reference at 0,0.714,1.429,2.143,2.857,3.571,4.286,5.0 s; broad event windows include sampling tolerance. No generated output was used to choose QA.",
+      "appearance_categories": [
+        "Color",
+        "Color",
+        "Texture",
+        "Material",
+        "Lighting"
+      ]
+    }
+  },
+  "scope": {
+    "motion_event": "A/B/C/E/F and D01,D04,D05,D07,D08",
+    "camera": "D01-D08 only; reuse existing ViPE run",
+    "rf": "all 48 cases, full frame",
+    "ap": "all 48 cases, exactly eight full frames over 0-5 seconds"
+  },
+  "score_rules": {
+    "DF_motion_event": "mean of available ISR, LRA and EndState rates; LRA_strict remains diagnostic. This aggregation is local.",
+    "RF_fullframe": "Binary Attribute QA across all series, extracted only from target_prompt.txt: mean over predefined facts (yes=1; no/unknown/invalid=0). Each fact has one primary Color/Material/Texture/Environment/Lighting category. Category scores are diagnostic slices; categories absent from the target prompt receive no invented questions and remain N/A, not zero. Overall RF is not a mean of category means.",
+    "AP": "mean of temporal property answers; yes requires the target property to be both correct and consistent on the same target across the eight sampled frames; no/unknown/invalid=0",
+    "camera": "keep original Rot/Trans/CamMC errors; do not mix raw errors into DF_motion_event"
+  }
+}

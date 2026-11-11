@@ -1,0 +1,73 @@
+{
+  "case": "F03",
+  "noun": "domino",
+  "gt_root_pattern": "(?:Field (?:00|03|06|09) (?:02|10|18)|Distributor (?:00|10|21))",
+  "attributes": [
+    {
+      "entities": [
+        "Field 00 02",
+        "Field 00 10",
+        "Field 00 18",
+        "Field 06 02",
+        "Field 06 10",
+        "Field 06 18"
+      ],
+      "surface": "field-domino body excluding middle band",
+      "target": "red",
+      "source": "green",
+      "id": "T1"
+    },
+    {
+      "entities": [
+        "Field 03 02",
+        "Field 03 10",
+        "Field 03 18",
+        "Field 09 02",
+        "Field 09 10",
+        "Field 09 18"
+      ],
+      "surface": "field-domino body excluding middle band",
+      "target": "blue",
+      "source": "yellow",
+      "id": "T2"
+    },
+    {
+      "entities": [
+        "Field 00 02",
+        "Field 00 10",
+        "Field 00 18",
+        "Field 06 02",
+        "Field 06 10",
+        "Field 06 18",
+        "Field 03 02",
+        "Field 03 10",
+        "Field 03 18",
+        "Field 09 02",
+        "Field 09 10",
+        "Field 09 18"
+      ],
+      "surface": "band around the field-domino middle",
+      "target": "white",
+      "source": "yellow",
+      "pattern": "one broad band around the domino middle",
+      "id": "T3"
+    },
+    {
+      "entities": [
+        "Distributor 00",
+        "Distributor 10",
+        "Distributor 21"
+      ],
+      "surface": "taller distributor-domino body",
+      "target": "white",
+      "source": "green",
+      "id": "T4"
+    }
+  ],
+  "notes": [
+    "Target colour authority: target_prompt.txt and appearance.json only; AC colours come from appearance.json AC or AC_recipe. No scene-level contract attributes or material names are used.",
+    "Entity names and hierarchy verified by read-only inspection of the final P2_AA.blend. Attribute selection is fixed before model scoring.",
+    "Opening camera depth confirms row 00 is nearest; red/deep-blue rows alternate from it. red -> red; deep blue/navy -> blue; teal -> green; gold/golden -> yellow; ivory -> white.",
+    "Fixed structural subset: rows 00/03/06/09 at columns 02/10/18, plus distributor 00/10/21. The scene has hundreds of dominoes; these fifteen GT entities are a representative subset for both DF and RF, not an all-domino count measure. Selection precedes model scoring."
+  ]
+}

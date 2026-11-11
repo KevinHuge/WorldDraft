@@ -1,0 +1,45 @@
+# Benchmark data (eval/download_data.sh), generated videos and evaluation outputs.
+/data/*
+!/data/README.md
+/results/
+/eval/results/
+*.blend
+*.mp4
+*.webm
+*.mov
+*.avi
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+# Model weights.
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.bin
+
+# Local settings.
+/eval/configs/envs.local.yaml
+.env
+.env.*
+!.env.example
+
+# Runtime logs, locks and temporary files.
+*.log
+*.lock
+*.pid
+*.tmp
+*.tmp.*
+
+# Python environments and caches; OS metadata.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+.venv-*/
+venv/
+.DS_Store

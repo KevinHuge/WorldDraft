@@ -1,0 +1,1033 @@
+{
+  "schema": "worlddraft.descriptions",
+  "dataset": "worlddraft",
+  "episodes": {
+    "A01": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "turn#1",
+            "startFrame": 22,
+            "endFrameExclusive": 45,
+            "startSeconds": 1.375,
+            "endSeconds": 2.8125,
+            "description": "Target: the car initially approaching from the bottom of the opening frame in the inner incoming lane, facing upward; follow this same car as it turns toward the left side of the image. Event: its first left turn through the intersection. Onset: its body heading first changes from its initial straight-ahead orientation. Offset: its heading finishes changing and settles along the outgoing road toward image-left. Forward travel with unchanged heading before or after the turn is outside this interval; do not time another car or the moment it crosses a road marking."
+          }
+        ],
+        "end_state": [
+          "Cars have progressed away from their opening positions along their assigned roads.",
+          "The road layout remains fixed while the cars move."
+        ]
+      }
+    },
+    "A02": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "rack_motion#1",
+            "startFrame": 20,
+            "endFrameExclusive": 21,
+            "startSeconds": 1.25,
+            "endSeconds": 1.3125,
+            "description": "Target: object ball 1 in the initially compact group of billiard balls, near the lower/front edge of that group in the opening view, identified by its numbered patch when visible; not the incoming cue ball. Event: this same ball is displaced by the break. Time: the first crossing of 0.03 scene units of distance from its own opening position, not the cue-ball launch, another ball moving, or completion of rack dispersal. This is a single displacement-threshold crossing, with no separate end boundary."
+          }
+        ],
+        "end_state": [
+          "The original compact rack has dispersed.",
+          "The visible balls remain on the table surface."
+        ]
+      }
+    },
+    "A03": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "gate_release#1",
+            "startFrame": 35,
+            "endFrameExclusive": 37,
+            "startSeconds": 2.1875,
+            "endSeconds": 2.3125,
+            "description": "Target: the narrow retractable metering stop across the bottle conveyor at the downstream end of the held bottle queue, not a bottle or the fixed machine frame. Event: the stop retracts downward to let bottles advance. Onset: the stop itself first moves downward relative to the conveyor. Offset: that downward stroke ends at its lowered position. Bottle motion before or after this stroke is not a boundary of the stop motion."
+          }
+        ],
+        "end_state": [
+          "A line of upright bottles remains on the conveyor.",
+          "Different bottles occupy the visible section compared with the opening."
+        ]
+      }
+    },
+    "A04": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "sail#1",
+            "startFrame": 0,
+            "endFrameExclusive": 40,
+            "startSeconds": 0,
+            "endSeconds": 2.5,
+            "description": "The sailboats move laterally across the lake on distinct courses. Track each sailboat by its hull and mast from its opening location on the lake. During the observed sailing interval, hulls advance on distinct courses relative to the water and shore; the interval is continuous rather than a single launch or docking action. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          },
+          {
+            "phase": "pass#1",
+            "startFrame": 40,
+            "endFrameExclusive": 80,
+            "startSeconds": 2.5,
+            "endSeconds": 5,
+            "description": "The boats continue sailing past one another with their hulls and masts remaining upright. Track each sailboat by its hull and mast from its opening location on the lake. During the observed sailing interval, hulls advance on distinct courses relative to the water and shore; the interval is continuous rather than a single launch or docking action. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          }
+        ],
+        "end_state": [
+          "Several boats remain upright on the water.",
+          "Their arrangement has changed from the opening fleet arrangement."
+        ]
+      }
+    },
+    "A05": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "rotate#1",
+            "startFrame": 0,
+            "endFrameExclusive": 80,
+            "startSeconds": 0,
+            "endSeconds": 5,
+            "description": "The carousel carries the horses around the central axis. Track the horses attached to the carousel poles around the fixed central axis. Observe their changing angular positions as the platform carries them around; motion is already ongoing and no unique startup or stop is required. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          },
+          {
+            "phase": "bob#1",
+            "startFrame": 0,
+            "endFrameExclusive": 80,
+            "startSeconds": 0,
+            "endSeconds": 5,
+            "description": "The horses rise and fall along their vertical poles while being carried around the carousel. Track individual carousel horses relative to their own vertical poles while the platform rotates. A bobbing cycle rises from a local low height, reverses at a high height and descends again; judge height along the pole rather than image position. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          }
+        ],
+        "end_state": [
+          "The horses remain attached to their poles and arranged in rings.",
+          "The carousel structure remains assembled."
+        ]
+      }
+    },
+    "A06": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "swing#1",
+            "startFrame": 0,
+            "endFrameExclusive": 40,
+            "startSeconds": 0,
+            "endSeconds": 2.5,
+            "description": "The suspended balls swing back and forth about their fixed upper attachment points. Track the suspended pendulum balls beneath the fixed support rail, each associated with its own suspension point. Follow successive swings through the center and reversals at the sides rather than treating the whole array as a rigid object. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          },
+          {
+            "phase": "phases#1",
+            "startFrame": 40,
+            "endFrameExclusive": 80,
+            "startSeconds": 2.5,
+            "endSeconds": 5,
+            "description": "The pendulums continue swinging with changing relative phases rather than moving as one rigid group. Track the suspended pendulum balls beneath the fixed support rail, each associated with its own suspension point. Follow successive swings through the center and reversals at the sides rather than treating the whole array as a rigid object. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          }
+        ],
+        "end_state": [
+          "The balls remain suspended from the support rail.",
+          "The support frame stays stationary while the balls move."
+        ]
+      }
+    },
+    "A07": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "rotate#1",
+            "startFrame": 0,
+            "endFrameExclusive": 40,
+            "startSeconds": 0,
+            "endSeconds": 2.5,
+            "description": "The wheel rotates, carrying gondolas along its circular rim. Track the passenger gondolas attached around the Ferris-wheel rim, relative to the fixed hub and support legs. The rotating wheel carries them along circular paths while each basket retains an upright passenger orientation; no unique start or stop is expected. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          },
+          {
+            "phase": "continue#1",
+            "startFrame": 40,
+            "endFrameExclusive": 80,
+            "startSeconds": 2.5,
+            "endSeconds": 5,
+            "description": "The gondolas continue around the wheel while their passenger baskets remain upright. Track the passenger gondolas attached around the Ferris-wheel rim, relative to the fixed hub and support legs. The rotating wheel carries them along circular paths while each basket retains an upright passenger orientation; no unique start or stop is expected. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          }
+        ],
+        "end_state": [
+          "The gondolas remain attached around the wheel rim.",
+          "The passenger baskets remain upright."
+        ]
+      }
+    },
+    "A08": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "descend#1",
+            "startFrame": 24,
+            "endFrameExclusive": 56,
+            "startSeconds": 1.5,
+            "endSeconds": 3.5,
+            "description": "Track the marbles initially distributed among the stacked funnels. Follow each marble as it rolls around a funnel and progresses through its outlet into a lower part of the apparatus. Marbles reach funnel levels below their own opening levels. Finishing in a collection tray is not required because the evaluated reference clip does not show tray contact."
+          }
+        ],
+        "end_state": [
+          "The marbles are at lower levels of the apparatus than at the beginning."
+        ]
+      }
+    },
+    "B01": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "first_domino#1",
+            "startFrame": 4,
+            "endFrameExclusive": 5,
+            "startSeconds": 0.25,
+            "endSeconds": 0.3125,
+            "description": "Target: the first upright domino at the starting end of the curved single row, initially at the upper-left end in the opening view; track this block rather than its neighbor. Event: the initiating block tips and transmits the fall into the row. Time: the first instant its tilt exceeds five degrees from its opening upright orientation. Do not use contact with the next block or the time it lies flat; this event has one threshold-crossing boundary."
+          },
+          {
+            "phase": "last_domino#1",
+            "startFrame": 67,
+            "endFrameExclusive": 68,
+            "startSeconds": 4.1875,
+            "endSeconds": 4.25,
+            "description": "Target: the last domino at the opposite end of the curved single row, initially at the right-hand end in the opening view. Event: the propagating cascade reaches this terminal block and it starts tipping. Time: this block first exceeds five degrees of tilt from its opening upright orientation. Earlier blocks falling or this block finally lying flat do not define the time; there is one crossing boundary."
+          }
+        ],
+        "end_state": [
+          "The whole domino row is toppled.",
+          "The fallen dominoes remain down."
+        ]
+      }
+    },
+    "B02": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "hand_withdrawal#1",
+            "startFrame": 8,
+            "endFrameExclusive": 19,
+            "startSeconds": 0.5,
+            "endSeconds": 1.1875,
+            "description": "Target: the hand initially holding the raised rightmost ball of the five-ball Newton cradle. Event: the hand withdraws outward from that ball to release it. Onset: the hand begins its first outward withdrawal from the held position. Offset: this outward withdrawal stops. Track hand translation, not the ball reaching the central row, the leftmost ball swinging, or the later return of the hand to catch the rightmost ball."
+          }
+        ],
+        "end_state": [
+          "The hand holds the rightmost ball raised.",
+          "The other balls hang approximately at the central resting position."
+        ]
+      }
+    },
+    "B03": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "headpin_fall#1",
+            "startFrame": 15,
+            "endFrameExclusive": 16,
+            "startSeconds": 0.9375,
+            "endSeconds": 1.0,
+            "description": "Target: the single front/head pin at the apex of the bowling-pin formation facing the approaching ball, centered ahead of the other pins. Event: this pin tips after the ball arrives. Time: its first tilt exceeding five degrees from its opening upright orientation. Do not substitute first ball-pin contact, sliding without tilt, another pin falling, or the head pin reaching the floor. Only this crossing is timed."
+          }
+        ],
+        "end_state": [
+          "Most pins are lying down at the end of the lane.",
+          "At least one pin is still standing."
+        ]
+      }
+    },
+    "B04": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "top_transfer#1",
+            "startFrame": 56,
+            "endFrameExclusive": 57,
+            "startSeconds": 3.5,
+            "endSeconds": 3.5625,
+            "description": "Target: the marble initially at the lower inlet beside the vertical elevator on the right of the apparatus (Marble_01); follow this same marble as the lift raises it to the top. Event: it transfers from the lift onto the descending return track. Onset: its world height first starts decreasing after the upward ride. Horizontal motion or the elevator mechanism rotating is not this boundary; only the start of descent is scored."
+          }
+        ],
+        "end_state": [
+          "Marbles are still moving on the apparatus near the end.",
+          "The lift continues carrying marbles upward."
+        ]
+      }
+    },
+    "B05": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "slew_to_truck#1",
+            "startFrame": 40,
+            "endFrameExclusive": 52,
+            "startSeconds": 2.5,
+            "endSeconds": 3.25,
+            "description": "Target: the excavator upper carriage carrying its cab, boom and bucket, rotating on the stationary lower chassis beside the dump truck. Event: its first swivel toward the truck after loading the bucket. Onset: the upper carriage first changes yaw toward the truck. Offset: this yaw rotation stops at its truck-facing orientation. Boom raising, bucket curling and soil falling are separate motions and must not set these yaw boundaries."
+          }
+        ],
+        "end_state": [
+          "The bucket has left its tipped unloading pose.",
+          "The excavator has begun turning back toward the digging side."
+        ]
+      }
+    },
+    "B06": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "bridge_open#1",
+            "startFrame": 17,
+            "endFrameExclusive": 27,
+            "startSeconds": 1.0625,
+            "endSeconds": 1.6875,
+            "description": "Target: the movable bridge leaf on the left half of the canal crossing in the opening view, attached to its bank hinge; not a car or the boat. Event: its first opening stroke from the horizontal road position. Onset: the leaf first rotates upward about its hinge. Offset: that upward rotation ends at its raised position. A car leaving the bridge or the boat entering the gap is not the leaf boundary."
+          },
+          {
+            "phase": "bridge_close#1",
+            "startFrame": 49,
+            "endFrameExclusive": 60,
+            "startSeconds": 3.0625,
+            "endSeconds": 3.75,
+            "description": "Target: the same bank-hinged left bridge leaf used for bridge opening. Event: its first downward closing stroke from the raised position toward the road. Onset: the leaf starts rotating downward. Offset: its downward rotation ends at the closed road position. Do not use the boat passing or cars restarting as the boundary; observe the leaf angle itself."
+          }
+        ],
+        "end_state": [
+          "Both bridge leaves are closed and form a continuous road.",
+          "Cars are crossing the restored roadway."
+        ]
+      }
+    },
+    "B07": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "forks_raise#1",
+            "startFrame": 22,
+            "endFrameExclusive": 41,
+            "startSeconds": 1.375,
+            "endSeconds": 2.5625,
+            "description": "Target: the forklift front moving carriage and its pair of L-shaped forks beneath the loaded pallet, not the vehicle chassis or truck. Event: the first upward fork stroke carrying the pallet. Onset: the fork carriage starts rising relative to the mast. Offset: that upward stroke stops at the raised level. Driving the forklift forward, moving the camera, or later withdrawing the forks does not extend this vertical-motion interval."
+          }
+        ],
+        "end_state": [
+          "The pallet of cartons remains inside the truck.",
+          "The forklift is separated from the deposited load as it reverses away."
+        ]
+      }
+    },
+    "B08": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "final_carton_stop#1",
+            "startFrame": 72,
+            "endFrameExclusive": 73,
+            "startSeconds": 4.5,
+            "endSeconds": 4.5625,
+            "description": "Target: the leading carton nearest the downstream end of the output rollers (Carton 1), followed continuously from its opening position as other cartons queue behind it. Event: its final forward movement during accumulation. Offset: its last forward translation ends and it remains at that position for the rest of the clip. An earlier temporary pause is not the final stop, and movement of an arriving carton is not movement of this target. Only the final offset is scored."
+          }
+        ],
+        "end_state": [
+          "The cartons form a closely packed queue on the output rollers.",
+          "The queue is approximately stationary."
+        ]
+      }
+    },
+    "C01": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "occlusion#1",
+            "startFrame": 23,
+            "endFrameExclusive": 42,
+            "startSeconds": 1.4375,
+            "endSeconds": 2.625,
+            "description": "Target: the leading coach of the connected train, the first coach to enter the tunnel; keep this coach identity through disappearance and reappearance. Event: its first almost-complete tunnel occlusion. Onset: the visible fraction of this coach drops to at most 10 percent. Offset: its visible fraction first rises above 10 percent as it emerges. Initial partial covering and the last trailing coach entering or exiting do not define these boundaries."
+          }
+        ],
+        "end_state": [
+          "The train is visible outside the right tunnel portal.",
+          "Its coaches remain connected in sequence."
+        ]
+      }
+    },
+    "C02": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "occlusion#1",
+            "startFrame": 20,
+            "endFrameExclusive": 39,
+            "startSeconds": 1.25,
+            "endSeconds": 2.4375,
+            "description": "Target: Ferry 1, the boat initially nearest the left end of the bridge on the lower/near side of its deck in the opening view, heading toward the passage beneath the bridge. Track this same boat, not one on the opposite side or farther right. Event: its first almost-complete bridge occlusion. Onset: at most 10 percent of the target remains visible behind the bridge. Offset: more than 10 percent becomes visible again beyond the obstruction. Passing a bridge edge with most of the boat still visible is not the onset."
+          }
+        ],
+        "end_state": [
+          "Boats remain upright on the water on both sides of the bridge.",
+          "The bridge remains fixed while the boats change position."
+        ]
+      }
+    },
+    "C03": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "occlusion#1",
+            "startFrame": 28,
+            "endFrameExclusive": 68,
+            "startSeconds": 1.75,
+            "endSeconds": 4.25,
+            "description": "Target: the torso of the single walking person approaching the revolving-door enclosure from image-left; track the torso, not the head, legs or a door panel. Event: the torso becomes almost fully blocked by the rotating door structure and then reappears. Onset: at most 10 percent of the torso is visible. Offset: the visible torso fraction first exceeds 10 percent again. The person starting to walk, entering the doorway, or finally leaving the entire enclosure are different boundaries."
+          }
+        ],
+        "end_state": [
+          "The person is visible outside to the right of the door.",
+          "The revolving-door structure remains in place."
+        ]
+      }
+    },
+    "C04": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "occlusion#1",
+            "startFrame": 15,
+            "endFrameExclusive": 24,
+            "startSeconds": 0.9375,
+            "endSeconds": 1.5,
+            "description": "Target: the cable-car cabin initially at the left of the opening view (Cable car 1), followed along its route; do not switch to the cabin initially on the right. Event: this cabin first becomes almost completely occluded along the route, then reappears. Onset: at most 10 percent of its target cabin geometry remains visible behind scene obstructions. Offset: the visible fraction first exceeds 10 percent again. Partial overlap with foliage or supports alone is insufficient."
+          }
+        ],
+        "end_state": [
+          "The two cabins remain on the elevated cable route.",
+          "Their positions along the route have changed."
+        ]
+      }
+    },
+    "C05": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "occlusion#1",
+            "startFrame": 13,
+            "endFrameExclusive": 23,
+            "startSeconds": 0.8125,
+            "endSeconds": 1.4375,
+            "description": "Target: the forklift initially at image-left of the warehouse, tracked as one vehicle behind the racks; do not follow the shelving or a carton on it. Event: its first almost-complete occlusion by the shelving and stored goods. Onset: at most 10 percent of the forklift target remains visible. Offset: its visible fraction first exceeds 10 percent again. Do not wait for the whole vehicle to clear the rack or time the beginning of driving."
+          }
+        ],
+        "end_state": [
+          "The forklift is visible on the right side of the shelving.",
+          "The shelving and stored cartons remain stationary."
+        ]
+      }
+    },
+    "C06": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "occlusion#1",
+            "startFrame": 15,
+            "endFrameExclusive": 31,
+            "startSeconds": 0.9375,
+            "endSeconds": 1.9375,
+            "description": "Target: the car initially in the lower-middle part of the opening image on the curved ring roadway (Ring 2 car 1), not the nearby car on the straight diagonal bridge. Follow that same car around its ring. Event: its first almost-complete occlusion by the elevated road structure. Onset: at most 10 percent of the target remains visible. Offset: more than 10 percent becomes visible again. Do not switch to another car or time ordinary travel along the curve."
+          }
+        ],
+        "end_state": [
+          "Cars remain on the road surfaces.",
+          "The elevated road structures remain fixed."
+        ]
+      }
+    },
+    "C07": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "occlusion#1",
+            "startFrame": 12,
+            "endFrameExclusive": 29,
+            "startSeconds": 0.75,
+            "endSeconds": 1.8125,
+            "description": "Target: the single car approaching the car-wash housing, followed through the wash passage. Event: its first almost-complete hiding inside the wash structure, followed by reappearance. Onset: at most 10 percent of the car target remains visible. Offset: the visible fraction first exceeds 10 percent again. The nose entering the opening, brush contact, and the whole car finally clearing the housing are not these boundaries."
+          }
+        ],
+        "end_state": [
+          "The car is visible on the lane outside the wash opening.",
+          "The wash housing remains in place."
+        ]
+      }
+    },
+    "C08": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "cup_cover#1",
+            "startFrame": 8,
+            "endFrameExclusive": 23,
+            "startSeconds": 0.5,
+            "endSeconds": 1.4375,
+            "description": "Target: the cup initially on the left above the small ball (cup 1); preserve this identity even when cups exchange positions. Event: this cup first lowers to cover the ball. Onset: the cup begins descending vertically. Offset: its downward stroke ends at the tabletop level. Lateral shuffling, another cup moving, and the first instant the ball is visually blocked are not the vertical-stroke boundaries."
+          },
+          {
+            "phase": "cup_reveal#1",
+            "startFrame": 62,
+            "endFrameExclusive": 75,
+            "startSeconds": 3.875,
+            "endSeconds": 4.6875,
+            "description": "Target: the same cup initially on the left that covered the ball (cup 1), tracked through the shuffle rather than chosen by its final position or color. Event: this cup rises after the shuffle to reveal the ball. Onset: the cup starts its upward stroke from the tabletop. Offset: that upward stroke ends at its raised position. The ball first becoming visible may occur within the stroke and is not the end boundary."
+          }
+        ],
+        "end_state": [
+          "The small ball is visible on the tabletop.",
+          "The cups occupy a different arrangement from the opening."
+        ]
+      }
+    },
+    "D01": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "drive#1",
+            "startFrame": 0,
+            "endFrameExclusive": 40,
+            "startSeconds": 0,
+            "endSeconds": 2.5,
+            "description": "The car advances along the curved road relative to the lane markings while the camera follows it. Track the single car on the curved road, relative to lane markings and road edges while the camera follows it. Its path bends with the road and its heading follows the local roadway; this is continuous driving with no unique startup or stop. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          },
+          {
+            "phase": "continue#1",
+            "startFrame": 40,
+            "endFrameExclusive": 80,
+            "startSeconds": 2.5,
+            "endSeconds": 5,
+            "description": "The car continues around the road bend, staying on the roadway. Track the single car on the curved road, relative to lane markings and road edges while the camera follows it. Its path bends with the road and its heading follows the local roadway; this is continuous driving with no unique startup or stop. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          }
+        ],
+        "end_state": [
+          "The car remains upright on the road.",
+          "The road and roadside scenery remain fixed in the world."
+        ]
+      }
+    },
+    "D02": {
+      "reference": {
+        "timeline": [],
+        "end_state": []
+      }
+    },
+    "D03": {
+      "reference": {
+        "timeline": [],
+        "end_state": []
+      }
+    },
+    "D04": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "rotate#1",
+            "startFrame": 0,
+            "endFrameExclusive": 40,
+            "startSeconds": 0,
+            "endSeconds": 2.5,
+            "description": "The turbine rotors turn around their hubs relative to the stationary towers. Track the turbine blades relative to each fixed nacelle hub and tower. The rotors sweep through changing angular positions about their hubs during the observation interval; no unique start or stop is expected. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          },
+          {
+            "phase": "continue#1",
+            "startFrame": 40,
+            "endFrameExclusive": 80,
+            "startSeconds": 2.5,
+            "endSeconds": 5,
+            "description": "The rotor blades continue sweeping around their hubs while the towers stay fixed. Track the turbine blades relative to each fixed nacelle hub and tower. The rotors sweep through changing angular positions about their hubs during the observation interval; no unique start or stop is expected. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          }
+        ],
+        "end_state": [
+          "The turbines remain mounted on their towers.",
+          "The tower bases remain fixed to the ground."
+        ]
+      }
+    },
+    "D05": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "depart#1",
+            "startFrame": 0,
+            "endFrameExclusive": 40,
+            "startSeconds": 0,
+            "endSeconds": 2.5,
+            "description": "The followed yacht moves away from the dock into the harbour while another vessel crosses farther out. Track the yacht followed by the camera as it moves away from its opening berth, distinct from the boats remaining docked and the separate vessel farther out. Follow its separation from the dock into the harbor. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          },
+          {
+            "phase": "navigate#1",
+            "startFrame": 40,
+            "endFrameExclusive": 80,
+            "startSeconds": 2.5,
+            "endSeconds": 5,
+            "description": "The moving vessels continue through the harbour as the berthed yachts remain moored. Track the yacht followed by the camera as it moves away from its opening berth, distinct from the boats remaining docked and the separate vessel farther out. Follow its separation from the dock into the harbor. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          }
+        ],
+        "end_state": [
+          "The followed yacht is out on the water away from its starting berth.",
+          "The other yachts remain at the docks."
+        ]
+      }
+    },
+    "D06": {
+      "reference": {
+        "timeline": [],
+        "end_state": []
+      }
+    },
+    "D07": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "travel#1",
+            "startFrame": 0,
+            "endFrameExclusive": 40,
+            "startSeconds": 0,
+            "endSeconds": 2.5,
+            "description": "The locomotive pulls its connected coaches along the curved viaduct relative to the rails and bridge piers. Track the locomotive and its connected coaches on the curved elevated viaduct. They advance together relative to rails and bridge piers, with each coach following the rail curvature; no unique launch or arrival boundary is required. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          },
+          {
+            "phase": "continue#1",
+            "startFrame": 40,
+            "endFrameExclusive": 80,
+            "startSeconds": 2.5,
+            "endSeconds": 5,
+            "description": "The connected train continues following the curved track around the viaduct. Track the locomotive and its connected coaches on the curved elevated viaduct. They advance together relative to rails and bridge piers, with each coach following the rail curvature; no unique launch or arrival boundary is required. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          }
+        ],
+        "end_state": [
+          "The train remains on the railway viaduct.",
+          "The coaches remain connected behind the locomotive."
+        ]
+      }
+    },
+    "D08": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "wheel#1",
+            "startFrame": 0,
+            "endFrameExclusive": 80,
+            "startSeconds": 0,
+            "endSeconds": 5,
+            "description": "The Ferris wheel rotates and carries its gondolas around the rim. Track the Ferris-wheel gondolas around their hub, the coaster train along its rails, and the seat carriage along the drop tower. Judge each component relative to its own fixed support, including its characteristic circular, rail-following or vertical movement. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          },
+          {
+            "phase": "coaster#1",
+            "startFrame": 0,
+            "endFrameExclusive": 80,
+            "startSeconds": 0,
+            "endSeconds": 5,
+            "description": "The roller-coaster train advances along its elevated track. Track the Ferris-wheel gondolas around their hub, the coaster train along its rails, and the seat carriage along the drop tower. Judge each component relative to its own fixed support, including its characteristic circular, rail-following or vertical movement. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          },
+          {
+            "phase": "tower#1",
+            "startFrame": 0,
+            "endFrameExclusive": 80,
+            "startSeconds": 0,
+            "endSeconds": 5,
+            "description": "The drop-tower seat carriage changes height along the vertical tower. Track the Ferris-wheel gondolas around their hub, the coaster train along its rails, and the seat carriage along the drop tower. Judge each component relative to its own fixed support, including its characteristic circular, rail-following or vertical movement. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          }
+        ],
+        "end_state": [
+          "The amusement rides remain assembled on their support structures.",
+          "The ride vehicles remain attached to their intended routes."
+        ]
+      }
+    },
+    "E01": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "payload_first_lift#1",
+            "startFrame": 30,
+            "endFrameExclusive": 42,
+            "startSeconds": 1.875,
+            "endSeconds": 2.625,
+            "description": "Target: the roller-cassette payload initially resting on the pickup fixture beneath the robot gripper, not the gripper or the arm links. Event: the payload first rises with the gripper. Onset: the payload world height begins increasing from its supported level. Offset: this first upward segment ends at its first local maximum height, whether followed by a pause or descent. Horizontal transfer or continued arm articulation does not extend the rise."
+          }
+        ],
+        "end_state": [
+          "The cassette is held off the pickup table.",
+          "The arm links remain connected at their joints."
+        ]
+      }
+    },
+    "E02": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "first_top#1",
+            "startFrame": 26,
+            "endFrameExclusive": 27,
+            "startSeconds": 1.625,
+            "endSeconds": 1.6875,
+            "description": "Target: the rigid upper load platform supported by the scissor arms above the fixed base, not an individual arm or hose. Event: the platform completes its first upward stroke. Offset: its height reaches the first local maximum and stops increasing before lowering. The start of rising or a linkage joint rotating is not this boundary. Only this first top offset is timed."
+          },
+          {
+            "phase": "second_rise#1",
+            "startFrame": 49,
+            "endFrameExclusive": 65,
+            "startSeconds": 3.0625,
+            "endSeconds": 4.0625,
+            "description": "Target: the same rigid upper scissor-lift platform above the fixed base. Event: its second upward stroke, after the first rise and intervening lowering. Onset: its height starts increasing from the intervening low turning point. Offset: that second increase ends at the next local maximum. Count upward strokes of this platform; do not substitute its first rise or a later cycle."
+          }
+        ],
+        "end_state": [
+          "The platform is near a low position above the base.",
+          "The crossed arms remain connected at their pivots."
+        ]
+      }
+    },
+    "E03": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "umbrella_open#1",
+            "startFrame": 5,
+            "endFrameExclusive": 72,
+            "startSeconds": 0.3125,
+            "endSeconds": 4.5,
+            "description": "Target: the fabric canopy attached to the umbrella ribs around the central shaft, initially folded closed. Event: its first unfolding stroke as the ribs spread. Onset: the canopy begins deforming away from the closed shape. Offset: the opening deformation finishes at the fully expanded shape. Translation of the whole umbrella, shaft motion or later fabric movement is not the opening stroke."
+          }
+        ],
+        "end_state": [
+          "The umbrella canopy is open.",
+          "The canopy remains attached to the ribs and central shaft."
+        ]
+      }
+    },
+    "E04": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "billow#1",
+            "startFrame": 0,
+            "endFrameExclusive": 40,
+            "startSeconds": 0,
+            "endSeconds": 2.5,
+            "description": "The two curtain panels billow away from the window and form moving folds while their upper edges remain supported. Track the two curtain panels attached along their upper edges at the window. Their cloth billows, folds and sways away from and back toward the window while the attachment line stays supported; this is ongoing deformation without a unique start or stop. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          },
+          {
+            "phase": "continue#1",
+            "startFrame": 40,
+            "endFrameExclusive": 80,
+            "startSeconds": 2.5,
+            "endSeconds": 5,
+            "description": "The curtains continue swaying and folding, alternately covering and revealing parts of the window. Track the two curtain panels attached along their upper edges at the window. Their cloth billows, folds and sways away from and back toward the window while the attachment line stays supported; this is ongoing deformation without a unique start or stop. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          }
+        ],
+        "end_state": [
+          "The curtains remain suspended from their upper support.",
+          "The panels retain a continuous fabric surface."
+        ]
+      }
+    },
+    "E05": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "waves#1",
+            "startFrame": 0,
+            "endFrameExclusive": 40,
+            "startSeconds": 0,
+            "endSeconds": 2.5,
+            "description": "The athlete drives alternating waves along the two ropes by moving their held ends. Track the two continuous ropes from the ends held by the athlete toward their far ends. Alternating hand motion drives bends that travel along the rope lengths, rather than moving each rope as a rigid rod. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          },
+          {
+            "phase": "continue#1",
+            "startFrame": 40,
+            "endFrameExclusive": 80,
+            "startSeconds": 2.5,
+            "endSeconds": 5,
+            "description": "Waves continue propagating along the flexible ropes toward their far ends. Track the two continuous ropes from the ends held by the athlete toward their far ends. Alternating hand motion drives bends that travel along the rope lengths, rather than moving each rope as a rigid rod. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          }
+        ],
+        "end_state": [
+          "Both ropes remain continuous.",
+          "The athlete still holds the near ends of the ropes."
+        ]
+      }
+    },
+    "E06": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "first_compression#1",
+            "startFrame": 26,
+            "endFrameExclusive": 44,
+            "startSeconds": 1.625,
+            "endSeconds": 2.75,
+            "description": "Target: the sponge block above the receiving basin, judged by its top-to-bottom height, not a water droplet or basin edge. Event: the first sustained decrease in sponge height. Onset: that first downward compression starts. Offset: height reaches its first local minimum before recovery. Sideways bulging or droplets appearing does not define the boundary; track thickness rather than whole-object translation."
+          },
+          {
+            "phase": "first_recovery#1",
+            "startFrame": 43,
+            "endFrameExclusive": 58,
+            "startSeconds": 2.6875,
+            "endSeconds": 3.625,
+            "description": "Target: the same sponge block above the basin. Event: the upward height segment after the first compression, which is the second increasing-height segment overall because a small initial expansion precedes the compression. Onset: height starts increasing from the first compressed minimum. Offset: this recovery ends at the next local maximum height. Do not count the opening expansion as this recovery or use droplets as a boundary."
+          }
+        ],
+        "end_state": [
+          "The sponge has expanded toward its wider shape.",
+          "The basin remains beneath the sponge."
+        ]
+      }
+    },
+    "E07": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "articulate#1",
+            "startFrame": 0,
+            "endFrameExclusive": 40,
+            "startSeconds": 0,
+            "endSeconds": 2.5,
+            "description": "The connected walking links pivot at their joints and cycle through changing leg configurations. Track the rigid links and their pinned joints in the walking mechanism, relative to its main frame. Successive joint rotations change leg posture through the walking cycle rather than stretching the links. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          },
+          {
+            "phase": "continue#1",
+            "startFrame": 40,
+            "endFrameExclusive": 80,
+            "startSeconds": 2.5,
+            "endSeconds": 5,
+            "description": "The linkage continues its articulated cycle, with the legs changing posture while the rigid links remain connected. Track the rigid links and their pinned joints in the walking mechanism, relative to its main frame. Successive joint rotations change leg posture through the walking cycle rather than stretching the links. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          }
+        ],
+        "end_state": [
+          "The walking links remain connected at the joints.",
+          "The rigid links retain their shape."
+        ]
+      }
+    },
+    "E08": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "feed#1",
+            "startFrame": 0,
+            "endFrameExclusive": 40,
+            "startSeconds": 0,
+            "endSeconds": 2.5,
+            "description": "The textile web advances through the rollers while bending into a hanging loop between supports. Track the continuous textile web passing through the machine rollers and forming a suspended loop between supports. Material advances through the supports while the hanging part changes bend and the rollers turn. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          },
+          {
+            "phase": "continue#1",
+            "startFrame": 40,
+            "endFrameExclusive": 80,
+            "startSeconds": 2.5,
+            "endSeconds": 5,
+            "description": "The fabric continues feeding through the machine while its hanging section flexes and the rollers turn. Track the continuous textile web passing through the machine rollers and forming a suspended loop between supports. Material advances through the supports while the hanging part changes bend and the rollers turn. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          }
+        ],
+        "end_state": [
+          "The textile web remains continuous through the rollers.",
+          "The machine supports remain fixed around the moving fabric."
+        ]
+      }
+    },
+    "F01": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "chocolate_lift#1",
+            "startFrame": 23,
+            "endFrameExclusive": 24,
+            "startSeconds": 1.4375,
+            "endSeconds": 1.5,
+            "description": "Target: the leading chocolate bar in the conveyor lane nearer the camera at the opening, closest to that lane's pickup robot (Chocolate -1 0), not the parallel farther lane or a later bar. Event: this bar is first picked up from the conveyor. Onset: its world height first increases above its belt-supported level. Conveyor translation, gripper descent, or another chocolate being lifted does not count. Only the first upward-motion onset is scored."
+          }
+        ],
+        "end_state": [
+          "Chocolate bars remain in two conveyor lanes.",
+          "The robot arms and packing cartons remain at the conveyor output stations."
+        ]
+      }
+    },
+    "F02": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "ball_lift#1",
+            "startFrame": 5,
+            "endFrameExclusive": 18,
+            "startSeconds": 0.3125,
+            "endSeconds": 1.125,
+            "description": "Target: the first of the three balls in the opening left-to-right order (Ball 0), resting at the pickup side of the LEGO transfer mechanism. Follow this same ball in the mechanism. Event: its first upward transfer stroke. Onset: this ball starts gaining world height from its lower resting position. Offset: that first increase ends at its first upper turning point or plateau. Motion of the figure's arms or a different ball is not a boundary of this ball's rise."
+          }
+        ],
+        "end_state": [
+          "The LEGO figure remains assembled at its joints.",
+          "The balls remain associated with the transfer mechanism rather than floating away."
+        ]
+      }
+    },
+    "F03": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "first_trigger#1",
+            "startFrame": 17,
+            "endFrameExclusive": 18,
+            "startSeconds": 1.0625,
+            "endSeconds": 1.125,
+            "description": "Target: the first tall distributor domino next to the trigger-marble ramp at the near end of the distributor chain, beside the array of smaller field dominoes. Event: the arriving marble initiates its fall. Time: this distributor first exceeds five degrees of tilt from its initial pose. Marble release, marble contact without sufficient tilt, and a small field domino tipping do not define the crossing. There is only one timed boundary."
+          },
+          {
+            "phase": "last_fall#1",
+            "startFrame": 71,
+            "endFrameExclusive": 72,
+            "startSeconds": 4.4375,
+            "endSeconds": 4.5,
+            "description": "Target: the terminal small domino at the far-right end of the row farthest from the camera in the opening field array (Field 09 19), not a tall distributor or an earlier row endpoint. Event: the cascade reaches this final field block. Time: its tilt first exceeds five degrees from its initial pose. Do not use the last block you happen to see falling or wait until the target lies flat. This is a single crossing boundary."
+          }
+        ],
+        "end_state": [
+          "Most field dominoes are toppled.",
+          "Previously toppled dominoes remain down."
+        ]
+      }
+    },
+    "F04": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "container_hoist#1",
+            "startFrame": 8,
+            "endFrameExclusive": 24,
+            "startSeconds": 0.5,
+            "endSeconds": 1.5,
+            "description": "Target: the handling container initially on the vehicle beneath the crane spreader, distinct from the stationary stacked containers beside the work area. Follow this same container throughout transfer. Event: its first hoisting stroke. Onset: the container begins gaining world height from its starting support. Offset: this increase ends at the upper transfer level. Spreader motion before lifting or horizontal crane travel does not set these vertical boundaries."
+          },
+          {
+            "phase": "container_lower#1",
+            "startFrame": 51,
+            "endFrameExclusive": 63,
+            "startSeconds": 3.1875,
+            "endSeconds": 3.9375,
+            "description": "Target: the same container lifted from the first vehicle under the crane, not a stationary stacked container. Event: its first lowering stroke from the upper transfer level toward the receiving vehicle. Onset: its world height starts decreasing. Offset: that decrease ends at the receiving support level. Horizontal positioning, spreader release and vehicle departure are separate actions."
+          }
+        ],
+        "end_state": [
+          "The transferred container rests on the receiving AGV.",
+          "The spreader is clear above the placed container."
+        ]
+      }
+    },
+    "F05": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "barrier_close#1",
+            "startFrame": 7,
+            "endFrameExclusive": 18,
+            "startSeconds": 0.4375,
+            "endSeconds": 1.125,
+            "description": "Target: the hinged road-crossing barrier arm initially upright beside the near-side waiting traffic, not the train, a warning lamp or a fixed post. Event: its first closing stroke toward the horizontal road-blocking position. Onset: the arm first rotates downward about its hinge. Offset: that rotation ends at the lowered position. Cars stopping or the train arriving is not the arm-motion boundary."
+          },
+          {
+            "phase": "barrier_open#1",
+            "startFrame": 51,
+            "endFrameExclusive": 62,
+            "startSeconds": 3.1875,
+            "endSeconds": 3.875,
+            "description": "Target: the same hinged road barrier that previously lowered across the waiting traffic. Event: its first reopening stroke after the train passage. Onset: the arm begins rotating upward from the lowered position. Offset: the upward rotation ends at its upright position. The train clearing the crossing or cars beginning to move is not the angular-motion boundary."
+          }
+        ],
+        "end_state": [
+          "The train has cleared the road crossing.",
+          "Road traffic resumes through the crossing."
+        ]
+      }
+    },
+    "F06": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "carton_lift#1",
+            "startFrame": 8,
+            "endFrameExclusive": 23,
+            "startSeconds": 0.5,
+            "endSeconds": 1.4375,
+            "description": "Target: the leading arriving carton at the conveyor pickup end nearest the robot in the opening view (Moving carton 0), distinct from the cartons already stacked on the pallet. Event: this carton's first upward pickup stroke. Onset: its world height begins increasing from the conveyor-supported level. Offset: that increase ends at the first high transfer position. Robot approach and horizontal carton travel do not extend this rise."
+          },
+          {
+            "phase": "carton_place#1",
+            "startFrame": 23,
+            "endFrameExclusive": 29,
+            "startSeconds": 1.4375,
+            "endSeconds": 1.8125,
+            "description": "Target: the same first arriving carton picked from the conveyor (Moving carton 0), followed in the gripper to the pallet; not a carton already in the stack. Event: its first lowering stroke from the transfer height. Onset: its world height begins decreasing. Offset: that decrease ends at the pallet placement level. Gripper opening and retreat happen separately and do not define this vertical-motion offset."
+          }
+        ],
+        "end_state": [
+          "A transferred carton is supported on the pallet.",
+          "The robot and conveyor remain assembled at the work cell."
+        ]
+      }
+    },
+    "F07": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "coasters#1",
+            "startFrame": 0,
+            "endFrameExclusive": 80,
+            "startSeconds": 0,
+            "endSeconds": 5,
+            "description": "Two connected roller-coaster trains travel around the undulating track, passing climbs, crests and curves. Track the two connected roller-coaster trains, each composed of ordered cars on the undulating track. Follow their travel through climbs, crests and curves relative to the rails, with no unique start or end stop required. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          },
+          {
+            "phase": "wheel#1",
+            "startFrame": 0,
+            "endFrameExclusive": 80,
+            "startSeconds": 0,
+            "endSeconds": 5,
+            "description": "The Ferris wheel rotates independently while the coaster trains move. Track the separate Ferris wheel and its attached gondolas, not the coaster trains in the same scene. Observe gondolas circulating around the fixed wheel hub during the continuous rotation. This phase is an observation window, not a claim of a unique physical startup or stop; assess the described motion relative to its support throughout the shown frames."
+          }
+        ],
+        "end_state": [
+          "The coaster cars remain connected into trains on the rails.",
+          "The Ferris-wheel gondolas remain attached to the wheel."
+        ]
+      }
+    },
+    "F08": {
+      "reference": {
+        "timeline": [
+          {
+            "phase": "packet_lift#1",
+            "startFrame": 8,
+            "endFrameExclusive": 16,
+            "startSeconds": 0.5,
+            "endSeconds": 1.0,
+            "description": "Target: the leading snack packet at the conveyor pickup end directly beneath the LEGO robot gripper in the opening view (Packet 0), not the trailing packets or an empty receiving pocket. Event: this packet's first upward pickup stroke. Onset: its world height starts increasing from the conveyor-supported level. Offset: this rise ends at the upper transfer height. Gripper approach, conveyor advance and horizontal transfer are separate motions."
+          },
+          {
+            "phase": "packet_place#1",
+            "startFrame": 25,
+            "endFrameExclusive": 31,
+            "startSeconds": 1.5625,
+            "endSeconds": 1.9375,
+            "description": "Target: the same leading packet first picked from the conveyor (Packet 0), tracked in the LEGO robot gripper to a receiving pocket. Event: its first downward placement stroke. Onset: its world height starts decreasing from transfer height. Offset: this decrease ends at the receiving-pocket support level. Do not time a later packet, gripper release or the robot returning toward the conveyor."
+          }
+        ],
+        "end_state": [
+          "The robot remains assembled at its joints.",
+          "Transferred packets are supported by receiving pockets."
+        ]
+      }
+    }
+  }
+}

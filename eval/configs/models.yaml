@@ -1,0 +1,55 @@
+# How each model receives the 832x480 condition video. Evaluation maps GT boxes to the output frame from this.
+# transform:
+#   none                    whole condition canvas resized to the output
+#   center_crop             scale to cover the output, crop the centre (exact, unrounded)
+#   area_resize_topleft_crop  resize to area 480*area_width keeping aspect, floor to multiples of 16 from the top-left
+#   letterbox               aspect-preserving fit with padding
+#   same_canvas             output must equal the input size; anything else is rejected
+#   pad                     padded by `top`/`bottom` pixels before upload; whole padded canvas resized
+# A new model: add an entry here (the evaluation refuses unknown models).
+draft:
+  input_size: [832, 480]
+  transform: none
+  role: reference          # the draft itself, read from data/drafts/; camera reference trajectory
+  video: condition
+  camera_reference_cell: P2_AA
+MiniMax:
+  input_size: [832, 480]
+  transform: none
+OmniWeaving:
+  input_size: [832, 480]
+  transform: center_crop
+UniVideo:
+  input_size: [832, 480]
+  transform: area_resize_topleft_crop
+  area_width: 832
+VINO:
+  input_size: [832, 480]
+  transform: area_resize_topleft_crop
+  area_width: 848
+Wan2.1-VACE-14B:
+  input_size: [832, 480]
+  transform: none
+LynnReal-Omni:
+  input_size: [832, 480]
+  transform: none
+Bernini-R-14B:
+  input_size: [832, 480]
+  transform: none
+Wan-3.0:
+  input_size: [832, 480]
+  transform: none
+SolarRenderer:
+  input_size: [832, 480]
+  transform: letterbox
+Wan2.2-VACE-Fun-A14B:
+  input_size: [832, 480]
+  transform: same_canvas
+C2R:
+  input_size: [832, 480]
+  transform: same_canvas
+Seedance-2.5:
+  input_size: [832, 480]
+  transform: pad
+  top: 6
+  bottom: 6

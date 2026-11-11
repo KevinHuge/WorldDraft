@@ -1,0 +1,101 @@
+{
+  "dataset": "worlddraft",
+  "protocol": "benchmark-literal-ap-gated",
+  "episode": "B02",
+  "files": {
+    "questions": "../qa/questions.csv",
+    "question_provenance": "../qa/provenance.json",
+    "factual_contrasts": "../qa/factual-contrasts.json",
+    "source_material_audit": "../qa/source-material-audit.json",
+    "visibility_gt": "data/gt/B02/gt.json",
+    "entities_gt": "data/gt/entities/B02.json",
+    "target_prompt": "data/scenes/B02/target_prompt.txt",
+    "appearance": "data/scenes/B02/appearance.json"
+  },
+  "judge": {
+    "model": "Qwen/Qwen3.6-27B",
+    "temperature": 0,
+    "enable_thinking": false
+  },
+  "qa": {
+    "groups": {
+      "B02": {
+        "balls": [
+          "B02 | ball 1",
+          "B02 | ball 2",
+          "B02 | ball 3",
+          "B02 | ball 4",
+          "B02 | ball 5"
+        ]
+      }
+    },
+    "bindings": {
+      "B02": {
+        "1": {
+          "count_scope": "global"
+        },
+        "2": {
+          "count_scope": "region"
+        },
+        "3": {
+          "count_scope": "region"
+        },
+        "4": {
+          "count_scope": "region"
+        },
+        "5": {
+          "count_scope": "region"
+        },
+        "6": {
+          "count_scope": "region"
+        },
+        "43": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        }
+      }
+    },
+    "times_s": [
+      0.0,
+      0.6875,
+      1.4375,
+      2.125,
+      2.875,
+      3.5625,
+      4.3125,
+      5.0
+    ],
+    "count_times_s": [
+      0.0,
+      2.125,
+      5.0
+    ],
+    "crop_side": 224,
+    "rf_sampling": "one frame per question; max GT visible mask area, earliest tie; scene questions use first frame",
+    "count_scoring": "exact_count_accuracy_global_and_local_separate",
+    "crop": "gt_bbox",
+    "binary_answers": [
+      "yes",
+      "no"
+    ],
+    "count_answers": "nonnegative_integer",
+    "entity_labels": {
+      "B02 | ball 1": "ball",
+      "B02 | ball 2": "ball",
+      "B02 | ball 3": "ball",
+      "B02 | ball 4": "ball",
+      "B02 | ball 5": "ball"
+    },
+    "global_count_view": "full_frame",
+    "visibility_from_masks": true,
+    "entity_mapping_audit": {
+      "sparse_only": [],
+      "dense_only": [
+        "B02 | release hand controller"
+      ],
+      "policy": "Sparse visible instance masks define regions and count units. Dense-only objects use named full-frame RF questions; no amodal bbox substitutes for visibility."
+    }
+  }
+}

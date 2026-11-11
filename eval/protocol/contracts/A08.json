@@ -1,0 +1,47 @@
+{
+  "case": "A08",
+  "noun": "marble",
+  "gt_root_pattern": "Glass marble \\d{2}",
+  "attributes": [
+    {
+      "id": "T1",
+      "entities": [
+        "Glass marble 01",
+        "Glass marble 04",
+        "Glass marble 07"
+      ],
+      "surface": "marble body",
+      "target": "red",
+      "source": "purple"
+    },
+    {
+      "id": "T2",
+      "entities": [
+        "Glass marble 02",
+        "Glass marble 05",
+        "Glass marble 08"
+      ],
+      "surface": "marble body",
+      "target": "blue",
+      "source": "orange"
+    },
+    {
+      "id": "T3",
+      "entities": [
+        "Glass marble 03",
+        "Glass marble 06"
+      ],
+      "surface": "marble body",
+      "target": "green",
+      "source": "blue"
+    }
+  ],
+  "notes": [
+    "Colour truth comes only from target_prompt.txt and appearance.json; scene metadata and material names are not colour authority.",
+    "All semantic roots are retained for DF. Shared-colour entities are grouped in one attribute, fixed across all nine cells.",
+    "T1: target scarlet red -> red; AC magenta -> purple.",
+    "T2: target cobalt blue -> blue; AC burnt orange -> orange.",
+    "T3: target emerald green -> green; AC cyan -> blue.",
+    "Marble entity numbers are not their opening-image left-to-right order; colour binding follows appearance.json entity_id."
+  ]
+}

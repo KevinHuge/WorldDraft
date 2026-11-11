@@ -1,0 +1,51 @@
+{
+  "case": "A02",
+  "noun": "billiard ball",
+  "gt_root_pattern": "Ball_\\d{2}",
+  "attributes": [
+    {
+      "id": "T1",
+      "entities": [
+        "Ball_01"
+      ],
+      "surface": "body",
+      "target": "yellow",
+      "source": "blue"
+    },
+    {
+      "id": "T3",
+      "entities": [
+        "Ball_03"
+      ],
+      "surface": "body",
+      "target": "red",
+      "source": "purple"
+    },
+    {
+      "id": "T7",
+      "entities": [
+        "Ball_07"
+      ],
+      "surface": "body",
+      "target": "green",
+      "source": "purple"
+    },
+    {
+      "id": "T12",
+      "entities": [
+        "Ball_12"
+      ],
+      "surface": "body",
+      "target": "blue",
+      "source": "brown"
+    }
+  ],
+  "notes": [
+    "Colour truth comes only from target_prompt.txt and appearance.json; scene metadata and material names are not colour authority.",
+    "T1: target golden yellow -> yellow; AC sky blue -> blue.",
+    "T3: target scarlet red -> red; AC magenta -> purple.",
+    "T7: target emerald green -> green; AC violet -> purple.",
+    "T12: target cobalt blue -> blue; AC chocolate brown -> brown.",
+    "Root pattern matches the top-level Blender entity_id (Ball_00..Ball_15), not necessarily the object name. Four representative coloured balls are scored; all sixteen balls remain GT entities."
+  ]
+}

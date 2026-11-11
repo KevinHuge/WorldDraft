@@ -1,0 +1,51 @@
+{
+  "case": "F04",
+  "noun": "container shell or end door",
+  "gt_root_pattern": "(?:Container shell|End door(?:\\.00[1-3])?|Parked lower container|Parked upper container)",
+  "attributes": [
+    {
+      "entities": [
+        "Container shell"
+      ],
+      "surface": "corrugated shell",
+      "target": "red",
+      "source": "blue",
+      "id": "T1"
+    },
+    {
+      "entities": [
+        "End door",
+        "End door.001",
+        "End door.002",
+        "End door.003"
+      ],
+      "surface": "end door face excluding locking bars",
+      "target": "white",
+      "source": "blue",
+      "id": "T2"
+    },
+    {
+      "entities": [
+        "Parked lower container"
+      ],
+      "surface": "container shell",
+      "target": "blue",
+      "source": "red",
+      "id": "T3"
+    },
+    {
+      "entities": [
+        "Parked upper container"
+      ],
+      "surface": "container shell",
+      "target": "white",
+      "source": "gray/silver",
+      "id": "T4"
+    }
+  ],
+  "notes": [
+    "Target colour authority: target_prompt.txt and appearance.json only; AC colours come from appearance.json AC or AC_recipe. No scene-level contract attributes or material names are used.",
+    "Entity names and hierarchy verified by read-only inspection of the final P2_AA.blend. Attribute selection is fixed before model scoring.",
+    "brick/oxide red -> red; navy/deep blue -> blue; ivory/cream -> white; light gray -> gray/silver. Handling shell and four door meshes are separate GT components; parked containers retain their semantic roots."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "case": "E04",
+  "noun": "curtain panels",
+  "gt_root_pattern": "Silk\\ curtains\\ —\\ real\\ cloth\\ simulation",
+  "attributes": [
+    {
+      "entities": [
+        "Silk curtains — real cloth simulation"
+      ],
+      "surface": "curtain fabric between vertical stripes",
+      "target": "white",
+      "source": "red",
+      "id": "T1"
+    },
+    {
+      "entities": [
+        "Silk curtains — real cloth simulation"
+      ],
+      "surface": "vertical curtain stripes",
+      "target": "blue",
+      "source": "white",
+      "pattern": "three broad vertical stripes on each of the two panels running from top edge to bottom hem",
+      "id": "T2"
+    }
+  ],
+  "notes": [
+    "Target colour authority: target_prompt.txt and appearance.json only; AC colours come from appearance.json AC or AC_recipe. No scene-level contract attributes or material names are used.",
+    "Entity names and hierarchy verified by read-only inspection of the final P2_AA.blend. Attribute selection is fixed before model scoring.",
+    "warm ivory/ivory -> white; navy-blue -> blue; burgundy red -> red. Both simulated curtain panels are merged in one scene mesh and therefore share one GT bbox; no fictional per-panel root is introduced."
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "dataset": "worlddraft",
+  "protocol": "benchmark-literal-ap-gated",
+  "episode": "E02",
+  "files": {
+    "questions": "../qa/questions.csv",
+    "question_provenance": "../qa/provenance.json",
+    "factual_contrasts": "../qa/factual-contrasts.json",
+    "source_material_audit": "../qa/source-material-audit.json",
+    "visibility_gt": "data/gt/E02/gt.json",
+    "entities_gt": "data/gt/entities/E02.json",
+    "target_prompt": "data/scenes/E02/target_prompt.txt",
+    "appearance": "data/scenes/E02/appearance.json"
+  },
+  "judge": {
+    "model": "Qwen/Qwen3.6-27B",
+    "temperature": 0,
+    "enable_thinking": false
+  },
+  "qa": {
+    "groups": {
+      "E02": {
+        "scissor arms": [
+          "Ascending rigid arm",
+          "Ascending rigid arm.001",
+          "Descending rigid arm",
+          "Descending rigid arm.001"
+        ],
+        "hydraulic hoses": [
+          "Flexible hydraulic hose",
+          "Flexible hydraulic hose.001"
+        ],
+        "lift platforms": [
+          "Rigid upper table"
+        ]
+      }
+    },
+    "bindings": {
+      "E02": {
+        "1": {
+          "count_scope": "global"
+        },
+        "2": {
+          "count_scope": "global"
+        },
+        "3": {
+          "count_scope": "global"
+        },
+        "4": {
+          "count_scope": "region"
+        },
+        "5": {
+          "count_scope": "region"
+        },
+        "6": {
+          "count_scope": "region"
+        },
+        "7": {
+          "count_scope": "region"
+        },
+        "8": {
+          "count_scope": "region"
+        },
+        "9": {
+          "count_scope": "region"
+        },
+        "10": {
+          "count_scope": "region"
+        },
+        "60": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "62": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "64": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "66": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "68": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "70": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        }
+      }
+    },
+    "times_s": [
+      0.0,
+      0.6875,
+      1.4375,
+      2.125,
+      2.875,
+      3.5625,
+      4.3125,
+      5.0
+    ],
+    "count_times_s": [
+      0.0,
+      2.125,
+      5.0
+    ],
+    "crop_side": 224,
+    "rf_sampling": "one frame per question; max GT visible mask area, earliest tie; scene questions use first frame",
+    "count_scoring": "exact_count_accuracy_global_and_local_separate",
+    "crop": "gt_bbox",
+    "binary_answers": [
+      "yes",
+      "no"
+    ],
+    "count_answers": "nonnegative_integer",
+    "entity_labels": {
+      "Ascending rigid arm": "scissor arm",
+      "Ascending rigid arm.001": "scissor arm",
+      "Descending rigid arm": "scissor arm",
+      "Descending rigid arm.001": "scissor arm",
+      "Flexible hydraulic hose": "hydraulic hose",
+      "Flexible hydraulic hose.001": "hydraulic hose",
+      "Rigid upper table": "lift platform"
+    },
+    "global_count_view": "full_frame",
+    "visibility_from_masks": true,
+    "entity_mapping_audit": {
+      "sparse_only": [
+        "Ascending rigid arm",
+        "Ascending rigid arm.001",
+        "Descending rigid arm",
+        "Descending rigid arm.001",
+        "Flexible hydraulic hose",
+        "Flexible hydraulic hose.001",
+        "Rigid upper table"
+      ],
+      "dense_only": [
+        "scissor_lift"
+      ],
+      "policy": "Sparse visible instance masks define regions and count units. Dense-only objects use named full-frame RF questions; no amodal bbox substitutes for visibility."
+    }
+  }
+}

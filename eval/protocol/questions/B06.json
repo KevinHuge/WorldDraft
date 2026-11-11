@@ -1,0 +1,144 @@
+{
+  "dataset": "worlddraft",
+  "protocol": "benchmark-literal-ap-gated",
+  "episode": "B06",
+  "files": {
+    "questions": "../qa/questions.csv",
+    "question_provenance": "../qa/provenance.json",
+    "factual_contrasts": "../qa/factual-contrasts.json",
+    "source_material_audit": "../qa/source-material-audit.json",
+    "visibility_gt": "data/gt/B06/gt.json",
+    "entities_gt": "data/gt/entities/B06.json",
+    "target_prompt": "data/scenes/B06/target_prompt.txt",
+    "appearance": "data/scenes/B06/appearance.json"
+  },
+  "judge": {
+    "model": "Qwen/Qwen3.6-27B",
+    "temperature": 0,
+    "enable_thinking": false
+  },
+  "qa": {
+    "groups": {
+      "B06": {
+        "cars": [
+          "Final eastbound car",
+          "Final westbound car",
+          "First crossing car"
+        ],
+        "bridge leafs": [
+          "Left lifting bridge leaf",
+          "Right lifting bridge leaf"
+        ],
+        "boats": [
+          "Passing cabin boat"
+        ]
+      }
+    },
+    "bindings": {
+      "B06": {
+        "1": {
+          "count_scope": "global"
+        },
+        "2": {
+          "count_scope": "global"
+        },
+        "3": {
+          "count_scope": "global"
+        },
+        "4": {
+          "count_scope": "region"
+        },
+        "5": {
+          "count_scope": "region"
+        },
+        "6": {
+          "count_scope": "region"
+        },
+        "7": {
+          "count_scope": "region"
+        },
+        "8": {
+          "count_scope": "region"
+        },
+        "9": {
+          "count_scope": "region"
+        },
+        "49": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "50": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "51": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "52": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "53": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        },
+        "54": {
+          "cells": [
+            "P1_AC",
+            "P2_AC"
+          ]
+        }
+      }
+    },
+    "times_s": [
+      0.0,
+      0.6875,
+      1.4375,
+      2.125,
+      2.875,
+      3.5625,
+      4.3125,
+      5.0
+    ],
+    "count_times_s": [
+      0.0,
+      2.125,
+      5.0
+    ],
+    "crop_side": 224,
+    "rf_sampling": "one frame per question; max GT visible mask area, earliest tie; scene questions use first frame",
+    "count_scoring": "exact_count_accuracy_global_and_local_separate",
+    "crop": "gt_bbox",
+    "binary_answers": [
+      "yes",
+      "no"
+    ],
+    "count_answers": "nonnegative_integer",
+    "entity_labels": {
+      "Final eastbound car": "car",
+      "Final westbound car": "car",
+      "First crossing car": "car",
+      "Left lifting bridge leaf": "bridge leaf",
+      "Passing cabin boat": "boat",
+      "Right lifting bridge leaf": "bridge leaf"
+    },
+    "global_count_view": "full_frame",
+    "visibility_from_masks": true,
+    "entity_mapping_audit": {
+      "sparse_only": [],
+      "dense_only": [],
+      "policy": "Sparse visible instance masks define regions and count units. Dense-only objects use named full-frame RF questions; no amodal bbox substitutes for visibility."
+    }
+  }
+}
