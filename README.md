@@ -18,11 +18,11 @@ Liuzhou Zhang<sup>3</sup>, Disen Lan<sup>6</sup>, Xiaogang Xu<sup>7</sup>, Qi Ch
 
 <p align="center"><img src="assets/performance.webp" width="100%" alt="Performance of 12 video models on WorldDraft across Rendering Performance, Granularity Gains, and Conflict Robustness."></p>
 
-## News
+## 📌 News
 
 - **11/2026:** Benchmark data and evaluation code released.
 
-## Overview
+## 🌟 Overview
 
 **WorldDraft benchmarks video models as generative renderers:** executable 4D world → draft video → photorealistic video. It tests whether models preserve the draft's geometry, motion, events, and camera while realizing the target appearance specified in text.
 
@@ -34,7 +34,7 @@ Liuzhou Zhang<sup>3</sup>, Disen Lan<sup>6</sup>, Xiaogang Xu<sup>7</sup>, Qi Ch
 
 See the [project page](https://haroldchen19.github.io/WorldDraft-site/) for the leaderboard and video comparisons.
 
-## Benchmark
+## 📊 Benchmark
 
 | Metric group | Metrics |
 |---|---|
@@ -47,7 +47,7 @@ See the [project page](https://haroldchen19.github.io/WorldDraft-site/) for the 
 
 Ground truth is exported from Blender: visible-instance masks, entity boxes, event boundaries, and camera trajectories. See the [metric protocol](eval/docs/metrics.md) for definitions, sampling, and aggregation.
 
-## Getting started
+## 🚀 Getting started
 
 ```bash
 git clone https://github.com/KevinHuge/WorldDraft.git
@@ -70,7 +70,7 @@ bash eval/download_data.sh
 
 Per-stage commands and output formats are documented in [eval/USAGE.md](eval/USAGE.md).
 
-## Repository
+## 📁 Repository
 
 | Path | Contents |
 |---|---|
@@ -78,7 +78,7 @@ Per-stage commands and output formats are documented in [eval/USAGE.md](eval/USA
 | [data/](data/README.md) | Benchmark data downloaded from Hugging Face; large files are not tracked |
 | [Data guide](eval/docs/data.md) | File formats and ground-truth generation |
 
-## Citation
+## 📝 Citation
 
 If you find WorldDraft useful, please cite:
 
