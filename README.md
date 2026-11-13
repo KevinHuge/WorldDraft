@@ -12,7 +12,7 @@ SUSTech &nbsp; ZODA &nbsp; HKUST &nbsp; CUHK &nbsp; HKUST(GZ) &nbsp; FDU &nbsp; 
 <sup>\*</sup> Equal Contribution &nbsp; <sup>†</sup> Project Lead
 
 <!-- Replace the Paper href (#) with the arXiv URL when available. -->
-[Paper](#) &nbsp; | &nbsp; [Project Page](https://haroldchen19.github.io/WorldDraft-site/) &nbsp; | &nbsp; [Dataset](https://huggingface.co/datasets/KevinHuge/WorldDraft) &nbsp; | &nbsp; [BibTeX](#citation) &nbsp; | &nbsp; [License](LICENSE)
+[Paper](https://arxiv.org/abs/2611.16217) &nbsp; | &nbsp; [Project Page](https://haroldchen19.github.io/WorldDraft-site/) &nbsp; | &nbsp; [Dataset](https://huggingface.co/datasets/KevinHuge/WorldDraft) &nbsp; | &nbsp; [BibTeX](#citation) &nbsp; | &nbsp; [License](LICENSE)
 
 </div>
 
@@ -20,7 +20,8 @@ SUSTech &nbsp; ZODA &nbsp; HKUST &nbsp; CUHK &nbsp; HKUST(GZ) &nbsp; FDU &nbsp; 
 
 ## 📌 News
 
-- **11/2026:** Benchmark data and evaluation code released.
+- **11/13/2026:** Paper released.
+- **11/11/2026:** Benchmark data and evaluation code released.
 
 ## 🌟 Overview
 
@@ -83,11 +84,10 @@ Per-stage commands and output formats are documented in [eval/USAGE.md](eval/USA
 If you find WorldDraft useful, please cite:
 
 ```bibtex
-@misc{hou2026worlddraft,
+@article{hou2026worlddraft,
   title={WorldDraft: If Code Builds the World, Can Video Models Just Render It?},
-  author={Hou, Zhiyu and Shu, Wen-Jie and Chen, Harold H. and Ruan, Weilin and Liao, Chenfei and Zhang, Liuzhou and Lan, Disen and Xu, Xiaogang and Chen, Qi and Lim, Ser-Nam},
-  year={2026},
-  howpublished={arXiv preprint},
-  url={https://haroldchen19.github.io/WorldDraft-site/}
+  author={Hou, Zhiyu and Shu, Wen-Jie and Chen, Harold Haodong and Ruan, Weilin and Liao, Chenfei and Zhang, Liuzhou and Lan, Disen and Xu, Xiaogang and Chen, Qi and Lim, Ser-Nam},
+  journal={arXiv preprint arXiv:2611.16217},
+  year={2026}
 }
 ```
